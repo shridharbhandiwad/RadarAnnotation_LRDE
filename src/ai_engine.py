@@ -45,16 +45,18 @@ class SequenceDataGenerator:
         self.label_encoder = LabelEncoder()
         
     def prepare_sequences(self, df: pd.DataFrame, feature_columns: List[str], 
-                         label_column: str = 'Annotation') -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+                         label_column: str = 'Annotation', return_label_strings: bool = False) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Prepare sequence data from DataFrame
         
         Args:
             df: Input DataFrame
             feature_columns: List of feature column names
             label_column: Label column name
+            return_label_strings: If True, return raw label strings instead of encoded integers
             
         Returns:
             Tuple of (sequences, labels, track_ids)
+            If return_label_strings=True, labels are strings; otherwise they are encoded integers
         """
         sequences = []
         labels = []
@@ -91,8 +93,11 @@ class SequenceDataGenerator:
         sequences = np.array(sequences)
         track_ids = np.array(track_ids)
         
-        # Encode labels
-        labels = self.label_encoder.fit_transform(labels)
+        # Encode labels unless raw strings requested
+        if return_label_strings:
+            labels = np.array(labels)
+        else:
+            labels = self.label_encoder.fit_transform(labels)
         
         return sequences, labels, track_ids
     
@@ -546,11 +551,11 @@ class TransformerModel:
         logger.info(f"Built Transformer model with input shape {input_shape}, "
                    f"multi_output={multi_output}")
     
-    def prepare_multi_output_labels(self, df: pd.DataFrame) -> Dict[str, np.ndarray]:
-        """Prepare multi-output labels from composite annotations
+    def prepare_multi_output_labels(self, label_strings: np.ndarray) -> Dict[str, np.ndarray]:
+        """Prepare multi-output labels from composite annotation strings
         
         Args:
-            df: DataFrame with 'Annotation' column containing composite labels
+            label_strings: Array of annotation strings (e.g., from sequences)
             
         Returns:
             Dictionary of label arrays for each output
@@ -562,7 +567,7 @@ class TransformerModel:
         maneuver_map = {'light_maneuver': 0, 'high_maneuver': 1}
         speed_map = {'low_speed': 0, 'high_speed': 1}
         
-        n_samples = len(df)
+        n_samples = len(label_strings)
         labels = {
             'direction': np.zeros(n_samples, dtype=np.float32),
             'altitude': np.zeros(n_samples, dtype=np.int32),
@@ -571,8 +576,9 @@ class TransformerModel:
             'speed': np.zeros(n_samples, dtype=np.float32)
         }
         
-        for idx, annotation in enumerate(df['Annotation']):
+        for idx, annotation in enumerate(label_strings):
             tags = str(annotation).split(',')
+            tags = [tag.strip() for tag in tags]  # Strip whitespace
             
             # Direction
             if 'incoming' in tags:
@@ -585,7 +591,7 @@ class TransformerModel:
                 labels['altitude'][idx] = 0
             elif 'descending' in tags:
                 labels['altitude'][idx] = 1
-            elif 'level' in tags:
+            elif 'level' in tags or 'level_flight' in tags:
                 labels['altitude'][idx] = 2
             
             # Path
@@ -633,13 +639,15 @@ class TransformerModel:
             use_multi_output = True
             logger.info("Using multi-output architecture for composite labels")
         
-        # Generate sequences
-        X_train, y_train, _ = self.sequence_generator.prepare_sequences(df_train, feature_cols)
-        X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
-        
         if use_multi_output:
-            # Prepare multi-output labels
-            y_train_multi = self.prepare_multi_output_labels(df_train)
+            # Generate sequences with label strings (not encoded)
+            X_train, y_train_strings, _ = self.sequence_generator.prepare_sequences(
+                df_train, feature_cols, return_label_strings=True
+            )
+            X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
+            
+            # Prepare multi-output labels from the sequence label strings
+            y_train_multi = self.prepare_multi_output_labels(y_train_strings)
             
             # Build multi-output model
             output_dims = {
@@ -655,9 +663,11 @@ class TransformerModel:
             # Prepare validation data
             validation_data = None
             if df_val is not None:
-                X_val, _, _ = self.sequence_generator.prepare_sequences(df_val, feature_cols)
+                X_val, y_val_strings, _ = self.sequence_generator.prepare_sequences(
+                    df_val, feature_cols, return_label_strings=True
+                )
                 X_val = self.sequence_generator.normalize_sequences(X_val, fit=False)
-                y_val_multi = self.prepare_multi_output_labels(df_val)
+                y_val_multi = self.prepare_multi_output_labels(y_val_strings)
                 validation_data = (X_val, y_val_multi)
             
             # Train
@@ -669,14 +679,21 @@ class TransformerModel:
                 verbose=0
             )
         else:
-            # Single output training
+            # Single output training - use encoded labels
+            X_train, y_train, _ = self.sequence_generator.prepare_sequences(
+                df_train, feature_cols, return_label_strings=False
+            )
+            X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
+            
             n_classes = len(self.sequence_generator.label_encoder.classes_)
             self.build_model((X_train.shape[1], X_train.shape[2]), n_classes)
             
             # Prepare validation data
             validation_data = None
             if df_val is not None:
-                X_val, y_val, _ = self.sequence_generator.prepare_sequences(df_val, feature_cols)
+                X_val, y_val, _ = self.sequence_generator.prepare_sequences(
+                    df_val, feature_cols, return_label_strings=False
+                )
                 X_val = self.sequence_generator.normalize_sequences(X_val, fit=False)
                 validation_data = (X_val, y_val)
             
@@ -753,12 +770,15 @@ class TransformerModel:
                        'speed', 'heading', 'range', 'curvature']
         feature_cols = [col for col in feature_cols if col in df_test.columns]
         
-        X_test, y_test, _ = self.sequence_generator.prepare_sequences(df_test, feature_cols)
-        X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
-        
         if self.multi_output:
-            # Multi-output evaluation
-            y_test_multi = self.prepare_multi_output_labels(df_test)
+            # Multi-output evaluation - get label strings for sequences
+            X_test, y_test_strings, _ = self.sequence_generator.prepare_sequences(
+                df_test, feature_cols, return_label_strings=True
+            )
+            X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
+            
+            # Prepare multi-output labels from sequence label strings
+            y_test_multi = self.prepare_multi_output_labels(y_test_strings)
             
             # Predictions
             y_pred_multi = self.model.predict(X_test, verbose=0)
@@ -791,7 +811,12 @@ class TransformerModel:
             metrics['f1_score'] = float(np.mean([m['f1_score'] for m in metrics['outputs'].values()]))
             
         else:
-            # Single output evaluation
+            # Single output evaluation - use encoded labels
+            X_test, y_test, _ = self.sequence_generator.prepare_sequences(
+                df_test, feature_cols, return_label_strings=False
+            )
+            X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
+            
             y_pred_proba = self.model.predict(X_test, verbose=0)
             y_pred = np.argmax(y_pred_proba, axis=1)
             
