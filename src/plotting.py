@@ -12,6 +12,8 @@ except ImportError:
     HAS_PYQTGRAPH = False
     logging.warning("PyQtGraph not available")
 
+from .utils import cartesian_to_polar, polar_to_cartesian
+
 logger = logging.getLogger(__name__)
 
 
@@ -94,6 +96,7 @@ class PPIPlotWidget:
         self.scatter_plots = {}
         self.selected_track = None
         self.track_data = {}  # Store track data for tooltips
+        self.coordinate_mode = 'cartesian'  # 'cartesian' or 'polar'
         
         # Create tooltip text item
         self.tooltip = pg.TextItem(anchor=(0, 1), color='white', fill=(0, 0, 0, 180))
@@ -117,6 +120,27 @@ class PPIPlotWidget:
             (0, 255, 128),    # Spring green
             (255, 0, 128),    # Rose
         ]
+    
+    def set_coordinate_mode(self, mode: str):
+        """Set coordinate display mode
+        
+        Args:
+            mode: 'cartesian' or 'polar'
+        """
+        if mode not in ['cartesian', 'polar']:
+            raise ValueError("Mode must be 'cartesian' or 'polar'")
+        
+        self.coordinate_mode = mode
+        
+        # Update axis labels
+        if mode == 'polar':
+            self.plot_widget.setLabel('left', 'Range', units='km')
+            self.plot_widget.setLabel('bottom', 'Azimuth', units='degrees')
+            self.plot_widget.setTitle('PPI - Range vs Azimuth')
+        else:
+            self.plot_widget.setLabel('left', 'Y Position', units='km')
+            self.plot_widget.setLabel('bottom', 'X Position', units='km')
+            self.plot_widget.setTitle('PPI - Plan Position Indicator')
     
     def clear(self):
         """Clear all plots"""
@@ -147,11 +171,29 @@ class PPIPlotWidget:
         x_km = df['x'].values / 1000.0
         y_km = df['y'].values / 1000.0
         
-        # Store track data for tooltips
+        # Compute polar coordinates
+        range_km, azimuth_deg = cartesian_to_polar(df['x'].values, df['y'].values)
+        range_km = range_km / 1000.0  # Convert to km
+        
+        # Choose which coordinates to plot
+        if self.coordinate_mode == 'polar':
+            plot_x = azimuth_deg
+            plot_y = range_km
+        else:
+            plot_x = x_km
+            plot_y = y_km
+        
+        # Store track data for tooltips (store both coordinate systems)
         for trackid in df['trackid'].unique():
             track_df = df[df['trackid'] == trackid].copy()
             track_df['x_km'] = track_df['x'] / 1000.0
             track_df['y_km'] = track_df['y'] / 1000.0
+            
+            # Add polar coordinates
+            track_range, track_azimuth = cartesian_to_polar(track_df['x'].values, track_df['y'].values)
+            track_df['range_km'] = track_range / 1000.0
+            track_df['azimuth_deg'] = track_azimuth
+            
             self.track_data[trackid] = track_df
         
         if color_by == 'trackid':
@@ -161,8 +203,8 @@ class PPIPlotWidget:
                 color_idx = idx % len(self.colors)
                 
                 scatter = pg.ScatterPlotItem(
-                    x=x_km[mask],
-                    y=y_km[mask],
+                    x=plot_x[mask],
+                    y=plot_y[mask],
                     size=8,
                     pen=pg.mkPen(None),
                     brush=pg.mkBrush(*self.colors[color_idx]),
@@ -190,8 +232,8 @@ class PPIPlotWidget:
                 color = get_annotation_color(annotation)
                 
                 scatter = pg.ScatterPlotItem(
-                    x=x_km[mask],
-                    y=y_km[mask],
+                    x=plot_x[mask],
+                    y=plot_y[mask],
                     size=8,
                     pen=pg.mkPen(None),
                     brush=pg.mkBrush(*color),
@@ -219,8 +261,14 @@ class PPIPlotWidget:
         nearest_info = None
         
         for trackid, track_df in self.track_data.items():
-            # Calculate distances to all points in this track
-            distances = np.sqrt((track_df['x_km'] - x)**2 + (track_df['y_km'] - y)**2)
+            # Calculate distances based on current coordinate mode
+            if self.coordinate_mode == 'polar':
+                # In polar mode: x=azimuth, y=range
+                distances = np.sqrt((track_df['azimuth_deg'] - x)**2 + (track_df['range_km'] - y)**2)
+            else:
+                # In cartesian mode: x=x, y=y
+                distances = np.sqrt((track_df['x_km'] - x)**2 + (track_df['y_km'] - y)**2)
+            
             min_track_dist = distances.min()
             
             if min_track_dist < min_dist:
@@ -232,16 +280,20 @@ class PPIPlotWidget:
                     'time': nearest_row['time'],
                     'x': nearest_row['x_km'],
                     'y': nearest_row['y_km'],
+                    'range': nearest_row['range_km'],
+                    'azimuth': nearest_row['azimuth_deg'],
                     'annotation': nearest_row.get('Annotation', 'N/A')
                 }
         
-        # Show tooltip if close enough (within 0.5 km)
-        if min_dist < 0.5 and nearest_info:
-            # Format tooltip text
+        # Show tooltip if close enough (threshold depends on mode)
+        threshold = 5.0 if self.coordinate_mode == 'polar' else 0.5
+        if min_dist < threshold and nearest_info:
+            # Format tooltip text with both coordinate systems
             tooltip_text = (
                 f"Track ID: {nearest_info['trackid']}\n"
                 f"Time: {nearest_info['time']:.2f} s\n"
-                f"Position: ({nearest_info['x']:.2f}, {nearest_info['y']:.2f}) km\n"
+                f"Cartesian: ({nearest_info['x']:.2f}, {nearest_info['y']:.2f}) km\n"
+                f"Polar: Range={nearest_info['range']:.2f} km, Az={nearest_info['azimuth']:.1f}°\n"
                 f"Annotation: {nearest_info['annotation']}"
             )
             
