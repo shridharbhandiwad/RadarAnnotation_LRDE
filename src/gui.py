@@ -624,7 +624,7 @@ class VisualizationPanel(QWidget):
             # Color by selector
             controls_layout.addWidget(QLabel("Color By:"))
             self.color_combo = QComboBox()
-            self.color_combo.addItems(['Track ID', 'Annotation'])
+            self.color_combo.addItems(['Track ID', 'Annotation', 'Track Segments (Colored by Annotation)'])
             self.color_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.color_combo)
             
@@ -647,7 +647,8 @@ class VisualizationPanel(QWidget):
             splitter = QSplitter(Qt.Orientation.Vertical)
             splitter.addWidget(self.ppi_widget.get_widget())
             splitter.addWidget(self.ts_widget.get_widget())
-            splitter.setSizes([400, 600])
+            # Make PPI bigger - 70% for radar view, 30% for time series
+            splitter.setSizes([700, 300])
             
             layout.addWidget(splitter)
         else:
@@ -678,7 +679,15 @@ class VisualizationPanel(QWidget):
                 except (ValueError, IndexError):
                     pass
             
-            color_by = 'trackid' if self.color_combo.currentText() == 'Track ID' else 'Annotation'
+            # Determine color mode
+            color_text = self.color_combo.currentText()
+            if color_text == 'Track ID':
+                color_by = 'trackid'
+            elif color_text == 'Track Segments (Colored by Annotation)':
+                color_by = 'track_segments'
+            else:
+                color_by = 'Annotation'
+            
             self.ppi_widget.plot_tracks(df_to_plot, color_by=color_by)
             self.ts_widget.plot_tracks(df_to_plot)
     

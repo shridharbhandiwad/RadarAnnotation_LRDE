@@ -19,44 +19,56 @@ logger = logging.getLogger(__name__)
 
 
 def get_annotation_color(annotation: str) -> tuple:
-    """Get color for annotation combination
+    """Get color for annotation combination with consistent color theme
     
     Args:
         annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed')
         
     Returns:
-        RGB color tuple
+        RGB color tuple (consistent with application theme)
     """
-    # Define color mapping for common annotation patterns
+    # Define color mapping with consistent, vibrant colors for better visibility on dark radar background
     color_map = {
-        # Single annotations
-        'LevelFlight': (0, 150, 255),      # Sky blue
+        # Single annotations - Primary flight characteristics
+        'LevelFlight': (52, 152, 219),      # Blue (matches app theme)
         'Climbing': (255, 128, 0),          # Orange
-        'Descending': (255, 0, 128),        # Pink
-        'HighSpeed': (255, 0, 0),           # Red
-        'LowSpeed': (0, 255, 0),            # Green
-        'Turning': (255, 255, 0),           # Yellow
-        'Straight': (100, 200, 100),        # Light green
-        'LightManeuver': (150, 150, 255),   # Light blue
-        'HighManeuver': (255, 0, 255),      # Magenta
-        'Incoming': (255, 165, 0),          # Orange
-        'Outgoing': (0, 255, 255),          # Cyan
-        'FixedRange': (128, 128, 128),      # Gray
+        'Descending': (255, 85, 150),       # Rose pink
+        'HighSpeed': (231, 76, 60),         # Red
+        'LowSpeed': (46, 204, 113),         # Green (matches app theme)
+        'Turning': (241, 196, 15),          # Yellow/Gold
+        'Straight': (100, 200, 150),        # Mint green
+        'LightManeuver': (155, 89, 182),    # Purple
+        'HighManeuver': (236, 77, 177),     # Magenta
+        'Incoming': (230, 126, 34),         # Dark orange
+        'Outgoing': (26, 188, 156),         # Turquoise (matches app theme)
+        'FixedRange': (149, 165, 166),      # Gray
         
-        # Common combinations
-        'LevelFlight+HighSpeed': (255, 100, 100),       # Light red
-        'LevelFlight+LowSpeed': (100, 255, 100),        # Light green
-        'Climbing+HighSpeed': (255, 150, 0),            # Deep orange
-        'Descending+HighSpeed': (255, 50, 150),         # Hot pink
-        'Turning+HighSpeed': (255, 200, 0),             # Gold
-        'Turning+LowSpeed': (200, 255, 100),            # Yellow-green
-        'LevelFlight+Straight': (100, 180, 255),        # Bright sky blue
-        'HighManeuver+Turning': (200, 0, 255),          # Purple
+        # Common combinations - Blended colors for clarity
+        'LevelFlight+HighSpeed': (255, 120, 120),       # Light red
+        'LevelFlight+LowSpeed': (100, 220, 150),        # Soft green
+        'Climbing+HighSpeed': (255, 140, 60),           # Burnt orange
+        'Descending+HighSpeed': (255, 80, 140),         # Hot pink
+        'Turning+HighSpeed': (255, 180, 50),            # Golden orange
+        'Turning+LowSpeed': (180, 220, 100),            # Yellow-green
+        'LevelFlight+Straight': (80, 180, 220),         # Sky blue
+        'HighManeuver+Turning': (220, 90, 200),         # Violet
+        'Climbing+LowSpeed': (150, 200, 100),           # Lime green
+        'Descending+LowSpeed': (200, 150, 180),         # Lavender
+        'LevelFlight+Turning': (150, 200, 220),         # Pale blue
+        'Straight+HighSpeed': (255, 100, 80),           # Coral red
+        'Straight+LowSpeed': (80, 220, 120),            # Fresh green
     }
     
     # Try exact match first
     if annotation in color_map:
         return color_map[annotation]
+    
+    # Try reverse order for composite annotations (e.g., 'HighSpeed+LevelFlight' -> 'LevelFlight+HighSpeed')
+    if '+' in annotation:
+        parts = annotation.split('+')
+        reversed_annotation = '+'.join(sorted(parts))
+        if reversed_annotation in color_map:
+            return color_map[reversed_annotation]
     
     # Check for partial matches and blend colors
     parts = annotation.split('+') if '+' in annotation else [annotation]
@@ -66,12 +78,12 @@ def get_annotation_color(annotation: str) -> tuple:
             colors.append(color_map[part])
     
     if colors:
-        # Average the colors
+        # Average the colors for smooth blending
         avg_color = tuple(int(sum(c[i] for c in colors) / len(colors)) for i in range(3))
         return avg_color
     
-    # Default fallback color
-    return (128, 128, 128)  # Gray
+    # Default fallback color (neutral gray)
+    return (149, 165, 166)  # Gray (matches app theme)
 
 
 class PPIPlotWidget:
@@ -117,18 +129,18 @@ class PPIPlotWidget:
         # Connect hover event
         self.plot_widget.scene().sigMouseMoved.connect(self.on_mouse_moved)
         
-        # Color map for tracks (fallback)
+        # Color map for tracks (fallback) - matches application theme
         self.colors = [
-            (255, 0, 0),      # Red
-            (0, 255, 0),      # Green
-            (0, 0, 255),      # Blue
-            (255, 255, 0),    # Yellow
-            (255, 0, 255),    # Magenta
-            (0, 255, 255),    # Cyan
-            (255, 128, 0),    # Orange
-            (128, 0, 255),    # Purple
-            (0, 255, 128),    # Spring green
-            (255, 0, 128),    # Rose
+            (231, 76, 60),      # Red (app theme)
+            (46, 204, 113),     # Green (app theme)
+            (52, 152, 219),     # Blue (app theme)
+            (241, 196, 15),     # Yellow/Gold (app theme)
+            (155, 89, 182),     # Purple (app theme)
+            (26, 188, 156),     # Turquoise (app theme)
+            (230, 126, 34),     # Orange (app theme)
+            (236, 77, 177),     # Magenta (app theme)
+            (22, 160, 133),     # Dark turquoise
+            (192, 57, 43),      # Dark red
         ]
     
     def set_coordinate_mode(self, mode: str):
@@ -260,7 +272,7 @@ class PPIPlotWidget:
         
         Args:
             df: DataFrame with x, y, trackid columns
-            color_by: Column to use for coloring ('trackid' or 'Annotation')
+            color_by: Column to use for coloring ('trackid', 'Annotation', or 'track_segments')
         """
         self.clear()
         
@@ -329,6 +341,49 @@ class PPIPlotWidget:
                 
                 self.plot_widget.addItem(scatter)
                 self.scatter_plots[trackid] = scatter
+        
+        elif color_by == 'track_segments' and 'Annotation' in df.columns:
+            # Plot each track with segments colored by annotation
+            # This shows different colored segments within the same track
+            annotation_colors_used = set()
+            
+            for trackid in df['trackid'].unique():
+                track_mask = df['trackid'] == trackid
+                track_df_subset = df[track_mask].copy()
+                
+                # Get unique annotations for this track
+                track_annotations = track_df_subset['Annotation'].unique()
+                
+                for annotation in track_annotations:
+                    if annotation == 'invalid' or pd.isna(annotation):
+                        continue
+                    
+                    # Mask for this specific annotation within this track
+                    annotation_mask = track_df_subset['Annotation'] == annotation
+                    track_annotation_indices = track_df_subset[annotation_mask].index
+                    
+                    # Get the positions for these points in the original arrays
+                    global_indices = track_annotation_indices
+                    local_mask = np.array([i in global_indices for i in df.index])
+                    
+                    # Use annotation-based color
+                    color = get_annotation_color(annotation)
+                    
+                    # Create scatter plot for this segment
+                    scatter = pg.ScatterPlotItem(
+                        x=plot_x[local_mask],
+                        y=plot_y[local_mask],
+                        size=9,
+                        pen=pg.mkPen(color, width=1),
+                        brush=pg.mkBrush(*color),
+                        name=f'{annotation[:20]}' if annotation not in annotation_colors_used else '',
+                        hoverable=True,
+                        hoverPen=pg.mkPen('yellow', width=2),
+                        hoverBrush=pg.mkBrush(255, 255, 0, 150)
+                    )
+                    
+                    self.plot_widget.addItem(scatter)
+                    annotation_colors_used.add(annotation)
         
         elif color_by == 'Annotation' and 'Annotation' in df.columns:
             # Plot by annotation type with color coding
@@ -478,14 +533,16 @@ class TimeSeriesPlotWidget:
         # Store plot items
         self.plot_items = {}
         
-        # Color map
+        # Color map - matches application theme
         self.colors = [
-            (255, 0, 0),      # Red
-            (0, 255, 0),      # Green
-            (0, 0, 255),      # Blue
-            (255, 255, 0),    # Yellow
-            (255, 0, 255),    # Magenta
-            (0, 255, 255),    # Cyan
+            (231, 76, 60),      # Red (app theme)
+            (46, 204, 113),     # Green (app theme)
+            (52, 152, 219),     # Blue (app theme)
+            (241, 196, 15),     # Yellow/Gold (app theme)
+            (155, 89, 182),     # Purple (app theme)
+            (26, 188, 156),     # Turquoise (app theme)
+            (230, 126, 34),     # Orange (app theme)
+            (236, 77, 177),     # Magenta (app theme)
         ]
     
     def clear(self):
