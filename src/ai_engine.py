@@ -26,6 +26,7 @@ except ImportError:
 
 from .config import get_config
 from .utils import ensure_dir
+from .label_transformer import LabelTransformer
 
 logger = logging.getLogger(__name__)
 
@@ -238,16 +239,18 @@ class XGBoostModel:
                     "🔍 DETECTED: Your data uses composite labels (comma-separated tags)\n"
                     "   Example: 'incoming,level,linear,light_maneuver,low_speed'\n\n"
                     "This happens when auto-labeling creates the same combination for all data.\n\n"
-                    "QUICK FIXES:\n"
+                    "💡 TIP: Use auto_transform=True in train_model() for automatic recovery\n\n"
+                    "MANUAL FIXES:\n"
                     "  1. Analyze your data to understand why labels are uniform:\n"
                     "     → python analyze_label_diversity.py <your_csv_file>\n\n"
-                    "  2. Create per-track labels (if you have multiple tracks):\n"
+                    "  2. Auto-transform labels with intelligent recovery:\n"
+                    "     → python -m src.label_transformer <your_csv_file> -o fixed_data.csv\n\n"
+                    "  3. Create per-track labels (if you have multiple tracks):\n"
                     "     → python create_track_labels.py <your_csv_file>\n\n"
-                    "  3. Split composite labels into separate binary tasks:\n"
+                    "  4. Split composite labels into separate binary tasks:\n"
                     "     → python split_composite_labels.py <your_csv_file>\n\n"
-                    "  4. Adjust auto-labeling thresholds in config/default_config.json\n"
-                    "     and re-run auto-labeling to create more varied labels\n\n"
-                    "  5. Collect more diverse data with different motion patterns\n"
+                    "  5. Adjust auto-labeling thresholds in config/default_config.json\n"
+                    "     and re-run auto-labeling to create more varied labels\n"
                 )
             else:
                 error_msg += (
@@ -546,8 +549,115 @@ class LSTMModel:
         logger.info(f"Loaded LSTM model from {path}")
 
 
-def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[str, Any] = None) -> Tuple[Any, Dict[str, Any]]:
-    """Train a model and save results
+def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[str, Any] = None, 
+                auto_transform: bool = True) -> Tuple[Any, Dict[str, Any]]:
+    """Train a model and save results with automatic label transformation
+    
+    Args:
+        model_name: Model type ('xgboost', 'lstm', 'transformer')
+        data_path: Path to labeled data CSV
+        output_dir: Output directory for model and results
+        params: Model parameters (optional)
+        auto_transform: Automatically transform labels if insufficient diversity (default: True)
+        
+    Returns:
+        Tuple of (model, metrics)
+    """
+    logger.info(f"Training {model_name} model from {data_path}")
+    
+    # Attempt training with auto-transformation if enabled
+    if auto_transform:
+        try:
+            return _train_model_with_recovery(model_name, data_path, output_dir, params)
+        except Exception as e:
+            # If auto-transform fails, fall through to original error handling
+            logger.warning(f"Auto-transformation failed: {e}")
+            logger.info("Attempting standard training...")
+    
+    # Original training logic (without auto-transform)
+    return _train_model_impl(model_name, data_path, output_dir, params)
+
+
+def _train_model_with_recovery(model_name: str, data_path: str, output_dir: str, 
+                               params: Dict[str, Any] = None) -> Tuple[Any, Dict[str, Any]]:
+    """Train model with automatic label diversity recovery
+    
+    Args:
+        model_name: Model type
+        data_path: Path to labeled data CSV
+        output_dir: Output directory
+        params: Model parameters
+        
+    Returns:
+        Tuple of (model, metrics)
+    """
+    try:
+        # Try normal training first
+        return _train_model_impl(model_name, data_path, output_dir, params)
+    except ValueError as e:
+        error_str = str(e)
+        
+        # Check if it's an insufficient classes error
+        if "Insufficient classes" in error_str or "unique class" in error_str.lower():
+            logger.warning("⚠️  Insufficient label diversity detected - attempting automatic recovery...")
+            
+            # Load data and analyze
+            df = pd.read_csv(data_path)
+            
+            if 'Annotation' not in df.columns:
+                raise
+            
+            # Apply automatic transformation
+            transformer = LabelTransformer()
+            analysis = transformer.analyze_label_diversity(df['Annotation'])
+            
+            logger.info(f"📊 Analysis: {analysis['n_unique_labels']} unique labels found")
+            logger.info(f"   Recommended strategy: {analysis['recommended_strategy']}")
+            
+            # Transform data
+            df_transformed, transform_info = transformer.auto_transform(df)
+            
+            if not transform_info.get('success', False):
+                logger.error("❌ Automatic transformation failed")
+                raise ValueError(
+                    f"Cannot recover from label diversity issue.\n"
+                    f"Reason: {transform_info.get('reason', 'Unknown')}\n\n"
+                    f"Original error:\n{error_str}"
+                )
+            
+            # Save transformed data
+            transformed_path = Path(output_dir) / 'transformed_training_data.csv'
+            ensure_dir(Path(output_dir))
+            df_transformed.to_csv(transformed_path, index=False)
+            logger.info(f"✅ Saved transformed data to {transformed_path}")
+            
+            # Log transformation details
+            logger.info(f"🔄 Applied transformation: {transform_info['transformation']}")
+            if 'n_labels' in transform_info:
+                logger.info(f"   Created {transform_info['n_labels']} unique labels")
+            if 'binary_label_columns' in transform_info:
+                logger.info(f"   Binary columns: {', '.join(transform_info['binary_label_columns'])}")
+            
+            # Retry training with transformed data
+            logger.info("🔁 Retrying training with transformed labels...")
+            model, metrics = _train_model_impl(model_name, str(transformed_path), output_dir, params)
+            
+            # Add transformation info to metrics
+            metrics['label_transformation'] = transform_info
+            metrics['original_data_path'] = data_path
+            metrics['transformed_data_path'] = str(transformed_path)
+            
+            logger.info("✅ Training succeeded with automatic label transformation!")
+            
+            return model, metrics
+        else:
+            # Not a label diversity issue - re-raise
+            raise
+
+
+def _train_model_impl(model_name: str, data_path: str, output_dir: str, 
+                      params: Dict[str, Any] = None) -> Tuple[Any, Dict[str, Any]]:
+    """Internal implementation of model training
     
     Args:
         model_name: Model type ('xgboost', 'lstm', 'transformer')
@@ -558,7 +668,6 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
     Returns:
         Tuple of (model, metrics)
     """
-    logger.info(f"Training {model_name} model from {data_path}")
     
     # Validate input file exists
     if not Path(data_path).exists():
