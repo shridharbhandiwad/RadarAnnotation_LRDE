@@ -159,10 +159,33 @@ class XGBoostModel:
         self.feature_columns = feature_cols
         
         # Filter valid features only
-        df_valid = df[df.get('valid_features', True)].copy()
+        # Use .get() with Series to properly handle missing column
+        if 'valid_features' in df.columns:
+            df_valid = df[df['valid_features'] == True].copy()
+        else:
+            # If no valid_features column, use all data
+            df_valid = df.copy()
+        
+        # Validate we have data after filtering
+        if len(df_valid) == 0:
+            raise ValueError(
+                "No valid data remaining after filtering. "
+                "All rows were filtered out by 'valid_features' column. \n\n"
+                "This usually happens when: \n"
+                "  1. The auto-labeling engine marked all data as invalid \n"
+                "  2. The data doesn't have enough points per track \n\n"
+                "Suggestions: \n"
+                "  - Check your input data has sufficient trajectory points \n"
+                "  - Try using raw labeled data without auto-labeling \n"
+                f"  - Original data had {len(df)} rows, all were filtered out"
+            )
         
         X = df_valid[feature_cols].values
         y = df_valid['Annotation'].values
+        
+        # Validate we have labels
+        if len(y) == 0:
+            raise ValueError("No labels found in data after filtering")
         
         return X, y
     
@@ -182,24 +205,53 @@ class XGBoostModel:
         import time
         start_time = time.time()
         
+        # Validate training data
+        if len(X_train) == 0 or len(y_train) == 0:
+            raise ValueError(
+                "Training data is empty. Cannot train model with 0 samples.\n\n"
+                "Suggestions:\n"
+                "  - Verify your CSV file contains data rows\n"
+                "  - Check that data wasn't filtered out by 'valid_features' column\n"
+                "  - Ensure the data has required feature columns"
+            )
+        
         # Normalize features
         X_train_scaled = self.scaler.fit_transform(X_train)
         
         # Encode labels
         y_train_encoded = self.label_encoder.fit_transform(y_train)
         n_classes = len(self.label_encoder.classes_)
+        unique_labels = list(self.label_encoder.classes_)
+        
+        # Validate minimum number of classes
+        if n_classes < 2:
+            raise ValueError(
+                f"Insufficient classes for training. Found {n_classes} unique class(es): {unique_labels}\n\n"
+                "Machine learning models require at least 2 different classes to train.\n\n"
+                "Suggestions:\n"
+                "  1. Check your 'Annotation' column has multiple different labels\n"
+                "  2. If using auto-labeling, verify it generated diverse labels\n"
+                "  3. Manually review and add variety to your annotations\n"
+                f"  4. Current unique classes: {unique_labels}"
+            )
         
         # Set appropriate objective based on number of classes
+        # Always override objective based on actual data, regardless of config
         params = self.params.copy()
-        if 'objective' not in params or params['objective'] is None:
-            if n_classes == 2:
-                params['objective'] = 'binary:logistic'
-            else:
-                params['objective'] = 'multi:softmax'
         
-        # For multi-class, ensure num_class is set
-        if n_classes > 2 and 'num_class' not in params:
+        if n_classes == 2:
+            # Binary classification
+            params['objective'] = 'binary:logistic'
+            # Remove num_class if present (not used for binary classification)
+            if 'num_class' in params:
+                del params['num_class']
+            logger.info(f"Detected {n_classes} classes, using binary classification (objective=binary:logistic)")
+        else:
+            # Multi-class classification (3+ classes)
+            params['objective'] = 'multi:softmax'
+            # Always set num_class for multi-class
             params['num_class'] = n_classes
+            logger.info(f"Detected {n_classes} classes, using multi-class classification (objective=multi:softmax, num_class={n_classes})")
         
         # Train model
         self.model = xgb.XGBClassifier(**params)
