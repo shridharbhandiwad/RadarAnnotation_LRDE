@@ -472,20 +472,50 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
     # Load data
     df = pd.read_csv(data_path)
     
-    # Split by track
+    # Get unique tracks
+    track_ids = df['trackid'].unique()
+    n_tracks = len(track_ids)
+    
+    logger.info(f"Dataset contains {n_tracks} unique track(s) with {len(df)} total samples")
+    
+    # Check minimum requirements
+    if n_tracks < 1:
+        raise ValueError("Dataset must contain at least 1 track")
+    
+    # Handle small datasets
     config = get_config()
     test_size = 1.0 - config.get('ml_params.train_test_split', 0.8)
     
-    track_ids = df['trackid'].unique()
-    train_tracks, test_tracks = train_test_split(track_ids, test_size=test_size, random_state=42)
-    
-    df_train = df[df['trackid'].isin(train_tracks)]
-    df_test = df[df['trackid'].isin(test_tracks)]
-    
-    # Further split train into train/val
-    train_tracks_sub, val_tracks = train_test_split(train_tracks, test_size=0.2, random_state=42)
-    df_train_sub = df[df['trackid'].isin(train_tracks_sub)]
-    df_val = df[df['trackid'].isin(val_tracks)]
+    if n_tracks < 3:
+        # Too few tracks to split - use all data for training
+        logger.warning(f"Only {n_tracks} track(s) available. Using all data for training without validation/test split.")
+        logger.warning("For proper model evaluation, at least 3 tracks are recommended.")
+        
+        df_train_sub = df.copy()
+        df_val = None
+        df_test = None
+        train_tracks_sub = track_ids
+        val_tracks = []
+        test_tracks = []
+    else:
+        # Normal splitting with sufficient data
+        train_tracks, test_tracks = train_test_split(track_ids, test_size=test_size, random_state=42)
+        
+        df_train = df[df['trackid'].isin(train_tracks)]
+        df_test = df[df['trackid'].isin(test_tracks)]
+        
+        # Further split train into train/val if enough tracks
+        if len(train_tracks) < 2:
+            # Not enough tracks for validation split
+            logger.warning(f"Only {len(train_tracks)} training track(s). Skipping validation split.")
+            df_train_sub = df_train.copy()
+            df_val = None
+            train_tracks_sub = train_tracks
+            val_tracks = []
+        else:
+            train_tracks_sub, val_tracks = train_test_split(train_tracks, test_size=0.2, random_state=42)
+            df_train_sub = df[df['trackid'].isin(train_tracks_sub)]
+            df_val = df[df['trackid'].isin(val_tracks)]
     
     logger.info(f"Data split - Train: {len(train_tracks_sub)} tracks, Val: {len(val_tracks)} tracks, Test: {len(test_tracks)} tracks")
     
@@ -495,11 +525,29 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
     if model_name == 'xgboost':
         model = XGBoostModel(params)
         X_train, y_train = model.prepare_features(df_train_sub)
-        X_val, y_val = model.prepare_features(df_val)
+        
+        # Prepare validation data if available
+        X_val, y_val = None, None
+        if df_val is not None and len(df_val) > 0:
+            X_val, y_val = model.prepare_features(df_val)
+        
         train_metrics = model.train(X_train, y_train, X_val, y_val)
         
-        X_test, y_test = model.prepare_features(df_test)
-        test_metrics = model.evaluate(X_test, y_test)
+        # Evaluate on test set if available
+        if df_test is not None and len(df_test) > 0:
+            X_test, y_test = model.prepare_features(df_test)
+            test_metrics = model.evaluate(X_test, y_test)
+        else:
+            # No test data - use training metrics as placeholder
+            logger.warning("No test data available. Using training set for evaluation (not recommended).")
+            test_metrics = {
+                'accuracy': train_metrics.get('train_accuracy', 0.0),
+                'f1_score': 0.0,
+                'confusion_matrix': [],
+                'classification_report': {},
+                'classes': train_metrics.get('classes', []),
+                'note': 'Evaluated on training set due to insufficient data for test split'
+            }
         
         model_path = Path(output_dir) / 'xgboost_model.pkl'
         model.save(str(model_path))
@@ -510,7 +558,20 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
         
         model = LSTMModel(params)
         train_metrics = model.train(df_train_sub, df_val)
-        test_metrics = model.evaluate(df_test)
+        
+        # Evaluate on test set if available
+        if df_test is not None and len(df_test) > 0:
+            test_metrics = model.evaluate(df_test)
+        else:
+            logger.warning("No test data available. Using training set for evaluation (not recommended).")
+            test_metrics = {
+                'accuracy': train_metrics.get('train_accuracy', 0.0),
+                'f1_score': 0.0,
+                'confusion_matrix': [],
+                'classification_report': {},
+                'classes': train_metrics.get('classes', []),
+                'note': 'Evaluated on training set due to insufficient data for test split'
+            }
         
         model_path = Path(output_dir) / 'lstm_model.h5'
         model.save(str(model_path))
