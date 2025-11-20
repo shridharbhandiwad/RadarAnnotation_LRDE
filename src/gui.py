@@ -618,6 +618,7 @@ class VisualizationPanel(QWidget):
             controls_layout.addWidget(QLabel("Display Mode:"))
             self.coord_combo = QComboBox()
             self.coord_combo.addItems(['Radar View (Circular)', 'Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
+            self.coord_combo.setCurrentIndex(0)  # Set Radar View as default
             self.coord_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.coord_combo)
             
