@@ -225,15 +225,40 @@ class XGBoostModel:
         
         # Validate minimum number of classes
         if n_classes < 2:
-            raise ValueError(
+            # Check if it's a composite label issue
+            is_composite = any(',' in str(label) for label in unique_labels)
+            
+            error_msg = (
                 f"Insufficient classes for training. Found {n_classes} unique class(es): {unique_labels}\n\n"
                 "Machine learning models require at least 2 different classes to train.\n\n"
-                "Suggestions:\n"
-                "  1. Check your 'Annotation' column has multiple different labels\n"
-                "  2. If using auto-labeling, verify it generated diverse labels\n"
-                "  3. Manually review and add variety to your annotations\n"
-                f"  4. Current unique classes: {unique_labels}"
             )
+            
+            if is_composite:
+                error_msg += (
+                    "🔍 DETECTED: Your data uses composite labels (comma-separated tags)\n"
+                    "   Example: 'incoming,level,linear,light_maneuver,low_speed'\n\n"
+                    "This happens when auto-labeling creates the same combination for all data.\n\n"
+                    "QUICK FIXES:\n"
+                    "  1. Analyze your data to understand why labels are uniform:\n"
+                    "     → python analyze_label_diversity.py <your_csv_file>\n\n"
+                    "  2. Create per-track labels (if you have multiple tracks):\n"
+                    "     → python create_track_labels.py <your_csv_file>\n\n"
+                    "  3. Split composite labels into separate binary tasks:\n"
+                    "     → python split_composite_labels.py <your_csv_file>\n\n"
+                    "  4. Adjust auto-labeling thresholds in config/default_config.json\n"
+                    "     and re-run auto-labeling to create more varied labels\n\n"
+                    "  5. Collect more diverse data with different motion patterns\n"
+                )
+            else:
+                error_msg += (
+                    "Suggestions:\n"
+                    "  1. Check your 'Annotation' column has multiple different labels\n"
+                    "  2. If using auto-labeling, verify it generated diverse labels\n"
+                    "  3. Manually review and add variety to your annotations\n"
+                    f"  4. Current unique classes: {unique_labels}\n"
+                )
+            
+            raise ValueError(error_msg)
         
         # Set appropriate objective based on number of classes
         # Always override objective based on actual data, regardless of config

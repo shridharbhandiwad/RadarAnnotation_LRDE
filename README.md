@@ -341,6 +341,18 @@ The AutoLabeling Engine produces these annotation tags:
 - Ensure PyQt6 is installed: `pip install PyQt6`
 - Check Python version: `python --version` (must be 3.10+)
 
+**Training error: "Insufficient classes for training":**
+- This means all your data has the same label
+- ML models need at least 2 different classes
+- **Quick fix**: Run `python analyze_label_diversity.py <your_csv>`
+- **Solutions**:
+  - Create per-track labels: `python create_track_labels.py <your_csv>`
+  - Split composite labels: `python split_composite_labels.py <your_csv>`
+  - Adjust auto-labeling thresholds in `config/default_config.json`
+  - Collect more diverse data
+- See **[INSUFFICIENT_CLASSES_FIX.md](INSUFFICIENT_CLASSES_FIX.md)** for detailed guide
+- See **[LABEL_DIVERSITY_GUIDE.md](LABEL_DIVERSITY_GUIDE.md)** for complete reference
+
 **TensorFlow errors:**
 - LSTM model requires TensorFlow
 - For CPU-only: `pip install tensorflow`
