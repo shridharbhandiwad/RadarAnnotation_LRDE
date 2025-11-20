@@ -349,7 +349,7 @@ class PPIPlotWidget:
             
             for trackid in df['trackid'].unique():
                 track_mask = df['trackid'] == trackid
-                track_df_subset = df[track_mask].copy()
+                track_df_subset = df[track_mask].copy().reset_index(drop=False)
                 
                 # Get unique annotations for this track
                 track_annotations = track_df_subset['Annotation'].unique()
@@ -360,11 +360,12 @@ class PPIPlotWidget:
                     
                     # Mask for this specific annotation within this track
                     annotation_mask = track_df_subset['Annotation'] == annotation
-                    track_annotation_indices = track_df_subset[annotation_mask].index
                     
-                    # Get the positions for these points in the original arrays
-                    global_indices = track_annotation_indices
-                    local_mask = np.array([i in global_indices for i in df.index])
+                    # Get the original DataFrame indices for these points
+                    original_indices = track_df_subset.loc[annotation_mask, 'index'].values
+                    
+                    # Create boolean mask for the original dataframe
+                    local_mask = df.index.isin(original_indices)
                     
                     # Use annotation-based color
                     color = get_annotation_color(annotation)
