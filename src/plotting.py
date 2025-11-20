@@ -22,56 +22,62 @@ def get_annotation_color(annotation: str) -> tuple:
     """Get color for annotation combination with consistent color theme
     
     Args:
-        annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed')
+        annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed' or 'level,high_speed')
         
     Returns:
         RGB color tuple (consistent with application theme)
     """
     # Define color mapping with consistent, vibrant colors for better visibility on dark radar background
+    # Supports both formats: TitleCase+Plus and lowercase,comma
     color_map = {
-        # Single annotations - Primary flight characteristics
+        # Single annotations - Primary flight characteristics (both formats)
         'LevelFlight': (52, 152, 219),      # Blue (matches app theme)
+        'level': (52, 152, 219),
+        'level_flight': (52, 152, 219),
         'Climbing': (255, 128, 0),          # Orange
+        'ascending': (255, 128, 0),
         'Descending': (255, 85, 150),       # Rose pink
+        'descending': (255, 85, 150),
         'HighSpeed': (231, 76, 60),         # Red
+        'high_speed': (231, 76, 60),
         'LowSpeed': (46, 204, 113),         # Green (matches app theme)
+        'low_speed': (46, 204, 113),
         'Turning': (241, 196, 15),          # Yellow/Gold
+        'curved': (241, 196, 15),
         'Straight': (100, 200, 150),        # Mint green
+        'linear': (100, 200, 150),
         'LightManeuver': (155, 89, 182),    # Purple
+        'light_maneuver': (155, 89, 182),
         'HighManeuver': (236, 77, 177),     # Magenta
+        'high_maneuver': (236, 77, 177),
         'Incoming': (230, 126, 34),         # Dark orange
+        'incoming': (230, 126, 34),
         'Outgoing': (26, 188, 156),         # Turquoise (matches app theme)
+        'outgoing': (26, 188, 156),
         'FixedRange': (149, 165, 166),      # Gray
-        
-        # Common combinations - Blended colors for clarity
-        'LevelFlight+HighSpeed': (255, 120, 120),       # Light red
-        'LevelFlight+LowSpeed': (100, 220, 150),        # Soft green
-        'Climbing+HighSpeed': (255, 140, 60),           # Burnt orange
-        'Descending+HighSpeed': (255, 80, 140),         # Hot pink
-        'Turning+HighSpeed': (255, 180, 50),            # Golden orange
-        'Turning+LowSpeed': (180, 220, 100),            # Yellow-green
-        'LevelFlight+Straight': (80, 180, 220),         # Sky blue
-        'HighManeuver+Turning': (220, 90, 200),         # Violet
-        'Climbing+LowSpeed': (150, 200, 100),           # Lime green
-        'Descending+LowSpeed': (200, 150, 180),         # Lavender
-        'LevelFlight+Turning': (150, 200, 220),         # Pale blue
-        'Straight+HighSpeed': (255, 100, 80),           # Coral red
-        'Straight+LowSpeed': (80, 220, 120),            # Fresh green
+        'fixed_range': (149, 165, 166),
+        'fixed_range_ascending': (180, 180, 180),
+        'fixed_range_descending': (120, 120, 120),
+        'invalid': (80, 80, 80),            # Dark gray for invalid
+        'normal': (200, 200, 200),          # Light gray for normal
     }
     
-    # Try exact match first
-    if annotation in color_map:
-        return color_map[annotation]
+    # Normalize annotation format (handle both separators)
+    normalized = annotation.strip()
     
-    # Try reverse order for composite annotations (e.g., 'HighSpeed+LevelFlight' -> 'LevelFlight+HighSpeed')
-    if '+' in annotation:
-        parts = annotation.split('+')
-        reversed_annotation = '+'.join(sorted(parts))
-        if reversed_annotation in color_map:
-            return color_map[reversed_annotation]
+    # Try exact match first
+    if normalized in color_map:
+        return color_map[normalized]
+    
+    # Parse composite annotations (supports both ',' and '+' separators)
+    if ',' in normalized:
+        parts = [p.strip() for p in normalized.split(',')]
+    elif '+' in normalized:
+        parts = [p.strip() for p in normalized.split('+')]
+    else:
+        parts = [normalized]
     
     # Check for partial matches and blend colors
-    parts = annotation.split('+') if '+' in annotation else [annotation]
     colors = []
     for part in parts:
         if part in color_map:
