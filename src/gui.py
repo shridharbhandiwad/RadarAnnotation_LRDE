@@ -19,23 +19,38 @@ except ImportError:
     HAS_PYQT6 = False
     logging.error("PyQt6 is not installed")
     
-    # Create stub classes to prevent NameError when module is imported
+    # Create stub classes to prevent import errors
+    # These are actual classes (not None) so inheritance won't fail
     class QThread:
-        pass
+        def __init__(self, *args, **kwargs):
+            pass
+        def start(self):
+            pass
     
     class Qt:
         class Orientation:
             Vertical = None
+        class StandardButton:
+            Yes = None
+            No = None
     
     def pyqtSignal(*args):
-        return None
+        return lambda: None
     
-    # Create stubs for all other Qt classes to prevent errors
-    QApplication = QMainWindow = QWidget = QVBoxLayout = QHBoxLayout = None
-    QPushButton = QLabel = QFileDialog = QTextEdit = QTabWidget = None
-    QComboBox = QSpinBox = QDoubleSpinBox = QFormLayout = QGroupBox = None
-    QProgressBar = QTableWidget = QTableWidgetItem = QSplitter = None
-    QListWidget = QStackedWidget = QMessageBox = QSlider = QFont = None
+    # Create stub classes (actual classes, not None) for all Qt widgets
+    class _QtStub:
+        def __init__(self, *args, **kwargs):
+            pass
+        def __call__(self, *args, **kwargs):
+            return self
+        def __getattr__(self, name):
+            return lambda *args, **kwargs: None
+    
+    QApplication = QMainWindow = QWidget = QVBoxLayout = QHBoxLayout = _QtStub
+    QPushButton = QLabel = QFileDialog = QTextEdit = QTabWidget = _QtStub
+    QComboBox = QSpinBox = QDoubleSpinBox = QFormLayout = QGroupBox = _QtStub
+    QProgressBar = QTableWidget = QTableWidgetItem = QSplitter = _QtStub
+    QListWidget = QStackedWidget = QMessageBox = QSlider = QFont = _QtStub
 
 # Import engines
 from . import data_engine, autolabel_engine, ai_engine, report_engine, sim_engine
@@ -674,8 +689,22 @@ class MainWindow(QMainWindow):
 def main():
     """Main entry point"""
     if not HAS_PYQT6:
-        print("Error: PyQt6 is not installed. Please install it with:")
-        print("  pip install PyQt6 pyqtgraph")
+        print("\n" + "=" * 80)
+        print(" ERROR: PyQt6 is not installed!")
+        print("=" * 80)
+        print("\nThe GUI application requires PyQt6 and PyQtGraph to run.")
+        print("\nTo install the required packages, run one of the following commands:")
+        print("\n  Option 1 - Install GUI packages only:")
+        print("    pip install PyQt6 pyqtgraph")
+        print("\n  Option 2 - Install all project requirements:")
+        print("    pip install -r requirements.txt")
+        print("\n  Option 3 - Install from conda (if using Anaconda):")
+        print("    conda install -c conda-forge pyqt")
+        print("    pip install pyqtgraph")
+        print("\n" + "=" * 80)
+        print("\nAfter installation, run the GUI again with:")
+        print("  python -m src.gui")
+        print("=" * 80 + "\n")
         sys.exit(1)
     
     app = QApplication(sys.argv)
