@@ -635,6 +635,16 @@ class VisualizationPanel(QWidget):
             self.track_filter.addItem("All Tracks")
             self.track_filter.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.track_filter)
+            
+            # Add separator
+            controls_layout.addWidget(QLabel("  |  "))
+            
+            # Show time series toggle
+            self.show_timeseries_checkbox = QPushButton("Show Time Series Charts")
+            self.show_timeseries_checkbox.setCheckable(True)
+            self.show_timeseries_checkbox.setChecked(False)
+            self.show_timeseries_checkbox.clicked.connect(self.toggle_timeseries)
+            controls_layout.addWidget(self.show_timeseries_checkbox)
         
         controls_layout.addStretch()
         layout.addLayout(controls_layout)
@@ -644,18 +654,29 @@ class VisualizationPanel(QWidget):
             self.ppi_widget = create_ppi_widget(self)
             self.ts_widget = create_timeseries_widget(self)
             
-            # Add to layout
-            splitter = QSplitter(Qt.Orientation.Vertical)
-            splitter.addWidget(self.ppi_widget.get_widget())
-            splitter.addWidget(self.ts_widget.get_widget())
-            # Make PPI bigger - 70% for radar view, 30% for time series
-            splitter.setSizes([700, 300])
+            # Add PPI plot (always visible)
+            layout.addWidget(self.ppi_widget.get_widget())
             
-            layout.addWidget(splitter)
+            # Add time series widget (initially hidden)
+            ts_container = self.ts_widget.get_widget()
+            ts_container.setVisible(False)
+            layout.addWidget(ts_container)
+            self.ts_container = ts_container
         else:
             layout.addWidget(QLabel("PyQtGraph not available for visualization"))
         
         self.setLayout(layout)
+    
+    def toggle_timeseries(self):
+        """Toggle visibility of time series charts"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ts_container'):
+            is_visible = self.show_timeseries_checkbox.isChecked()
+            self.ts_container.setVisible(is_visible)
+            # Update button text
+            if is_visible:
+                self.show_timeseries_checkbox.setText("Hide Time Series Charts")
+            else:
+                self.show_timeseries_checkbox.setText("Show Time Series Charts")
     
     def update_visualization(self):
         """Update visualization based on current settings"""
@@ -690,7 +711,10 @@ class VisualizationPanel(QWidget):
                 color_by = 'Annotation'
             
             self.ppi_widget.plot_tracks(df_to_plot, color_by=color_by)
-            self.ts_widget.plot_tracks(df_to_plot)
+            
+            # Only update time series if visible
+            if hasattr(self, 'ts_container') and self.ts_container.isVisible():
+                self.ts_widget.plot_tracks(df_to_plot)
     
     def load_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
