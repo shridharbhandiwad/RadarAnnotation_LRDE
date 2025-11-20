@@ -29,6 +29,35 @@ A comprehensive desktop application for radar data processing, automatic annotat
 - Generate professional reports with embedded visualizations
 - Create synthetic test data with 10 diverse trajectory types
 
+## Quick Start
+
+### 🚀 Fastest Way to Run
+
+1. Install GUI dependencies (if not already installed):
+   ```bash
+   # Windows
+   install_gui.bat
+   
+   # Linux/Mac
+   ./install_gui.sh
+   ```
+
+2. Run the application:
+   ```bash
+   # Windows
+   run.bat
+   
+   # Linux/Mac
+   ./run.sh
+   ```
+
+### ⚠️ GUI Not Opening?
+
+If you run the application and the GUI window doesn't appear:
+- **Cause**: PyQt6 is not installed
+- **Fix**: Run `install_gui.bat` (Windows) or `./install_gui.sh` (Linux/Mac)
+- **Details**: See [GUI_NOT_OPENING_FIX.md](GUI_NOT_OPENING_FIX.md)
+
 ## Installation
 
 ### Prerequisites
