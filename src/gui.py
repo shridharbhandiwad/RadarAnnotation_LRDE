@@ -614,6 +614,13 @@ class VisualizationPanel(QWidget):
         controls_layout.addWidget(load_button)
         
         if HAS_PYQTGRAPH:
+            # Coordinate mode selector
+            controls_layout.addWidget(QLabel("Coordinates:"))
+            self.coord_combo = QComboBox()
+            self.coord_combo.addItems(['Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
+            self.coord_combo.currentTextChanged.connect(self.update_visualization)
+            controls_layout.addWidget(self.coord_combo)
+            
             # Color by selector
             controls_layout.addWidget(QLabel("Color By:"))
             self.color_combo = QComboBox()
@@ -651,6 +658,10 @@ class VisualizationPanel(QWidget):
     def update_visualization(self):
         """Update visualization based on current settings"""
         if self.current_df is not None and HAS_PYQTGRAPH:
+            # Set coordinate mode
+            coord_mode = 'polar' if 'Polar' in self.coord_combo.currentText() else 'cartesian'
+            self.ppi_widget.set_coordinate_mode(coord_mode)
+            
             # Apply track filter
             df_to_plot = self.current_df
             selected_track = self.track_filter.currentText()
