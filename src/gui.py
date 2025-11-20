@@ -596,10 +596,25 @@ class VisualizationPanel(QWidget):
     def setup_ui(self):
         layout = QVBoxLayout()
         
+        # Controls panel
+        controls_layout = QHBoxLayout()
+        
         # Load data button
         load_button = QPushButton("Load Data for Visualization")
         load_button.clicked.connect(self.load_data)
-        layout.addWidget(load_button)
+        load_button.setObjectName("primaryButton")
+        controls_layout.addWidget(load_button)
+        
+        if HAS_PYQTGRAPH:
+            # Color by selector
+            controls_layout.addWidget(QLabel("Color By:"))
+            self.color_combo = QComboBox()
+            self.color_combo.addItems(['Track ID', 'Annotation'])
+            self.color_combo.currentTextChanged.connect(self.update_visualization)
+            controls_layout.addWidget(self.color_combo)
+        
+        controls_layout.addStretch()
+        layout.addLayout(controls_layout)
         
         if HAS_PYQTGRAPH:
             # Create visualization widgets
@@ -618,6 +633,13 @@ class VisualizationPanel(QWidget):
         
         self.setLayout(layout)
     
+    def update_visualization(self):
+        """Update visualization based on current settings"""
+        if self.current_df is not None and HAS_PYQTGRAPH:
+            color_by = 'trackid' if self.color_combo.currentText() == 'Track ID' else 'Annotation'
+            self.ppi_widget.plot_tracks(self.current_df, color_by=color_by)
+            self.ts_widget.plot_tracks(self.current_df)
+    
     def load_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Select Data File", "", "CSV Files (*.csv)"
@@ -627,9 +649,8 @@ class VisualizationPanel(QWidget):
             try:
                 self.current_df = pd.read_csv(file_path)
                 
-                # Plot data
-                self.ppi_widget.plot_tracks(self.current_df)
-                self.ts_widget.plot_tracks(self.current_df)
+                # Plot data with current color setting
+                self.update_visualization()
                 
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to load data: {str(e)}")
@@ -644,6 +665,7 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, 1400, 900)
         
         self.setup_ui()
+        self.apply_stylesheet()
         
         # Initialize config
         config_path = "config/default_config.json"
@@ -693,6 +715,259 @@ class MainWindow(QMainWindow):
     
     def change_panel(self, index):
         self.stack.setCurrentIndex(index)
+    
+    def apply_stylesheet(self):
+        """Apply modern stylesheet to the application"""
+        stylesheet = """
+        /* Main Window */
+        QMainWindow {
+            background-color: #f5f5f5;
+        }
+        
+        /* List Widget (Engine Selector) */
+        QListWidget {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            border-right: 2px solid #34495e;
+            font-size: 13px;
+            padding: 5px;
+        }
+        
+        QListWidget::item {
+            padding: 12px;
+            border-radius: 4px;
+            margin: 2px;
+        }
+        
+        QListWidget::item:selected {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        QListWidget::item:hover {
+            background-color: #34495e;
+        }
+        
+        /* Group Boxes */
+        QGroupBox {
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            margin-top: 12px;
+            padding-top: 15px;
+            font-weight: bold;
+            background-color: white;
+        }
+        
+        QGroupBox::title {
+            subcontrol-origin: margin;
+            subcontrol-position: top left;
+            padding: 5px 10px;
+            color: #2c3e50;
+        }
+        
+        /* Push Buttons */
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: bold;
+            min-height: 30px;
+        }
+        
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+        
+        QPushButton:pressed {
+            background-color: #1f618d;
+        }
+        
+        QPushButton:disabled {
+            background-color: #95a5a6;
+            color: #ecf0f1;
+        }
+        
+        QPushButton#primaryButton {
+            background-color: #27ae60;
+        }
+        
+        QPushButton#primaryButton:hover {
+            background-color: #229954;
+        }
+        
+        /* Labels */
+        QLabel {
+            color: #2c3e50;
+            font-size: 12px;
+            padding: 2px;
+        }
+        
+        /* Text Edits and Text Areas */
+        QTextEdit {
+            background-color: white;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 8px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 11px;
+            color: #2c3e50;
+        }
+        
+        /* Combo Boxes */
+        QComboBox {
+            background-color: white;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 6px 10px;
+            min-height: 25px;
+            color: #2c3e50;
+        }
+        
+        QComboBox:hover {
+            border: 1px solid #3498db;
+        }
+        
+        QComboBox::drop-down {
+            border: none;
+            padding-right: 10px;
+        }
+        
+        QComboBox::down-arrow {
+            image: none;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #2c3e50;
+            margin-right: 5px;
+        }
+        
+        /* Spin Boxes */
+        QSpinBox, QDoubleSpinBox {
+            background-color: white;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 5px;
+            min-height: 25px;
+            color: #2c3e50;
+        }
+        
+        QSpinBox:hover, QDoubleSpinBox:hover {
+            border: 1px solid #3498db;
+        }
+        
+        /* Tables */
+        QTableWidget {
+            background-color: white;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            gridline-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        QTableWidget::item {
+            padding: 5px;
+        }
+        
+        QTableWidget::item:selected {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        QHeaderView::section {
+            background-color: #34495e;
+            color: white;
+            padding: 8px;
+            border: none;
+            font-weight: bold;
+        }
+        
+        /* Progress Bar */
+        QProgressBar {
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            text-align: center;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        QProgressBar::chunk {
+            background-color: #3498db;
+            border-radius: 3px;
+        }
+        
+        /* Scroll Bars */
+        QScrollBar:vertical {
+            background: #ecf0f1;
+            width: 12px;
+            border-radius: 6px;
+        }
+        
+        QScrollBar::handle:vertical {
+            background: #95a5a6;
+            border-radius: 6px;
+            min-height: 20px;
+        }
+        
+        QScrollBar::handle:vertical:hover {
+            background: #7f8c8d;
+        }
+        
+        QScrollBar:horizontal {
+            background: #ecf0f1;
+            height: 12px;
+            border-radius: 6px;
+        }
+        
+        QScrollBar::handle:horizontal {
+            background: #95a5a6;
+            border-radius: 6px;
+            min-width: 20px;
+        }
+        
+        QScrollBar::handle:horizontal:hover {
+            background: #7f8c8d;
+        }
+        
+        /* Splitter */
+        QSplitter::handle {
+            background-color: #bdc3c7;
+        }
+        
+        QSplitter::handle:horizontal {
+            width: 2px;
+        }
+        
+        QSplitter::handle:vertical {
+            height: 2px;
+        }
+        
+        /* Slider */
+        QSlider::groove:horizontal {
+            border: 1px solid #bdc3c7;
+            height: 6px;
+            background: #ecf0f1;
+            border-radius: 3px;
+        }
+        
+        QSlider::handle:horizontal {
+            background: #3498db;
+            border: 1px solid #2980b9;
+            width: 16px;
+            height: 16px;
+            margin: -6px 0;
+            border-radius: 8px;
+        }
+        
+        QSlider::handle:horizontal:hover {
+            background: #2980b9;
+        }
+        """
+        
+        self.setStyleSheet(stylesheet)
 
 
 def main():
