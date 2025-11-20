@@ -11,9 +11,10 @@ try:
                                  QPushButton, QLabel, QFileDialog, QTextEdit, QTabWidget,
                                  QComboBox, QSpinBox, QDoubleSpinBox, QFormLayout, QGroupBox,
                                  QProgressBar, QTableWidget, QTableWidgetItem, QSplitter,
-                                 QListWidget, QStackedWidget, QMessageBox, QSlider)
+                                 QListWidget, QStackedWidget, QMessageBox, QSlider, QSizePolicy)
     from PyQt6.QtCore import Qt, QThread, pyqtSignal
     from PyQt6.QtGui import QFont
+    from PyQt6 import QtWidgets
     HAS_PYQT6 = True
 except ImportError:
     HAS_PYQT6 = False
@@ -50,7 +51,13 @@ except ImportError:
     QPushButton = QLabel = QFileDialog = QTextEdit = QTabWidget = _QtStub
     QComboBox = QSpinBox = QDoubleSpinBox = QFormLayout = QGroupBox = _QtStub
     QProgressBar = QTableWidget = QTableWidgetItem = QSplitter = _QtStub
-    QListWidget = QStackedWidget = QMessageBox = QSlider = QFont = _QtStub
+    QListWidget = QStackedWidget = QMessageBox = QSlider = QFont = QSizePolicy = _QtStub
+    
+    class QtWidgets:
+        class QSizePolicy:
+            class Policy:
+                Preferred = None
+                Expanding = None
 
 # Import engines
 from . import data_engine, autolabel_engine, ai_engine, report_engine, sim_engine
@@ -591,6 +598,7 @@ class VisualizationPanel(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.current_df = None
+        self.selected_tracks = []  # For track filtering
         self.setup_ui()
     
     def setup_ui(self):
@@ -612,6 +620,13 @@ class VisualizationPanel(QWidget):
             self.color_combo.addItems(['Track ID', 'Annotation'])
             self.color_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.color_combo)
+            
+            # Track ID filter
+            controls_layout.addWidget(QLabel("Filter Track ID:"))
+            self.track_filter = QComboBox()
+            self.track_filter.addItem("All Tracks")
+            self.track_filter.currentTextChanged.connect(self.update_visualization)
+            controls_layout.addWidget(self.track_filter)
         
         controls_layout.addStretch()
         layout.addLayout(controls_layout)
@@ -636,9 +651,19 @@ class VisualizationPanel(QWidget):
     def update_visualization(self):
         """Update visualization based on current settings"""
         if self.current_df is not None and HAS_PYQTGRAPH:
+            # Apply track filter
+            df_to_plot = self.current_df
+            selected_track = self.track_filter.currentText()
+            if selected_track != "All Tracks":
+                try:
+                    track_id = int(selected_track.split()[-1])
+                    df_to_plot = self.current_df[self.current_df['trackid'] == track_id]
+                except (ValueError, IndexError):
+                    pass
+            
             color_by = 'trackid' if self.color_combo.currentText() == 'Track ID' else 'Annotation'
-            self.ppi_widget.plot_tracks(self.current_df, color_by=color_by)
-            self.ts_widget.plot_tracks(self.current_df)
+            self.ppi_widget.plot_tracks(df_to_plot, color_by=color_by)
+            self.ts_widget.plot_tracks(df_to_plot)
     
     def load_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
@@ -648,6 +673,13 @@ class VisualizationPanel(QWidget):
         if file_path and HAS_PYQTGRAPH:
             try:
                 self.current_df = pd.read_csv(file_path)
+                
+                # Update track filter dropdown
+                self.track_filter.clear()
+                self.track_filter.addItem("All Tracks")
+                if 'trackid' in self.current_df.columns:
+                    for track_id in sorted(self.current_df['trackid'].unique()):
+                        self.track_filter.addItem(f"Track {int(track_id)}")
                 
                 # Plot data with current color setting
                 self.update_visualization()
@@ -662,7 +694,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Radar Data Annotation Application")
-        self.setGeometry(100, 100, 1400, 900)
+        self.setGeometry(100, 100, 1600, 1000)
         
         self.setup_ui()
         self.apply_stylesheet()
@@ -683,15 +715,23 @@ class MainWindow(QMainWindow):
         # Left panel: Engine selector
         self.engine_list = QListWidget()
         self.engine_list.addItems([
-            "Data Extraction",
-            "AutoLabeling",
-            "AI Tagging",
-            "Report",
-            "Simulation",
-            "Visualization"
+            "📊 Data Extraction",
+            "🏷️ AutoLabeling",
+            "🤖 AI Tagging",
+            "📈 Report",
+            "🔬 Simulation",
+            "📉 Visualization"
         ])
-        self.engine_list.setMaximumWidth(200)
+        self.engine_list.setMinimumWidth(220)
+        self.engine_list.setMaximumWidth(280)
+        self.engine_list.setSpacing(2)
         self.engine_list.currentRowChanged.connect(self.change_panel)
+        
+        # Set size policy to expand vertically
+        self.engine_list.setSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Preferred,
+            QtWidgets.QSizePolicy.Policy.Expanding
+        )
         
         # Right panel: Stacked widget for engine panels
         self.stack = QStackedWidget()
@@ -721,154 +761,202 @@ class MainWindow(QMainWindow):
         stylesheet = """
         /* Main Window */
         QMainWindow {
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
         }
         
         /* List Widget (Engine Selector) */
         QListWidget {
-            background-color: #2c3e50;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #1a2332, stop:1 #2c3e50);
             color: #ecf0f1;
             border: none;
-            border-right: 2px solid #34495e;
-            font-size: 13px;
-            padding: 5px;
+            border-right: 3px solid #3498db;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px;
         }
         
         QListWidget::item {
-            padding: 12px;
-            border-radius: 4px;
-            margin: 2px;
+            padding: 18px 15px;
+            border-radius: 8px;
+            margin: 4px 6px;
+            min-height: 50px;
+            border-left: 3px solid transparent;
         }
         
         QListWidget::item:selected {
-            background-color: #3498db;
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                        stop:0 #3498db, stop:1 #2980b9);
             color: white;
+            border-left: 3px solid #f39c12;
+            font-weight: bold;
         }
         
         QListWidget::item:hover {
-            background-color: #34495e;
+            background-color: rgba(52, 152, 219, 0.3);
+            border-left: 3px solid #3498db;
         }
         
         /* Group Boxes */
         QGroupBox {
-            border: 2px solid #bdc3c7;
-            border-radius: 8px;
-            margin-top: 12px;
-            padding-top: 15px;
-            font-weight: bold;
+            border: 2px solid #d5dce3;
+            border-radius: 10px;
+            margin-top: 16px;
+            padding-top: 20px;
+            font-weight: 600;
+            font-size: 13px;
             background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         QGroupBox::title {
             subcontrol-origin: margin;
             subcontrol-position: top left;
-            padding: 5px 10px;
+            padding: 6px 12px;
             color: #2c3e50;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            margin-left: 10px;
         }
         
         /* Push Buttons */
         QPushButton {
-            background-color: #3498db;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #3498db, stop:1 #2980b9);
             color: white;
             border: none;
-            border-radius: 6px;
-            padding: 10px 20px;
+            border-radius: 8px;
+            padding: 12px 24px;
             font-size: 13px;
-            font-weight: bold;
-            min-height: 30px;
+            font-weight: 600;
+            min-height: 36px;
         }
         
         QPushButton:hover {
-            background-color: #2980b9;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #2980b9, stop:1 #21618c);
+            border: 1px solid #1f618d;
         }
         
         QPushButton:pressed {
-            background-color: #1f618d;
+            background-color: #1a5276;
+            padding: 13px 23px 11px 25px;
         }
         
         QPushButton:disabled {
-            background-color: #95a5a6;
-            color: #ecf0f1;
+            background-color: #bdc3c7;
+            color: #7f8c8d;
         }
         
         QPushButton#primaryButton {
-            background-color: #27ae60;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #27ae60, stop:1 #229954);
         }
         
         QPushButton#primaryButton:hover {
-            background-color: #229954;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #229954, stop:1 #1e8449);
+            border: 1px solid #1e8449;
         }
         
         /* Labels */
         QLabel {
-            color: #2c3e50;
-            font-size: 12px;
-            padding: 2px;
+            color: #34495e;
+            font-size: 13px;
+            padding: 3px;
+            font-weight: 500;
         }
         
         /* Text Edits and Text Areas */
         QTextEdit {
-            background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 8px;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 11px;
+            background-color: #fdfefe;
+            border: 2px solid #d5dce3;
+            border-radius: 6px;
+            padding: 10px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
             color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        QTextEdit:focus {
+            border: 2px solid #3498db;
         }
         
         /* Combo Boxes */
         QComboBox {
             background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 6px 10px;
-            min-height: 25px;
+            border: 2px solid #d5dce3;
+            border-radius: 6px;
+            padding: 8px 12px;
+            min-height: 32px;
             color: #2c3e50;
+            font-size: 13px;
         }
         
         QComboBox:hover {
-            border: 1px solid #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        QComboBox:focus {
+            border: 2px solid #3498db;
+            background-color: #f8f9fa;
         }
         
         QComboBox::drop-down {
             border: none;
-            padding-right: 10px;
+            padding-right: 12px;
         }
         
         QComboBox::down-arrow {
             image: none;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            border-top: 5px solid #2c3e50;
-            margin-right: 5px;
+            border-top: 6px solid #2c3e50;
+            margin-right: 8px;
+        }
+        
+        QComboBox QAbstractItemView {
+            background-color: white;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            selection-background-color: #3498db;
+            selection-color: white;
+            padding: 4px;
         }
         
         /* Spin Boxes */
         QSpinBox, QDoubleSpinBox {
             background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 5px;
-            min-height: 25px;
+            border: 2px solid #d5dce3;
+            border-radius: 6px;
+            padding: 8px;
+            min-height: 32px;
             color: #2c3e50;
+            font-size: 13px;
         }
         
         QSpinBox:hover, QDoubleSpinBox:hover {
-            border: 1px solid #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        QSpinBox:focus, QDoubleSpinBox:focus {
+            border: 2px solid #3498db;
+            background-color: #f8f9fa;
         }
         
         /* Tables */
         QTableWidget {
             background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
+            border: 2px solid #d5dce3;
+            border-radius: 8px;
             gridline-color: #ecf0f1;
             color: #2c3e50;
         }
         
         QTableWidget::item {
-            padding: 5px;
+            padding: 8px;
+            border-bottom: 1px solid #ecf0f1;
         }
         
         QTableWidget::item:selected {
@@ -876,94 +964,134 @@ class MainWindow(QMainWindow):
             color: white;
         }
         
+        QTableWidget::item:hover {
+            background-color: #ebf5fb;
+        }
+        
         QHeaderView::section {
-            background-color: #34495e;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #34495e, stop:1 #2c3e50);
             color: white;
-            padding: 8px;
+            padding: 10px;
             border: none;
-            font-weight: bold;
+            border-right: 1px solid #2c3e50;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        QHeaderView::section:hover {
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #3498db, stop:1 #2980b9);
         }
         
         /* Progress Bar */
         QProgressBar {
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
+            border: 2px solid #d5dce3;
+            border-radius: 8px;
             text-align: center;
             background-color: #ecf0f1;
             color: #2c3e50;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 12px;
+            min-height: 24px;
         }
         
         QProgressBar::chunk {
-            background-color: #3498db;
-            border-radius: 3px;
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                        stop:0 #3498db, stop:1 #2ecc71);
+            border-radius: 6px;
         }
         
         /* Scroll Bars */
         QScrollBar:vertical {
-            background: #ecf0f1;
-            width: 12px;
-            border-radius: 6px;
+            background: #f8f9fa;
+            width: 14px;
+            border-radius: 7px;
+            margin: 2px;
         }
         
         QScrollBar::handle:vertical {
-            background: #95a5a6;
-            border-radius: 6px;
-            min-height: 20px;
+            background: #bdc3c7;
+            border-radius: 7px;
+            min-height: 30px;
         }
         
         QScrollBar::handle:vertical:hover {
+            background: #95a5a6;
+        }
+        
+        QScrollBar::handle:vertical:pressed {
             background: #7f8c8d;
         }
         
         QScrollBar:horizontal {
-            background: #ecf0f1;
-            height: 12px;
-            border-radius: 6px;
+            background: #f8f9fa;
+            height: 14px;
+            border-radius: 7px;
+            margin: 2px;
         }
         
         QScrollBar::handle:horizontal {
-            background: #95a5a6;
-            border-radius: 6px;
-            min-width: 20px;
+            background: #bdc3c7;
+            border-radius: 7px;
+            min-width: 30px;
         }
         
         QScrollBar::handle:horizontal:hover {
+            background: #95a5a6;
+        }
+        
+        QScrollBar::handle:horizontal:pressed {
             background: #7f8c8d;
+        }
+        
+        QScrollBar::add-line, QScrollBar::sub-line {
+            border: none;
+            background: none;
         }
         
         /* Splitter */
         QSplitter::handle {
-            background-color: #bdc3c7;
+            background-color: #d5dce3;
+        }
+        
+        QSplitter::handle:hover {
+            background-color: #3498db;
         }
         
         QSplitter::handle:horizontal {
-            width: 2px;
+            width: 3px;
         }
         
         QSplitter::handle:vertical {
-            height: 2px;
+            height: 3px;
         }
         
         /* Slider */
         QSlider::groove:horizontal {
-            border: 1px solid #bdc3c7;
-            height: 6px;
+            border: 2px solid #d5dce3;
+            height: 8px;
             background: #ecf0f1;
-            border-radius: 3px;
+            border-radius: 4px;
         }
         
         QSlider::handle:horizontal {
-            background: #3498db;
-            border: 1px solid #2980b9;
-            width: 16px;
-            height: 16px;
-            margin: -6px 0;
-            border-radius: 8px;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #3498db, stop:1 #2980b9);
+            border: 2px solid #2980b9;
+            width: 20px;
+            height: 20px;
+            margin: -8px 0;
+            border-radius: 10px;
         }
         
         QSlider::handle:horizontal:hover {
-            background: #2980b9;
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #2980b9, stop:1 #21618c);
+            border: 2px solid #1f618d;
+            width: 22px;
+            height: 22px;
+            margin: -9px 0;
         }
         """
         
