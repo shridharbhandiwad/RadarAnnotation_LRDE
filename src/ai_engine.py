@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import logging
+import os
 from pathlib import Path
 from typing import Dict, Any, Tuple, List, Optional
 import joblib
@@ -469,8 +470,39 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
     """
     logger.info(f"Training {model_name} model from {data_path}")
     
+    # Validate input file exists
+    if not Path(data_path).exists():
+        error_msg = f"Training data file not found: {data_path}"
+        logger.error(error_msg)
+        raise FileNotFoundError(error_msg)
+    
+    # Validate file is readable
+    if not os.access(data_path, os.R_OK):
+        error_msg = f"Training data file is not readable: {data_path}"
+        logger.error(error_msg)
+        raise PermissionError(error_msg)
+    
     # Load data
-    df = pd.read_csv(data_path)
+    try:
+        df = pd.read_csv(data_path)
+    except Exception as e:
+        error_msg = f"Failed to read CSV file {data_path}: {str(e)}"
+        logger.error(error_msg)
+        raise ValueError(error_msg) from e
+    
+    # Validate required columns
+    required_columns = ['trackid', 'Annotation']
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        error_msg = f"CSV file is missing required columns: {missing_columns}. Available columns: {list(df.columns)}"
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    # Check if data is empty
+    if len(df) == 0:
+        error_msg = f"CSV file is empty: {data_path}"
+        logger.error(error_msg)
+        raise ValueError(error_msg)
     
     # Get unique tracks
     track_ids = df['trackid'].unique()

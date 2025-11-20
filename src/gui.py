@@ -77,8 +77,9 @@ class WorkerThread(QThread):
             result = self.func(*self.args, **self.kwargs)
             self.finished.emit(result)
         except Exception as e:
-            logger.error(f"Worker thread error: {e}", exc_info=True)
-            self.error.emit(str(e))
+            error_msg = str(e) if str(e) else f"{type(e).__name__}: {repr(e)}"
+            logger.error(f"Worker thread error: {error_msg}", exc_info=True)
+            self.error.emit(error_msg)
 
 
 class DataExtractionPanel(QWidget):
