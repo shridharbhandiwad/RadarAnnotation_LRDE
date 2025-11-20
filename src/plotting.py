@@ -6,13 +6,69 @@ import logging
 
 try:
     import pyqtgraph as pg
-    from PyQt6 import QtCore, QtGui
+    from PyQt6 import QtCore, QtGui, QtWidgets
     HAS_PYQTGRAPH = True
 except ImportError:
     HAS_PYQTGRAPH = False
     logging.warning("PyQtGraph not available")
 
 logger = logging.getLogger(__name__)
+
+
+def get_annotation_color(annotation: str) -> tuple:
+    """Get color for annotation combination
+    
+    Args:
+        annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed')
+        
+    Returns:
+        RGB color tuple
+    """
+    # Define color mapping for common annotation patterns
+    color_map = {
+        # Single annotations
+        'LevelFlight': (0, 150, 255),      # Sky blue
+        'Climbing': (255, 128, 0),          # Orange
+        'Descending': (255, 0, 128),        # Pink
+        'HighSpeed': (255, 0, 0),           # Red
+        'LowSpeed': (0, 255, 0),            # Green
+        'Turning': (255, 255, 0),           # Yellow
+        'Straight': (100, 200, 100),        # Light green
+        'LightManeuver': (150, 150, 255),   # Light blue
+        'HighManeuver': (255, 0, 255),      # Magenta
+        'Incoming': (255, 165, 0),          # Orange
+        'Outgoing': (0, 255, 255),          # Cyan
+        'FixedRange': (128, 128, 128),      # Gray
+        
+        # Common combinations
+        'LevelFlight+HighSpeed': (255, 100, 100),       # Light red
+        'LevelFlight+LowSpeed': (100, 255, 100),        # Light green
+        'Climbing+HighSpeed': (255, 150, 0),            # Deep orange
+        'Descending+HighSpeed': (255, 50, 150),         # Hot pink
+        'Turning+HighSpeed': (255, 200, 0),             # Gold
+        'Turning+LowSpeed': (200, 255, 100),            # Yellow-green
+        'LevelFlight+Straight': (100, 180, 255),        # Bright sky blue
+        'HighManeuver+Turning': (200, 0, 255),          # Purple
+    }
+    
+    # Try exact match first
+    if annotation in color_map:
+        return color_map[annotation]
+    
+    # Check for partial matches and blend colors
+    parts = annotation.split('+') if '+' in annotation else [annotation]
+    colors = []
+    for part in parts:
+        if part in color_map:
+            colors.append(color_map[part])
+    
+    if colors:
+        # Average the colors
+        avg_color = tuple(int(sum(c[i] for c in colors) / len(colors)) for i in range(3))
+        return avg_color
+    
+    # Default fallback color
+    return (128, 128, 128)  # Gray
 
 
 class PPIPlotWidget:
@@ -34,11 +90,21 @@ class PPIPlotWidget:
         # Add legend
         self.plot_widget.addLegend()
         
-        # Store plot items
+        # Store plot items and data
         self.scatter_plots = {}
         self.selected_track = None
+        self.track_data = {}  # Store track data for tooltips
         
-        # Color map for tracks
+        # Create tooltip text item
+        self.tooltip = pg.TextItem(anchor=(0, 1), color='white', fill=(0, 0, 0, 180))
+        self.tooltip.setZValue(100)
+        self.plot_widget.addItem(self.tooltip)
+        self.tooltip.hide()
+        
+        # Connect hover event
+        self.plot_widget.scene().sigMouseMoved.connect(self.on_mouse_moved)
+        
+        # Color map for tracks (fallback)
         self.colors = [
             (255, 0, 0),      # Red
             (0, 255, 0),      # Green
@@ -57,6 +123,13 @@ class PPIPlotWidget:
         self.plot_widget.clear()
         self.scatter_plots = {}
         self.selected_track = None
+        self.track_data = {}
+        
+        # Re-add tooltip after clear
+        self.tooltip = pg.TextItem(anchor=(0, 1), color='white', fill=(0, 0, 0, 180))
+        self.tooltip.setZValue(100)
+        self.plot_widget.addItem(self.tooltip)
+        self.tooltip.hide()
     
     def plot_tracks(self, df: pd.DataFrame, color_by: str = 'trackid'):
         """Plot tracks on PPI
@@ -74,6 +147,13 @@ class PPIPlotWidget:
         x_km = df['x'].values / 1000.0
         y_km = df['y'].values / 1000.0
         
+        # Store track data for tooltips
+        for trackid in df['trackid'].unique():
+            track_df = df[df['trackid'] == trackid].copy()
+            track_df['x_km'] = track_df['x'] / 1000.0
+            track_df['y_km'] = track_df['y'] / 1000.0
+            self.track_data[trackid] = track_df
+        
         if color_by == 'trackid':
             # Plot by track
             for idx, trackid in enumerate(df['trackid'].unique()):
@@ -83,36 +163,93 @@ class PPIPlotWidget:
                 scatter = pg.ScatterPlotItem(
                     x=x_km[mask],
                     y=y_km[mask],
-                    size=5,
+                    size=8,
                     pen=pg.mkPen(None),
                     brush=pg.mkBrush(*self.colors[color_idx]),
-                    name=f'Track {int(trackid)}'
+                    name=f'Track {int(trackid)}',
+                    hoverable=True,
+                    hoverPen=pg.mkPen('yellow', width=2),
+                    hoverBrush=pg.mkBrush(255, 255, 0, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
                 self.scatter_plots[trackid] = scatter
         
         elif color_by == 'Annotation' and 'Annotation' in df.columns:
-            # Plot by annotation type
+            # Plot by annotation type with color coding
             annotations = df['Annotation'].unique()
+            annotation_legend = {}
             
-            for idx, annotation in enumerate(annotations):
-                if annotation == 'invalid':
+            for annotation in annotations:
+                if annotation == 'invalid' or pd.isna(annotation):
                     continue
                 
                 mask = df['Annotation'] == annotation
-                color_idx = idx % len(self.colors)
+                
+                # Use annotation-based color
+                color = get_annotation_color(annotation)
                 
                 scatter = pg.ScatterPlotItem(
                     x=x_km[mask],
                     y=y_km[mask],
-                    size=5,
+                    size=8,
                     pen=pg.mkPen(None),
-                    brush=pg.mkBrush(*self.colors[color_idx]),
-                    name=annotation[:20]  # Truncate long names
+                    brush=pg.mkBrush(*color),
+                    name=annotation[:25],  # Truncate long names
+                    hoverable=True,
+                    hoverPen=pg.mkPen('yellow', width=2),
+                    hoverBrush=pg.mkBrush(255, 255, 0, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
+                annotation_legend[annotation] = color
+    
+    def on_mouse_moved(self, pos):
+        """Handle mouse movement for tooltip display
+        
+        Args:
+            pos: Mouse position in scene coordinates
+        """
+        # Convert scene position to data coordinates
+        mouse_point = self.plot_widget.plotItem.vb.mapSceneToView(pos)
+        x, y = mouse_point.x(), mouse_point.y()
+        
+        # Find nearest point across all tracks
+        min_dist = float('inf')
+        nearest_info = None
+        
+        for trackid, track_df in self.track_data.items():
+            # Calculate distances to all points in this track
+            distances = np.sqrt((track_df['x_km'] - x)**2 + (track_df['y_km'] - y)**2)
+            min_track_dist = distances.min()
+            
+            if min_track_dist < min_dist:
+                min_dist = min_track_dist
+                nearest_idx = distances.idxmin()
+                nearest_row = track_df.loc[nearest_idx]
+                nearest_info = {
+                    'trackid': int(trackid),
+                    'time': nearest_row['time'],
+                    'x': nearest_row['x_km'],
+                    'y': nearest_row['y_km'],
+                    'annotation': nearest_row.get('Annotation', 'N/A')
+                }
+        
+        # Show tooltip if close enough (within 0.5 km)
+        if min_dist < 0.5 and nearest_info:
+            # Format tooltip text
+            tooltip_text = (
+                f"Track ID: {nearest_info['trackid']}\n"
+                f"Time: {nearest_info['time']:.2f} s\n"
+                f"Position: ({nearest_info['x']:.2f}, {nearest_info['y']:.2f}) km\n"
+                f"Annotation: {nearest_info['annotation']}"
+            )
+            
+            self.tooltip.setText(tooltip_text)
+            self.tooltip.setPos(x, y)
+            self.tooltip.show()
+        else:
+            self.tooltip.hide()
     
     def highlight_track(self, trackid: int):
         """Highlight a specific track
@@ -124,10 +261,10 @@ class PPIPlotWidget:
         
         for tid, scatter in self.scatter_plots.items():
             if tid == trackid:
-                scatter.setSize(10)
+                scatter.setSize(12)
                 scatter.setZValue(10)
             else:
-                scatter.setSize(5)
+                scatter.setSize(8)
                 scatter.setZValue(1)
     
     def get_widget(self):
