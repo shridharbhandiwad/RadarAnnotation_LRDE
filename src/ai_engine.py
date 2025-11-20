@@ -46,7 +46,7 @@ class SequenceDataGenerator:
         
     def prepare_sequences(self, df: pd.DataFrame, feature_columns: List[str], 
                          label_column: str = 'Annotation', return_label_strings: bool = False) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-        """Prepare sequence data from DataFrame
+        """Prepare sequence data from DataFrame with enhanced feature engineering
         
         Args:
             df: Input DataFrame
@@ -63,22 +63,39 @@ class SequenceDataGenerator:
         track_ids = []
         
         for trackid in df['trackid'].unique():
-            track_df = df[df['trackid'] == trackid].sort_values('time')
+            track_df = df[df['trackid'] == trackid].sort_values('time').copy()
+            
+            # Filter valid features only
+            if 'valid_features' in track_df.columns:
+                track_df = track_df[track_df['valid_features'] == True]
+            
+            if len(track_df) < 3:  # Skip tracks with insufficient data
+                continue
+            
+            # Ensure feature columns exist
+            available_features = [col for col in feature_columns if col in track_df.columns]
+            if len(available_features) == 0:
+                continue
+            
+            # Handle NaN and Inf values
+            track_df[available_features] = track_df[available_features].replace([np.inf, -np.inf], np.nan)
+            track_df[available_features] = track_df[available_features].fillna(0)
             
             if len(track_df) < self.sequence_length:
                 # Pad if too short
                 n_pad = self.sequence_length - len(track_df)
                 pad_df = pd.DataFrame(
-                    np.zeros((n_pad, len(feature_columns))),
-                    columns=feature_columns
+                    np.zeros((n_pad, len(available_features))),
+                    columns=available_features
                 )
-                track_features = pd.concat([pad_df, track_df[feature_columns]], ignore_index=True)
+                track_features = pd.concat([pad_df, track_df[available_features]], ignore_index=True)
                 track_label = track_df[label_column].mode()[0] if len(track_df) > 0 else 'normal'
             else:
-                # Use sliding window
-                for i in range(len(track_df) - self.sequence_length + 1):
+                # Use sliding window with stride
+                stride = max(1, self.sequence_length // 4)  # 75% overlap
+                for i in range(0, len(track_df) - self.sequence_length + 1, stride):
                     window = track_df.iloc[i:i+self.sequence_length]
-                    track_features = window[feature_columns]
+                    track_features = window[available_features]
                     track_label = window[label_column].mode()[0]
                     
                     sequences.append(track_features.values)
@@ -89,6 +106,9 @@ class SequenceDataGenerator:
             sequences.append(track_features.values)
             labels.append(track_label)
             track_ids.append(trackid)
+        
+        if len(sequences) == 0:
+            raise ValueError("No valid sequences could be created from the data. Ensure tracks have sufficient points.")
         
         sequences = np.array(sequences)
         track_ids = np.array(track_ids)
@@ -629,10 +649,18 @@ class TransformerModel:
         import time
         start_time = time.time()
         
-        # Prepare feature columns
-        feature_cols = ['x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az', 
-                       'speed', 'heading', 'range', 'curvature']
+        # Prepare enhanced feature columns for transformer
+        feature_cols = [
+            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
+            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
+            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
+        ]
         feature_cols = [col for col in feature_cols if col in df_train.columns]
+        
+        if len(feature_cols) == 0:
+            raise ValueError("No valid feature columns found in the training data")
+        
+        logger.info(f"Using {len(feature_cols)} features for transformer model: {feature_cols}")
         
         # Check if data has composite labels
         if use_multi_output or self._has_composite_labels(df_train):
@@ -758,7 +786,7 @@ class TransformerModel:
         return ',' in sample_label
     
     def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
-        """Evaluate Transformer model
+        """Evaluate Transformer model with enhanced features
         
         Args:
             df_test: Test DataFrame
@@ -766,8 +794,11 @@ class TransformerModel:
         Returns:
             Evaluation metrics
         """
-        feature_cols = ['x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az', 
-                       'speed', 'heading', 'range', 'curvature']
+        feature_cols = [
+            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
+            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
+            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
+        ]
         feature_cols = [col for col in feature_cols if col in df_test.columns]
         
         if self.multi_output:
@@ -826,7 +857,13 @@ class TransformerModel:
             cm = confusion_matrix(y_test, y_pred)
             
             classes = self.sequence_generator.label_encoder.classes_
-            report = classification_report(y_test, y_pred, target_names=classes, 
+            # Get labels present in y_test and y_pred
+            labels_present = np.unique(np.concatenate([y_test, y_pred]))
+            target_names = [classes[i] for i in labels_present if i < len(classes)]
+            
+            report = classification_report(y_test, y_pred,
+                                          labels=labels_present,
+                                          target_names=target_names if len(target_names) == len(labels_present) else None,
                                           output_dict=True, zero_division=0)
             
             metrics = {
@@ -931,13 +968,19 @@ class LSTMModel:
         import time
         start_time = time.time()
         
-        # Prepare feature columns
-        feature_cols = ['x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az', 
-                       'speed', 'heading', 'range', 'curvature']
+        # Prepare enhanced feature columns for LSTM
+        feature_cols = [
+            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
+            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
+            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
+        ]
         feature_cols = [col for col in feature_cols if col in df_train.columns]
         
+        if len(feature_cols) == 0:
+            raise ValueError("No valid feature columns found in the training data")
+        
         # Generate sequences
-        X_train, y_train, _ = self.sequence_generator.prepare_sequences(df_train, feature_cols)
+        X_train, y_train, _ = self.sequence_generator.prepare_sequences(df_train, feature_cols, return_label_strings=False)
         X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
         
         # Build model
@@ -991,11 +1034,14 @@ class LSTMModel:
         Returns:
             Evaluation metrics
         """
-        feature_cols = ['x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az', 
-                       'speed', 'heading', 'range', 'curvature']
+        feature_cols = [
+            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
+            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
+            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
+        ]
         feature_cols = [col for col in feature_cols if col in df_test.columns]
         
-        X_test, y_test, _ = self.sequence_generator.prepare_sequences(df_test, feature_cols)
+        X_test, y_test, _ = self.sequence_generator.prepare_sequences(df_test, feature_cols, return_label_strings=False)
         X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
         
         # Predictions
@@ -1008,7 +1054,13 @@ class LSTMModel:
         cm = confusion_matrix(y_test, y_pred)
         
         classes = self.sequence_generator.label_encoder.classes_
-        report = classification_report(y_test, y_pred, target_names=classes, 
+        # Get labels present in y_test and y_pred
+        labels_present = np.unique(np.concatenate([y_test, y_pred]))
+        target_names = [classes[i] for i in labels_present if i < len(classes)]
+        
+        report = classification_report(y_test, y_pred, 
+                                      labels=labels_present,
+                                      target_names=target_names if len(target_names) == len(labels_present) else None,
                                       output_dict=True, zero_division=0)
         
         metrics = {

@@ -404,18 +404,142 @@ def create_simulation_folders(base_dir: str = "data/simulations", n_folders: int
     return created_folders
 
 
+def create_large_training_dataset(output_path: str = "data/large_simulation_training.csv", 
+                                  n_tracks: int = 200, duration_min: float = 10) -> str:
+    """Create a large combined training dataset with diverse trajectories
+    
+    Args:
+        output_path: Path to save the combined CSV
+        n_tracks: Number of tracks to generate
+        duration_min: Duration of each track in minutes
+        
+    Returns:
+        Path to the created CSV file
+    """
+    config = get_config()
+    sample_rate_ms = config.get('simulation.sample_rate_ms', 100)
+    
+    logger.info(f"Creating large training dataset with {n_tracks} tracks...")
+    
+    generator = TrajectoryGenerator(sample_rate_ms, duration_min)
+    
+    # Define trajectory templates with variations
+    trajectory_templates = [
+        ("straight_low_speed", lambda: generator.straight_constant_velocity(
+            np.random.uniform(20, 50), np.random.uniform(500, 2000), 
+            (np.random.uniform(15000, 25000), np.random.uniform(8000, 15000)))),
+        ("straight_high_speed", lambda: generator.straight_constant_velocity(
+            np.random.uniform(200, 300), np.random.uniform(2500, 4000), 
+            (np.random.uniform(20000, 30000), np.random.uniform(10000, 20000)))),
+        ("ascending_spiral", lambda: generator.ascending_spiral(
+            np.random.uniform(1500, 3000), np.random.uniform(0.05, 0.15), 
+            np.random.uniform(3, 10), (np.random.uniform(5000, 15000), np.random.uniform(5000, 15000)), 
+            np.random.uniform(300, 800))),
+        ("descending_path", lambda: generator.descending_path(
+            np.random.uniform(120, 180), np.radians(np.random.uniform(10, 20)), 
+            (np.random.uniform(25000, 35000), np.random.uniform(25000, 35000), np.random.uniform(3500, 4500)))),
+        ("sharp_maneuver", lambda: generator.sharp_maneuver(
+            np.random.uniform(150, 220), np.random.uniform(1500, 2500), 
+            np.random.uniform(20, 40))),
+        ("curved_path", lambda: generator.curved_path(
+            np.random.uniform(100, 150), np.random.uniform(6000, 10000), 
+            np.random.uniform(2000, 3000), (np.random.uniform(3000, 8000), np.random.uniform(3000, 8000)))),
+        ("level_flight_jitter", lambda: generator.level_flight_with_jitter(
+            np.random.uniform(80, 120), np.random.uniform(1200, 1800), 
+            np.random.uniform(5, 15))),
+        ("stop_and_go", lambda: generator.stop_and_go(
+            np.random.uniform(150, 250), np.random.uniform(1500, 2200))),
+        ("oscillating_lateral", lambda: generator.oscillating_lateral(
+            np.random.uniform(120, 160), np.random.uniform(300, 700), 
+            np.random.uniform(30, 50), np.random.uniform(2000, 2500))),
+        ("complex_maneuver", lambda: generator.complex_maneuver(
+            np.random.uniform(1800, 2200)))
+    ]
+    
+    all_records = []
+    
+    for trackid in range(1, n_tracks + 1):
+        # Select random trajectory type
+        name, traj_func = trajectory_templates[trackid % len(trajectory_templates)]
+        
+        try:
+            # Generate trajectory with variations
+            trajectory = traj_func()
+            
+            # Convert to records
+            for row in trajectory:
+                record = {
+                    'time': row[0],
+                    'trackid': float(trackid),
+                    'x': row[1],
+                    'y': row[2],
+                    'z': row[3],
+                    'vx': row[4],
+                    'vy': row[5],
+                    'vz': row[6],
+                    'ax': row[7],
+                    'ay': row[8],
+                    'az': row[9]
+                }
+                all_records.append(record)
+            
+            if trackid % 20 == 0:
+                logger.info(f"Generated {trackid}/{n_tracks} tracks...")
+                
+        except Exception as e:
+            logger.warning(f"Failed to generate track {trackid}: {e}")
+            continue
+    
+    # Convert to DataFrame
+    import pandas as pd
+    df = pd.DataFrame(all_records)
+    
+    # Ensure output directory exists
+    ensure_dir(Path(output_path).parent)
+    
+    # Save to CSV
+    df.to_csv(output_path, index=False)
+    logger.info(f"Created large training dataset: {output_path}")
+    logger.info(f"  Total tracks: {df['trackid'].nunique()}")
+    logger.info(f"  Total records: {len(df)}")
+    logger.info(f"  Duration: {df['time'].max():.2f} seconds")
+    
+    return output_path
+
+
 # CLI interface
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description='Simulation Engine')
-    parser.add_argument('--outdir', default='data/simulations', help='Output directory')
-    parser.add_argument('--count', type=int, default=10, help='Number of simulations to create')
+    parser = argparse.ArgumentParser(description='Simulation Engine - Generate radar trajectory data')
+    subparsers = parser.add_subparsers(dest='command', help='Command to execute')
+    
+    # Folders command
+    folders_parser = subparsers.add_parser('folders', help='Create simulation folders')
+    folders_parser.add_argument('--outdir', default='data/simulations', help='Output directory')
+    folders_parser.add_argument('--count', type=int, default=10, help='Number of simulations to create')
+    
+    # Large dataset command
+    large_parser = subparsers.add_parser('large', help='Create large training dataset')
+    large_parser.add_argument('--output', default='data/large_simulation_training.csv', help='Output CSV path')
+    large_parser.add_argument('--tracks', type=int, default=200, help='Number of tracks to generate')
+    large_parser.add_argument('--duration', type=float, default=10, help='Duration per track (minutes)')
     
     args = parser.parse_args()
     
-    folders = create_simulation_folders(args.outdir, args.count)
+    if args.command == 'folders' or args.command is None:
+        # Default behavior - create folders
+        outdir = getattr(args, 'outdir', 'data/simulations')
+        count = getattr(args, 'count', 10)
+        folders = create_simulation_folders(outdir, count)
+        print(f"\nCreated {len(folders)} simulation folders:")
+        for folder in folders:
+            print(f"  {folder}")
     
-    print(f"\nCreated {len(folders)} simulation folders:")
-    for folder in folders:
-        print(f"  {folder}")
+    elif args.command == 'large':
+        # Create large dataset
+        csv_path = create_large_training_dataset(args.output, args.tracks, args.duration)
+        print(f"\nCreated large training dataset:")
+        print(f"  Path: {csv_path}")
+        print(f"  Tracks: {args.tracks}")
+        print(f"  Duration: {args.duration} minutes per track")
