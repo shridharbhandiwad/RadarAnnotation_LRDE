@@ -187,9 +187,22 @@ class XGBoostModel:
         
         # Encode labels
         y_train_encoded = self.label_encoder.fit_transform(y_train)
+        n_classes = len(self.label_encoder.classes_)
+        
+        # Set appropriate objective based on number of classes
+        params = self.params.copy()
+        if 'objective' not in params or params['objective'] is None:
+            if n_classes == 2:
+                params['objective'] = 'binary:logistic'
+            else:
+                params['objective'] = 'multi:softmax'
+        
+        # For multi-class, ensure num_class is set
+        if n_classes > 2 and 'num_class' not in params:
+            params['num_class'] = n_classes
         
         # Train model
-        self.model = xgb.XGBClassifier(**self.params)
+        self.model = xgb.XGBClassifier(**params)
         
         eval_set = None
         if X_val is not None and y_val is not None:
@@ -495,6 +508,13 @@ def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[s
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
         error_msg = f"CSV file is missing required columns: {missing_columns}. Available columns: {list(df.columns)}"
+        if 'Annotation' in missing_columns:
+            error_msg += "\n\nThis appears to be raw radar data without labels."
+            error_msg += "\nTo train a model, you need labeled data with an 'Annotation' column."
+            error_msg += "\n\nOptions:"
+            error_msg += "\n  1. Use the Auto-Labeling tool to generate annotations from raw data"
+            error_msg += "\n  2. Select a file that already has annotations (e.g., labelled_data_*.csv)"
+            error_msg += "\n  3. Manually add an 'Annotation' column to your CSV file"
         logger.error(error_msg)
         raise ValueError(error_msg)
     

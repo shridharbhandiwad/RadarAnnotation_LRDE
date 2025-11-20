@@ -39,6 +39,7 @@ DEFAULT_CONFIG = {
             "n_estimators": 100,
             "max_depth": 6,
             "learning_rate": 0.1,
+            "objective": "multi:softmax",
             "random_state": 42
         },
         "lstm": {
