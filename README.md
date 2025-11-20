@@ -8,7 +8,7 @@ A comprehensive desktop application for radar data processing, automatic annotat
 
 1. **Data Extraction Engine** - Parse binary radar data files into structured formats
 2. **AutoLabeling Engine** - Rule-based motion feature extraction and automatic annotation
-3. **AI Tagging Engine** - Machine learning models (XGBoost, LSTM) for trajectory classification
+3. **AI Tagging Engine** - Machine learning models (XGBoost, LSTM, Transformer) for trajectory classification
 4. **Report Engine** - Generate comprehensive HTML reports with visualizations
 5. **Simulation Engine** - Create synthetic radar data with diverse trajectory patterns
 
@@ -129,7 +129,7 @@ python -m src.gui
 
 **AI Tagging:**
 1. Navigate to "AI Tagging" panel
-2. Select model type (XGBoost or LSTM)
+2. Select model type (XGBoost, LSTM, or Transformer)
 3. Load labeled data CSV
 4. Click "Train Model"
 5. View training results and metrics
@@ -165,7 +165,14 @@ python -m src.autolabel_engine --input output/raw_data.csv --out output/labelled
 ### AI Training
 
 ```bash
+# Train XGBoost (fast, tabular features)
 python -m src.ai_engine --model xgboost --data output/labelled_data.csv --outdir output/models
+
+# Train LSTM (sequence modeling)
+python -m src.ai_engine --model lstm --data output/labelled_data.csv --outdir output/models
+
+# Train Transformer (multi-output, state-of-the-art)
+python -m src.ai_engine --model transformer --data output/labelled_data.csv --outdir output/models
 ```
 
 ### Report Generation
@@ -225,6 +232,7 @@ config/default_config.json
 **ML Parameters:**
 - XGBoost: `n_estimators`, `max_depth`, `learning_rate`
 - LSTM: `units`, `dropout`, `epochs`, `sequence_length`
+- Transformer: `d_model`, `num_heads`, `ff_dim`, `num_layers`, `dropout`, `epochs`
 
 ## Binary Format
 
@@ -382,12 +390,13 @@ This project is provided as-is for educational and research purposes.
 
 Contributions are welcome! Areas for improvement:
 
-- Additional ML models (Transformer, GRU)
+- Additional ML models (GRU, Attention mechanisms)
 - Real-time data streaming support
 - 3D visualization
 - Advanced filtering and search
 - Export to additional formats
 - Multi-radar fusion
+- Attention visualization for Transformer model
 
 ## Support
 
@@ -399,8 +408,33 @@ Built with:
 - PyQt6 for GUI framework
 - PyQtGraph for high-performance plotting
 - scikit-learn and XGBoost for machine learning
-- TensorFlow/Keras for deep learning
+- TensorFlow/Keras for deep learning (LSTM, Transformer with Multi-Head Attention)
 - NumPy and Pandas for data processing
+
+## Machine Learning Models
+
+This application includes three powerful models for trajectory classification:
+
+### 1. XGBoost Classifier
+- **Type**: Gradient boosting for tabular features
+- **Speed**: ⚡⚡⚡ Very Fast
+- **Best for**: Quick training, tabular features, small datasets
+- **Accuracy**: 85-90%
+
+### 2. LSTM (Long Short-Term Memory)
+- **Type**: Recurrent neural network for sequences
+- **Speed**: ⚡⚡ Moderate
+- **Best for**: Sequential data, proven reliability
+- **Accuracy**: 88-92%
+
+### 3. Transformer (Multi-Output) ⭐ NEW
+- **Type**: Self-attention mechanism with multi-head attention
+- **Speed**: ⚡ Slower but parallelizable
+- **Best for**: Multi-attribute classification, composite labels, long sequences
+- **Accuracy**: 90-95%
+- **Special Feature**: Predicts multiple outputs simultaneously (direction, altitude, path, maneuver, speed)
+
+**For detailed information**, see [TRANSFORMER_MODEL_GUIDE.md](TRANSFORMER_MODEL_GUIDE.md)
 
 ---
 

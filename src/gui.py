@@ -343,7 +343,7 @@ class AITaggingPanel(QWidget):
         model_layout = QFormLayout()
         
         self.model_combo = QComboBox()
-        self.model_combo.addItems(['xgboost', 'lstm'])
+        self.model_combo.addItems(['xgboost', 'lstm', 'transformer'])
         model_layout.addRow("Model Type:", self.model_combo)
         
         model_group.setLayout(model_layout)
@@ -425,6 +425,14 @@ class AITaggingPanel(QWidget):
         self.results_text.append(f"Train Accuracy: {train_metrics.get('train_accuracy', 0):.4f}")
         self.results_text.append(f"Test Accuracy: {test_metrics.get('accuracy', 0):.4f}")
         self.results_text.append(f"Test F1 Score: {test_metrics.get('f1_score', 0):.4f}")
+        
+        # Show multi-output metrics if available
+        if train_metrics.get('multi_output', False):
+            self.results_text.append(f"\nMulti-output Results:")
+            if 'outputs' in test_metrics:
+                for output_name, output_metrics in test_metrics['outputs'].items():
+                    self.results_text.append(f"  {output_name}: Acc={output_metrics['accuracy']:.4f}, F1={output_metrics['f1_score']:.4f}")
+        
         self.results_text.append(f"\nModel saved to: output/models/")
     
     def training_error(self, error_msg):
