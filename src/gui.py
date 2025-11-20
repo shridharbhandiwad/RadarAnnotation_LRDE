@@ -689,33 +689,66 @@ class MainWindow(QMainWindow):
 def main():
     """Main entry point"""
     if not HAS_PYQT6:
-        print("\n" + "=" * 80)
-        print(" ERROR: PyQt6 is not installed!")
-        print("=" * 80)
-        print("\nThe GUI application requires PyQt6 and PyQtGraph to run.")
-        print("\nTo install the required packages, run one of the following commands:")
-        print("\n  Option 1 - Install GUI packages only:")
-        print("    pip install PyQt6 pyqtgraph")
-        print("\n  Option 2 - Install all project requirements:")
-        print("    pip install -r requirements.txt")
-        print("\n  Option 3 - Install from conda (if using Anaconda):")
-        print("    conda install -c conda-forge pyqt")
-        print("    pip install pyqtgraph")
-        print("\n" + "=" * 80)
-        print("\nAfter installation, run the GUI again with:")
-        print("  python -m src.gui")
-        print("=" * 80 + "\n")
+        # Force flush to ensure error message is visible
+        error_msg = """
+================================================================================
+ ERROR: PyQt6 is not installed!
+================================================================================
+
+The GUI application requires PyQt6 and PyQtGraph to run.
+
+To install the required packages, run one of the following commands:
+
+  Option 1 - Install GUI packages only (Recommended):
+    pip install PyQt6 pyqtgraph
+
+  Option 2 - Install all project requirements:
+    pip install -r requirements.txt
+
+  Option 3 - Install from conda (if using Anaconda):
+    conda install -c conda-forge pyqt
+    pip install pyqtgraph
+
+================================================================================
+After installation, run the GUI again with:
+  python -m src.gui
+  
+  OR double-click:
+  run.bat (Windows)
+  run.sh (Linux/Mac)
+================================================================================
+"""
+        print(error_msg, flush=True)
+        sys.stderr.write(error_msg)
+        sys.stderr.flush()
+        
+        # Wait for user acknowledgment on Windows
+        if sys.platform == 'win32':
+            input("\nPress Enter to exit...")
+        
         sys.exit(1)
     
-    app = QApplication(sys.argv)
-    
-    # Set application style
-    app.setStyle('Fusion')
-    
-    window = MainWindow()
-    window.show()
-    
-    sys.exit(app.exec())
+    try:
+        app = QApplication(sys.argv)
+        
+        # Set application style
+        app.setStyle('Fusion')
+        
+        window = MainWindow()
+        window.show()
+        
+        sys.exit(app.exec())
+    except Exception as e:
+        error_msg = f"\n\nFATAL ERROR: Failed to start GUI application!\n\nError: {str(e)}\n\n"
+        print(error_msg, flush=True)
+        sys.stderr.write(error_msg)
+        sys.stderr.flush()
+        
+        if sys.platform == 'win32':
+            input("Press Enter to exit...")
+        
+        logger.error(f"GUI startup failed: {e}", exc_info=True)
+        sys.exit(1)
 
 
 if __name__ == '__main__':
