@@ -18,6 +18,24 @@ try:
 except ImportError:
     HAS_PYQT6 = False
     logging.error("PyQt6 is not installed")
+    
+    # Create stub classes to prevent NameError when module is imported
+    class QThread:
+        pass
+    
+    class Qt:
+        class Orientation:
+            Vertical = None
+    
+    def pyqtSignal(*args):
+        return None
+    
+    # Create stubs for all other Qt classes to prevent errors
+    QApplication = QMainWindow = QWidget = QVBoxLayout = QHBoxLayout = None
+    QPushButton = QLabel = QFileDialog = QTextEdit = QTabWidget = None
+    QComboBox = QSpinBox = QDoubleSpinBox = QFormLayout = QGroupBox = None
+    QProgressBar = QTableWidget = QTableWidgetItem = QSplitter = None
+    QListWidget = QStackedWidget = QMessageBox = QSlider = QFont = None
 
 # Import engines
 from . import data_engine, autolabel_engine, ai_engine, report_engine, sim_engine
