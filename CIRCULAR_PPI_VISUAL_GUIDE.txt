@@ -1,0 +1,345 @@
+================================================================================
+               CIRCULAR PPI - VISUAL REFERENCE GUIDE
+================================================================================
+
+ASCII ART REPRESENTATION OF THE CIRCULAR PPI DISPLAY:
+
+                            N (90°)
+                              |
+                         _____|_____
+                     ,-'     |     '-.
+                  ,-'     150°|30°     '-.
+                ,'           \|/           '.
+               /              |              \
+             ,'               |               '.
+            /             __--+--__             \
+           /           ,-'    |    '-.           \
+          ;         ,-'       |       '-.         ;
+          |       ,'          |          '.       |
+         ;      ,'            |            '.      ;
+         |     /          __--+--__          \     |
+         |    /        ,-'    |    '-.        \    |
+        ;    ;       ,'       |       '.       ;    ;
+        |    |     ,'         |         '.     |    |
+   W ===|====|====;=====210°==O==30°======;====|====|=== E (0°)
+   180° |    |     '.         |         ,'     |    |
+        ;    ;       '.       |       ,'       ;    ;
+        |    \         '-.    |    ,-'         /    |
+         |    \          '-.__|__,-'          /     |
+         ;     \            -.|.-            /      ;
+          |     '.            |            ,'       |
+          ;       '.          |          ,'         ;
+           \        '-.       |       ,-'          /
+            \          '-.    |    ,-'           /
+             '.            '--+--'             ,'
+               \              |              /
+                '.           /|\           ,'
+                  '-.     240°|300°     ,-'
+                     '-._____|_____,-'
+                              |
+                            S (270°)
+
+LEGEND:
+=======
+O       = Radar center (origin at 0,0)
+|  ---  = Azimuth lines (radial lines from center)
+Circles = Range rings (concentric distance markers)
+N E S W = Cardinal directions
+30° 60° = Angle markers (every 30 degrees)
+●       = Track points (your data, not shown in this diagram)
+
+================================================================================
+
+DETAILED VIEW WITH RANGE RINGS:
+================================
+
+                            N
+                            |
+                    [  50 km  ]   ← Range label
+                  /             \
+                 /               \
+               /      [40 km]     \
+              /    /           \   \
+             /    /   [30 km]   \   \
+            /    /   /       \   \   \
+           /    /   /  [20]   \   \   \
+          /    /   /   / [10]  \   \   \
+    W ---+----+---+---+--(O)---+---+----+--- E
+          \    \   \   \       /   /   /
+           \    \   \   \     /   /   /
+            \    \   \   \   /   /   /
+             \    \   \   \ /   /   /
+              \    \   \___/   /   /
+               \    \         /   /
+                \    \_______/   /
+                 \              /
+                  \____________/
+                        |
+                        S
+
+Each circle represents a range ring:
+- Innermost: 10 km from center
+- Next:      20 km from center
+- Next:      30 km from center
+- Next:      40 km from center
+- Outermost: 50 km from center
+
+(Note: Actual ranges auto-scale to your data)
+
+================================================================================
+
+AZIMUTH ANGLE REFERENCE:
+=========================
+
+Starting from East (0°) and going counter-clockwise:
+
+    E   =   0° (East)     →  Right side
+   30°  =  30°            →  Between E and N
+   60°  =  60°            →  Between E and N
+    N   =  90° (North)    →  Top
+  120°  = 120°            →  Between N and W
+  150°  = 150°            →  Between N and W
+    W   = 180° (West)     →  Left side
+  210°  = 210°            →  Between W and S
+  240°  = 240°            →  Between W and S
+    S   = 270° (South)    →  Bottom
+  300°  = 300°            →  Between S and E
+  330°  = 330°            →  Between S and E
+    E   = 360° (=0°)      →  Back to East
+
+================================================================================
+
+EXAMPLE TRACK POSITIONS:
+========================
+
+If you see a track point (●) at:
+
+Position A: Between 2nd and 3rd ring, on 30° line
+   → Range: ~20-30 km
+   → Azimuth: ~30° (NE direction)
+   → Tooltip: "Range=25.5 km, Az=30.2°"
+
+Position B: On 4th ring, between 90° and 120°
+   → Range: ~40 km
+   → Azimuth: ~105° (N-NW direction)
+   → Tooltip: "Range=40.1 km, Az=105.7°"
+
+Position C: Inside 1st ring, on 180° line
+   → Range: <10 km (close!)
+   → Azimuth: 180° (directly West)
+   → Tooltip: "Range=5.2 km, Az=180.0°"
+
+================================================================================
+
+COLOR SCHEME:
+=============
+
+Background:       Very Dark Gray (#0a0a0a) - Radar screen
+Range Rings:      Green, Dashed (RGB: 0, 150, 0)
+Azimuth Lines:    Green, Solid (RGB: 0, 150, 0)
+Range Labels:     Green Text (RGB: 0, 200, 0)
+Azimuth Labels:   Light Green Text (RGB: 100, 255, 100)
+Outer Boundary:   Bright Green, Solid (RGB: 0, 255, 0)
+Track Points:     Various colors (depends on Track ID or Annotation)
+
+Classic radar green-on-black display!
+
+================================================================================
+
+DISPLAY DIMENSIONS:
+===================
+
+If max track range is 47 km:
+   → Display shows 0-50 km (rounds up to nearest 10)
+   → 5 rings at: 10, 20, 30, 40, 50 km
+   → Ring spacing: 10 km
+
+If max track range is 123 km:
+   → Display shows 0-130 km (rounds up to nearest 10)
+   → 5 rings at: 26, 52, 78, 104, 130 km
+   → Ring spacing: 26 km
+
+Auto-scaling ensures all tracks fit within outer boundary!
+
+================================================================================
+
+COORDINATE SYSTEM COMPARISON:
+==============================
+
+CARTESIAN (X, Y):
+   Point at (10.5 km, 23.2 km)
+   X = 10.5 km East
+   Y = 23.2 km North
+
+POLAR (Range, Azimuth):
+   Same point in polar:
+   Range = sqrt(10.5² + 23.2²) = 25.48 km
+   Azimuth = arctan2(23.2, 10.5) = 65.7°
+
+CIRCULAR PPI:
+   Plots at Cartesian position on circular background
+   Tooltip shows BOTH systems:
+      "Cartesian: (10.50, 23.20) km"
+      "Polar: Range=25.48 km, Az=65.7°"
+
+================================================================================
+
+NAVIGATION TIPS:
+================
+
+Zoom In:        Scroll mouse wheel UP
+Zoom Out:       Scroll mouse wheel DOWN
+Pan:            Click and drag with LEFT mouse button
+Reset View:     Right-click → "View All"
+Tooltip:        Hover mouse over any track point
+Switch Mode:    Use "Display Mode" dropdown at top
+Color Tracks:   Use "Color By" dropdown
+Filter Tracks:  Use "Filter Track ID" dropdown
+
+================================================================================
+
+READING THE DISPLAY:
+====================
+
+STEP 1: Identify the range
+   - Count circles from center outward
+   - Each circle = one range increment
+   - Read range label at top (North) of circle
+
+STEP 2: Identify the azimuth
+   - Find nearest radial line
+   - Read angle label (N, E, S, W, or degrees)
+   - Estimate between lines if needed
+
+STEP 3: Use tooltip for exact values
+   - Hover over track point
+   - Read exact Range and Azimuth
+   - Also see Track ID, Time, Annotation
+
+EXAMPLE:
+   Visual estimate: "About 25 km at 60°"
+   Tooltip confirms: "Range=25.48 km, Az=65.7°"
+   Perfect!
+
+================================================================================
+
+TRACK COLORS:
+=============
+
+COLOR BY TRACK ID MODE:
+   Track 1  → Red
+   Track 2  → Green
+   Track 3  → Blue
+   Track 4  → Yellow
+   Track 5  → Magenta
+   Track 6  → Cyan
+   Track 7  → Orange
+   Track 8  → Purple
+   (etc.)
+
+COLOR BY ANNOTATION MODE:
+   LevelFlight           → Sky Blue
+   Climbing              → Orange
+   HighSpeed             → Red
+   LowSpeed              → Green
+   Turning               → Yellow
+   LevelFlight+HighSpeed → Light Red
+   Climbing+HighSpeed    → Deep Orange
+   (see full color map in documentation)
+
+================================================================================
+
+FREQUENTLY ASKED QUESTIONS:
+===========================
+
+Q: Why is the center at (0,0)?
+A: This represents YOUR radar position. All targets are relative to you.
+
+Q: Can I change the number of range rings?
+A: Yes! Edit src/plotting.py, line ~195: num_rings = 5
+
+Q: Can I change azimuth line spacing?
+A: Yes! Edit src/plotting.py, line ~216: angles_deg = [...]
+
+Q: What if tracks are outside the display?
+A: The display auto-scales. All tracks should fit. Zoom out if needed.
+
+Q: Can I switch back to rectangular view?
+A: Yes! Use Display Mode dropdown → "Cartesian (X, Y)"
+
+Q: Why green color?
+A: Traditional radar displays use green phosphor. It's the classic look!
+
+Q: Can I print or export this display?
+A: Right-click on plot → "Export" → Choose format (PNG, SVG, etc.)
+
+================================================================================
+
+TROUBLESHOOTING:
+================
+
+PROBLEM: Circles look oval/stretched
+SOLUTION: Resize window to be more square-shaped. Aspect ratio is locked.
+
+PROBLEM: Tooltip not showing
+SOLUTION: Hover closer to track points (within 0.5 km). Ensure data is loaded.
+
+PROBLEM: No range rings visible
+SOLUTION: Load data first. Rings draw automatically when data is plotted.
+
+PROBLEM: Labels overlapping
+SOLUTION: Zoom in/out to adjust spacing. Labels scale with view.
+
+PROBLEM: Display is blank
+SOLUTION: Check that data file has x, y, trackid columns. Load data again.
+
+================================================================================
+
+KEYBOARD & MOUSE REFERENCE:
+============================
+
+Mouse Wheel:           Zoom in/out
+Left Click + Drag:     Pan the view
+Right Click:           Context menu (export, etc.)
+Hover:                 Show tooltip
+Double Click:          Reset zoom (default behavior)
+
+No special keyboard shortcuts - all interaction is mouse-based.
+
+================================================================================
+
+DISPLAY MODES QUICK REFERENCE:
+===============================
+
+MODE 1: Radar View (Circular) ← YOU ARE HERE
+   - Round display
+   - Range rings (circles)
+   - Azimuth segments (radial lines)
+   - Dark background
+   - Green color scheme
+   - Default mode
+
+MODE 2: Cartesian (X, Y)
+   - Rectangular display
+   - X and Y axes
+   - Grid lines
+   - White background
+   - Traditional view
+
+MODE 3: Polar (Range, Azimuth)
+   - Rectangular display (not circular!)
+   - Range on Y-axis
+   - Azimuth on X-axis
+   - Grid lines
+   - For data analysis
+
+================================================================================
+
+ENJOY YOUR CIRCULAR PPI RADAR DISPLAY!
+
+For more information, see:
+   - CIRCULAR_PPI_QUICK_START.md (user guide)
+   - CIRCULAR_PPI_IMPLEMENTATION.md (technical details)
+   - CIRCULAR_PPI_SUMMARY.md (implementation summary)
+
+================================================================================

@@ -615,9 +615,9 @@ class VisualizationPanel(QWidget):
         
         if HAS_PYQTGRAPH:
             # Coordinate mode selector
-            controls_layout.addWidget(QLabel("Coordinates:"))
+            controls_layout.addWidget(QLabel("Display Mode:"))
             self.coord_combo = QComboBox()
-            self.coord_combo.addItems(['Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
+            self.coord_combo.addItems(['Radar View (Circular)', 'Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
             self.coord_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.coord_combo)
             
@@ -659,7 +659,13 @@ class VisualizationPanel(QWidget):
         """Update visualization based on current settings"""
         if self.current_df is not None and HAS_PYQTGRAPH:
             # Set coordinate mode
-            coord_mode = 'polar' if 'Polar' in self.coord_combo.currentText() else 'cartesian'
+            coord_text = self.coord_combo.currentText()
+            if 'Radar' in coord_text or 'Circular' in coord_text:
+                coord_mode = 'polar_circular'
+            elif 'Polar' in coord_text:
+                coord_mode = 'polar'
+            else:
+                coord_mode = 'cartesian'
             self.ppi_widget.set_coordinate_mode(coord_mode)
             
             # Apply track filter
