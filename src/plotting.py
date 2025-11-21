@@ -94,9 +94,9 @@ class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
         self.radius = radius
         self.zoom_factor = 2.0
         
-        # Style the lens - pulsing highlight circle
-        self.setPen(pg.mkPen(color=(255, 200, 0), width=2, style=QtCore.Qt.PenStyle.DashLine))
-        self.setBrush(pg.mkBrush(255, 255, 0, 40))
+        # Style the lens - subtle slate highlight
+        self.setPen(pg.mkPen(color=(184, 197, 214), width=2, style=QtCore.Qt.PenStyle.DashLine))
+        self.setBrush(pg.mkBrush(184, 197, 214, 40))
         self.setZValue(1000)
         self.hide()
     
@@ -111,47 +111,47 @@ class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
 
 
 def get_annotation_color(annotation: str) -> tuple:
-    """Get color for annotation combination with consistent color theme
+    """Get color for annotation combination with mono slate color theme
     
     Args:
         annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed' or 'level,high_speed')
         
     Returns:
-        RGB color tuple (consistent with application theme)
+        RGB color tuple (mono slate theme)
     """
-    # Define color mapping with consistent, vibrant colors for better visibility on dark radar background
+    # Define color mapping with mono slate colors - different shades for different annotations
     # Supports both formats: TitleCase+Plus and lowercase,comma
     color_map = {
         # Single annotations - Primary flight characteristics (both formats)
-        'LevelFlight': (52, 152, 219),      # Blue (matches app theme)
-        'level': (52, 152, 219),
-        'level_flight': (52, 152, 219),
-        'Climbing': (255, 128, 0),          # Orange
-        'ascending': (255, 128, 0),
-        'Descending': (255, 85, 150),       # Rose pink
-        'descending': (255, 85, 150),
-        'HighSpeed': (231, 76, 60),         # Red
-        'high_speed': (231, 76, 60),
-        'LowSpeed': (46, 204, 113),         # Green (matches app theme)
-        'low_speed': (46, 204, 113),
-        'Turning': (241, 196, 15),          # Yellow/Gold
-        'curved': (241, 196, 15),
-        'Straight': (100, 200, 150),        # Mint green
-        'linear': (100, 200, 150),
-        'LightManeuver': (155, 89, 182),    # Purple
-        'light_maneuver': (155, 89, 182),
-        'HighManeuver': (236, 77, 177),     # Magenta
-        'high_maneuver': (236, 77, 177),
-        'Incoming': (230, 126, 34),         # Dark orange
-        'incoming': (230, 126, 34),
-        'Outgoing': (26, 188, 156),         # Turquoise (matches app theme)
-        'outgoing': (26, 188, 156),
-        'FixedRange': (149, 165, 166),      # Gray
-        'fixed_range': (149, 165, 166),
-        'fixed_range_ascending': (180, 180, 180),
-        'fixed_range_descending': (120, 120, 120),
-        'invalid': (80, 80, 80),            # Dark gray for invalid
-        'normal': (200, 200, 200),          # Light gray for normal
+        'LevelFlight': (138, 154, 171),      # Light slate
+        'level': (138, 154, 171),
+        'level_flight': (138, 154, 171),
+        'Climbing': (155, 167, 183),         # Very light slate
+        'ascending': (155, 167, 183),
+        'Descending': (106, 123, 141),       # Medium-light slate
+        'descending': (106, 123, 141),
+        'HighSpeed': (197, 205, 217),        # Lightest slate
+        'high_speed': (197, 205, 217),
+        'LowSpeed': (122, 138, 155),         # Mid-light slate
+        'low_speed': (122, 138, 155),
+        'Turning': (90, 107, 125),           # Medium slate
+        'curved': (90, 107, 125),
+        'Straight': (184, 197, 214),         # Very light slate
+        'linear': (184, 197, 214),
+        'LightManeuver': (106, 123, 141),    # Medium-light slate
+        'light_maneuver': (106, 123, 141),
+        'HighManeuver': (74, 90, 107),       # Medium-dark slate
+        'high_maneuver': (74, 90, 107),
+        'Incoming': (155, 167, 183),         # Light-medium slate
+        'incoming': (155, 167, 183),
+        'Outgoing': (138, 154, 171),         # Light slate
+        'outgoing': (138, 154, 171),
+        'FixedRange': (90, 107, 125),        # Medium slate
+        'fixed_range': (90, 107, 125),
+        'fixed_range_ascending': (122, 138, 155),
+        'fixed_range_descending': (74, 90, 107),
+        'invalid': (45, 56, 68),             # Darkest slate for invalid
+        'normal': (184, 197, 214),           # Very light slate for normal
     }
     
     # Normalize annotation format (handle both separators)
@@ -180,8 +180,8 @@ def get_annotation_color(annotation: str) -> tuple:
         avg_color = tuple(int(sum(c[i] for c in colors) / len(colors)) for i in range(3))
         return avg_color
     
-    # Default fallback color (neutral gray)
-    return (149, 165, 166)  # Gray (matches app theme)
+    # Default fallback color (neutral slate)
+    return (122, 138, 155)  # Mid-light slate
 
 
 class PPIPlotWidget:
@@ -200,8 +200,8 @@ class PPIPlotWidget:
         self.plot_widget.setTitle('PPI - Plan Position Indicator (Radar View)')
         self.plot_widget.showGrid(x=False, y=False)  # Disable default grid, we'll draw custom
         
-        # Remove default background
-        self.plot_widget.setBackground('#0a0a0a')  # Dark background like radar screen
+        # Set dark slate background for radar display
+        self.plot_widget.setBackground('#1c2329')  # Dark slate background
         
         # Add legend
         self.plot_widget.addLegend()
@@ -246,18 +246,18 @@ class PPIPlotWidget:
         self._range_change_timer.timeout.connect(self._save_current_range)
         self._range_change_timer.setSingleShot(True)
         
-        # Color map for tracks (fallback) - matches application theme
+        # Color map for tracks (fallback) - mono slate theme
         self.colors = [
-            (231, 76, 60),      # Red (app theme)
-            (46, 204, 113),     # Green (app theme)
-            (52, 152, 219),     # Blue (app theme)
-            (241, 196, 15),     # Yellow/Gold (app theme)
-            (155, 89, 182),     # Purple (app theme)
-            (26, 188, 156),     # Turquoise (app theme)
-            (230, 126, 34),     # Orange (app theme)
-            (236, 77, 177),     # Magenta (app theme)
-            (22, 160, 133),     # Dark turquoise
-            (192, 57, 43),      # Dark red
+            (138, 154, 171),    # Light slate
+            (106, 123, 141),    # Medium-light slate
+            (90, 107, 125),     # Medium slate
+            (74, 90, 107),      # Medium-dark slate
+            (184, 197, 214),    # Very light slate
+            (122, 138, 155),    # Mid-light slate
+            (61, 74, 88),       # Dark slate
+            (155, 167, 183),    # Light-medium slate
+            (197, 205, 217),    # Lightest slate
+            (45, 56, 68),       # Darkest slate
         ]
     
     def on_range_changed(self):
@@ -445,15 +445,15 @@ class PPIPlotWidget:
         for i in range(1, num_rings + 1):
             range_km = i * ring_spacing
             
-            # Create circle
+            # Create circle with slate color
             circle = pg.QtWidgets.QGraphicsEllipseItem(-range_km, -range_km, 2*range_km, 2*range_km)
-            circle.setPen(pg.mkPen(color=(0, 150, 0), width=1, style=QtCore.Qt.PenStyle.DashLine))
+            circle.setPen(pg.mkPen(color=(74, 90, 107), width=1, style=QtCore.Qt.PenStyle.DashLine))
             circle.setZValue(-1)
             self.plot_widget.addItem(circle)
             self.range_rings.append(circle)
             
-            # Add range label
-            label = pg.TextItem(f'{range_km:.1f} km', color=(0, 200, 0), anchor=(0.5, 0.5))
+            # Add range label with slate color
+            label = pg.TextItem(f'{range_km:.1f} km', color=(138, 154, 171), anchor=(0.5, 0.5))
             label.setPos(0, range_km)
             label.setZValue(1)
             self.plot_widget.addItem(label)
@@ -471,28 +471,28 @@ class PPIPlotWidget:
             x_end = max_range_km * np.cos(angle_rad)
             y_end = max_range_km * np.sin(angle_rad)
             
-            # Create line from center to edge
+            # Create line from center to edge with slate color
             line = pg.PlotCurveItem([0, x_end], [0, y_end], 
-                                    pen=pg.mkPen(color=(0, 150, 0), width=1))
+                                    pen=pg.mkPen(color=(74, 90, 107), width=1))
             line.setZValue(-1)
             self.plot_widget.addItem(line)
             self.azimuth_lines.append(line)
             
-            # Add azimuth label at the edge
+            # Add azimuth label at the edge with slate color
             label_distance = max_range_km * 1.05
             label_x = label_distance * np.cos(angle_rad)
             label_y = label_distance * np.sin(angle_rad)
             
-            label = pg.TextItem(label_text, color=(100, 255, 100), anchor=(0.5, 0.5))
+            label = pg.TextItem(label_text, color=(155, 167, 183), anchor=(0.5, 0.5))
             label.setPos(label_x, label_y)
             label.setZValue(1)
             self.plot_widget.addItem(label)
             self.azimuth_labels.append(label)
         
-        # Draw outer circle boundary
+        # Draw outer circle boundary with slate color
         boundary = pg.QtWidgets.QGraphicsEllipseItem(-max_range_km, -max_range_km, 
                                                        2*max_range_km, 2*max_range_km)
-        boundary.setPen(pg.mkPen(color=(0, 255, 0), width=2))
+        boundary.setPen(pg.mkPen(color=(106, 123, 141), width=2))
         boundary.setZValue(-1)
         self.plot_widget.addItem(boundary)
         self.range_rings.append(boundary)
@@ -570,8 +570,8 @@ class PPIPlotWidget:
                     brush=pg.mkBrush(*self.colors[color_idx]),
                     name=f'Track {int(trackid)}',
                     hoverable=True,
-                    hoverPen=pg.mkPen('yellow', width=2),
-                    hoverBrush=pg.mkBrush(255, 255, 0, 150)
+                    hoverPen=pg.mkPen((184, 197, 214), width=2),
+                    hoverBrush=pg.mkBrush(184, 197, 214, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
@@ -614,8 +614,8 @@ class PPIPlotWidget:
                         brush=pg.mkBrush(*color),
                         name=f'{annotation[:20]}' if annotation not in annotation_colors_used else '',
                         hoverable=True,
-                        hoverPen=pg.mkPen('yellow', width=2),
-                        hoverBrush=pg.mkBrush(255, 255, 0, 150)
+                        hoverPen=pg.mkPen((184, 197, 214), width=2),
+                        hoverBrush=pg.mkBrush(184, 197, 214, 150)
                     )
                     
                     self.plot_widget.addItem(scatter)
@@ -643,8 +643,8 @@ class PPIPlotWidget:
                     brush=pg.mkBrush(*color),
                     name=annotation[:25],  # Truncate long names
                     hoverable=True,
-                    hoverPen=pg.mkPen('yellow', width=2),
-                    hoverBrush=pg.mkBrush(255, 255, 0, 150)
+                    hoverPen=pg.mkPen((184, 197, 214), width=2),
+                    hoverBrush=pg.mkBrush(184, 197, 214, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
@@ -817,16 +817,16 @@ class TimeSeriesPlotWidget:
         # Interactive features
         self.view_history = PlotViewHistory()
         
-        # Color map - matches application theme
+        # Color map - mono slate theme
         self.colors = [
-            (231, 76, 60),      # Red (app theme)
-            (46, 204, 113),     # Green (app theme)
-            (52, 152, 219),     # Blue (app theme)
-            (241, 196, 15),     # Yellow/Gold (app theme)
-            (155, 89, 182),     # Purple (app theme)
-            (26, 188, 156),     # Turquoise (app theme)
-            (230, 126, 34),     # Orange (app theme)
-            (236, 77, 177),     # Magenta (app theme)
+            (138, 154, 171),    # Light slate
+            (106, 123, 141),    # Medium-light slate
+            (90, 107, 125),     # Medium slate
+            (74, 90, 107),      # Medium-dark slate
+            (184, 197, 214),    # Very light slate
+            (122, 138, 155),    # Mid-light slate
+            (61, 74, 88),       # Dark slate
+            (155, 167, 183),    # Light-medium slate
         ]
     
     def zoom_in(self):
@@ -993,8 +993,8 @@ class AnnotationHighlighter:
             y=y_km,
             size=15,
             symbol='o',
-            pen=pg.mkPen('y', width=2),
-            brush=pg.mkBrush(255, 255, 0, 100),
+            pen=pg.mkPen((197, 205, 217), width=2),
+            brush=pg.mkBrush(197, 205, 217, 100),
             name=f'Highlighted: {annotation}'
         )
         
