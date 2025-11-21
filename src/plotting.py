@@ -3,10 +3,13 @@ import numpy as np
 import pandas as pd
 from typing import Dict, List, Tuple, Optional
 import logging
+from copy import deepcopy
+from pathlib import Path
 
 try:
     import pyqtgraph as pg
     from PyQt6 import QtCore, QtGui, QtWidgets
+    from pyqtgraph.exporters import ImageExporter
     HAS_PYQTGRAPH = True
 except ImportError:
     HAS_PYQTGRAPH = False
@@ -16,6 +19,98 @@ except ImportError:
 from .utils import cartesian_to_polar, polar_to_cartesian
 
 logger = logging.getLogger(__name__)
+
+
+class PlotViewHistory:
+    """Manages plot view history for undo/redo functionality"""
+    
+    def __init__(self, max_history: int = 50):
+        """Initialize history manager
+        
+        Args:
+            max_history: Maximum number of history states to keep
+        """
+        self.history = []
+        self.current_index = -1
+        self.max_history = max_history
+    
+    def save_state(self, view_range: Dict):
+        """Save current view state
+        
+        Args:
+            view_range: Dictionary with 'x' and 'y' ranges
+        """
+        # Remove any states after current index (for redo after undo)
+        if self.current_index < len(self.history) - 1:
+            self.history = self.history[:self.current_index + 1]
+        
+        # Add new state
+        self.history.append(deepcopy(view_range))
+        
+        # Trim history if too long
+        if len(self.history) > self.max_history:
+            self.history.pop(0)
+        else:
+            self.current_index += 1
+    
+    def can_undo(self) -> bool:
+        """Check if undo is available"""
+        return self.current_index > 0
+    
+    def can_redo(self) -> bool:
+        """Check if redo is available"""
+        return self.current_index < len(self.history) - 1
+    
+    def undo(self) -> Optional[Dict]:
+        """Go back to previous state"""
+        if self.can_undo():
+            self.current_index -= 1
+            return deepcopy(self.history[self.current_index])
+        return None
+    
+    def redo(self) -> Optional[Dict]:
+        """Go forward to next state"""
+        if self.can_redo():
+            self.current_index += 1
+            return deepcopy(self.history[self.current_index])
+        return None
+    
+    def clear(self):
+        """Clear all history"""
+        self.history = []
+        self.current_index = -1
+
+
+class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
+    """Magnifier lens overlay for plot inspection"""
+    
+    def __init__(self, radius: float = 50):
+        """Initialize magnifier lens
+        
+        Args:
+            radius: Radius of the magnifier lens in pixels
+        """
+        super().__init__(-radius, -radius, 2*radius, 2*radius)
+        self.radius = radius
+        self.zoom_factor = 3.0
+        
+        # Style the lens
+        self.setPen(pg.mkPen(color=(255, 255, 0), width=3))
+        self.setBrush(pg.mkBrush(255, 255, 255, 30))
+        self.setZValue(1000)
+        self.hide()
+        
+        # Create magnified view (will be set by parent)
+        self.mag_viewbox = None
+    
+    def set_zoom_factor(self, factor: float):
+        """Set magnification factor"""
+        self.zoom_factor = max(1.5, min(10.0, factor))
+    
+    def set_radius(self, radius: float):
+        """Set lens radius"""
+        self.radius = max(30, min(150, radius))
+        self.setRect(-self.radius, -self.radius, 2*self.radius, 2*self.radius)
 
 
 def get_annotation_color(annotation: str) -> tuple:
@@ -93,7 +188,7 @@ def get_annotation_color(annotation: str) -> tuple:
 
 
 class PPIPlotWidget:
-    """PPI (Plan Position Indicator) plot widget"""
+    """PPI (Plan Position Indicator) plot widget with interactive features"""
     
     def __init__(self, parent=None):
         """Initialize PPI plot"""
@@ -132,8 +227,26 @@ class PPIPlotWidget:
         self.plot_widget.addItem(self.tooltip)
         self.tooltip.hide()
         
-        # Connect hover event
+        # Interactive features
+        self.view_history = PlotViewHistory()
+        self.magnifier_enabled = False
+        self.magnifier = MagnifierLens(radius=60)
+        self.plot_widget.addItem(self.magnifier)
+        self.magnifier.hide()
+        
+        # Enable mouse interactions
+        self.plot_widget.setMouseEnabled(x=True, y=True)  # Enable panning
+        self.plot_widget.enableAutoRange(enable=False)
+        
+        # Connect events
         self.plot_widget.scene().sigMouseMoved.connect(self.on_mouse_moved)
+        self.plot_widget.plotItem.vb.sigRangeChanged.connect(self.on_range_changed)
+        
+        # Initial view state tracking
+        self._last_saved_range = None
+        self._range_change_timer = QtCore.QTimer()
+        self._range_change_timer.timeout.connect(self._save_current_range)
+        self._range_change_timer.setSingleShot(True)
         
         # Color map for tracks (fallback) - matches application theme
         self.colors = [
@@ -148,6 +261,121 @@ class PPIPlotWidget:
             (22, 160, 133),     # Dark turquoise
             (192, 57, 43),      # Dark red
         ]
+    
+    def on_range_changed(self):
+        """Handle range change events for history tracking"""
+        # Debounce: only save after 500ms of no changes
+        self._range_change_timer.start(500)
+    
+    def _save_current_range(self):
+        """Save current view range to history"""
+        view_range = self.get_view_range()
+        if view_range != self._last_saved_range:
+            self.view_history.save_state(view_range)
+            self._last_saved_range = view_range
+    
+    def get_view_range(self) -> Dict:
+        """Get current view range"""
+        [[xmin, xmax], [ymin, ymax]] = self.plot_widget.viewRange()
+        return {'x': (xmin, xmax), 'y': (ymin, ymax)}
+    
+    def set_view_range(self, view_range: Dict):
+        """Set view range"""
+        self.plot_widget.setXRange(view_range['x'][0], view_range['x'][1], padding=0)
+        self.plot_widget.setYRange(view_range['y'][0], view_range['y'][1], padding=0)
+        self._last_saved_range = view_range
+    
+    def undo_view(self):
+        """Undo to previous view state"""
+        prev_range = self.view_history.undo()
+        if prev_range:
+            self.set_view_range(prev_range)
+            logger.info("View state undone")
+    
+    def redo_view(self):
+        """Redo to next view state"""
+        next_range = self.view_history.redo()
+        if next_range:
+            self.set_view_range(next_range)
+            logger.info("View state redone")
+    
+    def reset_view(self):
+        """Reset view to show all data"""
+        self.plot_widget.autoRange()
+        self._save_current_range()
+        logger.info("View reset to default")
+    
+    def zoom_in(self):
+        """Zoom in by 20%"""
+        self.plot_widget.plotItem.vb.scaleBy((0.8, 0.8))
+        logger.info("Zoomed in")
+    
+    def zoom_out(self):
+        """Zoom out by 20%"""
+        self.plot_widget.plotItem.vb.scaleBy((1.25, 1.25))
+        logger.info("Zoomed out")
+    
+    def zoom_to_rect(self, rect: QtCore.QRectF):
+        """Zoom to specific rectangle
+        
+        Args:
+            rect: Rectangle in data coordinates to zoom to
+        """
+        self.plot_widget.setXRange(rect.left(), rect.right(), padding=0)
+        self.plot_widget.setYRange(rect.top(), rect.bottom(), padding=0)
+    
+    def toggle_magnifier(self, enabled: bool):
+        """Toggle magnifier lens
+        
+        Args:
+            enabled: Whether to enable magnifier
+        """
+        self.magnifier_enabled = enabled
+        if not enabled:
+            self.magnifier.hide()
+        logger.info(f"Magnifier {'enabled' if enabled else 'disabled'}")
+    
+    def set_magnifier_zoom(self, zoom: float):
+        """Set magnifier zoom factor
+        
+        Args:
+            zoom: Zoom factor (1.5 to 10.0)
+        """
+        self.magnifier.set_zoom_factor(zoom)
+    
+    def set_magnifier_size(self, size: float):
+        """Set magnifier lens size
+        
+        Args:
+            size: Radius in pixels (30 to 150)
+        """
+        self.magnifier.set_radius(size)
+    
+    def export_image(self, filepath: str):
+        """Export plot to image file
+        
+        Args:
+            filepath: Output file path
+        """
+        try:
+            exporter = ImageExporter(self.plot_widget.plotItem)
+            exporter.export(filepath)
+            logger.info(f"Plot exported to {filepath}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to export plot: {e}")
+            return False
+    
+    def set_plot_size(self, width: int, height: int):
+        """Set plot widget size
+        
+        Args:
+            width: Width in pixels
+            height: Height in pixels
+        """
+        self.plot_widget.setMinimumSize(width, height)
+        self.plot_widget.setMaximumSize(width, height)
+        logger.info(f"Plot size set to {width}x{height}")
     
     def set_coordinate_mode(self, mode: str):
         """Set coordinate display mode
@@ -422,7 +650,7 @@ class PPIPlotWidget:
                 annotation_legend[annotation] = color
     
     def on_mouse_moved(self, pos):
-        """Handle mouse movement for tooltip display
+        """Handle mouse movement for tooltip display and magnifier
         
         Args:
             pos: Mouse position in scene coordinates
@@ -430,6 +658,11 @@ class PPIPlotWidget:
         # Convert scene position to data coordinates
         mouse_point = self.plot_widget.plotItem.vb.mapSceneToView(pos)
         x, y = mouse_point.x(), mouse_point.y()
+        
+        # Update magnifier position if enabled
+        if self.magnifier_enabled:
+            self.magnifier.setPos(x, y)
+            self.magnifier.show()
         
         # Find nearest point across all tracks
         min_dist = float('inf')
@@ -504,7 +737,7 @@ class PPIPlotWidget:
 
 
 class TimeSeriesPlotWidget:
-    """Time series plot widget for multiple variables"""
+    """Time series plot widget for multiple variables with interactive features"""
     
     def __init__(self, parent=None):
         """Initialize time series plot"""
@@ -537,8 +770,16 @@ class TimeSeriesPlotWidget:
         self.speed_plot.setXLink(self.altitude_plot)
         self.curvature_plot.setXLink(self.altitude_plot)
         
+        # Enable mouse interactions
+        self.altitude_plot.setMouseEnabled(x=True, y=True)
+        self.speed_plot.setMouseEnabled(x=True, y=True)
+        self.curvature_plot.setMouseEnabled(x=True, y=True)
+        
         # Store plot items
         self.plot_items = {}
+        
+        # Interactive features
+        self.view_history = PlotViewHistory()
         
         # Color map - matches application theme
         self.colors = [
@@ -551,6 +792,39 @@ class TimeSeriesPlotWidget:
             (230, 126, 34),     # Orange (app theme)
             (236, 77, 177),     # Magenta (app theme)
         ]
+    
+    def zoom_in(self):
+        """Zoom in all plots"""
+        self.altitude_plot.vb.scaleBy((0.8, 0.8))
+        self.speed_plot.vb.scaleBy((0.8, 0.8))
+        self.curvature_plot.vb.scaleBy((0.8, 0.8))
+    
+    def zoom_out(self):
+        """Zoom out all plots"""
+        self.altitude_plot.vb.scaleBy((1.25, 1.25))
+        self.speed_plot.vb.scaleBy((1.25, 1.25))
+        self.curvature_plot.vb.scaleBy((1.25, 1.25))
+    
+    def reset_view(self):
+        """Reset view to show all data"""
+        self.altitude_plot.autoRange()
+        self.speed_plot.autoRange()
+        self.curvature_plot.autoRange()
+    
+    def export_image(self, filepath: str):
+        """Export plots to image file
+        
+        Args:
+            filepath: Output file path
+        """
+        try:
+            exporter = ImageExporter(self.layout_widget.scene())
+            exporter.export(filepath)
+            logger.info(f"Time series plots exported to {filepath}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to export time series plots: {e}")
+            return False
     
     def clear(self):
         """Clear all plots"""

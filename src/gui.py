@@ -604,18 +604,18 @@ class VisualizationPanel(QWidget):
     def setup_ui(self):
         layout = QVBoxLayout()
         
-        # Controls panel
+        # Top controls panel
         controls_layout = QHBoxLayout()
         
         # Load data button
-        load_button = QPushButton("Load Data for Visualization")
+        load_button = QPushButton("Load Data")
         load_button.clicked.connect(self.load_data)
         load_button.setObjectName("primaryButton")
         controls_layout.addWidget(load_button)
         
         if HAS_PYQTGRAPH:
             # Coordinate mode selector
-            controls_layout.addWidget(QLabel("Display Mode:"))
+            controls_layout.addWidget(QLabel("Display:"))
             self.coord_combo = QComboBox()
             self.coord_combo.addItems(['Radar View (Circular)', 'Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
             self.coord_combo.setCurrentIndex(0)  # Set Radar View as default
@@ -623,30 +623,133 @@ class VisualizationPanel(QWidget):
             controls_layout.addWidget(self.coord_combo)
             
             # Color by selector
-            controls_layout.addWidget(QLabel("Color By:"))
+            controls_layout.addWidget(QLabel("Color:"))
             self.color_combo = QComboBox()
             self.color_combo.addItems(['Track ID', 'Annotation', 'Track Segments (Colored by Annotation)'])
             self.color_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.color_combo)
             
             # Track ID filter
-            controls_layout.addWidget(QLabel("Filter Track ID:"))
+            controls_layout.addWidget(QLabel("Track:"))
             self.track_filter = QComboBox()
             self.track_filter.addItem("All Tracks")
             self.track_filter.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.track_filter)
             
             # Add separator
-            controls_layout.addWidget(QLabel("  |  "))
+            controls_layout.addWidget(QLabel(" | "))
             
             # Show time series toggle
-            self.show_timeseries_checkbox = QPushButton("Show Time Series Charts")
+            self.show_timeseries_checkbox = QPushButton("Time Series")
             self.show_timeseries_checkbox.setCheckable(True)
             self.show_timeseries_checkbox.setChecked(False)
             self.show_timeseries_checkbox.clicked.connect(self.toggle_timeseries)
             controls_layout.addWidget(self.show_timeseries_checkbox)
         
         controls_layout.addStretch()
+        layout.addLayout(controls_layout)
+        
+        # Interactive controls panel (new)
+        if HAS_PYQTGRAPH:
+            interactive_layout = QHBoxLayout()
+            
+            # Zoom controls
+            zoom_group = QGroupBox("Zoom & View")
+            zoom_layout = QHBoxLayout()
+            
+            btn_zoom_in = QPushButton("➕ Zoom In")
+            btn_zoom_in.clicked.connect(self.zoom_in)
+            zoom_layout.addWidget(btn_zoom_in)
+            
+            btn_zoom_out = QPushButton("➖ Zoom Out")
+            btn_zoom_out.clicked.connect(self.zoom_out)
+            zoom_layout.addWidget(btn_zoom_out)
+            
+            btn_reset = QPushButton("🔄 Reset View")
+            btn_reset.clicked.connect(self.reset_view)
+            zoom_layout.addWidget(btn_reset)
+            
+            zoom_group.setLayout(zoom_layout)
+            interactive_layout.addWidget(zoom_group)
+            
+            # History controls
+            history_group = QGroupBox("History")
+            history_layout = QHBoxLayout()
+            
+            self.btn_undo = QPushButton("⬅ Undo")
+            self.btn_undo.clicked.connect(self.undo_view)
+            history_layout.addWidget(self.btn_undo)
+            
+            self.btn_redo = QPushButton("➡ Redo")
+            self.btn_redo.clicked.connect(self.redo_view)
+            history_layout.addWidget(self.btn_redo)
+            
+            history_group.setLayout(history_layout)
+            interactive_layout.addWidget(history_group)
+            
+            # Magnifier controls
+            mag_group = QGroupBox("Magnifier")
+            mag_layout = QHBoxLayout()
+            
+            self.magnifier_toggle = QPushButton("🔍 Enable Magnifier")
+            self.magnifier_toggle.setCheckable(True)
+            self.magnifier_toggle.clicked.connect(self.toggle_magnifier)
+            mag_layout.addWidget(self.magnifier_toggle)
+            
+            mag_layout.addWidget(QLabel("Zoom:"))
+            self.mag_zoom_spin = QDoubleSpinBox()
+            self.mag_zoom_spin.setRange(1.5, 10.0)
+            self.mag_zoom_spin.setValue(3.0)
+            self.mag_zoom_spin.setSingleStep(0.5)
+            self.mag_zoom_spin.valueChanged.connect(self.update_magnifier_zoom)
+            mag_layout.addWidget(self.mag_zoom_spin)
+            
+            mag_group.setLayout(mag_layout)
+            interactive_layout.addWidget(mag_group)
+            
+            # Export controls
+            export_group = QGroupBox("Export")
+            export_layout = QHBoxLayout()
+            
+            btn_export_ppi = QPushButton("💾 Save PPI Plot")
+            btn_export_ppi.clicked.connect(self.export_ppi_plot)
+            export_layout.addWidget(btn_export_ppi)
+            
+            btn_export_ts = QPushButton("💾 Save Time Series")
+            btn_export_ts.clicked.connect(self.export_timeseries_plot)
+            export_layout.addWidget(btn_export_ts)
+            
+            export_group.setLayout(export_layout)
+            interactive_layout.addWidget(export_group)
+            
+            interactive_layout.addStretch()
+            layout.addLayout(interactive_layout)
+            
+            # Plot size controls
+            size_layout = QHBoxLayout()
+            size_layout.addWidget(QLabel("Plot Size:"))
+            
+            self.width_spin = QSpinBox()
+            self.width_spin.setRange(400, 3000)
+            self.width_spin.setValue(800)
+            self.width_spin.setSuffix(" px")
+            size_layout.addWidget(QLabel("Width:"))
+            size_layout.addWidget(self.width_spin)
+            
+            self.height_spin = QSpinBox()
+            self.height_spin.setRange(300, 2000)
+            self.height_spin.setValue(600)
+            self.height_spin.setSuffix(" px")
+            size_layout.addWidget(QLabel("Height:"))
+            size_layout.addWidget(self.height_spin)
+            
+            btn_apply_size = QPushButton("Apply Size")
+            btn_apply_size.clicked.connect(self.apply_plot_size)
+            size_layout.addWidget(btn_apply_size)
+            
+            size_layout.addStretch()
+            layout.addLayout(size_layout)
+        
         layout.addLayout(controls_layout)
         
         if HAS_PYQTGRAPH:
@@ -715,6 +818,96 @@ class VisualizationPanel(QWidget):
             # Only update time series if visible
             if hasattr(self, 'ts_container') and self.ts_container.isVisible():
                 self.ts_widget.plot_tracks(df_to_plot)
+    
+    def zoom_in(self):
+        """Zoom in on PPI plot"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.zoom_in()
+            if hasattr(self, 'ts_container') and self.ts_container.isVisible():
+                self.ts_widget.zoom_in()
+    
+    def zoom_out(self):
+        """Zoom out on PPI plot"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.zoom_out()
+            if hasattr(self, 'ts_container') and self.ts_container.isVisible():
+                self.ts_widget.zoom_out()
+    
+    def reset_view(self):
+        """Reset view to default"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.reset_view()
+            if hasattr(self, 'ts_container') and self.ts_container.isVisible():
+                self.ts_widget.reset_view()
+    
+    def undo_view(self):
+        """Undo view change"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.undo_view()
+    
+    def redo_view(self):
+        """Redo view change"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.redo_view()
+    
+    def toggle_magnifier(self):
+        """Toggle magnifier lens"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            enabled = self.magnifier_toggle.isChecked()
+            self.ppi_widget.toggle_magnifier(enabled)
+            
+            # Update button text
+            if enabled:
+                self.magnifier_toggle.setText("🔍 Disable Magnifier")
+            else:
+                self.magnifier_toggle.setText("🔍 Enable Magnifier")
+    
+    def update_magnifier_zoom(self, value):
+        """Update magnifier zoom factor"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.set_magnifier_zoom(value)
+    
+    def export_ppi_plot(self):
+        """Export PPI plot to image file"""
+        if not HAS_PYQTGRAPH or not hasattr(self, 'ppi_widget'):
+            return
+        
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, "Save PPI Plot", "ppi_plot.png",
+            "PNG Files (*.png);;JPEG Files (*.jpg);;All Files (*)"
+        )
+        
+        if file_path:
+            success = self.ppi_widget.export_image(file_path)
+            if success:
+                QMessageBox.information(self, "Success", f"Plot saved to:\n{file_path}")
+            else:
+                QMessageBox.critical(self, "Error", "Failed to export plot")
+    
+    def export_timeseries_plot(self):
+        """Export time series plot to image file"""
+        if not HAS_PYQTGRAPH or not hasattr(self, 'ts_widget'):
+            return
+        
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, "Save Time Series Plot", "timeseries_plot.png",
+            "PNG Files (*.png);;JPEG Files (*.jpg);;All Files (*)"
+        )
+        
+        if file_path:
+            success = self.ts_widget.export_image(file_path)
+            if success:
+                QMessageBox.information(self, "Success", f"Plot saved to:\n{file_path}")
+            else:
+                QMessageBox.critical(self, "Error", "Failed to export plot")
+    
+    def apply_plot_size(self):
+        """Apply custom plot size"""
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            width = self.width_spin.value()
+            height = self.height_spin.value()
+            self.ppi_widget.set_plot_size(width, height)
+            QMessageBox.information(self, "Success", f"Plot size set to {width}x{height} pixels")
     
     def load_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
