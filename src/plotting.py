@@ -944,9 +944,13 @@ class TimeSeriesPlotWidget:
         else:
             bg_color = '#1c2329'
         
-        self.altitude_plot.setBackground(bg_color)
-        self.speed_plot.setBackground(bg_color)
-        self.curvature_plot.setBackground(bg_color)
+        # Set background on the layout widget (not on PlotItem objects)
+        self.layout_widget.setBackground(bg_color)
+        
+        # Also set background for individual plot view boxes
+        self.altitude_plot.getViewBox().setBackgroundColor(bg_color)
+        self.speed_plot.getViewBox().setBackgroundColor(bg_color)
+        self.curvature_plot.getViewBox().setBackgroundColor(bg_color)
     
     def _update_theme_colors(self):
         """Update color palette based on theme"""
