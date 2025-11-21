@@ -6,7 +6,7 @@ from typing import Dict, Any
 
 # Default configuration
 DEFAULT_CONFIG = {
-    "theme": "black",  # Default theme
+    "theme": "white",  # Default theme
     "binary_schema": {
         "record_size": 80,  # 10 x float64 (8 bytes each)
         "endian": "little",

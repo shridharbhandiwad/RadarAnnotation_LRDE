@@ -694,6 +694,20 @@ class VisualizationPanel(QWidget):
         self.selected_tracks = []  # For track filtering
         self.setup_ui()
     
+    def set_theme(self, theme: str):
+        """Update visualization theme
+        
+        Args:
+            theme: Theme name ('white' or 'black')
+        """
+        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
+            self.ppi_widget.set_theme(theme)
+        if HAS_PYQTGRAPH and hasattr(self, 'ts_widget'):
+            self.ts_widget.set_theme(theme)
+        # Re-plot if data is loaded
+        if self.current_df is not None:
+            self.update_visualization()
+    
     def setup_ui(self):
         layout = QVBoxLayout()
         
@@ -819,9 +833,15 @@ class VisualizationPanel(QWidget):
         layout.addLayout(controls_layout)
         
         if HAS_PYQTGRAPH:
-            # Create visualization widgets
-            self.ppi_widget = create_ppi_widget(self)
-            self.ts_widget = create_timeseries_widget(self)
+            # Get theme from main window
+            main_window = self.window()
+            theme = 'white'  # Default
+            if hasattr(main_window, 'current_theme'):
+                theme = main_window.current_theme
+            
+            # Create visualization widgets with theme
+            self.ppi_widget = create_ppi_widget(self, theme)
+            self.ts_widget = create_timeseries_widget(self, theme)
             
             # Add PPI plot (always visible)
             layout.addWidget(self.ppi_widget.get_widget())
@@ -993,8 +1013,8 @@ class MainWindow(QMainWindow):
             save_default_config(config_path)
         self.config = get_config(config_path)
         
-        # Set current theme (default to black)
-        self.current_theme = self.config.get('theme', 'black') if hasattr(self.config, 'get') else 'black'
+        # Set current theme (default to white)
+        self.current_theme = self.config.get('theme', 'white') if hasattr(self.config, 'get') else 'white'
         
         self.setup_ui()
         self.apply_stylesheet()
@@ -1067,6 +1087,12 @@ class MainWindow(QMainWindow):
         
         # Apply stylesheet
         self.apply_stylesheet()
+        
+        # Update visualization panel theme if it exists
+        for i in range(self.stack.count()):
+            widget = self.stack.widget(i)
+            if hasattr(widget, 'set_theme'):
+                widget.set_theme(theme_name)
     
     def get_theme_stylesheet(self):
         """Get stylesheet for current theme"""

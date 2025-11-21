@@ -94,9 +94,9 @@ class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
         self.radius = radius
         self.zoom_factor = 2.0
         
-        # Style the lens - subtle slate highlight
-        self.setPen(pg.mkPen(color=(184, 197, 214), width=2, style=QtCore.Qt.PenStyle.DashLine))
-        self.setBrush(pg.mkBrush(184, 197, 214, 40))
+        # Style the lens - subtle highlight (will be updated by theme)
+        self.setPen(pg.mkPen(color=(100, 100, 100), width=2, style=QtCore.Qt.PenStyle.DashLine))
+        self.setBrush(pg.mkBrush(100, 100, 100, 40))
         self.setZValue(1000)
         self.hide()
     
@@ -187,10 +187,18 @@ def get_annotation_color(annotation: str) -> tuple:
 class PPIPlotWidget:
     """PPI (Plan Position Indicator) plot widget with interactive features"""
     
-    def __init__(self, parent=None):
-        """Initialize PPI plot"""
+    def __init__(self, parent=None, theme='white'):
+        """Initialize PPI plot
+        
+        Args:
+            parent: Parent widget
+            theme: Color theme ('white' or 'black')
+        """
         if not HAS_PYQTGRAPH:
             raise RuntimeError("PyQtGraph is required")
+        
+        # Store theme
+        self.theme = theme
         
         # Create plot widget
         self.plot_widget = pg.PlotWidget(parent=parent)
@@ -200,8 +208,8 @@ class PPIPlotWidget:
         self.plot_widget.setTitle('PPI - Plan Position Indicator (Radar View)')
         self.plot_widget.showGrid(x=False, y=False)  # Disable default grid, we'll draw custom
         
-        # Set dark slate background for radar display
-        self.plot_widget.setBackground('#1c2329')  # Dark slate background
+        # Set background based on theme
+        self._apply_theme_background()
         
         # Add legend
         self.plot_widget.addLegend()
@@ -246,19 +254,110 @@ class PPIPlotWidget:
         self._range_change_timer.timeout.connect(self._save_current_range)
         self._range_change_timer.setSingleShot(True)
         
-        # Color map for tracks (fallback) - mono slate theme
-        self.colors = [
-            (138, 154, 171),    # Light slate
-            (106, 123, 141),    # Medium-light slate
-            (90, 107, 125),     # Medium slate
-            (74, 90, 107),      # Medium-dark slate
-            (184, 197, 214),    # Very light slate
-            (122, 138, 155),    # Mid-light slate
-            (61, 74, 88),       # Dark slate
-            (155, 167, 183),    # Light-medium slate
-            (197, 205, 217),    # Lightest slate
-            (45, 56, 68),       # Darkest slate
-        ]
+        # Color map for tracks (fallback) - set by theme
+        self._update_theme_colors()
+    
+    def _apply_theme_background(self):
+        """Apply theme-appropriate background color"""
+        if self.theme == 'white':
+            self.plot_widget.setBackground('#ffffff')  # White background
+        else:
+            self.plot_widget.setBackground('#1c2329')  # Dark slate background
+    
+    def _update_theme_colors(self):
+        """Update color palette based on theme"""
+        if self.theme == 'white':
+            # White theme - darker colors for visibility
+            self.colors = [
+                (231, 76, 60),      # Red
+                (46, 204, 113),     # Green
+                (52, 152, 219),     # Blue
+                (155, 89, 182),     # Purple
+                (230, 126, 34),     # Orange
+                (26, 188, 156),     # Turquoise
+                (241, 196, 15),     # Yellow
+                (192, 57, 43),      # Dark red
+                (39, 174, 96),      # Dark green
+                (142, 68, 173),     # Dark purple
+            ]
+        else:
+            # Black theme - lighter slate colors
+            self.colors = [
+                (138, 154, 171),    # Light slate
+                (106, 123, 141),    # Medium-light slate
+                (90, 107, 125),     # Medium slate
+                (74, 90, 107),      # Medium-dark slate
+                (184, 197, 214),    # Very light slate
+                (122, 138, 155),    # Mid-light slate
+                (61, 74, 88),       # Dark slate
+                (155, 167, 183),    # Light-medium slate
+                (197, 205, 217),    # Lightest slate
+                (45, 56, 68),       # Darkest slate
+            ]
+    
+    def _get_theme_ring_color(self):
+        """Get theme-appropriate range ring color"""
+        if self.theme == 'white':
+            return (200, 200, 200)  # Light gray for white theme
+        else:
+            return (74, 90, 107)    # Slate for black theme
+    
+    def _get_theme_label_color(self):
+        """Get theme-appropriate label color"""
+        if self.theme == 'white':
+            return (80, 80, 80)     # Dark gray for white theme
+        else:
+            return (138, 154, 171)  # Light slate for black theme
+    
+    def _get_theme_azimuth_label_color(self):
+        """Get theme-appropriate azimuth label color"""
+        if self.theme == 'white':
+            return (60, 60, 60)     # Darker gray for white theme
+        else:
+            return (155, 167, 183)  # Light slate for black theme
+    
+    def _get_theme_boundary_color(self):
+        """Get theme-appropriate boundary color"""
+        if self.theme == 'white':
+            return (100, 100, 100)  # Gray for white theme
+        else:
+            return (106, 123, 141)  # Slate for black theme
+    
+    def _get_theme_hover_color(self):
+        """Get theme-appropriate hover color"""
+        if self.theme == 'white':
+            return (52, 152, 219)   # Blue for white theme
+        else:
+            return (184, 197, 214)  # Light slate for black theme
+    
+    def _get_theme_tooltip_colors(self):
+        """Get theme-appropriate tooltip colors"""
+        if self.theme == 'white':
+            return ((0, 0, 0), (255, 255, 255, 230))  # Black text, white background
+        else:
+            return ((255, 255, 255), (0, 0, 0, 180))  # White text, dark background
+    
+    def set_theme(self, theme: str):
+        """Set and apply new theme
+        
+        Args:
+            theme: Theme name ('white' or 'black')
+        """
+        self.theme = theme
+        self._apply_theme_background()
+        self._update_theme_colors()
+        
+        # Update tooltip colors
+        text_color, bg_color = self._get_theme_tooltip_colors()
+        self.tooltip.setColor(text_color)
+        self.tooltip.fill = pg.mkBrush(*bg_color)
+        
+        # Update magnifier colors
+        hover_color = self._get_theme_hover_color()
+        self.magnifier.setPen(pg.mkPen(color=hover_color, width=2, style=QtCore.Qt.PenStyle.DashLine))
+        self.magnifier.setBrush(pg.mkBrush(*hover_color, 40))
+        
+        logger.info(f"PPI theme set to {theme}")
     
     def on_range_changed(self):
         """Handle range change events for history tracking"""
@@ -417,8 +516,9 @@ class PPIPlotWidget:
         self.range_labels = []
         self.azimuth_labels = []
         
-        # Re-add tooltip after clear
-        self.tooltip = pg.TextItem(anchor=(0, 1), color='white', fill=(0, 0, 0, 180))
+        # Re-add tooltip after clear with theme colors
+        text_color, bg_color = self._get_theme_tooltip_colors()
+        self.tooltip = pg.TextItem(anchor=(0, 1), color=text_color, fill=bg_color)
         self.tooltip.setZValue(100)
         self.plot_widget.addItem(self.tooltip)
         self.tooltip.hide()
@@ -445,15 +545,17 @@ class PPIPlotWidget:
         for i in range(1, num_rings + 1):
             range_km = i * ring_spacing
             
-            # Create circle with slate color
+            # Create circle with theme color
+            ring_color = self._get_theme_ring_color()
             circle = pg.QtWidgets.QGraphicsEllipseItem(-range_km, -range_km, 2*range_km, 2*range_km)
-            circle.setPen(pg.mkPen(color=(74, 90, 107), width=1, style=QtCore.Qt.PenStyle.DashLine))
+            circle.setPen(pg.mkPen(color=ring_color, width=1, style=QtCore.Qt.PenStyle.DashLine))
             circle.setZValue(-1)
             self.plot_widget.addItem(circle)
             self.range_rings.append(circle)
             
-            # Add range label with slate color
-            label = pg.TextItem(f'{range_km:.1f} km', color=(138, 154, 171), anchor=(0.5, 0.5))
+            # Add range label with theme color
+            label_color = self._get_theme_label_color()
+            label = pg.TextItem(f'{range_km:.1f} km', color=label_color, anchor=(0.5, 0.5))
             label.setPos(0, range_km)
             label.setZValue(1)
             self.plot_widget.addItem(label)
@@ -471,28 +573,31 @@ class PPIPlotWidget:
             x_end = max_range_km * np.cos(angle_rad)
             y_end = max_range_km * np.sin(angle_rad)
             
-            # Create line from center to edge with slate color
+            # Create line from center to edge with theme color
+            ring_color = self._get_theme_ring_color()
             line = pg.PlotCurveItem([0, x_end], [0, y_end], 
-                                    pen=pg.mkPen(color=(74, 90, 107), width=1))
+                                    pen=pg.mkPen(color=ring_color, width=1))
             line.setZValue(-1)
             self.plot_widget.addItem(line)
             self.azimuth_lines.append(line)
             
-            # Add azimuth label at the edge with slate color
+            # Add azimuth label at the edge with theme color
             label_distance = max_range_km * 1.05
             label_x = label_distance * np.cos(angle_rad)
             label_y = label_distance * np.sin(angle_rad)
             
-            label = pg.TextItem(label_text, color=(155, 167, 183), anchor=(0.5, 0.5))
+            azimuth_label_color = self._get_theme_azimuth_label_color()
+            label = pg.TextItem(label_text, color=azimuth_label_color, anchor=(0.5, 0.5))
             label.setPos(label_x, label_y)
             label.setZValue(1)
             self.plot_widget.addItem(label)
             self.azimuth_labels.append(label)
         
-        # Draw outer circle boundary with slate color
+        # Draw outer circle boundary with theme color
+        boundary_color = self._get_theme_boundary_color()
         boundary = pg.QtWidgets.QGraphicsEllipseItem(-max_range_km, -max_range_km, 
                                                        2*max_range_km, 2*max_range_km)
-        boundary.setPen(pg.mkPen(color=(106, 123, 141), width=2))
+        boundary.setPen(pg.mkPen(color=boundary_color, width=2))
         boundary.setZValue(-1)
         self.plot_widget.addItem(boundary)
         self.range_rings.append(boundary)
@@ -562,6 +667,7 @@ class PPIPlotWidget:
                 mask = df['trackid'] == trackid
                 color_idx = idx % len(self.colors)
                 
+                hover_color = self._get_theme_hover_color()
                 scatter = pg.ScatterPlotItem(
                     x=plot_x[mask],
                     y=plot_y[mask],
@@ -570,8 +676,8 @@ class PPIPlotWidget:
                     brush=pg.mkBrush(*self.colors[color_idx]),
                     name=f'Track {int(trackid)}',
                     hoverable=True,
-                    hoverPen=pg.mkPen((184, 197, 214), width=2),
-                    hoverBrush=pg.mkBrush(184, 197, 214, 150)
+                    hoverPen=pg.mkPen(hover_color, width=2),
+                    hoverBrush=pg.mkBrush(*hover_color, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
@@ -606,6 +712,7 @@ class PPIPlotWidget:
                     color = get_annotation_color(annotation)
                     
                     # Create scatter plot for this segment
+                    hover_color = self._get_theme_hover_color()
                     scatter = pg.ScatterPlotItem(
                         x=plot_x[local_mask],
                         y=plot_y[local_mask],
@@ -614,8 +721,8 @@ class PPIPlotWidget:
                         brush=pg.mkBrush(*color),
                         name=f'{annotation[:20]}' if annotation not in annotation_colors_used else '',
                         hoverable=True,
-                        hoverPen=pg.mkPen((184, 197, 214), width=2),
-                        hoverBrush=pg.mkBrush(184, 197, 214, 150)
+                        hoverPen=pg.mkPen(hover_color, width=2),
+                        hoverBrush=pg.mkBrush(*hover_color, 150)
                     )
                     
                     self.plot_widget.addItem(scatter)
@@ -635,6 +742,7 @@ class PPIPlotWidget:
                 # Use annotation-based color
                 color = get_annotation_color(annotation)
                 
+                hover_color = self._get_theme_hover_color()
                 scatter = pg.ScatterPlotItem(
                     x=plot_x[mask],
                     y=plot_y[mask],
@@ -643,8 +751,8 @@ class PPIPlotWidget:
                     brush=pg.mkBrush(*color),
                     name=annotation[:25],  # Truncate long names
                     hoverable=True,
-                    hoverPen=pg.mkPen((184, 197, 214), width=2),
-                    hoverBrush=pg.mkBrush(184, 197, 214, 150)
+                    hoverPen=pg.mkPen(hover_color, width=2),
+                    hoverBrush=pg.mkBrush(*hover_color, 150)
                 )
                 
                 self.plot_widget.addItem(scatter)
@@ -775,10 +883,18 @@ class PPIPlotWidget:
 class TimeSeriesPlotWidget:
     """Time series plot widget for multiple variables with interactive features"""
     
-    def __init__(self, parent=None):
-        """Initialize time series plot"""
+    def __init__(self, parent=None, theme='white'):
+        """Initialize time series plot
+        
+        Args:
+            parent: Parent widget
+            theme: Color theme ('white' or 'black')
+        """
         if not HAS_PYQTGRAPH:
             raise RuntimeError("PyQtGraph is required")
+        
+        # Store theme
+        self.theme = theme
         
         # Create graphics layout widget with multiple plots
         self.layout_widget = pg.GraphicsLayoutWidget(parent=parent)
@@ -817,17 +933,58 @@ class TimeSeriesPlotWidget:
         # Interactive features
         self.view_history = PlotViewHistory()
         
-        # Color map - mono slate theme
-        self.colors = [
-            (138, 154, 171),    # Light slate
-            (106, 123, 141),    # Medium-light slate
-            (90, 107, 125),     # Medium slate
-            (74, 90, 107),      # Medium-dark slate
-            (184, 197, 214),    # Very light slate
-            (122, 138, 155),    # Mid-light slate
-            (61, 74, 88),       # Dark slate
-            (155, 167, 183),    # Light-medium slate
-        ]
+        # Apply theme
+        self._apply_theme_background()
+        self._update_theme_colors()
+    
+    def _apply_theme_background(self):
+        """Apply theme-appropriate background color"""
+        if self.theme == 'white':
+            bg_color = '#ffffff'
+        else:
+            bg_color = '#1c2329'
+        
+        self.altitude_plot.setBackground(bg_color)
+        self.speed_plot.setBackground(bg_color)
+        self.curvature_plot.setBackground(bg_color)
+    
+    def _update_theme_colors(self):
+        """Update color palette based on theme"""
+        if self.theme == 'white':
+            # White theme - darker colors for visibility
+            self.colors = [
+                (231, 76, 60),      # Red
+                (46, 204, 113),     # Green
+                (52, 152, 219),     # Blue
+                (155, 89, 182),     # Purple
+                (230, 126, 34),     # Orange
+                (26, 188, 156),     # Turquoise
+                (241, 196, 15),     # Yellow
+                (192, 57, 43),      # Dark red
+            ]
+        else:
+            # Black theme - lighter slate colors
+            self.colors = [
+                (138, 154, 171),    # Light slate
+                (106, 123, 141),    # Medium-light slate
+                (90, 107, 125),     # Medium slate
+                (74, 90, 107),      # Medium-dark slate
+                (184, 197, 214),    # Very light slate
+                (122, 138, 155),    # Mid-light slate
+                (61, 74, 88),       # Dark slate
+                (155, 167, 183),    # Light-medium slate
+            ]
+    
+    def set_theme(self, theme: str):
+        """Set and apply new theme
+        
+        Args:
+            theme: Theme name ('white' or 'black')
+        """
+        self.theme = theme
+        self._apply_theme_background()
+        self._update_theme_colors()
+        logger.info(f"Time series theme set to {theme}")
     
     def zoom_in(self):
         """Zoom in all plots"""
@@ -1004,25 +1161,27 @@ class AnnotationHighlighter:
         logger.info(f"Highlighted {len(highlighted_df)} points with annotation: {annotation}")
 
 
-def create_ppi_widget(parent=None):
+def create_ppi_widget(parent=None, theme='white'):
     """Create PPI plot widget
     
     Args:
         parent: Parent Qt widget
+        theme: Color theme ('white' or 'black')
         
     Returns:
         PPIPlotWidget instance
     """
-    return PPIPlotWidget(parent)
+    return PPIPlotWidget(parent, theme)
 
 
-def create_timeseries_widget(parent=None):
+def create_timeseries_widget(parent=None, theme='white'):
     """Create time series plot widget
     
     Args:
         parent: Parent Qt widget
+        theme: Color theme ('white' or 'black')
         
     Returns:
         TimeSeriesPlotWidget instance
     """
-    return TimeSeriesPlotWidget(parent)
+    return TimeSeriesPlotWidget(parent, theme)
