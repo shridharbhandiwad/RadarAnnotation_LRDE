@@ -92,16 +92,13 @@ class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
         """
         super().__init__(-radius, -radius, 2*radius, 2*radius)
         self.radius = radius
-        self.zoom_factor = 3.0
+        self.zoom_factor = 2.0
         
-        # Style the lens
-        self.setPen(pg.mkPen(color=(255, 255, 0), width=3))
-        self.setBrush(pg.mkBrush(255, 255, 255, 30))
+        # Style the lens - pulsing highlight circle
+        self.setPen(pg.mkPen(color=(255, 200, 0), width=2, style=QtCore.Qt.PenStyle.DashLine))
+        self.setBrush(pg.mkBrush(255, 255, 0, 40))
         self.setZValue(1000)
         self.hide()
-        
-        # Create magnified view (will be set by parent)
-        self.mag_viewbox = None
     
     def set_zoom_factor(self, factor: float):
         """Set magnification factor"""
@@ -240,6 +237,7 @@ class PPIPlotWidget:
         
         # Connect events
         self.plot_widget.scene().sigMouseMoved.connect(self.on_mouse_moved)
+        self.plot_widget.scene().sigMouseClicked.connect(self.on_mouse_clicked)
         self.plot_widget.plotItem.vb.sigRangeChanged.connect(self.on_range_changed)
         
         # Initial view state tracking
@@ -333,6 +331,9 @@ class PPIPlotWidget:
         self.magnifier_enabled = enabled
         if not enabled:
             self.magnifier.hide()
+        else:
+            # Show magnifier hint
+            logger.info("Magnifier enabled: Click to zoom in on an area")
         logger.info(f"Magnifier {'enabled' if enabled else 'disabled'}")
     
     def set_magnifier_zoom(self, zoom: float):
@@ -564,7 +565,7 @@ class PPIPlotWidget:
                 scatter = pg.ScatterPlotItem(
                     x=plot_x[mask],
                     y=plot_y[mask],
-                    size=8,
+                    size=5,
                     pen=pg.mkPen(None),
                     brush=pg.mkBrush(*self.colors[color_idx]),
                     name=f'Track {int(trackid)}',
@@ -608,7 +609,7 @@ class PPIPlotWidget:
                     scatter = pg.ScatterPlotItem(
                         x=plot_x[local_mask],
                         y=plot_y[local_mask],
-                        size=9,
+                        size=5,
                         pen=pg.mkPen(color, width=1),
                         brush=pg.mkBrush(*color),
                         name=f'{annotation[:20]}' if annotation not in annotation_colors_used else '',
@@ -637,7 +638,7 @@ class PPIPlotWidget:
                 scatter = pg.ScatterPlotItem(
                     x=plot_x[mask],
                     y=plot_y[mask],
-                    size=8,
+                    size=5,
                     pen=pg.mkPen(None),
                     brush=pg.mkBrush(*color),
                     name=annotation[:25],  # Truncate long names
@@ -648,6 +649,41 @@ class PPIPlotWidget:
                 
                 self.plot_widget.addItem(scatter)
                 annotation_legend[annotation] = color
+    
+    def on_mouse_clicked(self, event):
+        """Handle mouse click for magnifier zoom
+        
+        Args:
+            event: Mouse click event
+        """
+        if self.magnifier_enabled and event.button() == QtCore.Qt.MouseButton.LeftButton:
+            # Get click position in data coordinates
+            scene_pos = event.scenePos()
+            if self.plot_widget.plotItem.vb.sceneBoundingRect().contains(scene_pos):
+                mouse_point = self.plot_widget.plotItem.vb.mapSceneToView(scene_pos)
+                x, y = mouse_point.x(), mouse_point.y()
+                
+                # Calculate zoom window around click point
+                [[xmin, xmax], [ymin, ymax]] = self.plot_widget.viewRange()
+                current_width = xmax - xmin
+                current_height = ymax - ymin
+                
+                # Zoom in by factor (make view smaller around the point)
+                zoom_factor = 0.5  # Zoom in 2x
+                new_width = current_width * zoom_factor
+                new_height = current_height * zoom_factor
+                
+                # Center new view on click point
+                new_xmin = x - new_width / 2
+                new_xmax = x + new_width / 2
+                new_ymin = y - new_height / 2
+                new_ymax = y + new_height / 2
+                
+                # Apply zoom
+                self.plot_widget.setXRange(new_xmin, new_xmax, padding=0)
+                self.plot_widget.setYRange(new_ymin, new_ymax, padding=0)
+                
+                logger.info(f"Magnifier zoom at ({x:.2f}, {y:.2f})")
     
     def on_mouse_moved(self, pos):
         """Handle mouse movement for tooltip display and magnifier

@@ -653,102 +653,75 @@ class VisualizationPanel(QWidget):
         if HAS_PYQTGRAPH:
             interactive_layout = QHBoxLayout()
             
-            # Zoom controls
-            zoom_group = QGroupBox("Zoom & View")
-            zoom_layout = QHBoxLayout()
-            
-            btn_zoom_in = QPushButton("➕ Zoom In")
+            # Zoom controls - Icon only
+            btn_zoom_in = QPushButton("➕")
+            btn_zoom_in.setToolTip("Zoom In")
+            btn_zoom_in.setMaximumWidth(40)
             btn_zoom_in.clicked.connect(self.zoom_in)
-            zoom_layout.addWidget(btn_zoom_in)
+            btn_zoom_in.setObjectName("iconButton")
+            interactive_layout.addWidget(btn_zoom_in)
             
-            btn_zoom_out = QPushButton("➖ Zoom Out")
+            btn_zoom_out = QPushButton("➖")
+            btn_zoom_out.setToolTip("Zoom Out")
+            btn_zoom_out.setMaximumWidth(40)
             btn_zoom_out.clicked.connect(self.zoom_out)
-            zoom_layout.addWidget(btn_zoom_out)
+            btn_zoom_out.setObjectName("iconButton")
+            interactive_layout.addWidget(btn_zoom_out)
             
-            btn_reset = QPushButton("🔄 Reset View")
+            btn_reset = QPushButton("🔄")
+            btn_reset.setToolTip("Reset View")
+            btn_reset.setMaximumWidth(40)
             btn_reset.clicked.connect(self.reset_view)
-            zoom_layout.addWidget(btn_reset)
+            btn_reset.setObjectName("iconButton")
+            interactive_layout.addWidget(btn_reset)
             
-            zoom_group.setLayout(zoom_layout)
-            interactive_layout.addWidget(zoom_group)
+            # History controls - Icon only
+            interactive_layout.addWidget(QLabel(" | "))
             
-            # History controls
-            history_group = QGroupBox("History")
-            history_layout = QHBoxLayout()
-            
-            self.btn_undo = QPushButton("⬅ Undo")
+            self.btn_undo = QPushButton("⬅")
+            self.btn_undo.setToolTip("Undo")
+            self.btn_undo.setMaximumWidth(40)
             self.btn_undo.clicked.connect(self.undo_view)
-            history_layout.addWidget(self.btn_undo)
+            self.btn_undo.setObjectName("iconButton")
+            interactive_layout.addWidget(self.btn_undo)
             
-            self.btn_redo = QPushButton("➡ Redo")
+            self.btn_redo = QPushButton("➡")
+            self.btn_redo.setToolTip("Redo")
+            self.btn_redo.setMaximumWidth(40)
             self.btn_redo.clicked.connect(self.redo_view)
-            history_layout.addWidget(self.btn_redo)
+            self.btn_redo.setObjectName("iconButton")
+            interactive_layout.addWidget(self.btn_redo)
             
-            history_group.setLayout(history_layout)
-            interactive_layout.addWidget(history_group)
+            # Magnifier controls - Icon only
+            interactive_layout.addWidget(QLabel(" | "))
             
-            # Magnifier controls
-            mag_group = QGroupBox("Magnifier")
-            mag_layout = QHBoxLayout()
-            
-            self.magnifier_toggle = QPushButton("🔍 Enable Magnifier")
+            self.magnifier_toggle = QPushButton("🔍")
+            self.magnifier_toggle.setToolTip("Enable/Disable Magnifier")
+            self.magnifier_toggle.setMaximumWidth(40)
             self.magnifier_toggle.setCheckable(True)
             self.magnifier_toggle.clicked.connect(self.toggle_magnifier)
-            mag_layout.addWidget(self.magnifier_toggle)
+            self.magnifier_toggle.setObjectName("iconButton")
+            interactive_layout.addWidget(self.magnifier_toggle)
             
-            mag_layout.addWidget(QLabel("Zoom:"))
-            self.mag_zoom_spin = QDoubleSpinBox()
-            self.mag_zoom_spin.setRange(1.5, 10.0)
-            self.mag_zoom_spin.setValue(3.0)
-            self.mag_zoom_spin.setSingleStep(0.5)
-            self.mag_zoom_spin.valueChanged.connect(self.update_magnifier_zoom)
-            mag_layout.addWidget(self.mag_zoom_spin)
+            # Export controls - Icon only
+            interactive_layout.addWidget(QLabel(" | "))
             
-            mag_group.setLayout(mag_layout)
-            interactive_layout.addWidget(mag_group)
-            
-            # Export controls
-            export_group = QGroupBox("Export")
-            export_layout = QHBoxLayout()
-            
-            btn_export_ppi = QPushButton("💾 Save PPI Plot")
+            btn_export_ppi = QPushButton("💾")
+            btn_export_ppi.setToolTip("Save PPI Plot")
+            btn_export_ppi.setMaximumWidth(40)
             btn_export_ppi.clicked.connect(self.export_ppi_plot)
-            export_layout.addWidget(btn_export_ppi)
+            btn_export_ppi.setObjectName("iconButton")
+            interactive_layout.addWidget(btn_export_ppi)
             
-            btn_export_ts = QPushButton("💾 Save Time Series")
+            btn_export_ts = QPushButton("📊")
+            btn_export_ts.setToolTip("Save Time Series")
+            btn_export_ts.setMaximumWidth(40)
             btn_export_ts.clicked.connect(self.export_timeseries_plot)
-            export_layout.addWidget(btn_export_ts)
-            
-            export_group.setLayout(export_layout)
-            interactive_layout.addWidget(export_group)
+            btn_export_ts.setObjectName("iconButton")
+            interactive_layout.addWidget(btn_export_ts)
             
             interactive_layout.addStretch()
             layout.addLayout(interactive_layout)
-            
-            # Plot size controls
-            size_layout = QHBoxLayout()
-            size_layout.addWidget(QLabel("Plot Size:"))
-            
-            self.width_spin = QSpinBox()
-            self.width_spin.setRange(400, 3000)
-            self.width_spin.setValue(800)
-            self.width_spin.setSuffix(" px")
-            size_layout.addWidget(QLabel("Width:"))
-            size_layout.addWidget(self.width_spin)
-            
-            self.height_spin = QSpinBox()
-            self.height_spin.setRange(300, 2000)
-            self.height_spin.setValue(600)
-            self.height_spin.setSuffix(" px")
-            size_layout.addWidget(QLabel("Height:"))
-            size_layout.addWidget(self.height_spin)
-            
-            btn_apply_size = QPushButton("Apply Size")
-            btn_apply_size.clicked.connect(self.apply_plot_size)
-            size_layout.addWidget(btn_apply_size)
-            
-            size_layout.addStretch()
-            layout.addLayout(size_layout)
         
         layout.addLayout(controls_layout)
         
@@ -855,17 +828,6 @@ class VisualizationPanel(QWidget):
         if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
             enabled = self.magnifier_toggle.isChecked()
             self.ppi_widget.toggle_magnifier(enabled)
-            
-            # Update button text
-            if enabled:
-                self.magnifier_toggle.setText("🔍 Disable Magnifier")
-            else:
-                self.magnifier_toggle.setText("🔍 Enable Magnifier")
-    
-    def update_magnifier_zoom(self, value):
-        """Update magnifier zoom factor"""
-        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
-            self.ppi_widget.set_magnifier_zoom(value)
     
     def export_ppi_plot(self):
         """Export PPI plot to image file"""
@@ -900,14 +862,6 @@ class VisualizationPanel(QWidget):
                 QMessageBox.information(self, "Success", f"Plot saved to:\n{file_path}")
             else:
                 QMessageBox.critical(self, "Error", "Failed to export plot")
-    
-    def apply_plot_size(self):
-        """Apply custom plot size"""
-        if HAS_PYQTGRAPH and hasattr(self, 'ppi_widget'):
-            width = self.width_spin.value()
-            height = self.height_spin.value()
-            self.ppi_widget.set_plot_size(width, height)
-            QMessageBox.information(self, "Success", f"Plot size set to {width}x{height} pixels")
     
     def load_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
@@ -1101,6 +1055,38 @@ class MainWindow(QMainWindow):
             background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
                                         stop:0 #229954, stop:1 #1e8449);
             border: 1px solid #1e8449;
+        }
+        
+        QPushButton#iconButton {
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #5a6c7d, stop:1 #4a5c6d);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            min-height: 32px;
+            max-height: 32px;
+            min-width: 36px;
+            max-width: 36px;
+        }
+        
+        QPushButton#iconButton:hover {
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #3498db, stop:1 #2980b9);
+            border: 1px solid #1f618d;
+        }
+        
+        QPushButton#iconButton:pressed {
+            background-color: #1a5276;
+            padding: 9px 7px 7px 9px;
+        }
+        
+        QPushButton#iconButton:checked {
+            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                        stop:0 #e67e22, stop:1 #d35400);
+            border: 1px solid #c44100;
         }
         
         /* Labels */
