@@ -1,5 +1,5 @@
 {
-  "theme": "black",
+  "theme": "white",
   "binary_schema": {
     "record_size": 80,
     "endian": "little",
