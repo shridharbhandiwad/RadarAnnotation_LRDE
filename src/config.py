@@ -6,6 +6,7 @@ from typing import Dict, Any
 
 # Default configuration
 DEFAULT_CONFIG = {
+    "theme": "black",  # Default theme
     "binary_schema": {
         "record_size": 80,  # 10 x float64 (8 bytes each)
         "endian": "little",
@@ -142,8 +143,14 @@ def get_config(config_path: str = None) -> Config:
     return _global_config
 
 
-def save_default_config(path: str = "config/default_config.json") -> None:
-    """Save default configuration to file"""
+def save_default_config(path: str = "config/default_config.json", config_data: dict = None) -> None:
+    """Save default configuration to file
+    
+    Args:
+        path: Path to save config file
+        config_data: Configuration data to save (if None, uses DEFAULT_CONFIG)
+    """
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    data_to_save = config_data if config_data is not None else DEFAULT_CONFIG
     with open(path, 'w') as f:
-        json.dump(DEFAULT_CONFIG, f, indent=2)
+        json.dump(data_to_save, f, indent=2)
