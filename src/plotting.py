@@ -111,47 +111,47 @@ class MagnifierLens(QtWidgets.QGraphicsEllipseItem):
 
 
 def get_annotation_color(annotation: str) -> tuple:
-    """Get color for annotation combination with mono slate color theme
+    """Get color for annotation combination with distinct colors for each annotation type
     
     Args:
         annotation: Annotation string (may be composite like 'LevelFlight+HighSpeed' or 'level,high_speed')
         
     Returns:
-        RGB color tuple (mono slate theme)
+        RGB color tuple
     """
-    # Define color mapping with mono slate colors - different shades for different annotations
+    # Define color mapping with distinct colors for different annotations
     # Supports both formats: TitleCase+Plus and lowercase,comma
     color_map = {
         # Single annotations - Primary flight characteristics (both formats)
-        'LevelFlight': (138, 154, 171),      # Light slate
-        'level': (138, 154, 171),
-        'level_flight': (138, 154, 171),
-        'Climbing': (155, 167, 183),         # Very light slate
-        'ascending': (155, 167, 183),
-        'Descending': (106, 123, 141),       # Medium-light slate
-        'descending': (106, 123, 141),
-        'HighSpeed': (197, 205, 217),        # Lightest slate
-        'high_speed': (197, 205, 217),
-        'LowSpeed': (122, 138, 155),         # Mid-light slate
-        'low_speed': (122, 138, 155),
-        'Turning': (90, 107, 125),           # Medium slate
-        'curved': (90, 107, 125),
-        'Straight': (184, 197, 214),         # Very light slate
-        'linear': (184, 197, 214),
-        'LightManeuver': (106, 123, 141),    # Medium-light slate
-        'light_maneuver': (106, 123, 141),
-        'HighManeuver': (74, 90, 107),       # Medium-dark slate
-        'high_maneuver': (74, 90, 107),
-        'Incoming': (155, 167, 183),         # Light-medium slate
-        'incoming': (155, 167, 183),
-        'Outgoing': (138, 154, 171),         # Light slate
-        'outgoing': (138, 154, 171),
-        'FixedRange': (90, 107, 125),        # Medium slate
-        'fixed_range': (90, 107, 125),
-        'fixed_range_ascending': (122, 138, 155),
-        'fixed_range_descending': (74, 90, 107),
-        'invalid': (45, 56, 68),             # Darkest slate for invalid
-        'normal': (184, 197, 214),           # Very light slate for normal
+        'LevelFlight': (231, 76, 60),        # Red
+        'level': (231, 76, 60),
+        'level_flight': (231, 76, 60),
+        'Climbing': (46, 204, 113),          # Green
+        'ascending': (46, 204, 113),
+        'Descending': (52, 152, 219),        # Blue
+        'descending': (52, 152, 219),
+        'HighSpeed': (241, 196, 15),         # Yellow/Gold
+        'high_speed': (241, 196, 15),
+        'LowSpeed': (230, 126, 34),          # Orange
+        'low_speed': (230, 126, 34),
+        'Turning': (155, 89, 182),           # Purple
+        'curved': (155, 89, 182),
+        'Straight': (26, 188, 156),          # Turquoise
+        'linear': (26, 188, 156),
+        'LightManeuver': (230, 126, 34),     # Orange
+        'light_maneuver': (230, 126, 34),
+        'HighManeuver': (236, 77, 177),      # Magenta
+        'high_maneuver': (236, 77, 177),
+        'Incoming': (46, 204, 113),          # Green
+        'incoming': (46, 204, 113),
+        'Outgoing': (231, 76, 60),           # Red
+        'outgoing': (231, 76, 60),
+        'FixedRange': (22, 160, 133),        # Dark turquoise
+        'fixed_range': (22, 160, 133),
+        'fixed_range_ascending': (46, 204, 113),
+        'fixed_range_descending': (52, 152, 219),
+        'invalid': (149, 165, 166),          # Gray for invalid
+        'normal': (26, 188, 156),            # Turquoise for normal
     }
     
     # Normalize annotation format (handle both separators)
@@ -180,8 +180,8 @@ def get_annotation_color(annotation: str) -> tuple:
         avg_color = tuple(int(sum(c[i] for c in colors) / len(colors)) for i in range(3))
         return avg_color
     
-    # Default fallback color (neutral slate)
-    return (122, 138, 155)  # Mid-light slate
+    # Default fallback color (neutral gray)
+    return (149, 165, 166)  # Gray
 
 
 class PPIPlotWidget:
