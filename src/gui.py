@@ -830,8 +830,6 @@ class VisualizationPanel(QWidget):
             interactive_layout.addStretch()
             layout.addLayout(interactive_layout)
         
-        layout.addLayout(controls_layout)
-        
         if HAS_PYQTGRAPH:
             # Get theme from main window
             main_window = self.window()
