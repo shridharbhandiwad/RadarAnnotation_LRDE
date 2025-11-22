@@ -1323,7 +1323,8 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
                 tags = []
                 
                 # Direction
-                if y_pred_multi['direction'][idx] < 0.5:
+                direction_pred = y_pred_multi['direction'][idx][0] if len(y_pred_multi['direction'][idx].shape) > 0 else y_pred_multi['direction'][idx]
+                if direction_pred < 0.5:
                     tags.append('incoming')
                 else:
                     tags.append('outgoing')
@@ -1338,19 +1339,22 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
                     tags.append('level')
                 
                 # Path
-                if y_pred_multi['path'][idx] < 0.5:
+                path_pred = y_pred_multi['path'][idx][0] if len(y_pred_multi['path'][idx].shape) > 0 else y_pred_multi['path'][idx]
+                if path_pred < 0.5:
                     tags.append('linear')
                 else:
                     tags.append('curved')
                 
                 # Maneuver
-                if y_pred_multi['maneuver'][idx] < 0.5:
+                maneuver_pred = y_pred_multi['maneuver'][idx][0] if len(y_pred_multi['maneuver'][idx].shape) > 0 else y_pred_multi['maneuver'][idx]
+                if maneuver_pred < 0.5:
                     tags.append('light_maneuver')
                 else:
                     tags.append('high_maneuver')
                 
                 # Speed
-                if y_pred_multi['speed'][idx] < 0.5:
+                speed_pred = y_pred_multi['speed'][idx][0] if len(y_pred_multi['speed'][idx].shape) > 0 else y_pred_multi['speed'][idx]
+                if speed_pred < 0.5:
                     tags.append('low_speed')
                 else:
                     tags.append('high_speed')
