@@ -2023,43 +2023,89 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
     
     if model_type in ['random_forest', 'gradient_boosting']:
         # For tabular models (RF, XGBoost)
-        # Filter to only valid features
-        valid_mask = df_features['valid_features'].astype(bool)
-        df_valid = df_features.loc[valid_mask].copy()
+        # Check if this is a multi-output model
+        is_multi_output = hasattr(model, 'models') and hasattr(model, 'adapter')
         
-        if len(df_valid) == 0:
-            logger.warning("No valid features found after filtering. Using all data.")
-            df_valid = df_features.copy()
-        
-        # Get feature columns from the model
-        if not hasattr(model, 'feature_columns') or model.feature_columns is None:
-            raise ValueError("Model does not have feature_columns defined. Model may be corrupted.")
-        
-        feature_cols = model.feature_columns
-        
-        # Ensure all required features exist
-        missing_features = [col for col in feature_cols if col not in df_valid.columns]
-        if missing_features:
-            raise ValueError(f"Input data is missing required features: {missing_features}")
-        
-        # Extract features
-        X = df_valid[feature_cols].values
-        
-        # Scale features
-        X_scaled = model.scaler.transform(X)
-        
-        # Predict
-        y_pred_encoded = model.model.predict(X_scaled)
-        
-        # Decode labels
-        y_pred = model.label_encoder.inverse_transform(y_pred_encoded)
-        
-        # Assign predictions back to dataframe
-        df_features.loc[df_valid.index, 'Annotation'] = y_pred
-        
-        # Mark invalid rows
-        invalid_mask = df_features['valid_features'] == False
-        df_features.loc[invalid_mask, 'Annotation'] = 'invalid'
+        if is_multi_output:
+            # Multi-output model prediction
+            logger.info("Using multi-output model for prediction")
+            
+            # Filter to only valid features
+            valid_mask = df_features['valid_features'].astype(bool)
+            df_valid = df_features.loc[valid_mask].copy()
+            
+            if len(df_valid) == 0:
+                logger.warning("No valid features found after filtering. Using all data.")
+                df_valid = df_features.copy()
+            
+            # Use adapter to get input features
+            X, _, _ = model.adapter.prepare_data(df_valid, filter_valid=False)
+            
+            # Scale features
+            X_scaled = model.scaler.transform(X)
+            
+            # Predict each output tag
+            predictions = {}
+            for tag_name, tag_model in model.models.items():
+                predictions[tag_name] = tag_model.predict(X_scaled)
+            
+            # Convert predictions back to composite labels
+            composite_labels = []
+            for i in range(len(X_scaled)):
+                tags = []
+                for tag_name in model.output_tag_names:
+                    if tag_name in predictions and predictions[tag_name][i] == 1:
+                        tags.append(tag_name)
+                composite_labels.append(','.join(tags) if tags else 'normal')
+            
+            # Assign predictions back to dataframe
+            df_features.loc[df_valid.index, 'Annotation'] = composite_labels
+            
+            # Mark invalid rows
+            invalid_mask = df_features['valid_features'] == False
+            df_features.loc[invalid_mask, 'Annotation'] = 'invalid'
+            
+        else:
+            # Single-output model prediction
+            logger.info("Using single-output model for prediction")
+            
+            # Filter to only valid features
+            valid_mask = df_features['valid_features'].astype(bool)
+            df_valid = df_features.loc[valid_mask].copy()
+            
+            if len(df_valid) == 0:
+                logger.warning("No valid features found after filtering. Using all data.")
+                df_valid = df_features.copy()
+            
+            # Get feature columns from the model
+            if not hasattr(model, 'feature_columns') or model.feature_columns is None:
+                raise ValueError("Model does not have feature_columns defined. Model may be corrupted.")
+            
+            feature_cols = model.feature_columns
+            
+            # Ensure all required features exist
+            missing_features = [col for col in feature_cols if col not in df_valid.columns]
+            if missing_features:
+                raise ValueError(f"Input data is missing required features: {missing_features}")
+            
+            # Extract features
+            X = df_valid[feature_cols].values
+            
+            # Scale features
+            X_scaled = model.scaler.transform(X)
+            
+            # Predict
+            y_pred_encoded = model.model.predict(X_scaled)
+            
+            # Decode labels
+            y_pred = model.label_encoder.inverse_transform(y_pred_encoded)
+            
+            # Assign predictions back to dataframe
+            df_features.loc[df_valid.index, 'Annotation'] = y_pred
+            
+            # Mark invalid rows
+            invalid_mask = df_features['valid_features'] == False
+            df_features.loc[invalid_mask, 'Annotation'] = 'invalid'
         
     elif model_type == 'neural_network':
         # For sequence models (Transformer/LSTM)
