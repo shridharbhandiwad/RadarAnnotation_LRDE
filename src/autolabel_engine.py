@@ -186,11 +186,11 @@ def apply_rules_and_flags(df: pd.DataFrame, rules_config: Dict[str, Any] = None)
         
         # Vertical motion
         if df.loc[idx, 'fixed_range_ascending']:
-            tags.append('ascending')
+            tags.append('fixed_range_ascending')
         elif df.loc[idx, 'fixed_range_descending']:
-            tags.append('descending')
+            tags.append('fixed_range_descending')
         elif df.loc[idx, 'level_flight']:
-            tags.append('level')
+            tags.append('level_flight')
         
         # Path shape
         if df.loc[idx, 'linear']:

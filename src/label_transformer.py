@@ -141,12 +141,12 @@ class LabelTransformer:
                     return 'incoming'
                 elif 'outgoing' in tags:
                     return 'outgoing'
-                elif 'ascending' in tags:
-                    return 'ascending'
-                elif 'descending' in tags:
-                    return 'descending'
+                elif 'ascending' in tags or 'fixed_range_ascending' in tags:
+                    return 'fixed_range_ascending'
+                elif 'descending' in tags or 'fixed_range_descending' in tags:
+                    return 'fixed_range_descending'
                 elif 'level' in tags or 'level_flight' in tags:
-                    return 'level'
+                    return 'level_flight'
                 elif 'curved' in tags:
                     return 'curved'
                 elif 'linear' in tags:
@@ -266,7 +266,7 @@ class LabelTransformer:
         # Priority order
         priority = [
             'incoming', 'outgoing',
-            'ascending', 'descending', 'level', 'level_flight',
+            'fixed_range_ascending', 'ascending', 'fixed_range_descending', 'descending', 'level_flight', 'level',
             'curved', 'linear',
             'high_maneuver', 'light_maneuver',
             'high_speed', 'low_speed'

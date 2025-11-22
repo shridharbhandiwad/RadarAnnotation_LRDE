@@ -27,10 +27,10 @@ def test_transformer_model():
     data = []
     
     labels = [
-        'incoming,level,linear,light_maneuver,low_speed',
-        'outgoing,ascending,curved,high_maneuver,high_speed',
-        'incoming,descending,linear,light_maneuver,high_speed',
-        'outgoing,level,curved,high_maneuver,low_speed'
+        'incoming,level_flight,linear,light_maneuver,low_speed',
+        'outgoing,fixed_range_ascending,curved,high_maneuver,high_speed',
+        'incoming,fixed_range_descending,linear,light_maneuver,high_speed',
+        'outgoing,level_flight,curved,high_maneuver,low_speed'
     ]
     
     for track_id in range(n_tracks):
