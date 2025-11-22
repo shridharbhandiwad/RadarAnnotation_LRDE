@@ -435,20 +435,70 @@ class AITaggingPanel(QWidget):
         
         train_metrics = metrics['train']
         test_metrics = metrics['test']
+        model_name = metrics.get('model_name', 'Unknown')
         
-        self.results_text.append(f"\n✓ Training completed!")
-        self.results_text.append(f"Training Time: {train_metrics.get('training_time', 0):.2f}s")
-        self.results_text.append(f"Train Accuracy: {train_metrics.get('train_accuracy', 0):.4f}")
-        self.results_text.append(f"Test Accuracy: {test_metrics.get('accuracy', 0):.4f}")
-        self.results_text.append(f"Test F1 Score: {test_metrics.get('f1_score', 0):.4f}")
+        # Display formatted table
+        self.results_text.append("\n" + "="*70)
+        self.results_text.append(f"{'TRAINING RESULTS TABLE':^70}")
+        self.results_text.append("="*70)
+        self.results_text.append("")
+        
+        self.results_text.append("┌─────────────────────────────┬────────────────────────────────┐")
+        self.results_text.append("│ Metric                      │ Value                          │")
+        self.results_text.append("├─────────────────────────────┼────────────────────────────────┤")
+        self.results_text.append(f"│ Model Type                  │ {model_name:<30} │")
+        self.results_text.append(f"│ Train Accuracy              │ {train_metrics.get('train_accuracy', 0):>30.4f} │")
+        self.results_text.append(f"│ Test Accuracy               │ {test_metrics.get('accuracy', 0):>30.4f} │")
+        self.results_text.append(f"│ Test F1 Score               │ {test_metrics.get('f1_score', 0):>30.4f} │")
+        self.results_text.append(f"│ Training Time (s)           │ {train_metrics.get('training_time', 0):>30.2f} │")
         
         # Show multi-output metrics if available
         if train_metrics.get('multi_output', False):
-            self.results_text.append(f"\nMulti-output Results:")
+            self.results_text.append("├─────────────────────────────┼────────────────────────────────┤")
+            self.results_text.append("│ Multi-Output Results        │                                │")
+            self.results_text.append("├─────────────────────────────┼────────────────────────────────┤")
             if 'outputs' in test_metrics:
                 for output_name, output_metrics in test_metrics['outputs'].items():
-                    self.results_text.append(f"  {output_name}: Acc={output_metrics['accuracy']:.4f}, F1={output_metrics['f1_score']:.4f}")
+                    acc_f1_str = f"Acc:{output_metrics['accuracy']:.4f} F1:{output_metrics['f1_score']:.4f}"
+                    self.results_text.append(f"│   {output_name:<25} │ {acc_f1_str:<30} │")
         
+        self.results_text.append("└─────────────────────────────┴────────────────────────────────┘")
+        self.results_text.append("")
+        
+        # Verdict section
+        self.results_text.append("="*70)
+        self.results_text.append(f"{'VERDICT':^70}")
+        self.results_text.append("="*70)
+        self.results_text.append("")
+        
+        test_acc = test_metrics.get('accuracy', 0)
+        if test_acc > 0.95:
+            self.results_text.append("🏆 EXCELLENT: Outstanding performance (>95% accuracy)")
+            self.results_text.append("   ✅ Production-ready and highly reliable")
+        elif test_acc > 0.85:
+            self.results_text.append("✅ GOOD: Strong performance (>85% accuracy)")
+            self.results_text.append("   ✅ Suitable for deployment")
+        elif test_acc > 0.75:
+            self.results_text.append("⚠️  MODERATE: Acceptable performance (>75% accuracy)")
+            self.results_text.append("   💡 Consider more training data or tuning")
+        else:
+            self.results_text.append("❌ NEEDS IMPROVEMENT: Below expectations (<75%)")
+            self.results_text.append("   💡 Collect more diverse training data")
+        
+        # Check for overfitting
+        train_acc = train_metrics.get('train_accuracy', 0)
+        overfit_gap = train_acc - test_acc
+        self.results_text.append("")
+        if overfit_gap > 0.15:
+            self.results_text.append(f"⚠️  HIGH OVERFITTING: Train-test gap = {overfit_gap:.4f}")
+            self.results_text.append("   💡 Model may be memorizing training data")
+        elif overfit_gap > 0.05:
+            self.results_text.append(f"⚠️  SLIGHT OVERFITTING: Train-test gap = {overfit_gap:.4f}")
+        else:
+            self.results_text.append(f"✅ GOOD GENERALIZATION: Train-test gap = {overfit_gap:.4f}")
+        
+        self.results_text.append("")
+        self.results_text.append("="*70)
         self.results_text.append(f"\nModel saved to: output/models/")
     
     def training_error(self, error_msg):

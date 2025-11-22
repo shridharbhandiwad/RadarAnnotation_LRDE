@@ -230,7 +230,7 @@ def train_neural_network(labeled_csv, output_dir="output/models/neural_network_l
 
 
 def compare_models(rf_metrics, gb_metrics, nn_metrics):
-    """Compare model performance
+    """Compare model performance and display comprehensive results table
     
     Args:
         rf_metrics: Random Forest model metrics
@@ -242,35 +242,137 @@ def compare_models(rf_metrics, gb_metrics, nn_metrics):
     logger.info("=" * 80)
     
     if rf_metrics and gb_metrics and nn_metrics:
-        logger.info("\n{:<20} {:<15} {:<15} {:<15}".format("Metric", "Random Forest", "Grad Boosting", "Neural Net"))
-        logger.info("-" * 65)
-        
+        # Extract metrics for all models
         rf_train_acc = rf_metrics['train'].get('train_accuracy', 0)
         gb_train_acc = gb_metrics['train'].get('train_accuracy', 0)
         nn_train_acc = nn_metrics['train'].get('train_accuracy', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Train Accuracy", rf_train_acc, gb_train_acc, nn_train_acc))
         
         rf_test_acc = rf_metrics['test'].get('accuracy', 0)
         gb_test_acc = gb_metrics['test'].get('accuracy', 0)
         nn_test_acc = nn_metrics['test'].get('accuracy', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Test Accuracy", rf_test_acc, gb_test_acc, nn_test_acc))
         
         rf_f1 = rf_metrics['test'].get('f1_score', 0)
         gb_f1 = gb_metrics['test'].get('f1_score', 0)
         nn_f1 = nn_metrics['test'].get('f1_score', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Test F1 Score", rf_f1, gb_f1, nn_f1))
         
         rf_time = rf_metrics['train'].get('training_time', 0)
         gb_time = gb_metrics['train'].get('training_time', 0)
         nn_time = nn_metrics['train'].get('training_time', 0)
-        logger.info("{:<20} {:<15.2f}s {:<15.2f}s {:<15.2f}s".format("Training Time", rf_time, gb_time, nn_time))
         
-        logger.info("\n" + "=" * 80)
+        # Print comprehensive table header
+        logger.info("\n" + "=" * 100)
+        logger.info(" " * 35 + "TRAINING RESULTS TABLE")
+        logger.info("=" * 100)
+        logger.info("")
         
-        # Determine winner
-        accuracies = {'Random Forest': rf_test_acc, 'Gradient Boosting': gb_test_acc, 'Neural Network': nn_test_acc}
-        best_model = max(accuracies, key=accuracies.get)
-        logger.info(f"🏆 {best_model} model performed best with {accuracies[best_model]:.4f} accuracy!")
+        # Table header
+        logger.info("┌─────────────────────────┬──────────────────┬──────────────────┬──────────────────┐")
+        logger.info("│ Metric                  │ Random Forest    │ Gradient Boost   │ Neural Network   │")
+        logger.info("├─────────────────────────┼──────────────────┼──────────────────┼──────────────────┤")
+        
+        # Training Accuracy
+        logger.info("│ Train Accuracy          │     {:.4f}       │     {:.4f}       │     {:.4f}       │".format(
+            rf_train_acc, gb_train_acc, nn_train_acc))
+        
+        # Test Accuracy
+        logger.info("│ Test Accuracy           │     {:.4f}       │     {:.4f}       │     {:.4f}       │".format(
+            rf_test_acc, gb_test_acc, nn_test_acc))
+        
+        # F1 Score
+        logger.info("│ F1 Score                │     {:.4f}       │     {:.4f}       │     {:.4f}       │".format(
+            rf_f1, gb_f1, nn_f1))
+        
+        # Training Time
+        logger.info("│ Training Time (s)       │     {:>6.2f}       │     {:>6.2f}       │     {:>6.2f}       │".format(
+            rf_time, gb_time, nn_time))
+        
+        logger.info("└─────────────────────────┴──────────────────┴──────────────────┴──────────────────┘")
+        
+        # Calculate scores for verdict
+        models_data = {
+            'Random Forest': {
+                'test_acc': rf_test_acc,
+                'f1': rf_f1,
+                'time': rf_time,
+                'train_acc': rf_train_acc
+            },
+            'Gradient Boosting': {
+                'test_acc': gb_test_acc,
+                'f1': gb_f1,
+                'time': gb_time,
+                'train_acc': gb_train_acc
+            },
+            'Neural Network': {
+                'test_acc': nn_test_acc,
+                'f1': nn_f1,
+                'time': nn_time,
+                'train_acc': nn_train_acc
+            }
+        }
+        
+        # Determine best model based on test accuracy
+        best_accuracy_model = max(models_data.items(), key=lambda x: x[1]['test_acc'])
+        best_f1_model = max(models_data.items(), key=lambda x: x[1]['f1'])
+        fastest_model = min(models_data.items(), key=lambda x: x[1]['time'])
+        
+        # Print verdict section
+        logger.info("")
+        logger.info("=" * 100)
+        logger.info(" " * 42 + "VERDICT")
+        logger.info("=" * 100)
+        logger.info("")
+        
+        logger.info("🏆 BEST OVERALL MODEL: {}".format(best_accuracy_model[0]))
+        logger.info("   └─ Test Accuracy: {:.4f} ({:.2f}%)".format(
+            best_accuracy_model[1]['test_acc'], 
+            best_accuracy_model[1]['test_acc'] * 100))
+        logger.info("   └─ F1 Score: {:.4f}".format(best_accuracy_model[1]['f1']))
+        logger.info("   └─ Training Time: {:.2f}s".format(best_accuracy_model[1]['time']))
+        logger.info("")
+        
+        logger.info("📊 ADDITIONAL RANKINGS:")
+        logger.info("   • Highest Test Accuracy: {} ({:.4f})".format(
+            best_accuracy_model[0], best_accuracy_model[1]['test_acc']))
+        logger.info("   • Highest F1 Score: {} ({:.4f})".format(
+            best_f1_model[0], best_f1_model[1]['f1']))
+        logger.info("   • Fastest Training: {} ({:.2f}s)".format(
+            fastest_model[0], fastest_model[1]['time']))
+        logger.info("")
+        
+        # Recommendations
+        logger.info("💡 RECOMMENDATIONS:")
+        
+        # Check for overfitting
+        for model_name, data in models_data.items():
+            overfit_diff = data['train_acc'] - data['test_acc']
+            if overfit_diff > 0.10:
+                logger.info("   ⚠️  {} may be overfitting (train-test gap: {:.4f})".format(
+                    model_name, overfit_diff))
+        
+        # Performance recommendation
+        if best_accuracy_model[1]['test_acc'] > 0.95:
+            logger.info("   ✅ Excellent performance! {} is production-ready.".format(
+                best_accuracy_model[0]))
+        elif best_accuracy_model[1]['test_acc'] > 0.85:
+            logger.info("   ✅ Good performance. {} is suitable for deployment.".format(
+                best_accuracy_model[0]))
+        elif best_accuracy_model[1]['test_acc'] > 0.75:
+            logger.info("   ⚠️  Moderate performance. Consider more training data or hyperparameter tuning.")
+        else:
+            logger.info("   ❌ Low performance. More training data or feature engineering needed.")
+        
+        # Speed recommendation
+        if fastest_model[1]['time'] < 30:
+            logger.info("   ⚡ {} is very fast - ideal for rapid iteration.".format(
+                fastest_model[0]))
+        
+        # Accuracy vs Speed tradeoff
+        acc_speed_ratio = best_accuracy_model[1]['test_acc'] / best_accuracy_model[1]['time']
+        logger.info("   🎯 Best accuracy/speed ratio: {} ({:.6f})".format(
+            best_accuracy_model[0], acc_speed_ratio))
+        
+        logger.info("")
+        logger.info("=" * 100)
 
 
 def main():
