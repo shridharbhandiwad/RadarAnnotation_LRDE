@@ -51,21 +51,20 @@ class LabelTransformer:
             'is_composite': is_composite,
             'n_unique_tags': len(all_tags),
             'unique_tags': sorted(list(all_tags)),
-            'requires_transformation': n_unique < 2,
+            'requires_transformation': n_unique < 2 or is_composite,  # Always transform composite labels
             'recommended_strategy': None
         }
         
         # Recommend transformation strategy
-        if n_unique < 2:
-            if is_composite and len(all_tags) >= 2:
-                analysis['recommended_strategy'] = 'multi_label_binary'
-                analysis['reason'] = f'Only {n_unique} composite label(s), but contains {len(all_tags)} individual tags'
-            elif is_composite:
-                analysis['recommended_strategy'] = 'extract_primary'
-                analysis['reason'] = 'Composite labels with few unique tags'
-            else:
-                analysis['recommended_strategy'] = 'manual_labeling_required'
-                analysis['reason'] = 'Insufficient diversity in simple labels - need more data'
+        if is_composite:
+            # Composite labels should be transformed to extract primary label
+            # This avoids "previously unseen labels" errors when data is split
+            # and works with traditional ML models that expect single labels
+            analysis['recommended_strategy'] = 'extract_primary'
+            analysis['reason'] = f'Composite labels with {len(all_tags)} individual tags - extracting primary label for single-output models'
+        elif n_unique < 2:
+            analysis['recommended_strategy'] = 'manual_labeling_required'
+            analysis['reason'] = 'Insufficient diversity in simple labels - need more data'
         else:
             analysis['recommended_strategy'] = 'use_as_is'
             analysis['reason'] = f'{n_unique} unique labels - sufficient for training'

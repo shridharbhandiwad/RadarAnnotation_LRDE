@@ -1178,11 +1178,13 @@ def _train_model_with_recovery(model_name: str, data_path: str, output_dir: str,
     try:
         # Try normal training first
         return _train_model_impl(model_name, data_path, output_dir, params)
-    except ValueError as e:
+    except (ValueError, Exception) as e:
         error_str = str(e)
         
-        # Check if it's an insufficient classes error
-        if "Insufficient classes" in error_str or "unique class" in error_str.lower():
+        # Check if it's a label diversity or unseen labels error
+        if ("Insufficient classes" in error_str or 
+            "unique class" in error_str.lower() or
+            "previously unseen labels" in error_str.lower()):
             logger.warning("⚠️  Insufficient label diversity detected - attempting automatic recovery...")
             
             # Load data and analyze
