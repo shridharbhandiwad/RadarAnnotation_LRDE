@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════════════
+  MODEL EVALUATION FIX - QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════
+
+✅ FIXED: Model evaluation now supports multi-output models!
+
+PROBLEM:
+  ❌ Error: 'model' (KeyError when using multi-output XGBoost/RF models)
+
+SOLUTION:
+  ✓ Modified ai_engine.py predict_and_label() function
+  ✓ Added multi-output model detection
+  ✓ Separated prediction logic for single vs multi-output models
+
+═══════════════════════════════════════════════════════════════════
+  WHAT WAS FIXED
+═══════════════════════════════════════════════════════════════════
+
+File Modified: src/ai_engine.py
+Function: predict_and_label() (lines 2024-2108)
+
+Changes:
+  1. Detects if model is multi-output (has 'models' and 'adapter')
+  2. Uses model.adapter for feature extraction (multi-output)
+  3. Uses model.models[tag_name] for prediction (multi-output)
+  4. Converts binary tag predictions back to composite labels
+
+═══════════════════════════════════════════════════════════════════
+  HOW TO USE MODEL EVALUATION
+═══════════════════════════════════════════════════════════════════
+
+In the GUI:
+  1. Go to "🔮 Model Evaluation" tab
+  2. Select trained model (.pkl or .h5 file)
+  3. Select input data (.csv file)
+  4. Click "🚀 Predict and Auto-Label"
+  5. View results and save labeled data
+
+Supported Models:
+  ✅ Random Forest (single-output)
+  ✅ Random Forest Multi-Output
+  ✅ XGBoost (single-output)
+  ✅ XGBoost Multi-Output
+  ✅ Neural Network (Transformer/LSTM)
+
+═══════════════════════════════════════════════════════════════════
+  EXPECTED RESULTS
+═══════════════════════════════════════════════════════════════════
+
+Multi-output models will produce composite labels like:
+  • "incoming,linear,light_maneuver,high_speed"
+  • "outgoing,curved,high_maneuver,low_speed"
+  • "normal" (if no tags predicted)
+
+Single-output models will produce labels like:
+  • "incoming_linear"
+  • "outgoing_curved"
+  • etc.
+
+═══════════════════════════════════════════════════════════════════
+
+For more details, see: MODEL_EVALUATION_FIX.md
