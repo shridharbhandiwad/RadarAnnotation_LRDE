@@ -1869,26 +1869,106 @@ def load_trained_model(model_path: str) -> Tuple[Any, str]:
     parent_dir = model_path.parent.name.lower()
     full_path_lower = str(model_path).lower()
     
-    # Check both filename and parent directory for model type indicators
+    # Priority 1: Check for .h5 files (Keras/TensorFlow models)
+    if model_path.suffix == '.h5':
+        if not HAS_TENSORFLOW:
+            raise RuntimeError("TensorFlow is required to load neural network models")
+        
+        # Use TransformerModel for all neural network models
+        model = TransformerModel()
+        model.load(str(model_path))
+        return model, 'neural_network'
+    
+    # Priority 2: Check for metadata pickle files (shouldn't be loaded directly)
+    if '_metadata.pkl' in model_path.name or '_metadata' in model_name:
+        # User selected a metadata file instead of the main model file
+        # Try to find the corresponding .h5 file
+        h5_name = model_name.replace('_metadata', '') + '.h5'
+        h5_path = model_path.parent / h5_name
+        
+        if h5_path.exists():
+            raise ValueError(
+                f"You selected a metadata file. Please select the main model file instead:\n{h5_path}"
+            )
+        else:
+            raise ValueError(
+                f"You selected a metadata file ({model_path.name}), which cannot be loaded directly. "
+                f"Please select the corresponding .h5 model file from the same directory."
+            )
+    
+    # Priority 3: Check for neural network models by path indicators
+    if 'neural_network' in full_path_lower or 'transformer' in full_path_lower or 'lstm' in full_path_lower:
+        if not HAS_TENSORFLOW:
+            raise RuntimeError("TensorFlow is required to load neural network models")
+        
+        # Look for .h5 file in the same directory
+        h5_files = list(model_path.parent.glob('*.h5'))
+        if h5_files:
+            # Use the first .h5 file found (TransformerModel handles all neural network types)
+            model = TransformerModel()
+            model.load(str(h5_files[0]))
+            return model, 'neural_network'
+        else:
+            raise ValueError(
+                f"Model directory appears to be for a neural network model, but no .h5 file found. "
+                f"Please select the .h5 model file."
+            )
+    
+    # Priority 4: Check for Random Forest models
     if 'random_forest' in model_name or 'random_forest' in parent_dir or (model_path.suffix == '.pkl' and 'forest' in full_path_lower):
         model = RandomForestModel()
         model.load(str(model_path))
         return model, 'random_forest'
     
+    # Priority 5: Check for XGBoost models
     elif 'gradient_boosting' in full_path_lower or 'xgboost' in full_path_lower or 'gradient' in full_path_lower:
         model = XGBoostModel()
         model.load(str(model_path))
         return model, 'gradient_boosting'
     
-    elif 'neural_network' in full_path_lower or 'transformer' in full_path_lower or model_path.suffix == '.h5':
-        if not HAS_TENSORFLOW:
-            raise RuntimeError("TensorFlow is required to load neural network models")
-        model = TransformerModel()
-        model.load(str(model_path))
-        return model, 'neural_network'
+    # Priority 6: Try to determine from .pkl file contents
+    elif model_path.suffix == '.pkl':
+        import joblib
+        try:
+            data = joblib.load(str(model_path))
+            
+            # Check what keys are in the pickle file
+            if isinstance(data, dict):
+                keys = set(data.keys())
+                
+                # Check if it's an XGBoost/RandomForest model file
+                if 'model' in keys and 'scaler' in keys and 'label_encoder' in keys:
+                    # Could be either, default to XGBoost
+                    model = XGBoostModel()
+                    model.load(str(model_path))
+                    return model, 'gradient_boosting'
+                
+                # Check if it's a multi-output model
+                elif 'models' in keys and 'adapter' in keys:
+                    # Multi-output model (could be XGBoost or RandomForest)
+                    model = XGBoostMultiOutputModel()
+                    model.load(str(model_path))
+                    return model, 'gradient_boosting'
+                
+                # Check if it's metadata only (no 'model' or 'models' key)
+                elif 'sequence_generator' in keys or 'output_tag_names' in keys:
+                    raise ValueError(
+                        f"This appears to be a metadata file for a neural network model. "
+                        f"Please select the corresponding .h5 model file from the same directory."
+                    )
+            
+            raise ValueError(f"Pickle file format not recognized: {model_path}")
+            
+        except Exception as e:
+            if 'ValueError' in str(type(e).__name__):
+                raise
+            raise ValueError(f"Failed to load model file: {str(e)}")
     
     else:
-        raise ValueError(f"Cannot determine model type from filename: {model_path}")
+        raise ValueError(
+            f"Cannot determine model type from filename: {model_path}\n"
+            f"Supported file types: .h5 (neural networks), .pkl (Random Forest/XGBoost)"
+        )
 
 
 def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str = None) -> pd.DataFrame:
