@@ -1914,19 +1914,36 @@ def load_trained_model(model_path: str) -> Tuple[Any, str]:
                 f"Please select the .h5 model file."
             )
     
-    # Priority 4: Check for Random Forest models
-    if 'random_forest' in model_name or 'random_forest' in parent_dir or (model_path.suffix == '.pkl' and 'forest' in full_path_lower):
+    # Priority 4: Check for Multi-Output models FIRST (before checking single-output)
+    if 'multi_output' in full_path_lower or 'multioutput' in full_path_lower:
+        # Check if it's Random Forest or XGBoost multi-output
+        if 'random_forest' in full_path_lower or 'forest' in full_path_lower:
+            model = RandomForestMultiOutputModel()
+            model.load(str(model_path))
+            return model, 'random_forest'
+        elif 'gradient_boosting' in full_path_lower or 'xgboost' in full_path_lower or 'gradient' in full_path_lower:
+            model = XGBoostMultiOutputModel()
+            model.load(str(model_path))
+            return model, 'gradient_boosting'
+        else:
+            # Default to XGBoost multi-output if can't determine
+            model = XGBoostMultiOutputModel()
+            model.load(str(model_path))
+            return model, 'gradient_boosting'
+    
+    # Priority 5: Check for Random Forest models (single-output)
+    elif 'random_forest' in model_name or 'random_forest' in parent_dir or (model_path.suffix == '.pkl' and 'forest' in full_path_lower):
         model = RandomForestModel()
         model.load(str(model_path))
         return model, 'random_forest'
     
-    # Priority 5: Check for XGBoost models
+    # Priority 6: Check for XGBoost models (single-output)
     elif 'gradient_boosting' in full_path_lower or 'xgboost' in full_path_lower or 'gradient' in full_path_lower:
         model = XGBoostModel()
         model.load(str(model_path))
         return model, 'gradient_boosting'
     
-    # Priority 6: Try to determine from .pkl file contents
+    # Priority 7: Try to determine from .pkl file contents
     elif model_path.suffix == '.pkl':
         import joblib
         try:
