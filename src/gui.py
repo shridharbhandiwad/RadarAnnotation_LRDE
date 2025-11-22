@@ -1,6 +1,7 @@
 """Main GUI Application using PyQt6"""
 import sys
 import os
+import json
 from pathlib import Path
 import pandas as pd
 import logging
@@ -739,6 +740,290 @@ class SimulationPanel(QWidget):
         except Exception as e:
             self.status_text.append(f"✗ Error: {str(e)}")
             logger.error(f"Simulation error: {e}", exc_info=True)
+
+
+class ModelEvaluationPanel(QWidget):
+    """Panel for Model Evaluation with User-Inputted Files"""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.model_path = None
+        self.input_data_path = None
+        self.output_data = None
+        self.setup_ui()
+    
+    def setup_ui(self):
+        layout = QVBoxLayout()
+        
+        # Title
+        title = QLabel("🔮 Evaluate Model with User-Inputted File")
+        title_font = QFont()
+        title_font.setPointSize(14)
+        title_font.setBold(True)
+        title.setFont(title_font)
+        layout.addWidget(title)
+        
+        # Step 1: Select trained model
+        model_group = QGroupBox("Step 1: Select Trained Model")
+        model_layout = QVBoxLayout()
+        
+        self.model_label = QLabel("No model selected")
+        self.model_button = QPushButton("📁 Browse for Trained Model")
+        self.model_button.clicked.connect(self.select_model)
+        self.model_button.setObjectName("primaryButton")
+        
+        model_layout.addWidget(QLabel("Select a trained model file (.pkl for RF/XGBoost, .h5 for Neural Network):"))
+        model_layout.addWidget(self.model_label)
+        model_layout.addWidget(self.model_button)
+        model_group.setLayout(model_layout)
+        
+        # Step 2: Select input data
+        data_group = QGroupBox("Step 2: Select Input Data File")
+        data_layout = QVBoxLayout()
+        
+        self.data_label = QLabel("No data file selected")
+        self.data_button = QPushButton("📄 Browse for CSV File")
+        self.data_button.clicked.connect(self.select_data)
+        self.data_button.setEnabled(False)
+        
+        data_layout.addWidget(QLabel("Select a CSV file with trajectory data (can be unlabeled):"))
+        data_layout.addWidget(self.data_label)
+        data_layout.addWidget(self.data_button)
+        data_group.setLayout(data_layout)
+        
+        # Step 3: Run prediction
+        predict_group = QGroupBox("Step 3: Run Prediction")
+        predict_layout = QVBoxLayout()
+        
+        self.predict_button = QPushButton("🚀 Predict and Auto-Label")
+        self.predict_button.clicked.connect(self.run_prediction)
+        self.predict_button.setEnabled(False)
+        self.predict_button.setObjectName("primaryButton")
+        
+        predict_layout.addWidget(self.predict_button)
+        predict_group.setLayout(predict_layout)
+        
+        # Progress bar
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setVisible(False)
+        
+        # Results display
+        results_group = QGroupBox("Prediction Results")
+        results_layout = QVBoxLayout()
+        
+        self.results_table = QTableWidget()
+        self.results_table.setColumnCount(3)
+        self.results_table.setHorizontalHeaderLabels(['Predicted Label', 'Count', 'Percentage'])
+        self.results_table.setMaximumHeight(150)
+        results_layout.addWidget(self.results_table)
+        
+        # Action buttons
+        actions_layout = QHBoxLayout()
+        
+        self.save_button = QPushButton("💾 Save Labeled Data")
+        self.save_button.clicked.connect(self.save_labeled_data)
+        self.save_button.setEnabled(False)
+        actions_layout.addWidget(self.save_button)
+        
+        self.visualize_button = QPushButton("📊 Visualize Results")
+        self.visualize_button.clicked.connect(self.visualize_results)
+        self.visualize_button.setEnabled(False)
+        actions_layout.addWidget(self.visualize_button)
+        
+        results_layout.addLayout(actions_layout)
+        results_group.setLayout(results_layout)
+        
+        # Status log
+        self.status_text = QTextEdit()
+        self.status_text.setReadOnly(True)
+        self.status_text.setMaximumHeight(150)
+        
+        # Add all to main layout
+        layout.addWidget(model_group)
+        layout.addWidget(data_group)
+        layout.addWidget(predict_group)
+        layout.addWidget(self.progress_bar)
+        layout.addWidget(results_group)
+        layout.addWidget(QLabel("Status Log:"))
+        layout.addWidget(self.status_text)
+        layout.addStretch()
+        
+        self.setLayout(layout)
+    
+    def select_model(self):
+        """Select a trained model file"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Select Trained Model", "output/models/",
+            "Model Files (*.pkl *.h5);;All Files (*)"
+        )
+        
+        if file_path:
+            self.model_path = file_path
+            model_name = Path(file_path).name
+            self.model_label.setText(f"Selected: {model_name}")
+            self.status_text.append(f"\n✓ Model selected: {file_path}")
+            self.data_button.setEnabled(True)
+    
+    def select_data(self):
+        """Select input data file"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Select Input Data", "data/",
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        
+        if file_path:
+            self.input_data_path = file_path
+            data_name = Path(file_path).name
+            self.data_label.setText(f"Selected: {data_name}")
+            self.status_text.append(f"✓ Data file selected: {file_path}")
+            
+            # Load and display basic info
+            try:
+                df = pd.read_csv(file_path)
+                self.status_text.append(f"  Total records: {len(df):,}")
+                if 'trackid' in df.columns:
+                    self.status_text.append(f"  Unique tracks: {df['trackid'].nunique()}")
+                if 'Annotation' in df.columns:
+                    self.status_text.append(f"  📝 Note: File already has annotations (will be replaced)")
+            except Exception as e:
+                self.status_text.append(f"⚠️  Warning: Could not read file info: {str(e)}")
+            
+            self.predict_button.setEnabled(True)
+    
+    def run_prediction(self):
+        """Run prediction on input data"""
+        if not self.model_path or not self.input_data_path:
+            QMessageBox.warning(self, "Error", "Please select both a model and input data file.")
+            return
+        
+        self.status_text.append(f"\n{'='*60}")
+        self.status_text.append("🚀 Starting prediction...")
+        self.progress_bar.setVisible(True)
+        self.progress_bar.setRange(0, 0)
+        self.predict_button.setEnabled(False)
+        
+        # Run in worker thread
+        def prediction_worker():
+            # Set output path
+            input_path = Path(self.input_data_path)
+            output_path = str(input_path.parent / f"{input_path.stem}_predicted.csv")
+            
+            # Run prediction
+            df_labeled = ai_engine.predict_and_label(
+                self.model_path,
+                self.input_data_path,
+                output_path
+            )
+            
+            return df_labeled, output_path
+        
+        self.worker = WorkerThread(prediction_worker)
+        self.worker.finished.connect(self.prediction_completed)
+        self.worker.error.connect(self.prediction_error)
+        self.worker.start()
+    
+    def prediction_completed(self, result):
+        """Handle prediction completion"""
+        df_labeled, output_path = result
+        
+        self.progress_bar.setVisible(False)
+        self.predict_button.setEnabled(True)
+        
+        self.output_data = df_labeled
+        self.output_path = output_path
+        
+        self.status_text.append(f"\n✅ Prediction completed successfully!")
+        self.status_text.append(f"📊 Results saved to: {output_path}")
+        
+        # Display results summary
+        annotation_counts = df_labeled['Annotation'].value_counts()
+        total_records = len(df_labeled)
+        
+        self.status_text.append(f"\n📈 Prediction Summary:")
+        self.status_text.append(f"  Total records: {total_records:,}")
+        self.status_text.append(f"  Unique labels: {len(annotation_counts)}")
+        
+        # Update results table
+        self.results_table.setRowCount(0)
+        for label, count in annotation_counts.items():
+            row = self.results_table.rowCount()
+            self.results_table.insertRow(row)
+            percentage = (count / total_records * 100) if total_records > 0 else 0
+            self.results_table.setItem(row, 0, QTableWidgetItem(str(label)))
+            self.results_table.setItem(row, 1, QTableWidgetItem(f"{count:,}"))
+            self.results_table.setItem(row, 2, QTableWidgetItem(f"{percentage:.2f}%"))
+        
+        # Show top 5 in status
+        self.status_text.append(f"\n  Top 5 predicted labels:")
+        for i, (label, count) in enumerate(annotation_counts.head(5).items()):
+            percentage = (count / total_records * 100) if total_records > 0 else 0
+            self.status_text.append(f"    {i+1}. {label}: {count:,} ({percentage:.1f}%)")
+        
+        # Enable action buttons
+        self.save_button.setEnabled(True)
+        self.visualize_button.setEnabled(True)
+    
+    def prediction_error(self, error_msg):
+        """Handle prediction error"""
+        self.progress_bar.setVisible(False)
+        self.predict_button.setEnabled(True)
+        
+        self.status_text.append(f"\n❌ Prediction failed!")
+        self.status_text.append(f"Error: {error_msg}")
+        
+        QMessageBox.critical(self, "Prediction Error", f"Failed to run prediction:\n\n{error_msg}")
+    
+    def save_labeled_data(self):
+        """Save labeled data to a custom location"""
+        if self.output_data is None:
+            QMessageBox.warning(self, "Error", "No prediction results available.")
+            return
+        
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, "Save Labeled Data", "predicted_labels.csv",
+            "CSV Files (*.csv)"
+        )
+        
+        if file_path:
+            try:
+                self.output_data.to_csv(file_path, index=False)
+                self.status_text.append(f"\n✅ Data saved to: {file_path}")
+                QMessageBox.information(self, "Success", f"Labeled data saved to:\n{file_path}")
+            except Exception as e:
+                self.status_text.append(f"\n❌ Save error: {str(e)}")
+                QMessageBox.critical(self, "Error", f"Failed to save data:\n{str(e)}")
+    
+    def visualize_results(self):
+        """Switch to visualization panel with the predicted data"""
+        if self.output_data is None:
+            QMessageBox.warning(self, "Error", "No prediction results available.")
+            return
+        
+        # Find the visualization panel and load the data
+        main_window = self.window()
+        if isinstance(main_window, MainWindow):
+            # Switch to visualization tab (index 7)
+            main_window.engine_list.setCurrentRow(7)
+            
+            # Get the visualization panel
+            viz_panel = main_window.stack.widget(7)
+            if hasattr(viz_panel, 'current_df'):
+                viz_panel.current_df = self.output_data
+                
+                # Update track filter
+                if hasattr(viz_panel, 'track_filter'):
+                    viz_panel.track_filter.clear()
+                    viz_panel.track_filter.addItem("All Tracks")
+                    if 'trackid' in self.output_data.columns:
+                        for track_id in sorted(self.output_data['trackid'].unique()):
+                            viz_panel.track_filter.addItem(f"Track {int(track_id)}")
+                
+                # Update visualization
+                if hasattr(viz_panel, 'update_visualization'):
+                    viz_panel.update_visualization()
+                
+                self.status_text.append(f"\n🎨 Switched to visualization panel")
+                QMessageBox.information(self, "Visualization", "Switched to visualization panel.\nYou can now view the predicted labels.")
 
 
 class HighVolumeTrainingPanel(QWidget):
@@ -1516,6 +1801,7 @@ class MainWindow(QMainWindow):
             "📊 Data Extraction",
             "🏷️ AutoLabeling",
             "🤖 AI Tagging",
+            "🔮 Model Evaluation",
             "🚀 High Volume Training",
             "📈 Report",
             "🔬 Simulation",
@@ -1540,6 +1826,7 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(DataExtractionPanel())
         self.stack.addWidget(AutoLabelingPanel())
         self.stack.addWidget(AITaggingPanel())
+        self.stack.addWidget(ModelEvaluationPanel())
         self.stack.addWidget(HighVolumeTrainingPanel())
         self.stack.addWidget(ReportPanel())
         self.stack.addWidget(SimulationPanel())

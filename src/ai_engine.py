@@ -1129,6 +1129,270 @@ class TransformerModel:
         logger.info(f"Loaded Transformer model from {path}")
 
 
+def load_trained_model(model_path: str) -> Tuple[Any, str]:
+    """Load a trained model from disk
+    
+    Args:
+        model_path: Path to the saved model file
+        
+    Returns:
+        Tuple of (model_object, model_type)
+        
+    Raises:
+        FileNotFoundError: If model file doesn't exist
+        ValueError: If model type cannot be determined
+    """
+    model_path = Path(model_path)
+    
+    if not model_path.exists():
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+    
+    # Determine model type from filename or extension
+    model_name = model_path.stem.lower()
+    
+    if 'random_forest' in model_name or model_path.suffix == '.pkl' and 'forest' in model_name:
+        model = RandomForestModel()
+        model.load(str(model_path))
+        return model, 'random_forest'
+    
+    elif 'gradient_boosting' in model_name or 'xgboost' in model_name or (model_path.suffix == '.pkl' and 'gradient' in model_name):
+        model = XGBoostModel()
+        model.load(str(model_path))
+        return model, 'gradient_boosting'
+    
+    elif 'neural_network' in model_name or 'transformer' in model_name or model_path.suffix == '.h5':
+        if not HAS_TENSORFLOW:
+            raise RuntimeError("TensorFlow is required to load neural network models")
+        model = TransformerModel()
+        model.load(str(model_path))
+        return model, 'neural_network'
+    
+    else:
+        raise ValueError(f"Cannot determine model type from filename: {model_path}")
+
+
+def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str = None) -> pd.DataFrame:
+    """Predict labels for unlabeled data using a trained model
+    
+    This function:
+    1. Loads a trained model
+    2. Reads the input CSV (which may be raw unlabeled data)
+    3. Computes necessary motion features
+    4. Uses the model to predict labels
+    5. Saves results with predicted annotations
+    
+    Args:
+        model_path: Path to trained model file
+        input_csv_path: Path to input CSV (can be unlabeled)
+        output_csv_path: Path to save labeled output (optional, defaults to input_labeled.csv)
+        
+    Returns:
+        DataFrame with predicted annotations
+        
+    Raises:
+        FileNotFoundError: If model or input file doesn't exist
+        ValueError: If input data is invalid
+    """
+    logger.info(f"Loading model from {model_path}")
+    model, model_type = load_trained_model(model_path)
+    
+    logger.info(f"Reading input data from {input_csv_path}")
+    if not Path(input_csv_path).exists():
+        raise FileNotFoundError(f"Input file not found: {input_csv_path}")
+    
+    df = pd.read_csv(input_csv_path)
+    
+    # Check required columns for feature computation
+    required_cols = ['trackid', 'time', 'x', 'y', 'z', 'vx', 'vy', 'vz']
+    missing_cols = [col for col in required_cols if col not in df.columns]
+    if missing_cols:
+        raise ValueError(f"Input CSV is missing required columns: {missing_cols}")
+    
+    # Add acceleration columns if missing (initialize to zero)
+    for col in ['ax', 'ay', 'az']:
+        if col not in df.columns:
+            df[col] = 0.0
+    
+    logger.info("Computing motion features...")
+    # Import autolabel_engine to compute features
+    from . import autolabel_engine
+    df_features = autolabel_engine.compute_motion_features(df)
+    
+    # Prepare predictions based on model type
+    logger.info(f"Generating predictions using {model_type} model...")
+    
+    if model_type in ['random_forest', 'gradient_boosting']:
+        # For tabular models (RF, XGBoost)
+        # Filter to only valid features
+        df_valid = df_features[df_features['valid_features'] == True].copy()
+        
+        if len(df_valid) == 0:
+            logger.warning("No valid features found after filtering. Using all data.")
+            df_valid = df_features.copy()
+        
+        # Get feature columns from the model
+        if not hasattr(model, 'feature_columns') or model.feature_columns is None:
+            raise ValueError("Model does not have feature_columns defined. Model may be corrupted.")
+        
+        feature_cols = model.feature_columns
+        
+        # Ensure all required features exist
+        missing_features = [col for col in feature_cols if col not in df_valid.columns]
+        if missing_features:
+            raise ValueError(f"Input data is missing required features: {missing_features}")
+        
+        # Extract features
+        X = df_valid[feature_cols].values
+        
+        # Scale features
+        X_scaled = model.scaler.transform(X)
+        
+        # Predict
+        y_pred_encoded = model.model.predict(X_scaled)
+        
+        # Decode labels
+        y_pred = model.label_encoder.inverse_transform(y_pred_encoded)
+        
+        # Assign predictions back to dataframe
+        df_features.loc[df_valid.index, 'Annotation'] = y_pred
+        
+        # Mark invalid rows
+        invalid_mask = df_features['valid_features'] == False
+        df_features.loc[invalid_mask, 'Annotation'] = 'invalid'
+        
+    elif model_type == 'neural_network':
+        # For sequence models (Transformer/LSTM)
+        feature_cols = [
+            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
+            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
+            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
+        ]
+        feature_cols = [col for col in feature_cols if col in df_features.columns]
+        
+        # Prepare sequences (without labels - we'll predict them)
+        sequences = []
+        track_info = []  # Store (trackid, indices) for each sequence
+        
+        sequence_length = model.sequence_generator.sequence_length
+        
+        for trackid in df_features['trackid'].unique():
+            track_df = df_features[df_features['trackid'] == trackid].sort_values('time').copy()
+            
+            # Filter valid features
+            track_df = track_df[track_df['valid_features'] == True]
+            
+            if len(track_df) < 3:
+                continue
+            
+            # Handle NaN and Inf
+            track_df[feature_cols] = track_df[feature_cols].replace([np.inf, -np.inf], np.nan)
+            track_df[feature_cols] = track_df[feature_cols].fillna(0)
+            
+            if len(track_df) < sequence_length:
+                # Pad if too short
+                n_pad = sequence_length - len(track_df)
+                pad_df = pd.DataFrame(
+                    np.zeros((n_pad, len(feature_cols))),
+                    columns=feature_cols
+                )
+                track_features = pd.concat([pad_df, track_df[feature_cols]], ignore_index=True)
+                sequences.append(track_features.values)
+                track_info.append((trackid, track_df.index))
+            else:
+                # Use sliding window
+                stride = max(1, sequence_length // 4)
+                for i in range(0, len(track_df) - sequence_length + 1, stride):
+                    window = track_df.iloc[i:i+sequence_length]
+                    sequences.append(window[feature_cols].values)
+                    track_info.append((trackid, window.index))
+        
+        if len(sequences) == 0:
+            raise ValueError("No valid sequences could be created from the data")
+        
+        sequences = np.array(sequences)
+        sequences = model.sequence_generator.normalize_sequences(sequences, fit=False)
+        
+        # Predict
+        if model.multi_output:
+            # Multi-output prediction
+            y_pred_multi = model.model.predict(sequences, verbose=0)
+            
+            # Convert multi-output predictions back to composite labels
+            predicted_labels = []
+            for idx in range(len(sequences)):
+                tags = []
+                
+                # Direction
+                if y_pred_multi['direction'][idx] < 0.5:
+                    tags.append('incoming')
+                else:
+                    tags.append('outgoing')
+                
+                # Altitude
+                altitude_pred = np.argmax(y_pred_multi['altitude'][idx]) if len(y_pred_multi['altitude'][idx].shape) > 0 else int(y_pred_multi['altitude'][idx])
+                if altitude_pred == 0:
+                    tags.append('ascending')
+                elif altitude_pred == 1:
+                    tags.append('descending')
+                else:
+                    tags.append('level')
+                
+                # Path
+                if y_pred_multi['path'][idx] < 0.5:
+                    tags.append('linear')
+                else:
+                    tags.append('curved')
+                
+                # Maneuver
+                if y_pred_multi['maneuver'][idx] < 0.5:
+                    tags.append('light_maneuver')
+                else:
+                    tags.append('high_maneuver')
+                
+                # Speed
+                if y_pred_multi['speed'][idx] < 0.5:
+                    tags.append('low_speed')
+                else:
+                    tags.append('high_speed')
+                
+                predicted_labels.append(','.join(tags))
+        else:
+            # Single output prediction
+            y_pred_proba = model.model.predict(sequences, verbose=0)
+            y_pred_encoded = np.argmax(y_pred_proba, axis=1)
+            predicted_labels = model.sequence_generator.label_encoder.inverse_transform(y_pred_encoded)
+        
+        # Assign predictions to dataframe
+        # For each sequence, assign the predicted label to all points in that sequence
+        df_features['Annotation'] = 'invalid'  # Default for unpredicted rows
+        
+        for idx, (trackid, indices) in enumerate(track_info):
+            df_features.loc[indices, 'Annotation'] = predicted_labels[idx]
+    
+    else:
+        raise ValueError(f"Unsupported model type: {model_type}")
+    
+    # Set default output path if not provided
+    if output_csv_path is None:
+        input_path = Path(input_csv_path)
+        output_csv_path = str(input_path.parent / f"{input_path.stem}_labeled.csv")
+    
+    # Save results
+    logger.info(f"Saving labeled data to {output_csv_path}")
+    df_features.to_csv(output_csv_path, index=False)
+    
+    # Print summary
+    annotation_counts = df_features['Annotation'].value_counts()
+    logger.info(f"Prediction summary:")
+    logger.info(f"  Total records: {len(df_features)}")
+    logger.info(f"  Unique labels: {len(annotation_counts)}")
+    logger.info(f"  Top 5 labels:")
+    for label, count in annotation_counts.head(5).items():
+        logger.info(f"    {label}: {count} ({count/len(df_features)*100:.1f}%)")
+    
+    return df_features
+
+
 def train_model(model_name: str, data_path: str, output_dir: str, params: Dict[str, Any] = None, 
                 auto_transform: bool = True) -> Tuple[Any, Dict[str, Any]]:
     """Train a model and save results with automatic label transformation
