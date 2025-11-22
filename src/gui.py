@@ -350,7 +350,7 @@ class AITaggingPanel(QWidget):
         model_layout = QFormLayout()
         
         self.model_combo = QComboBox()
-        self.model_combo.addItems(['xgboost', 'lstm', 'transformer'])
+        self.model_combo.addItems(['Random Forest', 'Gradient Boosting', 'Neural Network'])
         model_layout.addRow("Model Type:", self.model_combo)
         
         model_group.setLayout(model_layout)
@@ -400,9 +400,17 @@ class AITaggingPanel(QWidget):
             self.results_text.append(f"Selected data: {file_path}")
     
     def train_model(self):
-        model_name = self.model_combo.currentText()
+        model_display_name = self.model_combo.currentText()
         
-        self.results_text.append(f"\nTraining {model_name} model...")
+        # Map display names to internal model names
+        model_name_map = {
+            'Random Forest': 'random_forest',
+            'Gradient Boosting': 'gradient_boosting',
+            'Neural Network': 'neural_network'
+        }
+        model_name = model_name_map.get(model_display_name, model_display_name.lower().replace(' ', '_'))
+        
+        self.results_text.append(f"\nTraining {model_display_name} model...")
         self.progress_bar.setVisible(True)
         self.progress_bar.setRange(0, 0)  # Indeterminate
         self.train_button.setEnabled(False)
@@ -742,20 +750,20 @@ class HighVolumeTrainingPanel(QWidget):
         
         # Model selection checkboxes
         models_layout = QHBoxLayout()
-        self.train_transformer_check = QPushButton("🧠 Transformer")
-        self.train_transformer_check.setCheckable(True)
-        self.train_transformer_check.setChecked(True)
-        models_layout.addWidget(self.train_transformer_check)
+        self.train_random_forest_check = QPushButton("🌲 Random Forest")
+        self.train_random_forest_check.setCheckable(True)
+        self.train_random_forest_check.setChecked(True)
+        models_layout.addWidget(self.train_random_forest_check)
         
-        self.train_lstm_check = QPushButton("🔁 LSTM")
-        self.train_lstm_check.setCheckable(True)
-        self.train_lstm_check.setChecked(True)
-        models_layout.addWidget(self.train_lstm_check)
+        self.train_gradient_boosting_check = QPushButton("🚀 Gradient Boosting")
+        self.train_gradient_boosting_check.setCheckable(True)
+        self.train_gradient_boosting_check.setChecked(True)
+        models_layout.addWidget(self.train_gradient_boosting_check)
         
-        self.train_xgboost_check = QPushButton("🚀 XGBoost")
-        self.train_xgboost_check.setCheckable(True)
-        self.train_xgboost_check.setChecked(False)
-        models_layout.addWidget(self.train_xgboost_check)
+        self.train_neural_network_check = QPushButton("🧠 Neural Network")
+        self.train_neural_network_check.setCheckable(True)
+        self.train_neural_network_check.setChecked(True)
+        models_layout.addWidget(self.train_neural_network_check)
         
         training_layout.addLayout(models_layout)
         
@@ -948,12 +956,12 @@ class HighVolumeTrainingPanel(QWidget):
         
         # Determine which models to train
         models_to_train = []
-        if self.train_transformer_check.isChecked():
-            models_to_train.append('transformer')
-        if self.train_lstm_check.isChecked():
-            models_to_train.append('lstm')
-        if self.train_xgboost_check.isChecked():
-            models_to_train.append('xgboost')
+        if self.train_random_forest_check.isChecked():
+            models_to_train.append('random_forest')
+        if self.train_gradient_boosting_check.isChecked():
+            models_to_train.append('gradient_boosting')
+        if self.train_neural_network_check.isChecked():
+            models_to_train.append('neural_network')
         
         if not models_to_train:
             QMessageBox.warning(self, "Error", "Please select at least one model to train.")

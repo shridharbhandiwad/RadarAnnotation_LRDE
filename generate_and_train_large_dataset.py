@@ -1,9 +1,9 @@
-"""Generate large simulation dataset and train transformer/LSTM models
+"""Generate large simulation dataset and train Random Forest, Gradient Boosting, and Neural Network models
 
 This script:
 1. Creates a large simulation dataset with 200+ tracks and diverse patterns
 2. Applies auto-labeling to generate composite labels
-3. Trains both transformer and LSTM models
+3. Trains Random Forest, Gradient Boosting, and Neural Network models
 4. Evaluates and compares performance
 """
 
@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 from src.sim_engine import create_large_training_dataset
 from src.autolabel_engine import compute_motion_features, apply_rules_and_flags, get_annotation_summary
-from src.ai_engine import train_model, TransformerModel, LSTMModel
+from src.ai_engine import train_model
 
 
 def generate_large_dataset(n_tracks=200, duration_min=10):
@@ -98,8 +98,8 @@ def apply_autolabeling(csv_path):
     return labeled_path
 
 
-def train_transformer(labeled_csv, output_dir="output/models/transformer_large"):
-    """Train transformer model on labeled data
+def train_random_forest(labeled_csv, output_dir="output/models/random_forest_large"):
+    """Train Random Forest model on labeled data
     
     Args:
         labeled_csv: Path to labeled CSV
@@ -109,12 +109,93 @@ def train_transformer(labeled_csv, output_dir="output/models/transformer_large")
         Tuple of (model, metrics)
     """
     logger.info("=" * 80)
-    logger.info("STEP 3: Training Transformer Model")
+    logger.info("STEP 3: Training Random Forest Model")
     logger.info("=" * 80)
     
     try:
         model, metrics = train_model(
-            model_name='transformer',
+            model_name='random_forest',
+            data_path=labeled_csv,
+            output_dir=output_dir,
+            params={
+                'n_estimators': 200,
+                'max_depth': 20,
+                'min_samples_split': 2,
+                'min_samples_leaf': 1,
+                'random_state': 42,
+                'n_jobs': -1
+            },
+            auto_transform=True
+        )
+        
+        logger.info("✓ Random Forest training completed")
+        logger.info(f"  Train Accuracy: {metrics['train'].get('train_accuracy', 0):.4f}")
+        logger.info(f"  Test Accuracy: {metrics['test'].get('accuracy', 0):.4f}")
+        logger.info(f"  Test F1 Score: {metrics['test'].get('f1_score', 0):.4f}")
+        
+        return model, metrics
+        
+    except Exception as e:
+        logger.error(f"✗ Random Forest training failed: {e}")
+        return None, None
+
+
+def train_gradient_boosting(labeled_csv, output_dir="output/models/gradient_boosting_large"):
+    """Train Gradient Boosting model on labeled data
+    
+    Args:
+        labeled_csv: Path to labeled CSV
+        output_dir: Output directory for model
+        
+    Returns:
+        Tuple of (model, metrics)
+    """
+    logger.info("=" * 80)
+    logger.info("STEP 4: Training Gradient Boosting Model")
+    logger.info("=" * 80)
+    
+    try:
+        model, metrics = train_model(
+            model_name='gradient_boosting',
+            data_path=labeled_csv,
+            output_dir=output_dir,
+            params={
+                'n_estimators': 200,
+                'max_depth': 8,
+                'learning_rate': 0.1
+            },
+            auto_transform=True
+        )
+        
+        logger.info("✓ Gradient Boosting training completed")
+        logger.info(f"  Train Accuracy: {metrics['train'].get('train_accuracy', 0):.4f}")
+        logger.info(f"  Test Accuracy: {metrics['test'].get('accuracy', 0):.4f}")
+        logger.info(f"  Test F1 Score: {metrics['test'].get('f1_score', 0):.4f}")
+        
+        return model, metrics
+        
+    except Exception as e:
+        logger.error(f"✗ Gradient Boosting training failed: {e}")
+        return None, None
+
+
+def train_neural_network(labeled_csv, output_dir="output/models/neural_network_large"):
+    """Train Neural Network model on labeled data
+    
+    Args:
+        labeled_csv: Path to labeled CSV
+        output_dir: Output directory for model
+        
+    Returns:
+        Tuple of (model, metrics)
+    """
+    logger.info("=" * 80)
+    logger.info("STEP 5: Training Neural Network Model")
+    logger.info("=" * 80)
+    
+    try:
+        model, metrics = train_model(
+            model_name='neural_network',
             data_path=labeled_csv,
             output_dir=output_dir,
             params={
@@ -130,7 +211,7 @@ def train_transformer(labeled_csv, output_dir="output/models/transformer_large")
             auto_transform=True
         )
         
-        logger.info("✓ Transformer training completed")
+        logger.info("✓ Neural Network training completed")
         logger.info(f"  Train Accuracy: {metrics['train'].get('train_accuracy', 0):.4f}")
         logger.info(f"  Test Accuracy: {metrics['test'].get('accuracy', 0):.4f}")
         logger.info(f"  Test F1 Score: {metrics['test'].get('f1_score', 0):.4f}")
@@ -144,97 +225,58 @@ def train_transformer(labeled_csv, output_dir="output/models/transformer_large")
         return model, metrics
         
     except Exception as e:
-        logger.error(f"✗ Transformer training failed: {e}")
+        logger.error(f"✗ Neural Network training failed: {e}")
         return None, None
 
 
-def train_lstm(labeled_csv, output_dir="output/models/lstm_large"):
-    """Train LSTM model on labeled data
+def compare_models(rf_metrics, gb_metrics, nn_metrics):
+    """Compare model performance
     
     Args:
-        labeled_csv: Path to labeled CSV
-        output_dir: Output directory for model
-        
-    Returns:
-        Tuple of (model, metrics)
+        rf_metrics: Random Forest model metrics
+        gb_metrics: Gradient Boosting model metrics
+        nn_metrics: Neural Network model metrics
     """
     logger.info("=" * 80)
-    logger.info("STEP 4: Training LSTM Model")
+    logger.info("STEP 6: Model Comparison")
     logger.info("=" * 80)
     
-    try:
-        model, metrics = train_model(
-            model_name='lstm',
-            data_path=labeled_csv,
-            output_dir=output_dir,
-            params={
-                'units': 128,
-                'dropout': 0.3,
-                'epochs': 100,
-                'batch_size': 64,
-                'sequence_length': 30
-            },
-            auto_transform=True
-        )
+    if rf_metrics and gb_metrics and nn_metrics:
+        logger.info("\n{:<20} {:<15} {:<15} {:<15}".format("Metric", "Random Forest", "Grad Boosting", "Neural Net"))
+        logger.info("-" * 65)
         
-        logger.info("✓ LSTM training completed")
-        logger.info(f"  Train Accuracy: {metrics['train'].get('train_accuracy', 0):.4f}")
-        logger.info(f"  Test Accuracy: {metrics['test'].get('accuracy', 0):.4f}")
-        logger.info(f"  Test F1 Score: {metrics['test'].get('f1_score', 0):.4f}")
+        rf_train_acc = rf_metrics['train'].get('train_accuracy', 0)
+        gb_train_acc = gb_metrics['train'].get('train_accuracy', 0)
+        nn_train_acc = nn_metrics['train'].get('train_accuracy', 0)
+        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Train Accuracy", rf_train_acc, gb_train_acc, nn_train_acc))
         
-        return model, metrics
+        rf_test_acc = rf_metrics['test'].get('accuracy', 0)
+        gb_test_acc = gb_metrics['test'].get('accuracy', 0)
+        nn_test_acc = nn_metrics['test'].get('accuracy', 0)
+        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Test Accuracy", rf_test_acc, gb_test_acc, nn_test_acc))
         
-    except Exception as e:
-        logger.error(f"✗ LSTM training failed: {e}")
-        return None, None
-
-
-def compare_models(transformer_metrics, lstm_metrics):
-    """Compare transformer and LSTM performance
-    
-    Args:
-        transformer_metrics: Transformer model metrics
-        lstm_metrics: LSTM model metrics
-    """
-    logger.info("=" * 80)
-    logger.info("STEP 5: Model Comparison")
-    logger.info("=" * 80)
-    
-    if transformer_metrics and lstm_metrics:
-        logger.info("\n{:<20} {:<15} {:<15}".format("Metric", "Transformer", "LSTM"))
-        logger.info("-" * 50)
+        rf_f1 = rf_metrics['test'].get('f1_score', 0)
+        gb_f1 = gb_metrics['test'].get('f1_score', 0)
+        nn_f1 = nn_metrics['test'].get('f1_score', 0)
+        logger.info("{:<20} {:<15.4f} {:<15.4f} {:<15.4f}".format("Test F1 Score", rf_f1, gb_f1, nn_f1))
         
-        t_train_acc = transformer_metrics['train'].get('train_accuracy', 0)
-        l_train_acc = lstm_metrics['train'].get('train_accuracy', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f}".format("Train Accuracy", t_train_acc, l_train_acc))
-        
-        t_test_acc = transformer_metrics['test'].get('accuracy', 0)
-        l_test_acc = lstm_metrics['test'].get('accuracy', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f}".format("Test Accuracy", t_test_acc, l_test_acc))
-        
-        t_f1 = transformer_metrics['test'].get('f1_score', 0)
-        l_f1 = lstm_metrics['test'].get('f1_score', 0)
-        logger.info("{:<20} {:<15.4f} {:<15.4f}".format("Test F1 Score", t_f1, l_f1))
-        
-        t_time = transformer_metrics['train'].get('training_time', 0)
-        l_time = lstm_metrics['train'].get('training_time', 0)
-        logger.info("{:<20} {:<15.2f}s {:<15.2f}s".format("Training Time", t_time, l_time))
+        rf_time = rf_metrics['train'].get('training_time', 0)
+        gb_time = gb_metrics['train'].get('training_time', 0)
+        nn_time = nn_metrics['train'].get('training_time', 0)
+        logger.info("{:<20} {:<15.2f}s {:<15.2f}s {:<15.2f}s".format("Training Time", rf_time, gb_time, nn_time))
         
         logger.info("\n" + "=" * 80)
         
         # Determine winner
-        if t_test_acc > l_test_acc:
-            logger.info("🏆 Transformer model performed better!")
-        elif l_test_acc > t_test_acc:
-            logger.info("🏆 LSTM model performed better!")
-        else:
-            logger.info("🤝 Both models performed equally well!")
+        accuracies = {'Random Forest': rf_test_acc, 'Gradient Boosting': gb_test_acc, 'Neural Network': nn_test_acc}
+        best_model = max(accuracies, key=accuracies.get)
+        logger.info(f"🏆 {best_model} model performed best with {accuracies[best_model]:.4f} accuracy!")
 
 
 def main():
     """Main execution function"""
     logger.info("=" * 80)
-    logger.info("Large-Scale Transformer & LSTM Training Pipeline")
+    logger.info("Large-Scale Model Training Pipeline")
     logger.info("=" * 80)
     
     try:
@@ -244,14 +286,17 @@ def main():
         # Step 2: Apply auto-labeling
         labeled_csv = apply_autolabeling(raw_csv)
         
-        # Step 3: Train transformer
-        transformer_model, transformer_metrics = train_transformer(labeled_csv)
+        # Step 3: Train Random Forest
+        rf_model, rf_metrics = train_random_forest(labeled_csv)
         
-        # Step 4: Train LSTM
-        lstm_model, lstm_metrics = train_lstm(labeled_csv)
+        # Step 4: Train Gradient Boosting
+        gb_model, gb_metrics = train_gradient_boosting(labeled_csv)
         
-        # Step 5: Compare models
-        compare_models(transformer_metrics, lstm_metrics)
+        # Step 5: Train Neural Network
+        nn_model, nn_metrics = train_neural_network(labeled_csv)
+        
+        # Step 6: Compare models
+        compare_models(rf_metrics, gb_metrics, nn_metrics)
         
         logger.info("=" * 80)
         logger.info("✓ Pipeline completed successfully!")
@@ -259,8 +304,9 @@ def main():
         logger.info(f"\nGenerated files:")
         logger.info(f"  Raw data: {raw_csv}")
         logger.info(f"  Labeled data: {labeled_csv}")
-        logger.info(f"  Transformer model: output/models/transformer_large/")
-        logger.info(f"  LSTM model: output/models/lstm_large/")
+        logger.info(f"  Random Forest model: output/models/random_forest_large/")
+        logger.info(f"  Gradient Boosting model: output/models/gradient_boosting_large/")
+        logger.info(f"  Neural Network model: output/models/neural_network_large/")
         
     except Exception as e:
         logger.error(f"Pipeline failed: {e}")
