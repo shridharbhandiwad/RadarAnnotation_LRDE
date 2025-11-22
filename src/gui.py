@@ -135,7 +135,7 @@ class DataExtractionPanel(QWidget):
         # Status
         self.status_text = QTextEdit()
         self.status_text.setReadOnly(True)
-        self.status_text.setMaximumHeight(150)
+        self.status_text.setMaximumHeight(100)
         
         layout.addWidget(file_group)
         layout.addWidget(self.extract_button)
@@ -243,6 +243,7 @@ class AutoLabelingPanel(QWidget):
         self.results_table = QTableWidget()
         self.results_table.setColumnCount(3)
         self.results_table.setHorizontalHeaderLabels(['Annotation', 'Count', 'Percentage'])
+        self.results_table.setMaximumHeight(120)
         
         # Save button
         self.save_button = QPushButton("Save Labeled Data")
@@ -252,7 +253,7 @@ class AutoLabelingPanel(QWidget):
         # Status
         self.status_text = QTextEdit()
         self.status_text.setReadOnly(True)
-        self.status_text.setMaximumHeight(100)
+        self.status_text.setMaximumHeight(80)
         
         layout.addWidget(file_group)
         layout.addWidget(threshold_group)
@@ -553,14 +554,14 @@ class SettingsPanel(QWidget):
         self.black_theme_button.setCheckable(True)
         self.black_theme_button.clicked.connect(lambda: self.apply_theme('black'))
         self.black_theme_button.setObjectName("themeButton")
-        self.black_theme_button.setMinimumHeight(60)
+        self.black_theme_button.setMinimumHeight(40)
         theme_buttons_layout.addWidget(self.black_theme_button)
         
         self.white_theme_button = QPushButton("⚪ White Theme")
         self.white_theme_button.setCheckable(True)
         self.white_theme_button.clicked.connect(lambda: self.apply_theme('white'))
         self.white_theme_button.setObjectName("themeButton")
-        self.white_theme_button.setMinimumHeight(60)
+        self.white_theme_button.setMinimumHeight(40)
         theme_buttons_layout.addWidget(self.white_theme_button)
         
         theme_layout.addLayout(theme_buttons_layout)
@@ -568,12 +569,9 @@ class SettingsPanel(QWidget):
         # Theme preview/description
         self.theme_description = QTextEdit()
         self.theme_description.setReadOnly(True)
-        self.theme_description.setMaximumHeight(120)
+        self.theme_description.setMaximumHeight(60)
         self.theme_description.setPlainText(
-            "Black Theme: Dark professional interface optimized for low-light environments.\n"
-            "Perfect for defense and tactical applications.\n\n"
-            "White Theme: Light clean interface for bright environments.\n"
-            "Reduces eye strain in well-lit conditions."
+            "Black Theme: Dark interface for low-light. White Theme: Light interface for bright environments."
         )
         theme_layout.addWidget(self.theme_description)
         
@@ -582,7 +580,7 @@ class SettingsPanel(QWidget):
         # Status
         self.status_text = QTextEdit()
         self.status_text.setReadOnly(True)
-        self.status_text.setMaximumHeight(100)
+        self.status_text.setMaximumHeight(70)
         
         layout.addWidget(theme_group)
         layout.addWidget(QLabel("Status:"))
@@ -788,7 +786,7 @@ class HighVolumeTrainingPanel(QWidget):
         self.results_table.setHorizontalHeaderLabels([
             'Model', 'Train Acc', 'Test Acc', 'F1 Score', 'Time (s)'
         ])
-        self.results_table.setMinimumHeight(150)
+        self.results_table.setMaximumHeight(120)
         results_layout.addWidget(self.results_table)
         
         # Action buttons
@@ -810,7 +808,7 @@ class HighVolumeTrainingPanel(QWidget):
         # Status log
         self.status_text = QTextEdit()
         self.status_text.setReadOnly(True)
-        self.status_text.setMaximumHeight(180)
+        self.status_text.setMaximumHeight(120)
         
         # Add all to main layout
         layout.addWidget(data_gen_group)
@@ -1441,7 +1439,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Radar Data Annotation Application")
-        self.setGeometry(100, 100, 1600, 1000)
+        self.setGeometry(100, 100, 1280, 720)
         
         # Initialize config
         config_path = "config/default_config.json"
@@ -1474,8 +1472,8 @@ class MainWindow(QMainWindow):
             "📉 Visualization",
             "⚙️ Settings"
         ])
-        self.engine_list.setMinimumWidth(220)
-        self.engine_list.setMaximumWidth(280)
+        self.engine_list.setMinimumWidth(170)
+        self.engine_list.setMaximumWidth(200)
         self.engine_list.setSpacing(2)
         self.engine_list.currentRowChanged.connect(self.change_panel)
         
@@ -1565,10 +1563,10 @@ class MainWindow(QMainWindow):
         }
         
         QListWidget::item {
-            padding: 18px 15px;
-            border-radius: 6px;
-            margin: 4px 6px;
-            min-height: 50px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin: 2px 4px;
+            min-height: 32px;
             border-left: 3px solid transparent;
         }
         
@@ -1588,11 +1586,11 @@ class MainWindow(QMainWindow):
         /* Group Boxes - Subtle slate container */
         QGroupBox {
             border: 2px solid #3d4a58;
-            border-radius: 8px;
-            margin-top: 16px;
-            padding-top: 20px;
+            border-radius: 6px;
+            margin-top: 10px;
+            padding-top: 15px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             background-color: #343e4c;
             color: #c5d1df;
         }
@@ -1600,11 +1598,11 @@ class MainWindow(QMainWindow):
         QGroupBox::title {
             subcontrol-origin: margin;
             subcontrol-position: top left;
-            padding: 6px 12px;
+            padding: 4px 10px;
             color: #d5dfe9;
             background-color: #3d4a58;
-            border-radius: 4px;
-            margin-left: 10px;
+            border-radius: 3px;
+            margin-left: 8px;
         }
         
         /* Push Buttons - Mono slate gradient */
@@ -1613,11 +1611,11 @@ class MainWindow(QMainWindow):
                                         stop:0 #5a6b7d, stop:1 #4a5a6b);
             color: #e8eef5;
             border: 1px solid #3d4a58;
-            border-radius: 6px;
-            padding: 12px 24px;
-            font-size: 13px;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 12px;
             font-weight: 600;
-            min-height: 36px;
+            min-height: 28px;
         }
         
         QPushButton:hover {
@@ -1628,7 +1626,7 @@ class MainWindow(QMainWindow):
         
         QPushButton:pressed {
             background-color: #3d4a58;
-            padding: 13px 23px 11px 25px;
+            padding: 9px 15px 7px 17px;
         }
         
         QPushButton:disabled {
@@ -1686,8 +1684,8 @@ class MainWindow(QMainWindow):
         /* Labels - Light slate text */
         QLabel {
             color: #c5d1df;
-            font-size: 13px;
-            padding: 3px;
+            font-size: 12px;
+            padding: 2px;
             font-weight: 500;
         }
         
@@ -1695,10 +1693,10 @@ class MainWindow(QMainWindow):
         QTextEdit {
             background-color: #242b34;
             border: 2px solid #3d4a58;
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: 4px;
+            padding: 6px;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            font-size: 12px;
+            font-size: 11px;
             color: #b8c5d6;
             line-height: 1.4;
         }
@@ -1712,9 +1710,9 @@ class MainWindow(QMainWindow):
         QComboBox {
             background-color: #343e4c;
             border: 2px solid #3d4a58;
-            border-radius: 5px;
-            padding: 8px 12px;
-            min-height: 32px;
+            border-radius: 4px;
+            padding: 6px 10px;
+            min-height: 26px;
             color: #c5d1df;
             font-size: 13px;
         }
@@ -1756,9 +1754,9 @@ class MainWindow(QMainWindow):
         QSpinBox, QDoubleSpinBox {
             background-color: #343e4c;
             border: 2px solid #3d4a58;
-            border-radius: 5px;
-            padding: 8px;
-            min-height: 32px;
+            border-radius: 4px;
+            padding: 6px;
+            min-height: 26px;
             color: #c5d1df;
             font-size: 13px;
         }
@@ -1783,7 +1781,7 @@ class MainWindow(QMainWindow):
         }
         
         QTableWidget::item {
-            padding: 8px;
+            padding: 4px;
             border-bottom: 1px solid #3d4a58;
         }
         
@@ -1800,7 +1798,7 @@ class MainWindow(QMainWindow):
             background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
                                         stop:0 #3d4a58, stop:1 #2b3440);
             color: #d5dfe9;
-            padding: 10px;
+            padding: 6px;
             border: none;
             border-right: 1px solid #2b3440;
             font-weight: 600;
@@ -1928,11 +1926,11 @@ class MainWindow(QMainWindow):
                                         stop:0 #5a6b7d, stop:1 #4a5a6b);
             color: #e8eef5;
             border: 2px solid #3d4a58;
-            border-radius: 8px;
-            padding: 18px 24px;
-            font-size: 15px;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 13px;
             font-weight: 700;
-            min-height: 60px;
+            min-height: 40px;
         }
         
         QPushButton#themeButton:hover {
@@ -1970,10 +1968,10 @@ class MainWindow(QMainWindow):
         }
         
         QListWidget::item {
-            padding: 18px 15px;
-            border-radius: 6px;
-            margin: 4px 6px;
-            min-height: 50px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin: 2px 4px;
+            min-height: 32px;
             border-left: 3px solid transparent;
         }
         
@@ -1993,11 +1991,11 @@ class MainWindow(QMainWindow):
         /* Group Boxes - Light container */
         QGroupBox {
             border: 2px solid #d0d0d0;
-            border-radius: 8px;
-            margin-top: 16px;
-            padding-top: 20px;
+            border-radius: 6px;
+            margin-top: 10px;
+            padding-top: 15px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             background-color: #ffffff;
             color: #2b3440;
         }
@@ -2005,11 +2003,11 @@ class MainWindow(QMainWindow):
         QGroupBox::title {
             subcontrol-origin: margin;
             subcontrol-position: top left;
-            padding: 6px 12px;
+            padding: 4px 10px;
             color: #1c2329;
             background-color: #e8e8e8;
-            border-radius: 4px;
-            margin-left: 10px;
+            border-radius: 3px;
+            margin-left: 8px;
         }
         
         /* Push Buttons - Light gradient */
@@ -2018,11 +2016,11 @@ class MainWindow(QMainWindow):
                                         stop:0 #f0f0f0, stop:1 #e0e0e0);
             color: #2b3440;
             border: 1px solid #c0c0c0;
-            border-radius: 6px;
-            padding: 12px 24px;
-            font-size: 13px;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 12px;
             font-weight: 600;
-            min-height: 36px;
+            min-height: 28px;
         }
         
         QPushButton:hover {
@@ -2033,7 +2031,7 @@ class MainWindow(QMainWindow):
         
         QPushButton:pressed {
             background-color: #d0d0d0;
-            padding: 13px 23px 11px 25px;
+            padding: 9px 15px 7px 17px;
         }
         
         QPushButton:disabled {
@@ -2092,8 +2090,8 @@ class MainWindow(QMainWindow):
         /* Labels - Dark text */
         QLabel {
             color: #2b3440;
-            font-size: 13px;
-            padding: 3px;
+            font-size: 12px;
+            padding: 2px;
             font-weight: 500;
         }
         
@@ -2101,10 +2099,10 @@ class MainWindow(QMainWindow):
         QTextEdit {
             background-color: #ffffff;
             border: 2px solid #d0d0d0;
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: 4px;
+            padding: 6px;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            font-size: 12px;
+            font-size: 11px;
             color: #2b3440;
             line-height: 1.4;
         }
@@ -2118,9 +2116,9 @@ class MainWindow(QMainWindow):
         QComboBox {
             background-color: #ffffff;
             border: 2px solid #d0d0d0;
-            border-radius: 5px;
-            padding: 8px 12px;
-            min-height: 32px;
+            border-radius: 4px;
+            padding: 6px 10px;
+            min-height: 26px;
             color: #2b3440;
             font-size: 13px;
         }
@@ -2162,9 +2160,9 @@ class MainWindow(QMainWindow):
         QSpinBox, QDoubleSpinBox {
             background-color: #ffffff;
             border: 2px solid #d0d0d0;
-            border-radius: 5px;
-            padding: 8px;
-            min-height: 32px;
+            border-radius: 4px;
+            padding: 6px;
+            min-height: 26px;
             color: #2b3440;
             font-size: 13px;
         }
@@ -2189,7 +2187,7 @@ class MainWindow(QMainWindow):
         }
         
         QTableWidget::item {
-            padding: 8px;
+            padding: 4px;
             border-bottom: 1px solid #e0e0e0;
         }
         
@@ -2206,7 +2204,7 @@ class MainWindow(QMainWindow):
             background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
                                         stop:0 #f5f5f5, stop:1 #e8e8e8);
             color: #1c2329;
-            padding: 10px;
+            padding: 6px;
             border: none;
             border-right: 1px solid #d0d0d0;
             font-weight: 600;
@@ -2334,11 +2332,11 @@ class MainWindow(QMainWindow):
                                         stop:0 #ffffff, stop:1 #f0f0f0);
             color: #2b3440;
             border: 2px solid #d0d0d0;
-            border-radius: 8px;
-            padding: 18px 24px;
-            font-size: 15px;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 13px;
             font-weight: 700;
-            min-height: 60px;
+            min-height: 40px;
         }
         
         QPushButton#themeButton:hover {
