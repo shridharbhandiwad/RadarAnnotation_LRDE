@@ -1477,13 +1477,72 @@ if __name__ == "__main__":
     
     model, metrics = train_model(args.model, args.data, args.outdir)
     
-    print(f"\nTraining Results for {args.model}:")
-    print(f"  Train Accuracy: {metrics['train'].get('train_accuracy', 0):.4f}")
-    print(f"  Test Accuracy: {metrics['test'].get('accuracy', 0):.4f}")
-    print(f"  Test F1 Score: {metrics['test'].get('f1_score', 0):.4f}")
+    # Display results in a formatted table
+    print("\n" + "=" * 80)
+    print(" " * 25 + f"TRAINING RESULTS - {args.model.upper()}")
+    print("=" * 80)
+    print("")
+    
+    print("┌─────────────────────────────────┬──────────────────────────────────┐")
+    print("│ Metric                          │ Value                            │")
+    print("├─────────────────────────────────┼──────────────────────────────────┤")
+    print(f"│ Model Type                      │ {args.model:<32} │")
+    print(f"│ Train Accuracy                  │ {metrics['train'].get('train_accuracy', 0):>32.4f} │")
+    print(f"│ Test Accuracy                   │ {metrics['test'].get('accuracy', 0):>32.4f} │")
+    print(f"│ Test F1 Score                   │ {metrics['test'].get('f1_score', 0):>32.4f} │")
+    print(f"│ Training Time (s)               │ {metrics['train'].get('training_time', 0):>32.2f} │")
     
     if metrics['train'].get('multi_output', False):
-        print(f"\n  Multi-output Model:")
+        print("├─────────────────────────────────┼──────────────────────────────────┤")
+        print("│ Multi-Output Results            │                                  │")
+        print("├─────────────────────────────────┼──────────────────────────────────┤")
         if 'outputs' in metrics['test']:
             for output_name, output_metrics in metrics['test']['outputs'].items():
-                print(f"    {output_name}: Acc={output_metrics['accuracy']:.4f}, F1={output_metrics['f1_score']:.4f}")
+                print(f"│   {output_name:<27} │ Acc: {output_metrics['accuracy']:.4f} F1: {output_metrics['f1_score']:.4f}     │")
+    
+    print("└─────────────────────────────────┴──────────────────────────────────┘")
+    print("")
+    
+    # Verdict
+    print("=" * 80)
+    print(" " * 32 + "VERDICT")
+    print("=" * 80)
+    print("")
+    
+    test_acc = metrics['test'].get('accuracy', 0)
+    if test_acc > 0.95:
+        print("🏆 EXCELLENT: Model achieved outstanding performance (>95% accuracy)")
+        print("   ✅ Production-ready and highly reliable")
+    elif test_acc > 0.85:
+        print("✅ GOOD: Model shows strong performance (>85% accuracy)")
+        print("   ✅ Suitable for deployment with monitoring")
+    elif test_acc > 0.75:
+        print("⚠️  MODERATE: Model has acceptable performance (>75% accuracy)")
+        print("   💡 Consider collecting more training data or tuning hyperparameters")
+    else:
+        print("❌ NEEDS IMPROVEMENT: Model performance is below expectations (<75% accuracy)")
+        print("   💡 Recommendations:")
+        print("      • Collect more diverse training data")
+        print("      • Feature engineering - add more relevant features")
+        print("      • Try different model architectures")
+        print("      • Check for data quality issues")
+    
+    # Check for overfitting
+    train_acc = metrics['train'].get('train_accuracy', 0)
+    overfit_gap = train_acc - test_acc
+    print("")
+    if overfit_gap > 0.15:
+        print(f"⚠️  HIGH OVERFITTING DETECTED: Train-test gap = {overfit_gap:.4f}")
+        print("   💡 Model may be memorizing training data. Try:")
+        print("      • Increase regularization")
+        print("      • Use more training data")
+        print("      • Reduce model complexity")
+    elif overfit_gap > 0.05:
+        print(f"⚠️  SLIGHT OVERFITTING: Train-test gap = {overfit_gap:.4f}")
+        print("   💡 Model is fitting well but could generalize better")
+    else:
+        print(f"✅ GOOD GENERALIZATION: Train-test gap = {overfit_gap:.4f}")
+        print("   Model generalizes well to unseen data")
+    
+    print("")
+    print("=" * 80)
