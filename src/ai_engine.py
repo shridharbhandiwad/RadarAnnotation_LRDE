@@ -1233,9 +1233,9 @@ class TransformerModel:
                 labels['direction'][idx] = 1
             
             # Altitude
-            if 'ascending' in tags:
+            if 'ascending' in tags or 'fixed_range_ascending' in tags:
                 labels['altitude'][idx] = 0
-            elif 'descending' in tags:
+            elif 'descending' in tags or 'fixed_range_descending' in tags:
                 labels['altitude'][idx] = 1
             elif 'level' in tags or 'level_flight' in tags:
                 labels['altitude'][idx] = 2
@@ -2197,11 +2197,11 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
                 # Altitude
                 altitude_pred = np.argmax(y_pred_multi['altitude'][idx]) if len(y_pred_multi['altitude'][idx].shape) > 0 else int(y_pred_multi['altitude'][idx])
                 if altitude_pred == 0:
-                    tags.append('ascending')
+                    tags.append('fixed_range_ascending')
                 elif altitude_pred == 1:
-                    tags.append('descending')
+                    tags.append('fixed_range_descending')
                 else:
-                    tags.append('level')
+                    tags.append('level_flight')
                 
                 # Path
                 path_pred = y_pred_multi['path'][idx][0] if len(y_pred_multi['path'][idx].shape) > 0 else y_pred_multi['path'][idx]

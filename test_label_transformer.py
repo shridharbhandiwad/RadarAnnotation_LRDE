@@ -28,7 +28,7 @@ def create_test_data_uniform_composite():
         'vx': np.random.randn(30) * 10,
         'vy': np.random.randn(30) * 10,
         'vz': np.random.randn(30) * 2,
-        'Annotation': ['incoming,level,linear,light_maneuver,low_speed'] * 30
+        'Annotation': ['incoming,level_flight,linear,light_maneuver,low_speed'] * 30
     }
     return pd.DataFrame(data)
 
@@ -45,9 +45,9 @@ def create_test_data_diverse_tracks():
         'vy': np.random.randn(30) * 10,
         'vz': np.random.randn(30) * 2,
         'Annotation': (
-            ['incoming,level,linear,light_maneuver,low_speed'] * 10 +
-            ['outgoing,level,curved,high_maneuver,high_speed'] * 10 +
-            ['incoming,ascending,linear,light_maneuver,low_speed'] * 10
+            ['incoming,level_flight,linear,light_maneuver,low_speed'] * 10 +
+            ['outgoing,level_flight,curved,high_maneuver,high_speed'] * 10 +
+            ['incoming,fixed_range_ascending,linear,light_maneuver,low_speed'] * 10
         )
     }
     return pd.DataFrame(data)
@@ -114,9 +114,9 @@ def test_per_track_labels():
     print(f"   Unique point-level labels: {df['Annotation'].nunique()}")
     
     # Manually create different labels per track for demonstration
-    df.loc[df['trackid'] == 1, 'Annotation'] = 'incoming,level,linear,light_maneuver,low_speed'
-    df.loc[df['trackid'] == 2, 'Annotation'] = 'outgoing,level,curved,high_maneuver,high_speed'
-    df.loc[df['trackid'] == 3, 'Annotation'] = 'incoming,ascending,linear,light_maneuver,low_speed'
+    df.loc[df['trackid'] == 1, 'Annotation'] = 'incoming,level_flight,linear,light_maneuver,low_speed'
+    df.loc[df['trackid'] == 2, 'Annotation'] = 'outgoing,level_flight,curved,high_maneuver,high_speed'
+    df.loc[df['trackid'] == 3, 'Annotation'] = 'incoming,fixed_range_ascending,linear,light_maneuver,low_speed'
     
     transformer = LabelTransformer()
     df_out = transformer.create_per_track_labels(df, strategy='primary')
