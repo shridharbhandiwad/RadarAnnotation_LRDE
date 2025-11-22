@@ -100,7 +100,9 @@ class MultiOutputDataAdapter:
         """
         # Filter valid features if requested
         if filter_valid and 'valid_features' in df.columns:
-            df_valid = df[df['valid_features'] == True].copy()
+            # Use .loc to avoid DataFrame ambiguity issues
+            valid_mask = df['valid_features'].astype(bool)
+            df_valid = df.loc[valid_mask].copy()
             logger.info(f"Filtered from {len(df)} to {len(df_valid)} valid samples")
         else:
             df_valid = df.copy()
@@ -178,7 +180,8 @@ class MultiOutputDataAdapter:
             
             # Filter valid features
             if filter_valid and 'valid_features' in track_df.columns:
-                track_df = track_df[track_df['valid_features'] == True]
+                valid_mask = track_df['valid_features'].astype(bool)
+                track_df = track_df.loc[valid_mask]
             
             if len(track_df) < 3:
                 continue

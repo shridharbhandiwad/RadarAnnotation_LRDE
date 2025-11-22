@@ -69,7 +69,8 @@ class SequenceDataGenerator:
             
             # Filter valid features only
             if 'valid_features' in track_df.columns:
-                track_df = track_df[track_df['valid_features'] == True]
+                valid_mask = track_df['valid_features'].astype(bool)
+                track_df = track_df.loc[valid_mask]
             
             if len(track_df) < 3:  # Skip tracks with insufficient data
                 continue
@@ -187,9 +188,10 @@ class XGBoostModel:
         self.feature_columns = feature_cols
         
         # Filter valid features only
-        # Use .get() with Series to properly handle missing column
+        # Use .loc with boolean mask to avoid DataFrame ambiguity
         if 'valid_features' in df.columns:
-            df_valid = df[df['valid_features'] == True].copy()
+            valid_mask = df['valid_features'].astype(bool)
+            df_valid = df.loc[valid_mask].copy()
         else:
             # If no valid_features column, use all data
             df_valid = df.copy()
@@ -650,7 +652,8 @@ class RandomForestModel:
         
         # Filter valid features only
         if 'valid_features' in df.columns:
-            df_valid = df[df['valid_features'] == True].copy()
+            valid_mask = df['valid_features'].astype(bool)
+            df_valid = df.loc[valid_mask].copy()
         else:
             df_valid = df.copy()
         
@@ -1938,7 +1941,8 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
     if model_type in ['random_forest', 'gradient_boosting']:
         # For tabular models (RF, XGBoost)
         # Filter to only valid features
-        df_valid = df_features[df_features['valid_features'] == True].copy()
+        valid_mask = df_features['valid_features'].astype(bool)
+        df_valid = df_features.loc[valid_mask].copy()
         
         if len(df_valid) == 0:
             logger.warning("No valid features found after filtering. Using all data.")
@@ -1993,7 +1997,8 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
             track_df = df_features[df_features['trackid'] == trackid].sort_values('time').copy()
             
             # Filter valid features
-            track_df = track_df[track_df['valid_features'] == True]
+            valid_mask = track_df['valid_features'].astype(bool)
+            track_df = track_df.loc[valid_mask]
             
             if len(track_df) < 3:
                 continue
