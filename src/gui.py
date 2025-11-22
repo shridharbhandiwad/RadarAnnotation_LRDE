@@ -349,11 +349,28 @@ class AITaggingPanel(QWidget):
         
         # Model selection
         model_group = QGroupBox("Model Selection")
-        model_layout = QFormLayout()
+        model_layout = QVBoxLayout()
         
+        # Model type selection
+        model_type_layout = QFormLayout()
         self.model_combo = QComboBox()
         self.model_combo.addItems(['Random Forest', 'Gradient Boosting', 'Neural Network'])
-        model_layout.addRow("Model Type:", self.model_combo)
+        model_type_layout.addRow("Model Type:", self.model_combo)
+        model_layout.addLayout(model_type_layout)
+        
+        # Multi-output mode checkbox
+        self.multi_output_check = QPushButton("🎯 Multi-Output Mode (Auto-Tagging)")
+        self.multi_output_check.setCheckable(True)
+        self.multi_output_check.setChecked(False)
+        self.multi_output_check.clicked.connect(self.toggle_multi_output_info)
+        model_layout.addWidget(self.multi_output_check)
+        
+        # Info label for multi-output
+        self.multi_output_info = QLabel()
+        self.multi_output_info.setWordWrap(True)
+        self.multi_output_info.setVisible(False)
+        self.multi_output_info.setStyleSheet("QLabel { color: #666; font-size: 11px; padding: 8px; background-color: #f0f0f0; border-radius: 4px; }")
+        model_layout.addWidget(self.multi_output_info)
         
         model_group.setLayout(model_layout)
         
@@ -391,6 +408,20 @@ class AITaggingPanel(QWidget):
         
         self.setLayout(layout)
     
+    def toggle_multi_output_info(self):
+        """Toggle multi-output information display"""
+        if self.multi_output_check.isChecked():
+            info_text = (
+                "<b>Multi-Output Mode:</b> Trains model to predict multiple tags simultaneously<br>"
+                "<b>Input:</b> Columns A-K (x, y, z, velocities, etc.)<br>"
+                "<b>Output:</b> Columns L-AF (incoming, outgoing, level, linear, curved, etc.)<br>"
+                "<b>Benefits:</b> Single model for all tags, captures tag relationships"
+            )
+            self.multi_output_info.setText(info_text)
+            self.multi_output_info.setVisible(True)
+        else:
+            self.multi_output_info.setVisible(False)
+    
     def select_data(self):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Select Labeled Data", "", "CSV Files (*.csv)"
@@ -403,6 +434,7 @@ class AITaggingPanel(QWidget):
     
     def train_model(self):
         model_display_name = self.model_combo.currentText()
+        is_multi_output = self.multi_output_check.isChecked()
         
         # Map display names to internal model names
         model_name_map = {
@@ -412,18 +444,28 @@ class AITaggingPanel(QWidget):
         }
         model_name = model_name_map.get(model_display_name, model_display_name.lower().replace(' ', '_'))
         
-        self.results_text.append(f"\nTraining {model_display_name} model...")
+        mode_str = "Multi-Output" if is_multi_output else "Standard"
+        self.results_text.append(f"\nTraining {model_display_name} model ({mode_str} mode)...")
         self.progress_bar.setVisible(True)
         self.progress_bar.setRange(0, 0)  # Indeterminate
         self.train_button.setEnabled(False)
         
-        # Run training in worker thread
-        self.worker = WorkerThread(
-            ai_engine.train_model,
-            model_name,
-            self.data_path,
-            'output/models'
-        )
+        if is_multi_output:
+            # Run multi-output training
+            self.worker = WorkerThread(
+                self._train_multi_output_model,
+                model_name,
+                self.data_path
+            )
+        else:
+            # Run standard training
+            self.worker = WorkerThread(
+                ai_engine.train_model,
+                model_name,
+                self.data_path,
+                'output/models'
+            )
+        
         self.worker.finished.connect(self.training_finished)
         self.worker.error.connect(self.training_error)
         self.worker.start()
@@ -456,12 +498,17 @@ class AITaggingPanel(QWidget):
         # Show multi-output metrics if available
         if train_metrics.get('multi_output', False):
             self.results_text.append("├─────────────────────────────┼────────────────────────────────┤")
-            self.results_text.append("│ Multi-Output Results        │                                │")
+            self.results_text.append("│ Multi-Output Per-Tag Results│                                │")
             self.results_text.append("├─────────────────────────────┼────────────────────────────────┤")
-            if 'outputs' in test_metrics:
-                for output_name, output_metrics in test_metrics['outputs'].items():
+            per_tag_metrics = test_metrics.get('per_tag_metrics', test_metrics.get('outputs', {}))
+            if per_tag_metrics:
+                # Show top 10 tags (sorted by name)
+                tag_items = sorted(per_tag_metrics.items())[:10]
+                for output_name, output_metrics in tag_items:
                     acc_f1_str = f"Acc:{output_metrics['accuracy']:.4f} F1:{output_metrics['f1_score']:.4f}"
                     self.results_text.append(f"│   {output_name:<25} │ {acc_f1_str:<30} │")
+                if len(per_tag_metrics) > 10:
+                    self.results_text.append(f"│   ... and {len(per_tag_metrics)-10} more tags │{'':30} │")
         
         self.results_text.append("└─────────────────────────────┴────────────────────────────────┘")
         self.results_text.append("")
@@ -501,6 +548,84 @@ class AITaggingPanel(QWidget):
         self.results_text.append("")
         self.results_text.append("="*70)
         self.results_text.append(f"\nModel saved to: output/models/")
+    
+    def _train_multi_output_model(self, model_name: str, data_path: str):
+        """Train a multi-output model
+        
+        Args:
+            model_name: One of 'random_forest', 'gradient_boosting', 'neural_network'
+            data_path: Path to labeled CSV dataset
+            
+        Returns:
+            Tuple of (model, metrics)
+        """
+        from sklearn.model_selection import train_test_split
+        import time
+        
+        # Load data
+        df = pd.read_csv(data_path)
+        
+        # Split by track ID to avoid data leakage
+        track_ids = df['trackid'].unique()
+        train_ids, test_ids = train_test_split(track_ids, test_size=0.2, random_state=42)
+        train_ids, val_ids = train_test_split(train_ids, test_size=0.2, random_state=42)
+        
+        df_train = df[df['trackid'].isin(train_ids)]
+        df_val = df[df['trackid'].isin(val_ids)]
+        df_test = df[df['trackid'].isin(test_ids)]
+        
+        # Create appropriate multi-output model
+        if model_name == 'random_forest':
+            model = ai_engine.RandomForestMultiOutputModel(params={
+                'n_estimators': 100,
+                'max_depth': 20,
+                'random_state': 42,
+                'n_jobs': -1
+            })
+            model_display_name = 'Random Forest'
+            output_dir = 'output/models/random_forest_multi_output'
+        elif model_name == 'gradient_boosting':
+            model = ai_engine.XGBoostMultiOutputModel(params={
+                'n_estimators': 100,
+                'max_depth': 6,
+                'learning_rate': 0.1,
+                'random_state': 42
+            })
+            model_display_name = 'XGBoost'
+            output_dir = 'output/models/xgboost_multi_output'
+        elif model_name == 'neural_network':
+            model = ai_engine.TransformerMultiOutputModel(params={
+                'd_model': 128,
+                'num_heads': 8,
+                'num_layers': 4,
+                'epochs': 50
+            })
+            model_display_name = 'Transformer'
+            output_dir = 'output/models/transformer_multi_output'
+        else:
+            raise ValueError(f"Unsupported model type for multi-output: {model_name}")
+        
+        # Train model
+        train_metrics = model.train(df_train, df_val)
+        
+        # Evaluate on test set
+        test_metrics = model.evaluate(df_test)
+        
+        # Save model
+        model_path = Path(output_dir) / 'model.pkl'
+        model.save(str(model_path))
+        
+        # Format metrics for display
+        metrics = {
+            'model_name': model_display_name,
+            'train': {
+                **train_metrics,
+                'multi_output': True
+            },
+            'test': test_metrics
+        }
+        
+        return (model, metrics)
     
     def training_error(self, error_msg):
         self.progress_bar.setVisible(False)
