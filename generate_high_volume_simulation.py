@@ -1,12 +1,12 @@
 """Generate High-Volume Simulation Dataset
 
 This script generates:
-- 10 random tracks
+- 1 single track with ALL trajectory types
 - 100ms sampling interval (0.1 seconds)
-- 10 minutes flight time each
-- Total: ~60,000 data points
+- 60 minutes (1 hour) flight time
+- Total: ~36,000 data points
 
-The dataset is suitable for training, testing, and evaluating different models.
+The dataset includes all possible trajectory types for better model accuracy.
 """
 
 import logging
@@ -25,18 +25,19 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-from src.sim_engine import create_large_training_dataset
+from src.sim_engine import create_single_track_all_trajectories
 from src.autolabel_engine import compute_motion_features, apply_rules_and_flags, get_annotation_summary
 
 
 def generate_high_volume_dataset():
-    """Generate high-volume simulation dataset
+    """Generate high-volume simulation dataset with single track
     
     Parameters:
-    - 10 random tracks
+    - 1 single track with ALL trajectory types
     - 100ms interval (configured in config)
-    - 10 minutes per track
-    - Total: ~60,000 data points
+    - 60 minutes (1 hour) total flight time
+    - 10 different trajectory types, 6 minutes each
+    - Total: ~36,000 data points
     
     Returns:
         Tuple of (raw_csv_path, labeled_csv_path)
@@ -45,39 +46,34 @@ def generate_high_volume_dataset():
     logger.info("HIGH-VOLUME SIMULATION DATASET GENERATION")
     logger.info("=" * 80)
     logger.info("Configuration:")
-    logger.info("  - Tracks: 10")
+    logger.info("  - Tracks: 1 (single track with all trajectory types)")
     logger.info("  - Sample Interval: 100ms (0.1 seconds)")
-    logger.info("  - Duration per track: 10 minutes")
-    logger.info("  - Expected data points: ~60,000")
+    logger.info("  - Total flight duration: 60 minutes (1 hour)")
+    logger.info("  - Trajectory types: 10 (6 minutes each)")
+    logger.info("  - Expected data points: ~36,000")
     logger.info("=" * 80)
     
     # Generate raw simulation data
     output_path = "data/high_volume_simulation.csv"
     
     logger.info("\nSTEP 1: Generating raw simulation data...")
-    csv_path = create_large_training_dataset(
+    csv_path = create_single_track_all_trajectories(
         output_path=output_path,
-        n_tracks=10,
-        duration_min=10
+        duration_min=60
     )
     
     # Load and verify
     df = pd.read_csv(csv_path)
     logger.info(f"\n✓ Raw simulation dataset created: {csv_path}")
     logger.info(f"  Total records: {len(df):,}")
-    logger.info(f"  Unique tracks: {df['trackid'].nunique()}")
+    logger.info(f"  Track ID: {df['trackid'].unique()[0]}")
     logger.info(f"  Duration: {df['time'].max():.2f} seconds ({df['time'].max()/60:.2f} minutes)")
     
-    # Calculate average points per track
-    points_per_track = df.groupby('trackid').size()
-    logger.info(f"  Avg points per track: {points_per_track.mean():.0f}")
-    logger.info(f"  Min points per track: {points_per_track.min()}")
-    logger.info(f"  Max points per track: {points_per_track.max()}")
-    
     # Calculate time intervals
-    time_diffs = df.groupby('trackid')['time'].diff().dropna()
+    time_diffs = df['time'].diff().dropna()
     avg_interval_ms = time_diffs.mean() * 1000
     logger.info(f"  Avg sampling interval: {avg_interval_ms:.1f}ms")
+    logger.info(f"  Total data points: {len(df):,}")
     
     # Apply auto-labeling
     logger.info("\nSTEP 2: Applying auto-labeling...")
@@ -91,8 +87,8 @@ def generate_high_volume_dataset():
     logger.info(f"  Unique annotations: {len(summary['annotation_distribution'])}")
     
     # Show top annotations
-    logger.info("\n  Top 10 Annotations:")
-    for annotation, data in list(summary['annotation_distribution'].items())[:10]:
+    logger.info("\n  Top 15 Annotations:")
+    for annotation, data in list(summary['annotation_distribution'].items())[:15]:
         logger.info(f"    {annotation}: {data['count']:,} ({data['percentage']:.2f}%)")
     
     # Save labeled dataset
