@@ -685,6 +685,436 @@ class SimulationPanel(QWidget):
             logger.error(f"Simulation error: {e}", exc_info=True)
 
 
+class HighVolumeTrainingPanel(QWidget):
+    """Panel for High Volume Data Training and Evaluation"""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.current_data_path = None
+        self.labeled_data_path = None
+        self.training_results = {}
+        self.setup_ui()
+    
+    def setup_ui(self):
+        layout = QVBoxLayout()
+        
+        # Step 1: Dataset Generation
+        data_gen_group = QGroupBox("Step 1: Generate High-Volume Dataset")
+        data_gen_layout = QFormLayout()
+        
+        self.n_tracks_spin = QSpinBox()
+        self.n_tracks_spin.setRange(10, 500)
+        self.n_tracks_spin.setValue(200)
+        self.n_tracks_spin.setToolTip("Number of trajectory tracks to generate")
+        data_gen_layout.addRow("Number of Tracks:", self.n_tracks_spin)
+        
+        self.duration_spin = QDoubleSpinBox()
+        self.duration_spin.setRange(1.0, 30.0)
+        self.duration_spin.setValue(10.0)
+        self.duration_spin.setToolTip("Duration of each track in minutes")
+        data_gen_layout.addRow("Duration (min):", self.duration_spin)
+        
+        self.generate_button = QPushButton("Generate Dataset")
+        self.generate_button.clicked.connect(self.generate_dataset)
+        self.generate_button.setObjectName("primaryButton")
+        data_gen_layout.addWidget(self.generate_button)
+        
+        data_gen_group.setLayout(data_gen_layout)
+        
+        # Step 2: Auto-Labeling
+        labeling_group = QGroupBox("Step 2: Apply Auto-Labeling")
+        labeling_layout = QVBoxLayout()
+        
+        self.use_existing_data = QPushButton("Or Select Existing CSV File")
+        self.use_existing_data.clicked.connect(self.select_existing_data)
+        labeling_layout.addWidget(self.use_existing_data)
+        
+        self.label_button = QPushButton("Apply Auto-Labeling")
+        self.label_button.clicked.connect(self.apply_labeling)
+        self.label_button.setEnabled(False)
+        labeling_layout.addWidget(self.label_button)
+        
+        labeling_group.setLayout(labeling_layout)
+        
+        # Step 3: Model Training
+        training_group = QGroupBox("Step 3: Train Models")
+        training_layout = QVBoxLayout()
+        
+        # Model selection checkboxes
+        models_layout = QHBoxLayout()
+        self.train_transformer_check = QPushButton("🧠 Transformer")
+        self.train_transformer_check.setCheckable(True)
+        self.train_transformer_check.setChecked(True)
+        models_layout.addWidget(self.train_transformer_check)
+        
+        self.train_lstm_check = QPushButton("🔁 LSTM")
+        self.train_lstm_check.setCheckable(True)
+        self.train_lstm_check.setChecked(True)
+        models_layout.addWidget(self.train_lstm_check)
+        
+        self.train_xgboost_check = QPushButton("🚀 XGBoost")
+        self.train_xgboost_check.setCheckable(True)
+        self.train_xgboost_check.setChecked(False)
+        models_layout.addWidget(self.train_xgboost_check)
+        
+        training_layout.addLayout(models_layout)
+        
+        self.train_all_button = QPushButton("Train Selected Models")
+        self.train_all_button.clicked.connect(self.train_models)
+        self.train_all_button.setEnabled(False)
+        self.train_all_button.setObjectName("primaryButton")
+        training_layout.addWidget(self.train_all_button)
+        
+        training_group.setLayout(training_layout)
+        
+        # Progress bar
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setVisible(False)
+        
+        # Results display
+        results_group = QGroupBox("Results Summary")
+        results_layout = QVBoxLayout()
+        
+        self.results_table = QTableWidget()
+        self.results_table.setColumnCount(5)
+        self.results_table.setHorizontalHeaderLabels([
+            'Model', 'Train Acc', 'Test Acc', 'F1 Score', 'Time (s)'
+        ])
+        self.results_table.setMinimumHeight(150)
+        results_layout.addWidget(self.results_table)
+        
+        # Action buttons
+        actions_layout = QHBoxLayout()
+        
+        self.generate_report_button = QPushButton("📄 Generate Report")
+        self.generate_report_button.clicked.connect(self.generate_report)
+        self.generate_report_button.setEnabled(False)
+        actions_layout.addWidget(self.generate_report_button)
+        
+        self.export_results_button = QPushButton("💾 Export Results")
+        self.export_results_button.clicked.connect(self.export_results)
+        self.export_results_button.setEnabled(False)
+        actions_layout.addWidget(self.export_results_button)
+        
+        results_layout.addLayout(actions_layout)
+        results_group.setLayout(results_layout)
+        
+        # Status log
+        self.status_text = QTextEdit()
+        self.status_text.setReadOnly(True)
+        self.status_text.setMaximumHeight(180)
+        
+        # Add all to main layout
+        layout.addWidget(data_gen_group)
+        layout.addWidget(labeling_group)
+        layout.addWidget(training_group)
+        layout.addWidget(self.progress_bar)
+        layout.addWidget(results_group)
+        layout.addWidget(QLabel("Status Log:"))
+        layout.addWidget(self.status_text)
+        
+        self.setLayout(layout)
+    
+    def generate_dataset(self):
+        """Generate high-volume dataset"""
+        try:
+            n_tracks = self.n_tracks_spin.value()
+            duration = self.duration_spin.value()
+            
+            self.status_text.append(f"\n{'='*60}")
+            self.status_text.append(f"Generating dataset: {n_tracks} tracks, {duration} min each...")
+            self.progress_bar.setVisible(True)
+            self.progress_bar.setRange(0, 0)
+            self.generate_button.setEnabled(False)
+            
+            # Run in worker thread
+            def generate_worker():
+                output_path = "data/high_volume_simulation.csv"
+                csv_path = sim_engine.create_large_training_dataset(
+                    output_path=output_path,
+                    n_tracks=n_tracks,
+                    duration_min=duration
+                )
+                return csv_path
+            
+            self.worker = WorkerThread(generate_worker)
+            self.worker.finished.connect(self.dataset_generated)
+            self.worker.error.connect(self.operation_error)
+            self.worker.start()
+            
+        except Exception as e:
+            self.status_text.append(f"✗ Error: {str(e)}")
+            logger.error(f"Dataset generation error: {e}", exc_info=True)
+    
+    def dataset_generated(self, csv_path):
+        """Handle dataset generation completion"""
+        self.progress_bar.setVisible(False)
+        self.generate_button.setEnabled(True)
+        
+        self.current_data_path = csv_path
+        self.status_text.append(f"✓ Dataset generated: {csv_path}")
+        
+        # Load and display summary
+        df = pd.read_csv(csv_path)
+        self.status_text.append(f"  Total tracks: {df['trackid'].nunique()}")
+        self.status_text.append(f"  Total records: {len(df):,}")
+        self.status_text.append(f"  Duration: {df['time'].max():.1f}s")
+        
+        self.label_button.setEnabled(True)
+    
+    def select_existing_data(self):
+        """Select existing CSV file"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Select Simulation Data CSV", "data/", "CSV Files (*.csv)"
+        )
+        
+        if file_path:
+            self.current_data_path = file_path
+            self.status_text.append(f"\n✓ Selected existing data: {file_path}")
+            
+            # Check if it's already labeled
+            df = pd.read_csv(file_path)
+            if 'Annotation' in df.columns:
+                self.labeled_data_path = file_path
+                self.status_text.append("  Data is already labeled!")
+                self.train_all_button.setEnabled(True)
+            else:
+                self.label_button.setEnabled(True)
+    
+    def apply_labeling(self):
+        """Apply auto-labeling to dataset"""
+        if not self.current_data_path:
+            QMessageBox.warning(self, "Error", "No dataset available. Generate or select data first.")
+            return
+        
+        try:
+            self.status_text.append(f"\n{'='*60}")
+            self.status_text.append("Applying auto-labeling...")
+            self.progress_bar.setVisible(True)
+            self.progress_bar.setRange(0, 0)
+            self.label_button.setEnabled(False)
+            
+            def labeling_worker():
+                df = pd.read_csv(self.current_data_path)
+                
+                # Compute features
+                df = autolabel_engine.compute_motion_features(df)
+                
+                # Apply rules
+                df = autolabel_engine.apply_rules_and_flags(df)
+                
+                # Save labeled data
+                labeled_path = self.current_data_path.replace('.csv', '_labeled.csv')
+                df.to_csv(labeled_path, index=False)
+                
+                # Get summary
+                summary = autolabel_engine.get_annotation_summary(df)
+                
+                return labeled_path, summary
+            
+            self.worker = WorkerThread(labeling_worker)
+            self.worker.finished.connect(self.labeling_completed)
+            self.worker.error.connect(self.operation_error)
+            self.worker.start()
+            
+        except Exception as e:
+            self.status_text.append(f"✗ Error: {str(e)}")
+            logger.error(f"Labeling error: {e}", exc_info=True)
+    
+    def labeling_completed(self, result):
+        """Handle labeling completion"""
+        labeled_path, summary = result
+        
+        self.progress_bar.setVisible(False)
+        self.label_button.setEnabled(True)
+        
+        self.labeled_data_path = labeled_path
+        self.status_text.append(f"✓ Auto-labeling completed: {labeled_path}")
+        self.status_text.append(f"  Valid records: {summary['valid_records']:,}/{summary['total_records']:,}")
+        self.status_text.append(f"  Unique annotations: {len(summary['annotation_distribution'])}")
+        
+        # Show top annotations
+        self.status_text.append("  Top 5 annotations:")
+        for i, (ann, data) in enumerate(list(summary['annotation_distribution'].items())[:5]):
+            self.status_text.append(f"    {i+1}. {ann}: {data['count']} ({data['percentage']:.1f}%)")
+        
+        self.train_all_button.setEnabled(True)
+    
+    def train_models(self):
+        """Train selected models"""
+        if not self.labeled_data_path:
+            QMessageBox.warning(self, "Error", "No labeled data available. Complete previous steps first.")
+            return
+        
+        # Determine which models to train
+        models_to_train = []
+        if self.train_transformer_check.isChecked():
+            models_to_train.append('transformer')
+        if self.train_lstm_check.isChecked():
+            models_to_train.append('lstm')
+        if self.train_xgboost_check.isChecked():
+            models_to_train.append('xgboost')
+        
+        if not models_to_train:
+            QMessageBox.warning(self, "Error", "Please select at least one model to train.")
+            return
+        
+        self.status_text.append(f"\n{'='*60}")
+        self.status_text.append(f"Training {len(models_to_train)} model(s)...")
+        self.progress_bar.setVisible(True)
+        self.progress_bar.setRange(0, 0)
+        self.train_all_button.setEnabled(False)
+        
+        def training_worker():
+            results = {}
+            
+            for model_name in models_to_train:
+                logger.info(f"Training {model_name}...")
+                
+                output_dir = f"output/models/{model_name}_highvolume"
+                
+                try:
+                    model, metrics = ai_engine.train_model(
+                        model_name,
+                        self.labeled_data_path,
+                        output_dir,
+                        auto_transform=True
+                    )
+                    results[model_name] = metrics
+                    logger.info(f"✓ {model_name} training completed")
+                except Exception as e:
+                    logger.error(f"✗ {model_name} training failed: {e}")
+                    results[model_name] = {'error': str(e)}
+            
+            return results
+        
+        self.worker = WorkerThread(training_worker)
+        self.worker.finished.connect(self.training_completed)
+        self.worker.error.connect(self.operation_error)
+        self.worker.start()
+    
+    def training_completed(self, results):
+        """Handle training completion"""
+        self.progress_bar.setVisible(False)
+        self.train_all_button.setEnabled(True)
+        
+        self.training_results = results
+        
+        self.status_text.append(f"\n{'='*60}")
+        self.status_text.append("✓ Training completed for all models!")
+        
+        # Update results table
+        self.results_table.setRowCount(0)
+        
+        for model_name, metrics in results.items():
+            if 'error' in metrics:
+                self.status_text.append(f"  ✗ {model_name}: {metrics['error']}")
+                continue
+            
+            row = self.results_table.rowCount()
+            self.results_table.insertRow(row)
+            
+            train_metrics = metrics.get('train', {})
+            test_metrics = metrics.get('test', {})
+            
+            train_acc = train_metrics.get('train_accuracy', 0)
+            test_acc = test_metrics.get('accuracy', 0)
+            f1_score = test_metrics.get('f1_score', 0)
+            train_time = train_metrics.get('training_time', 0)
+            
+            self.results_table.setItem(row, 0, QTableWidgetItem(model_name.upper()))
+            self.results_table.setItem(row, 1, QTableWidgetItem(f"{train_acc:.4f}"))
+            self.results_table.setItem(row, 2, QTableWidgetItem(f"{test_acc:.4f}"))
+            self.results_table.setItem(row, 3, QTableWidgetItem(f"{f1_score:.4f}"))
+            self.results_table.setItem(row, 4, QTableWidgetItem(f"{train_time:.2f}"))
+            
+            self.status_text.append(f"\n  {model_name.upper()}:")
+            self.status_text.append(f"    Train Acc: {train_acc:.4f}")
+            self.status_text.append(f"    Test Acc:  {test_acc:.4f}")
+            self.status_text.append(f"    F1 Score:  {f1_score:.4f}")
+            self.status_text.append(f"    Time:      {train_time:.2f}s")
+        
+        # Determine best model
+        best_model = max(results.items(), 
+                        key=lambda x: x[1].get('test', {}).get('accuracy', 0) if 'error' not in x[1] else 0)
+        self.status_text.append(f"\n🏆 Best model: {best_model[0].upper()}")
+        
+        self.generate_report_button.setEnabled(True)
+        self.export_results_button.setEnabled(True)
+    
+    def generate_report(self):
+        """Generate comprehensive HTML report"""
+        if not self.training_results:
+            QMessageBox.warning(self, "Error", "No training results available.")
+            return
+        
+        try:
+            self.status_text.append(f"\n{'='*60}")
+            self.status_text.append("Generating comprehensive report...")
+            
+            report_path = "output/high_volume_training_report.html"
+            
+            # Use the first model's output directory as base
+            first_model = list(self.training_results.keys())[0]
+            model_dir = f"output/models/{first_model}_highvolume"
+            
+            report_engine.generate_report(
+                Path(model_dir).parent,
+                report_path,
+                include_model_metrics=True
+            )
+            
+            self.status_text.append(f"✓ Report generated: {report_path}")
+            
+            # Ask to open
+            reply = QMessageBox.question(
+                self, 'Open Report',
+                'Report generated successfully! Open in browser?',
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+            )
+            
+            if reply == QMessageBox.StandardButton.Yes:
+                import webbrowser
+                webbrowser.open(f'file://{Path(report_path).absolute()}')
+        
+        except Exception as e:
+            self.status_text.append(f"✗ Error generating report: {str(e)}")
+            logger.error(f"Report generation error: {e}", exc_info=True)
+    
+    def export_results(self):
+        """Export results to JSON"""
+        if not self.training_results:
+            QMessageBox.warning(self, "Error", "No training results available.")
+            return
+        
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, "Export Results", "high_volume_training_results.json",
+            "JSON Files (*.json)"
+        )
+        
+        if file_path:
+            try:
+                with open(file_path, 'w') as f:
+                    json.dump(self.training_results, f, indent=2)
+                
+                self.status_text.append(f"\n✓ Results exported to: {file_path}")
+                QMessageBox.information(self, "Success", f"Results exported to:\n{file_path}")
+            
+            except Exception as e:
+                self.status_text.append(f"✗ Export error: {str(e)}")
+                QMessageBox.critical(self, "Error", f"Failed to export results:\n{str(e)}")
+    
+    def operation_error(self, error_msg):
+        """Handle worker thread errors"""
+        self.progress_bar.setVisible(False)
+        self.generate_button.setEnabled(True)
+        self.label_button.setEnabled(True)
+        self.train_all_button.setEnabled(True)
+        
+        self.status_text.append(f"\n✗ Error: {error_msg}")
+        QMessageBox.critical(self, "Error", f"Operation failed:\n\n{error_msg}")
+
+
 class VisualizationPanel(QWidget):
     """Panel for data visualization"""
     
@@ -1030,6 +1460,7 @@ class MainWindow(QMainWindow):
             "📊 Data Extraction",
             "🏷️ AutoLabeling",
             "🤖 AI Tagging",
+            "🚀 High Volume Training",
             "📈 Report",
             "🔬 Simulation",
             "📉 Visualization",
@@ -1053,6 +1484,7 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(DataExtractionPanel())
         self.stack.addWidget(AutoLabelingPanel())
         self.stack.addWidget(AITaggingPanel())
+        self.stack.addWidget(HighVolumeTrainingPanel())
         self.stack.addWidget(ReportPanel())
         self.stack.addWidget(SimulationPanel())
         self.stack.addWidget(VisualizationPanel())
