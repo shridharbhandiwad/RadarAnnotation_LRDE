@@ -28,6 +28,7 @@ except ImportError:
 from .config import get_config
 from .utils import ensure_dir
 from .label_transformer import LabelTransformer
+from .multi_output_adapter import MultiOutputDataAdapter, DEFAULT_INPUT_FEATURES, DEFAULT_OUTPUT_TAGS
 
 logger = logging.getLogger(__name__)
 
@@ -401,6 +402,213 @@ class XGBoostModel:
         logger.info(f"Loaded XGBoost model from {path}")
 
 
+class XGBoostMultiOutputModel:
+    """XGBoost Multi-Output Classifier for tag prediction
+    
+    Trains separate XGBoost models for each output tag column.
+    Suitable for the data format where columns A-K are inputs and columns L-AF are output tags.
+    """
+    
+    def __init__(self, params: Dict[str, Any] = None):
+        """Initialize XGBoost Multi-Output model
+        
+        Args:
+            params: Model parameters
+        """
+        config = get_config()
+        default_params = config.get('ml_params.xgboost', {})
+        self.params = {**default_params, **(params or {})}
+        self.models = {}  # Dictionary of models, one per output tag
+        self.scaler = StandardScaler()
+        self.adapter = MultiOutputDataAdapter()
+        self.output_tag_names = []
+        
+    def train(self, df_train: pd.DataFrame, df_val: pd.DataFrame = None,
+             input_cols: List[str] = None, output_cols: List[str] = None) -> Dict[str, Any]:
+        """Train XGBoost models for multi-output prediction
+        
+        Args:
+            df_train: Training DataFrame
+            df_val: Validation DataFrame (optional)
+            input_cols: List of input feature column names (if None, auto-detect)
+            output_cols: List of output tag column names (if None, auto-detect)
+            
+        Returns:
+            Training metrics
+        """
+        import time
+        start_time = time.time()
+        
+        # Identify columns
+        self.adapter.identify_columns(df_train, input_cols, output_cols)
+        self.output_tag_names = self.adapter.output_tag_columns
+        
+        # Prepare data
+        X_train, Y_train, _ = self.adapter.prepare_data(df_train, filter_valid=True)
+        
+        # Normalize features
+        X_train_scaled = self.scaler.fit_transform(X_train)
+        
+        # Prepare validation data if available
+        X_val_scaled, Y_val = None, None
+        if df_val is not None:
+            X_val, Y_val, _ = self.adapter.prepare_data(df_val, filter_valid=True)
+            X_val_scaled = self.scaler.transform(X_val)
+        
+        # Train a model for each output tag
+        tag_metrics = {}
+        for tag_name in self.output_tag_names:
+            logger.info(f"Training XGBoost model for tag: {tag_name}")
+            
+            y_train = Y_train[tag_name].values
+            
+            # Set up parameters for binary classification
+            params = self.params.copy()
+            params['objective'] = 'binary:logistic'
+            if 'num_class' in params:
+                del params['num_class']
+            
+            # Train model
+            model = xgb.XGBClassifier(**params)
+            
+            eval_set = None
+            if X_val_scaled is not None and Y_val is not None:
+                y_val = Y_val[tag_name].values
+                eval_set = [(X_val_scaled, y_val)]
+            
+            model.fit(X_train_scaled, y_train, eval_set=eval_set, verbose=False)
+            self.models[tag_name] = model
+            
+            # Evaluate
+            y_train_pred = model.predict(X_train_scaled)
+            train_acc = accuracy_score(y_train, y_train_pred)
+            
+            tag_metrics[tag_name] = {'train_accuracy': train_acc}
+            
+            if eval_set:
+                y_val_pred = model.predict(X_val_scaled)
+                val_acc = accuracy_score(y_val, y_val_pred)
+                tag_metrics[tag_name]['val_accuracy'] = val_acc
+            
+            logger.info(f"  {tag_name}: train_acc={train_acc:.4f}" + 
+                       (f", val_acc={val_acc:.4f}" if eval_set else ""))
+        
+        training_time = time.time() - start_time
+        
+        # Calculate overall metrics
+        overall_train_acc = np.mean([m['train_accuracy'] for m in tag_metrics.values()])
+        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val else None
+        
+        metrics = {
+            'training_time': training_time,
+            'train_accuracy': overall_train_acc,
+            'per_tag_metrics': tag_metrics,
+            'n_tags': len(self.output_tag_names),
+            'tag_names': self.output_tag_names
+        }
+        
+        if overall_val_acc is not None:
+            metrics['val_accuracy'] = overall_val_acc
+        
+        logger.info(f"XGBoost Multi-Output training completed in {training_time:.2f}s")
+        logger.info(f"Overall train accuracy: {overall_train_acc:.4f}")
+        if overall_val_acc:
+            logger.info(f"Overall val accuracy: {overall_val_acc:.4f}")
+        
+        return metrics
+    
+    def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
+        """Evaluate model on test data
+        
+        Args:
+            df_test: Test DataFrame
+            
+        Returns:
+            Evaluation metrics
+        """
+        X_test, Y_test, _ = self.adapter.prepare_data(df_test, filter_valid=True)
+        X_test_scaled = self.scaler.transform(X_test)
+        
+        tag_metrics = {}
+        y_pred_all = {}
+        
+        for tag_name in self.output_tag_names:
+            y_true = Y_test[tag_name].values
+            model = self.models[tag_name]
+            y_pred = model.predict(X_test_scaled)
+            
+            acc = accuracy_score(y_true, y_pred)
+            f1 = f1_score(y_true, y_pred, average='binary', zero_division=0)
+            
+            tag_metrics[tag_name] = {
+                'accuracy': float(acc),
+                'f1_score': float(f1)
+            }
+            y_pred_all[tag_name] = y_pred
+        
+        # Overall metrics
+        overall_acc = np.mean([m['accuracy'] for m in tag_metrics.values()])
+        overall_f1 = np.mean([m['f1_score'] for m in tag_metrics.values()])
+        
+        metrics = {
+            'accuracy': float(overall_acc),
+            'f1_score': float(overall_f1),
+            'per_tag_metrics': tag_metrics,
+            'multi_output': True,
+            'tag_names': self.output_tag_names
+        }
+        
+        logger.info(f"XGBoost Multi-Output evaluation - Accuracy: {overall_acc:.4f}, F1: {overall_f1:.4f}")
+        
+        return metrics
+    
+    def predict(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Predict tags for input data
+        
+        Args:
+            df: Input DataFrame
+            
+        Returns:
+            DataFrame with predicted tags
+        """
+        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False)
+        X_scaled = self.scaler.transform(X)
+        
+        predictions = {}
+        for tag_name in self.output_tag_names:
+            model = self.models[tag_name]
+            predictions[tag_name] = model.predict(X_scaled)
+        
+        pred_df = pd.DataFrame(predictions, index=X.index)
+        
+        # Add aggregated annotation
+        pred_df['Predicted_Annotation'] = self.adapter.create_aggregated_labels(pred_df)
+        
+        return pred_df
+    
+    def save(self, path: str) -> None:
+        """Save model to disk"""
+        ensure_dir(Path(path).parent)
+        joblib.dump({
+            'models': self.models,
+            'scaler': self.scaler,
+            'adapter': self.adapter,
+            'output_tag_names': self.output_tag_names,
+            'params': self.params
+        }, path)
+        logger.info(f"Saved XGBoost Multi-Output model to {path}")
+    
+    def load(self, path: str) -> None:
+        """Load model from disk"""
+        data = joblib.load(path)
+        self.models = data['models']
+        self.scaler = data['scaler']
+        self.adapter = data['adapter']
+        self.output_tag_names = data['output_tag_names']
+        self.params = data['params']
+        logger.info(f"Loaded XGBoost Multi-Output model from {path}")
+
+
 class RandomForestModel:
     """Random Forest classifier for tabular features"""
     
@@ -615,6 +823,202 @@ class RandomForestModel:
         self.feature_columns = data['feature_columns']
         self.params = data['params']
         logger.info(f"Loaded Random Forest model from {path}")
+
+
+class RandomForestMultiOutputModel:
+    """Random Forest Multi-Output Classifier for tag prediction
+    
+    Uses sklearn's MultiOutputClassifier with Random Forest for each output tag column.
+    Suitable for the data format where columns A-K are inputs and columns L-AF are output tags.
+    """
+    
+    def __init__(self, params: Dict[str, Any] = None):
+        """Initialize Random Forest Multi-Output model
+        
+        Args:
+            params: Model parameters
+        """
+        config = get_config()
+        default_params = config.get('ml_params.random_forest', {})
+        self.params = {**default_params, **(params or {})}
+        self.models = {}  # Dictionary of models, one per output tag
+        self.scaler = StandardScaler()
+        self.adapter = MultiOutputDataAdapter()
+        self.output_tag_names = []
+        
+    def train(self, df_train: pd.DataFrame, df_val: pd.DataFrame = None,
+             input_cols: List[str] = None, output_cols: List[str] = None) -> Dict[str, Any]:
+        """Train Random Forest models for multi-output prediction
+        
+        Args:
+            df_train: Training DataFrame
+            df_val: Validation DataFrame (optional)
+            input_cols: List of input feature column names (if None, auto-detect)
+            output_cols: List of output tag column names (if None, auto-detect)
+            
+        Returns:
+            Training metrics
+        """
+        import time
+        start_time = time.time()
+        
+        # Identify columns
+        self.adapter.identify_columns(df_train, input_cols, output_cols)
+        self.output_tag_names = self.adapter.output_tag_columns
+        
+        # Prepare data
+        X_train, Y_train, _ = self.adapter.prepare_data(df_train, filter_valid=True)
+        
+        # Normalize features
+        X_train_scaled = self.scaler.fit_transform(X_train)
+        
+        # Prepare validation data if available
+        X_val_scaled, Y_val = None, None
+        if df_val is not None:
+            X_val, Y_val, _ = self.adapter.prepare_data(df_val, filter_valid=True)
+            X_val_scaled = self.scaler.transform(X_val)
+        
+        # Train a model for each output tag
+        tag_metrics = {}
+        for tag_name in self.output_tag_names:
+            logger.info(f"Training Random Forest model for tag: {tag_name}")
+            
+            y_train = Y_train[tag_name].values
+            
+            # Train model
+            model = RandomForestClassifier(**self.params)
+            model.fit(X_train_scaled, y_train)
+            self.models[tag_name] = model
+            
+            # Evaluate
+            y_train_pred = model.predict(X_train_scaled)
+            train_acc = accuracy_score(y_train, y_train_pred)
+            
+            tag_metrics[tag_name] = {'train_accuracy': train_acc}
+            
+            if X_val_scaled is not None and Y_val is not None:
+                y_val = Y_val[tag_name].values
+                y_val_pred = model.predict(X_val_scaled)
+                val_acc = accuracy_score(y_val, y_val_pred)
+                tag_metrics[tag_name]['val_accuracy'] = val_acc
+                logger.info(f"  {tag_name}: train_acc={train_acc:.4f}, val_acc={val_acc:.4f}")
+            else:
+                logger.info(f"  {tag_name}: train_acc={train_acc:.4f}")
+        
+        training_time = time.time() - start_time
+        
+        # Calculate overall metrics
+        overall_train_acc = np.mean([m['train_accuracy'] for m in tag_metrics.values()])
+        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val else None
+        
+        metrics = {
+            'training_time': training_time,
+            'train_accuracy': overall_train_acc,
+            'per_tag_metrics': tag_metrics,
+            'n_tags': len(self.output_tag_names),
+            'tag_names': self.output_tag_names
+        }
+        
+        if overall_val_acc is not None:
+            metrics['val_accuracy'] = overall_val_acc
+        
+        logger.info(f"Random Forest Multi-Output training completed in {training_time:.2f}s")
+        logger.info(f"Overall train accuracy: {overall_train_acc:.4f}")
+        if overall_val_acc:
+            logger.info(f"Overall val accuracy: {overall_val_acc:.4f}")
+        
+        return metrics
+    
+    def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
+        """Evaluate model on test data
+        
+        Args:
+            df_test: Test DataFrame
+            
+        Returns:
+            Evaluation metrics
+        """
+        X_test, Y_test, _ = self.adapter.prepare_data(df_test, filter_valid=True)
+        X_test_scaled = self.scaler.transform(X_test)
+        
+        tag_metrics = {}
+        y_pred_all = {}
+        
+        for tag_name in self.output_tag_names:
+            y_true = Y_test[tag_name].values
+            model = self.models[tag_name]
+            y_pred = model.predict(X_test_scaled)
+            
+            acc = accuracy_score(y_true, y_pred)
+            f1 = f1_score(y_true, y_pred, average='binary', zero_division=0)
+            
+            tag_metrics[tag_name] = {
+                'accuracy': float(acc),
+                'f1_score': float(f1)
+            }
+            y_pred_all[tag_name] = y_pred
+        
+        # Overall metrics
+        overall_acc = np.mean([m['accuracy'] for m in tag_metrics.values()])
+        overall_f1 = np.mean([m['f1_score'] for m in tag_metrics.values()])
+        
+        metrics = {
+            'accuracy': float(overall_acc),
+            'f1_score': float(overall_f1),
+            'per_tag_metrics': tag_metrics,
+            'multi_output': True,
+            'tag_names': self.output_tag_names
+        }
+        
+        logger.info(f"Random Forest Multi-Output evaluation - Accuracy: {overall_acc:.4f}, F1: {overall_f1:.4f}")
+        
+        return metrics
+    
+    def predict(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Predict tags for input data
+        
+        Args:
+            df: Input DataFrame
+            
+        Returns:
+            DataFrame with predicted tags
+        """
+        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False)
+        X_scaled = self.scaler.transform(X)
+        
+        predictions = {}
+        for tag_name in self.output_tag_names:
+            model = self.models[tag_name]
+            predictions[tag_name] = model.predict(X_scaled)
+        
+        pred_df = pd.DataFrame(predictions, index=X.index)
+        
+        # Add aggregated annotation
+        pred_df['Predicted_Annotation'] = self.adapter.create_aggregated_labels(pred_df)
+        
+        return pred_df
+    
+    def save(self, path: str) -> None:
+        """Save model to disk"""
+        ensure_dir(Path(path).parent)
+        joblib.dump({
+            'models': self.models,
+            'scaler': self.scaler,
+            'adapter': self.adapter,
+            'output_tag_names': self.output_tag_names,
+            'params': self.params
+        }, path)
+        logger.info(f"Saved Random Forest Multi-Output model to {path}")
+    
+    def load(self, path: str) -> None:
+        """Load model from disk"""
+        data = joblib.load(path)
+        self.models = data['models']
+        self.scaler = data['scaler']
+        self.adapter = data['adapter']
+        self.output_tag_names = data['output_tag_names']
+        self.params = data['params']
+        logger.info(f"Loaded Random Forest Multi-Output model from {path}")
 
 
 class TransformerBlock(keras.layers.Layer):
@@ -1127,6 +1531,314 @@ class TransformerModel:
         self.output_names = data.get('output_names', [])
         
         logger.info(f"Loaded Transformer model from {path}")
+
+
+class TransformerMultiOutputModel:
+    """Transformer Multi-Output Model for tag prediction
+    
+    Uses a single transformer architecture with multiple output heads,
+    one for each output tag column. Suitable for the data format where
+    columns A-K are inputs and columns L-AF are output tags.
+    """
+    
+    def __init__(self, params: Dict[str, Any] = None):
+        """Initialize Transformer Multi-Output model
+        
+        Args:
+            params: Model parameters
+        """
+        if not HAS_TENSORFLOW:
+            raise RuntimeError("TensorFlow is required for Transformer model")
+        
+        config = get_config()
+        default_params = config.get('ml_params.transformer', {})
+        self.params = {**default_params, **(params or {})}
+        self.model = None
+        self.adapter = MultiOutputDataAdapter()
+        self.history = None
+        self.output_tag_names = []
+        
+    def train(self, df_train: pd.DataFrame, df_val: pd.DataFrame = None,
+             input_cols: List[str] = None, output_cols: List[str] = None) -> Dict[str, Any]:
+        """Train Transformer model for multi-output prediction
+        
+        Args:
+            df_train: Training DataFrame
+            df_val: Validation DataFrame (optional)
+            input_cols: List of input feature column names (if None, auto-detect)
+            output_cols: List of output tag column names (if None, auto-detect)
+            
+        Returns:
+            Training metrics
+        """
+        import time
+        start_time = time.time()
+        
+        # Identify columns
+        self.adapter.identify_columns(df_train, input_cols, output_cols)
+        self.output_tag_names = self.adapter.output_tag_columns
+        
+        # Prepare sequences
+        X_train, Y_train, _ = self.adapter.prepare_sequences(
+            df_train, 
+            sequence_length=self.params['sequence_length'],
+            filter_valid=True
+        )
+        
+        # Normalize sequences
+        from sklearn.preprocessing import StandardScaler
+        scaler = StandardScaler()
+        n_samples, seq_len, n_features = X_train.shape
+        X_train_flat = X_train.reshape(-1, n_features)
+        X_train_scaled = scaler.fit_transform(X_train_flat)
+        X_train = X_train_scaled.reshape(n_samples, seq_len, n_features)
+        
+        self.scaler = scaler
+        
+        # Prepare validation data if available
+        validation_data = None
+        if df_val is not None:
+            X_val, Y_val, _ = self.adapter.prepare_sequences(
+                df_val,
+                sequence_length=self.params['sequence_length'],
+                filter_valid=True
+            )
+            X_val_flat = X_val.reshape(-1, n_features)
+            X_val_scaled = scaler.transform(X_val_flat)
+            X_val = X_val_scaled.reshape(X_val.shape[0], seq_len, n_features)
+            
+            # Prepare Y_val as dictionary
+            Y_val_dict = {tag_name: Y_val[:, i] for i, tag_name in enumerate(self.output_tag_names)}
+            validation_data = (X_val, Y_val_dict)
+        
+        # Build model
+        self._build_model(input_shape=(X_train.shape[1], X_train.shape[2]))
+        
+        # Prepare Y_train as dictionary
+        Y_train_dict = {tag_name: Y_train[:, i] for i, tag_name in enumerate(self.output_tag_names)}
+        
+        # Train
+        self.history = self.model.fit(
+            X_train, Y_train_dict,
+            epochs=self.params['epochs'],
+            batch_size=self.params['batch_size'],
+            validation_data=validation_data,
+            verbose=0
+        )
+        
+        training_time = time.time() - start_time
+        
+        # Collect metrics
+        metrics = {
+            'training_time': training_time,
+            'per_tag_metrics': {},
+            'n_tags': len(self.output_tag_names),
+            'tag_names': self.output_tag_names
+        }
+        
+        # Extract per-tag metrics from history
+        for tag_name in self.output_tag_names:
+            acc_key = f'{tag_name}_accuracy'
+            if acc_key in self.history.history:
+                train_acc = float(self.history.history[acc_key][-1])
+                metrics['per_tag_metrics'][tag_name] = {'train_accuracy': train_acc}
+                
+                if validation_data:
+                    val_acc_key = f'val_{tag_name}_accuracy'
+                    if val_acc_key in self.history.history:
+                        val_acc = float(self.history.history[val_acc_key][-1])
+                        metrics['per_tag_metrics'][tag_name]['val_accuracy'] = val_acc
+        
+        # Calculate overall metrics
+        overall_train_acc = np.mean([m['train_accuracy'] for m in metrics['per_tag_metrics'].values()])
+        metrics['train_accuracy'] = overall_train_acc
+        
+        if validation_data:
+            overall_val_acc = np.mean([m['val_accuracy'] for m in metrics['per_tag_metrics'].values() if 'val_accuracy' in m])
+            metrics['val_accuracy'] = overall_val_acc
+        
+        logger.info(f"Transformer Multi-Output training completed in {training_time:.2f}s")
+        logger.info(f"Overall train accuracy: {overall_train_acc:.4f}")
+        
+        return metrics
+    
+    def _build_model(self, input_shape: Tuple[int, int]) -> None:
+        """Build Transformer model architecture with multiple output heads
+        
+        Args:
+            input_shape: (sequence_length, n_features)
+        """
+        # Input layer
+        inputs = keras.Input(shape=input_shape)
+        
+        # Linear projection to d_model dimensions
+        x = layers.Dense(self.params['d_model'])(inputs)
+        
+        # Add positional encoding
+        seq_len = input_shape[0]
+        positions = tf.range(start=0, limit=seq_len, delta=1)
+        position_embedding = layers.Embedding(
+            input_dim=seq_len,
+            output_dim=self.params['d_model']
+        )(positions)
+        x = x + position_embedding
+        
+        # Stack Transformer blocks
+        for _ in range(self.params['num_layers']):
+            x = TransformerBlock(
+                d_model=self.params['d_model'],
+                num_heads=self.params['num_heads'],
+                ff_dim=self.params['ff_dim'],
+                dropout=self.params['dropout']
+            )(x)
+        
+        # Global average pooling
+        x = layers.GlobalAveragePooling1D()(x)
+        x = layers.Dropout(self.params['dropout'])(x)
+        x = layers.Dense(self.params['d_model'], activation='relu')(x)
+        x = layers.Dropout(self.params['dropout'])(x)
+        
+        # Create output head for each tag (all binary classification)
+        outputs = {}
+        for tag_name in self.output_tag_names:
+            outputs[tag_name] = layers.Dense(1, activation='sigmoid', name=tag_name)(x)
+        
+        self.model = keras.Model(inputs=inputs, outputs=outputs)
+        
+        # Compile with multiple losses
+        losses = {tag_name: 'binary_crossentropy' for tag_name in self.output_tag_names}
+        metrics_dict = {tag_name: ['accuracy'] for tag_name in self.output_tag_names}
+        
+        self.model.compile(
+            optimizer='adam',
+            loss=losses,
+            metrics=metrics_dict
+        )
+        
+        logger.info(f"Built Transformer Multi-Output model with {len(self.output_tag_names)} output heads")
+    
+    def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
+        """Evaluate model on test data
+        
+        Args:
+            df_test: Test DataFrame
+            
+        Returns:
+            Evaluation metrics
+        """
+        X_test, Y_test, _ = self.adapter.prepare_sequences(
+            df_test,
+            sequence_length=self.params['sequence_length'],
+            filter_valid=True
+        )
+        
+        # Normalize
+        n_samples, seq_len, n_features = X_test.shape
+        X_test_flat = X_test.reshape(-1, n_features)
+        X_test_scaled = self.scaler.transform(X_test_flat)
+        X_test = X_test_scaled.reshape(n_samples, seq_len, n_features)
+        
+        # Predict
+        Y_pred_dict = self.model.predict(X_test, verbose=0)
+        
+        # Evaluate each tag
+        tag_metrics = {}
+        for i, tag_name in enumerate(self.output_tag_names):
+            y_true = Y_test[:, i]
+            y_pred_prob = Y_pred_dict[tag_name].flatten()
+            y_pred = (y_pred_prob > 0.5).astype(int)
+            
+            acc = accuracy_score(y_true, y_pred)
+            f1 = f1_score(y_true, y_pred, average='binary', zero_division=0)
+            
+            tag_metrics[tag_name] = {
+                'accuracy': float(acc),
+                'f1_score': float(f1)
+            }
+        
+        # Overall metrics
+        overall_acc = np.mean([m['accuracy'] for m in tag_metrics.values()])
+        overall_f1 = np.mean([m['f1_score'] for m in tag_metrics.values()])
+        
+        metrics = {
+            'accuracy': float(overall_acc),
+            'f1_score': float(overall_f1),
+            'per_tag_metrics': tag_metrics,
+            'multi_output': True,
+            'tag_names': self.output_tag_names
+        }
+        
+        logger.info(f"Transformer Multi-Output evaluation - Accuracy: {overall_acc:.4f}, F1: {overall_f1:.4f}")
+        
+        return metrics
+    
+    def predict(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Predict tags for input data
+        
+        Args:
+            df: Input DataFrame
+            
+        Returns:
+            DataFrame with predicted tags
+        """
+        X, _, track_info = self.adapter.prepare_sequences(
+            df,
+            sequence_length=self.params['sequence_length'],
+            filter_valid=False
+        )
+        
+        # Normalize
+        n_samples, seq_len, n_features = X.shape
+        X_flat = X.reshape(-1, n_features)
+        X_scaled = self.scaler.transform(X_flat)
+        X = X_scaled.reshape(n_samples, seq_len, n_features)
+        
+        # Predict
+        Y_pred_dict = self.model.predict(X, verbose=0)
+        
+        # Convert to binary predictions
+        predictions = {}
+        for tag_name in self.output_tag_names:
+            y_pred_prob = Y_pred_dict[tag_name].flatten()
+            predictions[tag_name] = (y_pred_prob > 0.5).astype(int)
+        
+        pred_df = pd.DataFrame(predictions)
+        
+        # Add aggregated annotation
+        pred_df['Predicted_Annotation'] = self.adapter.create_aggregated_labels(pred_df)
+        
+        return pred_df
+    
+    def save(self, path: str) -> None:
+        """Save model to disk"""
+        ensure_dir(Path(path).parent)
+        self.model.save(path)
+        
+        # Save additional data
+        metadata_path = Path(path).parent / f"{Path(path).stem}_metadata.pkl"
+        joblib.dump({
+            'adapter': self.adapter,
+            'scaler': self.scaler,
+            'output_tag_names': self.output_tag_names,
+            'params': self.params
+        }, metadata_path)
+        
+        logger.info(f"Saved Transformer Multi-Output model to {path}")
+    
+    def load(self, path: str) -> None:
+        """Load model from disk"""
+        # Register custom layer
+        custom_objects = {'TransformerBlock': TransformerBlock}
+        self.model = keras.models.load_model(path, custom_objects=custom_objects)
+        
+        metadata_path = Path(path).parent / f"{Path(path).stem}_metadata.pkl"
+        data = joblib.load(metadata_path)
+        self.adapter = data['adapter']
+        self.scaler = data['scaler']
+        self.output_tag_names = data['output_tag_names']
+        self.params = data['params']
+        
+        logger.info(f"Loaded Transformer Multi-Output model from {path}")
 
 
 def load_trained_model(model_path: str) -> Tuple[Any, str]:
