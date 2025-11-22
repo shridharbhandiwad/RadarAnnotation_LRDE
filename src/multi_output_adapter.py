@@ -85,17 +85,19 @@ class MultiOutputDataAdapter:
         logger.info(f"Aggregated label column: {self.aggregated_label_column}")
     
     def prepare_data(self, df: pd.DataFrame, 
-                     filter_valid: bool = True) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-        """Prepare data for multi-output training
+                     filter_valid: bool = True,
+                     include_outputs: bool = True) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+        """Prepare data for multi-output training or prediction
         
         Args:
             df: Input DataFrame
             filter_valid: Whether to filter by valid_features column
+            include_outputs: Whether to extract output columns (False for prediction mode)
             
         Returns:
             Tuple of (X, Y, metadata) where:
                 - X: DataFrame with input features
-                - Y: DataFrame with output tags
+                - Y: DataFrame with output tags (empty DataFrame if include_outputs=False)
                 - metadata: DataFrame with trackid, time, etc.
         """
         # Filter valid features if requested
@@ -124,18 +126,22 @@ class MultiOutputDataAdapter:
         X = X.replace([np.inf, -np.inf], np.nan)
         X = X.fillna(0)
         
-        # Extract output tags
-        if not self.output_tag_columns:
-            raise ValueError("Output tag columns not identified. Call identify_columns() first.")
-        
-        missing_output_cols = [col for col in self.output_tag_columns if col not in df_valid.columns]
-        if missing_output_cols:
-            raise ValueError(f"Missing output columns: {missing_output_cols}")
-        
-        Y = df_valid[self.output_tag_columns].copy()
-        
-        # Convert to binary (0/1)
-        Y = Y.astype(int)
+        # Extract output tags (only if include_outputs=True, i.e., for training)
+        if include_outputs:
+            if not self.output_tag_columns:
+                raise ValueError("Output tag columns not identified. Call identify_columns() first.")
+            
+            missing_output_cols = [col for col in self.output_tag_columns if col not in df_valid.columns]
+            if missing_output_cols:
+                raise ValueError(f"Missing output columns: {missing_output_cols}")
+            
+            Y = df_valid[self.output_tag_columns].copy()
+            
+            # Convert to binary (0/1)
+            Y = Y.astype(int)
+        else:
+            # For prediction mode, return empty DataFrame with correct columns
+            Y = pd.DataFrame(columns=self.output_tag_columns, index=df_valid.index)
         
         # Extract metadata
         metadata_cols = ['trackid', 'time'] if 'trackid' in df_valid.columns else []
@@ -145,10 +151,11 @@ class MultiOutputDataAdapter:
         metadata = df_valid[metadata_cols].copy() if metadata_cols else pd.DataFrame(index=df_valid.index)
         
         logger.info(f"Prepared data: X shape={X.shape}, Y shape={Y.shape}")
-        logger.info(f"Output tag distribution:")
-        for col in Y.columns:
-            pos_count = Y[col].sum()
-            logger.info(f"  {col}: {pos_count}/{len(Y)} ({pos_count/len(Y)*100:.1f}%)")
+        if include_outputs and len(Y) > 0:
+            logger.info(f"Output tag distribution:")
+            for col in Y.columns:
+                pos_count = Y[col].sum()
+                logger.info(f"  {col}: {pos_count}/{len(Y)} ({pos_count/len(Y)*100:.1f}%)")
         
         return X, Y, metadata
     

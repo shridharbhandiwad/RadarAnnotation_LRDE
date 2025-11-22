@@ -575,7 +575,7 @@ class XGBoostMultiOutputModel:
         Returns:
             DataFrame with predicted tags
         """
-        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False)
+        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False, include_outputs=False)
         X_scaled = self.scaler.transform(X)
         
         predictions = {}
@@ -988,7 +988,7 @@ class RandomForestMultiOutputModel:
         Returns:
             DataFrame with predicted tags
         """
-        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False)
+        X, _, metadata = self.adapter.prepare_data(df, filter_valid=False, include_outputs=False)
         X_scaled = self.scaler.transform(X)
         
         predictions = {}
@@ -2056,7 +2056,7 @@ def predict_and_label(model_path: str, input_csv_path: str, output_csv_path: str
                 df_valid = df_features.copy()
             
             # Use adapter to get input features
-            X, _, _ = model.adapter.prepare_data(df_valid, filter_valid=False)
+            X, _, _ = model.adapter.prepare_data(df_valid, filter_valid=False, include_outputs=False)
             
             # Scale features
             X_scaled = model.scaler.transform(X)
