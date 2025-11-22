@@ -1864,20 +1864,23 @@ def load_trained_model(model_path: str) -> Tuple[Any, str]:
     if not model_path.exists():
         raise FileNotFoundError(f"Model file not found: {model_path}")
     
-    # Determine model type from filename or extension
+    # Determine model type from filename, parent directory, or extension
     model_name = model_path.stem.lower()
+    parent_dir = model_path.parent.name.lower()
+    full_path_lower = str(model_path).lower()
     
-    if 'random_forest' in model_name or model_path.suffix == '.pkl' and 'forest' in model_name:
+    # Check both filename and parent directory for model type indicators
+    if 'random_forest' in model_name or 'random_forest' in parent_dir or (model_path.suffix == '.pkl' and 'forest' in full_path_lower):
         model = RandomForestModel()
         model.load(str(model_path))
         return model, 'random_forest'
     
-    elif 'gradient_boosting' in model_name or 'xgboost' in model_name or (model_path.suffix == '.pkl' and 'gradient' in model_name):
+    elif 'gradient_boosting' in full_path_lower or 'xgboost' in full_path_lower or 'gradient' in full_path_lower:
         model = XGBoostModel()
         model.load(str(model_path))
         return model, 'gradient_boosting'
     
-    elif 'neural_network' in model_name or 'transformer' in model_name or model_path.suffix == '.h5':
+    elif 'neural_network' in full_path_lower or 'transformer' in full_path_lower or model_path.suffix == '.h5':
         if not HAS_TENSORFLOW:
             raise RuntimeError("TensorFlow is required to load neural network models")
         model = TransformerModel()
