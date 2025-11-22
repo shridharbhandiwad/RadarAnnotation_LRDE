@@ -467,6 +467,8 @@ class XGBoostMultiOutputModel:
             params['objective'] = 'binary:logistic'
             if 'num_class' in params:
                 del params['num_class']
+            # Set base_score to valid value for binary:logistic (must be in (0,1))
+            params['base_score'] = 0.5
             
             # Train model
             model = xgb.XGBClassifier(**params)
