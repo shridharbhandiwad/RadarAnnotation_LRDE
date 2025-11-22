@@ -4,13 +4,14 @@ A comprehensive desktop application for radar data processing, automatic annotat
 
 ## Features
 
-### 🔧 Five Core Engines
+### 🔧 Core Engines
 
 1. **Data Extraction Engine** - Parse binary radar data files into structured formats
 2. **AutoLabeling Engine** - Rule-based motion feature extraction and automatic annotation
 3. **AI Tagging Engine** - Machine learning models (XGBoost, LSTM, Transformer) for trajectory classification
-4. **Report Engine** - Generate comprehensive HTML reports with visualizations
-5. **Simulation Engine** - Create synthetic radar data with diverse trajectory patterns
+4. **High Volume Training** - ✨ NEW! End-to-end pipeline for large-scale model training and evaluation
+5. **Report Engine** - Generate comprehensive HTML reports with visualizations
+6. **Simulation Engine** - Create synthetic radar data with diverse trajectory patterns
 
 ### 📊 Rich GUI
 
@@ -139,6 +140,16 @@ python -m src.gui
 2. Load any data CSV file
 3. Interactive PPI and time series plots will display
 4. Click tracks to highlight them
+
+**High Volume Training:** ✨ NEW!
+1. Navigate to "🚀 High Volume Training" panel
+2. Generate large dataset (200+ tracks) or select existing data
+3. Apply auto-labeling
+4. Train multiple models (Transformer, LSTM, XGBoost) simultaneously
+5. Compare results in summary table
+6. Generate comprehensive reports
+
+See [QUICK_START_HIGH_VOLUME_GUI.md](QUICK_START_HIGH_VOLUME_GUI.md) for detailed guide.
 
 **Report Generation:**
 1. Navigate to "Report" panel
