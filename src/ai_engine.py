@@ -501,7 +501,7 @@ class XGBoostMultiOutputModel:
         
         # Calculate overall metrics
         overall_train_acc = np.mean([m['train_accuracy'] for m in tag_metrics.values()])
-        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val else None
+        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val is not None and len(df_val) > 0 else None
         
         metrics = {
             'training_time': training_time,
@@ -914,7 +914,7 @@ class RandomForestMultiOutputModel:
         
         # Calculate overall metrics
         overall_train_acc = np.mean([m['train_accuracy'] for m in tag_metrics.values()])
-        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val else None
+        overall_val_acc = np.mean([m['val_accuracy'] for m in tag_metrics.values() if 'val_accuracy' in m]) if df_val is not None and len(df_val) > 0 else None
         
         metrics = {
             'training_time': training_time,
