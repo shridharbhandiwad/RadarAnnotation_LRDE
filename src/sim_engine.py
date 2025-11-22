@@ -404,6 +404,134 @@ def create_simulation_folders(base_dir: str = "data/simulations", n_folders: int
     return created_folders
 
 
+def create_single_track_all_trajectories(output_path: str = "data/high_volume_simulation.csv", 
+                                         duration_min: float = 60) -> str:
+    """Create a single track with all possible trajectory types for better model accuracy
+    
+    Args:
+        output_path: Path to save the combined CSV
+        duration_min: Total flight duration in minutes (default: 60 minutes = 1 hour)
+        
+    Returns:
+        Path to the created CSV file
+    """
+    config = get_config()
+    sample_rate_ms = config.get('simulation.sample_rate_ms', 100)
+    sample_rate_s = sample_rate_ms / 1000.0
+    
+    logger.info(f"Creating single track with all trajectory types for {duration_min} minutes...")
+    
+    # Define all trajectory types - each will get equal time
+    trajectory_types = [
+        "straight_low_speed",
+        "straight_high_speed", 
+        "ascending_spiral",
+        "descending_path",
+        "sharp_maneuver",
+        "curved_path",
+        "level_flight_jitter",
+        "stop_and_go",
+        "oscillating_lateral",
+        "complex_maneuver"
+    ]
+    
+    num_trajectories = len(trajectory_types)
+    duration_per_trajectory_min = duration_min / num_trajectories
+    
+    logger.info(f"  Total trajectories: {num_trajectories}")
+    logger.info(f"  Duration per trajectory: {duration_per_trajectory_min:.2f} minutes")
+    
+    all_records = []
+    time_offset = 0.0
+    last_pos = [10000, 10000, 2000]  # Starting position
+    
+    for idx, traj_type in enumerate(trajectory_types):
+        logger.info(f"Generating trajectory {idx+1}/{num_trajectories}: {traj_type}")
+        
+        # Create generator for this segment
+        generator = TrajectoryGenerator(sample_rate_ms, duration_per_trajectory_min)
+        
+        # Generate trajectory based on type
+        if traj_type == "straight_low_speed":
+            trajectory = generator.straight_constant_velocity(35.0, last_pos[2], (last_pos[0], last_pos[1]))
+        elif traj_type == "straight_high_speed":
+            trajectory = generator.straight_constant_velocity(250.0, last_pos[2], (last_pos[0], last_pos[1]))
+        elif traj_type == "ascending_spiral":
+            trajectory = generator.ascending_spiral(2000, 0.1, 5, (last_pos[0], last_pos[1]), last_pos[2])
+        elif traj_type == "descending_path":
+            trajectory = generator.descending_path(150.0, np.radians(15), (last_pos[0], last_pos[1], max(last_pos[2], 3500)))
+        elif traj_type == "sharp_maneuver":
+            # Adjust starting position for sharp maneuver
+            temp_traj = generator.sharp_maneuver(180.0, last_pos[2], 30)
+            # Offset to continue from last position
+            trajectory = temp_traj.copy()
+            trajectory[:, 1] += last_pos[0] - temp_traj[0, 1]  # x offset
+            trajectory[:, 2] += last_pos[1] - temp_traj[0, 2]  # y offset
+        elif traj_type == "curved_path":
+            trajectory = generator.curved_path(120.0, 8000, last_pos[2], (last_pos[0], last_pos[1]))
+        elif traj_type == "level_flight_jitter":
+            trajectory = generator.level_flight_with_jitter(100.0, last_pos[2], 10)
+            # Offset position
+            trajectory[:, 1] += last_pos[0] - trajectory[0, 1]
+            trajectory[:, 2] += last_pos[1] - trajectory[0, 2]
+        elif traj_type == "stop_and_go":
+            trajectory = generator.stop_and_go(200.0, last_pos[2])
+            # Offset position
+            trajectory[:, 1] += last_pos[0] - trajectory[0, 1]
+            trajectory[:, 2] += last_pos[1] - trajectory[0, 2]
+        elif traj_type == "oscillating_lateral":
+            trajectory = generator.oscillating_lateral(140.0, 500, 40, last_pos[2])
+            # Offset position
+            trajectory[:, 1] += last_pos[0] - trajectory[0, 1]
+            trajectory[:, 2] += last_pos[1] - trajectory[0, 2]
+        elif traj_type == "complex_maneuver":
+            trajectory = generator.complex_maneuver(last_pos[2])
+            # Offset position
+            trajectory[:, 1] += last_pos[0] - trajectory[0, 1]
+            trajectory[:, 2] += last_pos[1] - trajectory[0, 2]
+        
+        # Convert to records with time offset
+        for row in trajectory:
+            record = {
+                'time': row[0] + time_offset,
+                'trackid': 1.0,  # Single track
+                'x': row[1],
+                'y': row[2],
+                'z': row[3],
+                'vx': row[4],
+                'vy': row[5],
+                'vz': row[6],
+                'ax': row[7],
+                'ay': row[8],
+                'az': row[9]
+            }
+            all_records.append(record)
+        
+        # Update for next trajectory
+        time_offset += trajectory[-1, 0]
+        last_pos = [trajectory[-1, 1], trajectory[-1, 2], trajectory[-1, 3]]
+        
+        logger.info(f"  Segment {idx+1} complete: {len(trajectory)} points, ending at ({last_pos[0]:.0f}, {last_pos[1]:.0f}, {last_pos[2]:.0f})")
+    
+    # Convert to DataFrame
+    import pandas as pd
+    df = pd.DataFrame(all_records)
+    
+    # Ensure output directory exists
+    ensure_dir(Path(output_path).parent)
+    
+    # Save to CSV
+    df.to_csv(output_path, index=False)
+    logger.info(f"\n✓ Created single-track dataset: {output_path}")
+    logger.info(f"  Track ID: 1")
+    logger.info(f"  Total records: {len(df):,}")
+    logger.info(f"  Total duration: {df['time'].max():.2f} seconds ({df['time'].max()/60:.2f} minutes)")
+    logger.info(f"  Sample rate: {sample_rate_ms}ms")
+    logger.info(f"  Trajectory types included: {num_trajectories}")
+    
+    return output_path
+
+
 def create_large_training_dataset(output_path: str = "data/large_simulation_training.csv", 
                                   n_tracks: int = 200, duration_min: float = 10) -> str:
     """Create a large combined training dataset with diverse trajectories
