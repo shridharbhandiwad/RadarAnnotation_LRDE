@@ -1,6 +1,6 @@
 """Train and Compare Multiple Models on High-Volume Dataset
 
-This script trains Transformer, LSTM, and XGBoost models on the high-volume
+This script trains Random Forest, Gradient Boosting, and Neural Network models on the high-volume
 simulation dataset and compares their performance.
 """
 
@@ -39,21 +39,66 @@ def train_and_compare_models(data_path: str = "data/high_volume_simulation_label
     logger.info("TRAINING MULTIPLE MODELS ON HIGH-VOLUME DATASET")
     logger.info("=" * 80)
     logger.info(f"Dataset: {data_path}")
-    logger.info("Models: Transformer, LSTM, XGBoost")
+    logger.info("Models: Random Forest, Gradient Boosting, Neural Network")
     logger.info("=" * 80)
     
     models = {}
     metrics = {}
     
-    # Train Transformer
+    # Train Random Forest
     logger.info("\n" + "=" * 80)
-    logger.info("1/3: TRAINING TRANSFORMER MODEL")
+    logger.info("1/3: TRAINING RANDOM FOREST MODEL")
     logger.info("=" * 80)
     try:
-        models['transformer'], metrics['transformer'] = train_model(
-            model_name='transformer',
+        models['random_forest'], metrics['random_forest'] = train_model(
+            model_name='random_forest',
             data_path=data_path,
-            output_dir='output/models/transformer_high_volume',
+            output_dir='output/models/random_forest_high_volume',
+            params={
+                'n_estimators': 200,
+                'max_depth': 20,
+                'min_samples_split': 2,
+                'min_samples_leaf': 1,
+                'random_state': 42,
+                'n_jobs': -1
+            },
+            auto_transform=True
+        )
+        logger.info("✓ Random Forest training completed")
+    except Exception as e:
+        logger.error(f"✗ Random Forest training failed: {e}")
+        metrics['random_forest'] = None
+    
+    # Train Gradient Boosting
+    logger.info("\n" + "=" * 80)
+    logger.info("2/3: TRAINING GRADIENT BOOSTING MODEL")
+    logger.info("=" * 80)
+    try:
+        models['gradient_boosting'], metrics['gradient_boosting'] = train_model(
+            model_name='gradient_boosting',
+            data_path=data_path,
+            output_dir='output/models/gradient_boosting_high_volume',
+            params={
+                'n_estimators': 200,
+                'max_depth': 8,
+                'learning_rate': 0.1
+            },
+            auto_transform=True
+        )
+        logger.info("✓ Gradient Boosting training completed")
+    except Exception as e:
+        logger.error(f"✗ Gradient Boosting training failed: {e}")
+        metrics['gradient_boosting'] = None
+    
+    # Train Neural Network
+    logger.info("\n" + "=" * 80)
+    logger.info("3/3: TRAINING NEURAL NETWORK MODEL")
+    logger.info("=" * 80)
+    try:
+        models['neural_network'], metrics['neural_network'] = train_model(
+            model_name='neural_network',
+            data_path=data_path,
+            output_dir='output/models/neural_network_high_volume',
             params={
                 'd_model': 128,
                 'num_heads': 8,
@@ -66,54 +111,10 @@ def train_and_compare_models(data_path: str = "data/high_volume_simulation_label
             },
             auto_transform=True
         )
-        logger.info("✓ Transformer training completed")
+        logger.info("✓ Neural Network training completed")
     except Exception as e:
-        logger.error(f"✗ Transformer training failed: {e}")
-        metrics['transformer'] = None
-    
-    # Train LSTM
-    logger.info("\n" + "=" * 80)
-    logger.info("2/3: TRAINING LSTM MODEL")
-    logger.info("=" * 80)
-    try:
-        models['lstm'], metrics['lstm'] = train_model(
-            model_name='lstm',
-            data_path=data_path,
-            output_dir='output/models/lstm_high_volume',
-            params={
-                'units': 128,
-                'dropout': 0.3,
-                'epochs': 100,
-                'batch_size': 64,
-                'sequence_length': 30
-            },
-            auto_transform=True
-        )
-        logger.info("✓ LSTM training completed")
-    except Exception as e:
-        logger.error(f"✗ LSTM training failed: {e}")
-        metrics['lstm'] = None
-    
-    # Train XGBoost
-    logger.info("\n" + "=" * 80)
-    logger.info("3/3: TRAINING XGBOOST MODEL")
-    logger.info("=" * 80)
-    try:
-        models['xgboost'], metrics['xgboost'] = train_model(
-            model_name='xgboost',
-            data_path=data_path,
-            output_dir='output/models/xgboost_high_volume',
-            params={
-                'n_estimators': 200,
-                'max_depth': 8,
-                'learning_rate': 0.1
-            },
-            auto_transform=True
-        )
-        logger.info("✓ XGBoost training completed")
-    except Exception as e:
-        logger.error(f"✗ XGBoost training failed: {e}")
-        metrics['xgboost'] = None
+        logger.error(f"✗ Neural Network training failed: {e}")
+        metrics['neural_network'] = None
     
     # Compare results
     logger.info("\n" + "=" * 80)
@@ -154,9 +155,9 @@ def train_and_compare_models(data_path: str = "data/high_volume_simulation_label
         logger.info("=" * 80)
         
         logger.info("\nModel outputs saved to:")
-        logger.info("  - output/models/transformer_high_volume/")
-        logger.info("  - output/models/lstm_high_volume/")
-        logger.info("  - output/models/xgboost_high_volume/")
+        logger.info("  - output/models/random_forest_high_volume/")
+        logger.info("  - output/models/gradient_boosting_high_volume/")
+        logger.info("  - output/models/neural_network_high_volume/")
     
     return 0
 

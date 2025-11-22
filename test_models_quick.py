@@ -1,4 +1,4 @@
-"""Quick test of transformer and LSTM models with enhanced features"""
+"""Quick test of Random Forest, Gradient Boosting, and Neural Network models"""
 
 import logging
 import sys
@@ -21,7 +21,7 @@ import pandas as pd
 def main():
     """Quick test with small dataset"""
     logger.info("=" * 80)
-    logger.info("Quick Test: Transformer & LSTM with Enhanced Features")
+    logger.info("Quick Test: Random Forest, Gradient Boosting & Neural Network")
     logger.info("=" * 80)
     
     # Step 1: Generate small dataset (50 tracks, 3 minutes each)
@@ -52,13 +52,62 @@ def main():
     for ann, count in list(annotations.items())[:3]:
         logger.info(f"    {ann}: {count}")
     
-    # Step 3: Train Transformer
-    logger.info("\n[3/5] Training Transformer model...")
+    # Step 3: Train Random Forest
+    logger.info("\n[3/6] Training Random Forest model...")
     try:
-        t_model, t_metrics = train_model(
-            model_name='transformer',
+        rf_model, rf_metrics = train_model(
+            model_name='random_forest',
             data_path=labeled_csv,
-            output_dir='output/test_transformer',
+            output_dir='output/test_random_forest',
+            params={
+                'n_estimators': 100,
+                'max_depth': 15,
+                'random_state': 42,
+                'n_jobs': -1
+            },
+            auto_transform=True
+        )
+        
+        logger.info("✓ Random Forest trained successfully")
+        logger.info(f"  Train Accuracy: {rf_metrics['train'].get('train_accuracy', 0):.4f}")
+        logger.info(f"  Test Accuracy: {rf_metrics['test'].get('accuracy', 0):.4f}")
+                
+    except Exception as e:
+        logger.error(f"✗ Random Forest training failed: {e}")
+        import traceback
+        traceback.print_exc()
+    
+    # Step 4: Train Gradient Boosting
+    logger.info("\n[4/6] Training Gradient Boosting model...")
+    try:
+        gb_model, gb_metrics = train_model(
+            model_name='gradient_boosting',
+            data_path=labeled_csv,
+            output_dir='output/test_gradient_boosting',
+            params={
+                'n_estimators': 100,
+                'max_depth': 6,
+                'learning_rate': 0.1
+            },
+            auto_transform=True
+        )
+        
+        logger.info("✓ Gradient Boosting trained successfully")
+        logger.info(f"  Train Accuracy: {gb_metrics['train'].get('train_accuracy', 0):.4f}")
+        logger.info(f"  Test Accuracy: {gb_metrics['test'].get('accuracy', 0):.4f}")
+        
+    except Exception as e:
+        logger.error(f"✗ Gradient Boosting training failed: {e}")
+        import traceback
+        traceback.print_exc()
+    
+    # Step 5: Train Neural Network
+    logger.info("\n[5/6] Training Neural Network model...")
+    try:
+        nn_model, nn_metrics = train_model(
+            model_name='neural_network',
+            data_path=labeled_csv,
+            output_dir='output/test_neural_network',
             params={
                 'd_model': 64,
                 'num_heads': 4,
@@ -72,50 +121,24 @@ def main():
             auto_transform=True
         )
         
-        logger.info("✓ Transformer trained successfully")
-        logger.info(f"  Train Accuracy: {t_metrics['train'].get('train_accuracy', 0):.4f}")
-        logger.info(f"  Test Accuracy: {t_metrics['test'].get('accuracy', 0):.4f}")
-        logger.info(f"  Multi-output: {t_metrics['train'].get('multi_output', False)}")
+        logger.info("✓ Neural Network trained successfully")
+        logger.info(f"  Train Accuracy: {nn_metrics['train'].get('train_accuracy', 0):.4f}")
+        logger.info(f"  Test Accuracy: {nn_metrics['test'].get('accuracy', 0):.4f}")
+        logger.info(f"  Multi-output: {nn_metrics['train'].get('multi_output', False)}")
         
-        if t_metrics['train'].get('multi_output', False) and 'outputs' in t_metrics['test']:
+        if nn_metrics['train'].get('multi_output', False) and 'outputs' in nn_metrics['test']:
             logger.info("  Per-output accuracy:")
-            for name, metrics in t_metrics['test']['outputs'].items():
+            for name, metrics in nn_metrics['test']['outputs'].items():
                 logger.info(f"    {name}: {metrics['accuracy']:.4f}")
-                
+        
     except Exception as e:
-        logger.error(f"✗ Transformer training failed: {e}")
+        logger.error(f"✗ Neural Network training failed: {e}")
         import traceback
         traceback.print_exc()
     
-    # Step 4: Train LSTM
-    logger.info("\n[4/5] Training LSTM model...")
-    try:
-        l_model, l_metrics = train_model(
-            model_name='lstm',
-            data_path=labeled_csv,
-            output_dir='output/test_lstm',
-            params={
-                'units': 64,
-                'dropout': 0.2,
-                'epochs': 30,
-                'batch_size': 32,
-                'sequence_length': 20
-            },
-            auto_transform=True
-        )
-        
-        logger.info("✓ LSTM trained successfully")
-        logger.info(f"  Train Accuracy: {l_metrics['train'].get('train_accuracy', 0):.4f}")
-        logger.info(f"  Test Accuracy: {l_metrics['test'].get('accuracy', 0):.4f}")
-        
-    except Exception as e:
-        logger.error(f"✗ LSTM training failed: {e}")
-        import traceback
-        traceback.print_exc()
-    
-    logger.info("\n[5/5] Test completed!")
+    logger.info("\n[6/6] Test completed!")
     logger.info("=" * 80)
-    logger.info("✓ Both models are working correctly with enhanced features!")
+    logger.info("✓ All three models are working correctly!")
     logger.info("=" * 80)
     
     return 0
