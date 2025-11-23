@@ -14,6 +14,17 @@ import logging
 from pathlib import Path
 import numpy as np
 
+# Add src directory to path for loading pickled models that reference src modules
+_script_dir = Path(__file__).parent
+if _script_dir not in sys.path:
+    sys.path.insert(0, str(_script_dir))
+
+try:
+    import joblib
+    HAS_JOBLIB = True
+except ImportError:
+    HAS_JOBLIB = False
+
 try:
     import tensorflow as tf
     from tensorflow import keras
@@ -273,10 +284,39 @@ def convert_xgboost_to_onnx(model_path: str, output_dir: str, model_name: str = 
         logger.error("XGBoost not installed. Install with: pip install xgboost")
         return []
     
-    # Load model
+    # Load model - try joblib first (preferred), then pickle
     try:
-        with open(model_path, 'rb') as f:
-            data = pickle.load(f)
+        # Try joblib first (recommended for sklearn/xgboost models)
+        if HAS_JOBLIB:
+            try:
+                logger.info("Loading model with joblib...")
+                data = joblib.load(model_path)
+            except ModuleNotFoundError as e:
+                # Missing module during unpickling - likely needs src module classes
+                logger.warning(f"Module not found during joblib load: {e}")
+                logger.info("Attempting to import required src modules...")
+                
+                # Try importing common src modules that might be needed
+                try:
+                    from src.multi_output_adapter import MultiOutputDataAdapter
+                    from src.label_transformer import LabelTransformer
+                    logger.info("Successfully imported src modules, retrying...")
+                    data = joblib.load(model_path)
+                except ImportError as ie:
+                    logger.error(f"Failed to import src modules: {ie}")
+                    logger.error("The model file may have been created with a different version of the code.")
+                    logger.error("Please ensure the 'src' directory is available and contains all necessary modules.")
+                    raise
+            except Exception as e:
+                logger.warning(f"Failed to load with joblib: {e}")
+                logger.info("Trying with standard pickle...")
+                with open(model_path, 'rb') as f:
+                    data = pickle.load(f)
+        else:
+            # Joblib not available, use pickle
+            logger.info("Joblib not available, using pickle...")
+            with open(model_path, 'rb') as f:
+                data = pickle.load(f)
         
         # Extract models (multi-output: one model per tag)
         if isinstance(data, dict) and 'models' in data:
