@@ -73,15 +73,15 @@ _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o: _deps/ruy-b
 _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o: ruy/ruy/thread_pool.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o -MF CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o.d -o CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o -c /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o -MF CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o.d -o CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o -c /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc > CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc > CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc -o CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/thread_pool.cc -o CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.s
 
 # Object files for target ruy_thread_pool
 ruy_thread_pool_OBJECTS = \
