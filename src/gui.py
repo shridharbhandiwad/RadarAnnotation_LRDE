@@ -102,11 +102,11 @@ class DataExtractionPanel(QWidget):
         layout = QVBoxLayout()
         
         # File selection
-        file_group = QGroupBox("Binary File Selection")
+        file_group = QGroupBox()
         file_layout = QVBoxLayout()
         
-        self.file_label = QLabel("No file selected")
-        self.file_button = QPushButton("Select Binary File")
+        self.file_label = QLabel("---")
+        self.file_button = QPushButton("📁 File")
         self.file_button.clicked.connect(self.select_file)
         
         file_layout.addWidget(self.file_label)
@@ -114,19 +114,19 @@ class DataExtractionPanel(QWidget):
         file_group.setLayout(file_layout)
         
         # Extract button
-        self.extract_button = QPushButton("Extract Data")
+        self.extract_button = QPushButton("Extract")
         self.extract_button.clicked.connect(self.extract_data)
         self.extract_button.setEnabled(False)
         
         # Save options
-        save_group = QGroupBox("Save Options")
+        save_group = QGroupBox()
         save_layout = QFormLayout()
         
         self.format_combo = QComboBox()
         self.format_combo.addItems(['csv', 'xlsx'])
-        save_layout.addRow("Format:", self.format_combo)
+        save_layout.addRow("", self.format_combo)
         
-        self.save_button = QPushButton("Save Extracted Data")
+        self.save_button = QPushButton("💾 Save")
         self.save_button.clicked.connect(self.save_data)
         self.save_button.setEnabled(False)
         save_layout.addWidget(self.save_button)
@@ -141,7 +141,6 @@ class DataExtractionPanel(QWidget):
         layout.addWidget(file_group)
         layout.addWidget(self.extract_button)
         layout.addWidget(save_group)
-        layout.addWidget(QLabel("Status:"))
         layout.addWidget(self.status_text)
         layout.addStretch()
         
@@ -153,9 +152,9 @@ class DataExtractionPanel(QWidget):
         )
         if file_path:
             self.file_path = file_path
-            self.file_label.setText(f"Selected: {Path(file_path).name}")
+            self.file_label.setText(Path(file_path).name)
             self.extract_button.setEnabled(True)
-            self.status_text.append(f"Selected file: {file_path}")
+            self.status_text.append(f"Selected: {file_path}")
     
     def extract_data(self):
         try:
@@ -203,11 +202,11 @@ class AutoLabelingPanel(QWidget):
         layout = QVBoxLayout()
         
         # File selection
-        file_group = QGroupBox("Input Data")
+        file_group = QGroupBox()
         file_layout = QVBoxLayout()
         
-        self.file_label = QLabel("No file selected")
-        self.file_button = QPushButton("Select CSV File")
+        self.file_label = QLabel("---")
+        self.file_button = QPushButton("📄 CSV")
         self.file_button.clicked.connect(self.select_file)
         
         file_layout.addWidget(self.file_label)
@@ -215,28 +214,28 @@ class AutoLabelingPanel(QWidget):
         file_group.setLayout(file_layout)
         
         # Threshold adjustments
-        threshold_group = QGroupBox("Threshold Settings")
+        threshold_group = QGroupBox()
         threshold_layout = QFormLayout()
         
         self.level_flight_spin = QDoubleSpinBox()
         self.level_flight_spin.setRange(0, 100)
         self.level_flight_spin.setValue(5.0)
-        threshold_layout.addRow("Level Flight (m):", self.level_flight_spin)
+        threshold_layout.addRow("Level (m):", self.level_flight_spin)
         
         self.low_speed_spin = QDoubleSpinBox()
         self.low_speed_spin.setRange(0, 500)
         self.low_speed_spin.setValue(50.0)
-        threshold_layout.addRow("Low Speed (m/s):", self.low_speed_spin)
+        threshold_layout.addRow("Low (m/s):", self.low_speed_spin)
         
         self.high_speed_spin = QDoubleSpinBox()
         self.high_speed_spin.setRange(0, 1000)
         self.high_speed_spin.setValue(200.0)
-        threshold_layout.addRow("High Speed (m/s):", self.high_speed_spin)
+        threshold_layout.addRow("High (m/s):", self.high_speed_spin)
         
         threshold_group.setLayout(threshold_layout)
         
         # Process button
-        self.process_button = QPushButton("Run Auto-Labeling")
+        self.process_button = QPushButton("Label")
         self.process_button.clicked.connect(self.run_autolabeling)
         self.process_button.setEnabled(False)
         
@@ -247,7 +246,7 @@ class AutoLabelingPanel(QWidget):
         self.results_table.setMaximumHeight(120)
         
         # Save button
-        self.save_button = QPushButton("Save Labeled Data")
+        self.save_button = QPushButton("💾 Save")
         self.save_button.clicked.connect(self.save_data)
         self.save_button.setEnabled(False)
         
@@ -259,10 +258,8 @@ class AutoLabelingPanel(QWidget):
         layout.addWidget(file_group)
         layout.addWidget(threshold_group)
         layout.addWidget(self.process_button)
-        layout.addWidget(QLabel("Annotation Results:"))
         layout.addWidget(self.results_table)
         layout.addWidget(self.save_button)
-        layout.addWidget(QLabel("Status:"))
         layout.addWidget(self.status_text)
         
         self.setLayout(layout)
@@ -273,9 +270,9 @@ class AutoLabelingPanel(QWidget):
         )
         if file_path:
             self.file_path = file_path
-            self.file_label.setText(f"Selected: {Path(file_path).name}")
+            self.file_label.setText(Path(file_path).name)
             self.process_button.setEnabled(True)
-            self.status_text.append(f"Selected file: {file_path}")
+            self.status_text.append(f"Selected: {file_path}")
     
     def run_autolabeling(self):
         try:
@@ -348,18 +345,18 @@ class AITaggingPanel(QWidget):
         layout = QVBoxLayout()
         
         # Model selection
-        model_group = QGroupBox("Model Selection")
+        model_group = QGroupBox()
         model_layout = QVBoxLayout()
         
         # Model type selection
         model_type_layout = QFormLayout()
         self.model_combo = QComboBox()
         self.model_combo.addItems(['Random Forest', 'Gradient Boosting', 'Neural Network'])
-        model_type_layout.addRow("Model Type:", self.model_combo)
+        model_type_layout.addRow("", self.model_combo)
         model_layout.addLayout(model_type_layout)
         
         # Multi-output mode checkbox
-        self.multi_output_check = QPushButton("🎯 Multi-Output Mode (Auto-Tagging)")
+        self.multi_output_check = QPushButton("🎯 Multi-Output")
         self.multi_output_check.setCheckable(True)
         self.multi_output_check.setChecked(False)
         self.multi_output_check.clicked.connect(self.toggle_multi_output_info)
@@ -375,11 +372,11 @@ class AITaggingPanel(QWidget):
         model_group.setLayout(model_layout)
         
         # Data selection
-        data_group = QGroupBox("Training Data")
+        data_group = QGroupBox()
         data_layout = QVBoxLayout()
         
-        self.data_label = QLabel("No file selected")
-        self.data_button = QPushButton("Select Labeled Data CSV")
+        self.data_label = QLabel("---")
+        self.data_button = QPushButton("📄 Data")
         self.data_button.clicked.connect(self.select_data)
         
         data_layout.addWidget(self.data_label)
@@ -387,7 +384,7 @@ class AITaggingPanel(QWidget):
         data_group.setLayout(data_layout)
         
         # Train button
-        self.train_button = QPushButton("Train Model")
+        self.train_button = QPushButton("Train")
         self.train_button.clicked.connect(self.train_model)
         self.train_button.setEnabled(False)
         
@@ -403,7 +400,6 @@ class AITaggingPanel(QWidget):
         layout.addWidget(data_group)
         layout.addWidget(self.train_button)
         layout.addWidget(self.progress_bar)
-        layout.addWidget(QLabel("Training Results:"))
         layout.addWidget(self.results_text)
         
         self.setLayout(layout)
@@ -428,9 +424,9 @@ class AITaggingPanel(QWidget):
         )
         if file_path:
             self.data_path = file_path
-            self.data_label.setText(f"Selected: {Path(file_path).name}")
+            self.data_label.setText(Path(file_path).name)
             self.train_button.setEnabled(True)
-            self.results_text.append(f"Selected data: {file_path}")
+            self.results_text.append(f"Data: {file_path}")
     
     def train_model(self):
         model_display_name = self.model_combo.currentText()
@@ -644,11 +640,11 @@ class ReportPanel(QWidget):
         layout = QVBoxLayout()
         
         # Folder selection
-        folder_group = QGroupBox("Data Folder")
+        folder_group = QGroupBox()
         folder_layout = QVBoxLayout()
         
-        self.folder_label = QLabel("No folder selected")
-        self.folder_button = QPushButton("Select Data Folder")
+        self.folder_label = QLabel("---")
+        self.folder_button = QPushButton("📂 Folder")
         self.folder_button.clicked.connect(self.select_folder)
         
         folder_layout.addWidget(self.folder_label)
@@ -656,7 +652,7 @@ class ReportPanel(QWidget):
         folder_group.setLayout(folder_layout)
         
         # Generate button
-        self.generate_button = QPushButton("Generate Report")
+        self.generate_button = QPushButton("Generate")
         self.generate_button.clicked.connect(self.generate_report)
         self.generate_button.setEnabled(False)
         
@@ -666,7 +662,6 @@ class ReportPanel(QWidget):
         
         layout.addWidget(folder_group)
         layout.addWidget(self.generate_button)
-        layout.addWidget(QLabel("Status:"))
         layout.addWidget(self.status_text)
         layout.addStretch()
         
@@ -676,9 +671,9 @@ class ReportPanel(QWidget):
         folder_path = QFileDialog.getExistingDirectory(self, "Select Data Folder")
         if folder_path:
             self.folder_path = folder_path
-            self.folder_label.setText(f"Selected: {Path(folder_path).name}")
+            self.folder_label.setText(Path(folder_path).name)
             self.generate_button.setEnabled(True)
-            self.status_text.append(f"Selected folder: {folder_path}")
+            self.status_text.append(f"Folder: {folder_path}")
     
     def generate_report(self):
         try:
@@ -717,23 +712,20 @@ class SettingsPanel(QWidget):
         layout = QVBoxLayout()
         
         # Theme selection
-        theme_group = QGroupBox("Theme Settings")
+        theme_group = QGroupBox()
         theme_layout = QVBoxLayout()
-        
-        theme_label = QLabel("Select Application Theme:")
-        theme_layout.addWidget(theme_label)
         
         # Theme buttons
         theme_buttons_layout = QHBoxLayout()
         
-        self.black_theme_button = QPushButton("⚫ Black Theme")
+        self.black_theme_button = QPushButton("⚫")
         self.black_theme_button.setCheckable(True)
         self.black_theme_button.clicked.connect(lambda: self.apply_theme('black'))
         self.black_theme_button.setObjectName("themeButton")
         self.black_theme_button.setMinimumHeight(40)
         theme_buttons_layout.addWidget(self.black_theme_button)
         
-        self.white_theme_button = QPushButton("⚪ White Theme")
+        self.white_theme_button = QPushButton("⚪")
         self.white_theme_button.setCheckable(True)
         self.white_theme_button.clicked.connect(lambda: self.apply_theme('white'))
         self.white_theme_button.setObjectName("themeButton")
@@ -759,7 +751,6 @@ class SettingsPanel(QWidget):
         self.status_text.setMaximumHeight(70)
         
         layout.addWidget(theme_group)
-        layout.addWidget(QLabel("Status:"))
         layout.addWidget(self.status_text)
         layout.addStretch()
         
@@ -806,22 +797,22 @@ class SimulationPanel(QWidget):
         layout = QVBoxLayout()
         
         # Settings
-        settings_group = QGroupBox("Simulation Settings")
+        settings_group = QGroupBox()
         settings_layout = QFormLayout()
         
         self.count_spin = QSpinBox()
         self.count_spin.setRange(1, 20)
         self.count_spin.setValue(10)
-        settings_layout.addRow("Number of Simulations:", self.count_spin)
+        settings_layout.addRow("Count:", self.count_spin)
         
         settings_group.setLayout(settings_layout)
         
         # Output folder
-        folder_group = QGroupBox("Output Folder")
+        folder_group = QGroupBox()
         folder_layout = QVBoxLayout()
         
         self.folder_label = QLabel("data/simulations")
-        self.folder_button = QPushButton("Select Output Folder")
+        self.folder_button = QPushButton("📂 Folder")
         self.folder_button.clicked.connect(self.select_folder)
         
         folder_layout.addWidget(self.folder_label)
@@ -829,7 +820,7 @@ class SimulationPanel(QWidget):
         folder_group.setLayout(folder_layout)
         
         # Generate button
-        self.generate_button = QPushButton("Generate Simulations")
+        self.generate_button = QPushButton("Generate")
         self.generate_button.clicked.connect(self.generate_simulations)
         
         # Status
@@ -839,7 +830,6 @@ class SimulationPanel(QWidget):
         layout.addWidget(settings_group)
         layout.addWidget(folder_group)
         layout.addWidget(self.generate_button)
-        layout.addWidget(QLabel("Status:"))
         layout.addWidget(self.status_text)
         
         self.setLayout(layout)
@@ -880,47 +870,37 @@ class ModelEvaluationPanel(QWidget):
     def setup_ui(self):
         layout = QVBoxLayout()
         
-        # Title
-        title = QLabel("🔮 Evaluate Model with User-Inputted File")
-        title_font = QFont()
-        title_font.setPointSize(14)
-        title_font.setBold(True)
-        title.setFont(title_font)
-        layout.addWidget(title)
-        
         # Step 1: Select trained model
-        model_group = QGroupBox("Step 1: Select Trained Model")
+        model_group = QGroupBox("1. Model")
         model_layout = QVBoxLayout()
         
-        self.model_label = QLabel("No model selected")
-        self.model_button = QPushButton("📁 Browse for Trained Model")
+        self.model_label = QLabel("---")
+        self.model_button = QPushButton("📁")
         self.model_button.clicked.connect(self.select_model)
         self.model_button.setObjectName("primaryButton")
         
-        model_layout.addWidget(QLabel("Select a trained model file (.pkl for RF/XGBoost, .h5 for Neural Network):"))
         model_layout.addWidget(self.model_label)
         model_layout.addWidget(self.model_button)
         model_group.setLayout(model_layout)
         
         # Step 2: Select input data
-        data_group = QGroupBox("Step 2: Select Input Data File")
+        data_group = QGroupBox("2. Data")
         data_layout = QVBoxLayout()
         
-        self.data_label = QLabel("No data file selected")
-        self.data_button = QPushButton("📄 Browse for CSV File")
+        self.data_label = QLabel("---")
+        self.data_button = QPushButton("📄")
         self.data_button.clicked.connect(self.select_data)
         self.data_button.setEnabled(False)
         
-        data_layout.addWidget(QLabel("Select a CSV file with trajectory data (can be unlabeled):"))
         data_layout.addWidget(self.data_label)
         data_layout.addWidget(self.data_button)
         data_group.setLayout(data_layout)
         
         # Step 3: Run prediction
-        predict_group = QGroupBox("Step 3: Run Prediction")
+        predict_group = QGroupBox("3. Predict")
         predict_layout = QVBoxLayout()
         
-        self.predict_button = QPushButton("🚀 Predict and Auto-Label")
+        self.predict_button = QPushButton("🚀 Predict")
         self.predict_button.clicked.connect(self.run_prediction)
         self.predict_button.setEnabled(False)
         self.predict_button.setObjectName("primaryButton")
@@ -933,7 +913,7 @@ class ModelEvaluationPanel(QWidget):
         self.progress_bar.setVisible(False)
         
         # Results display
-        results_group = QGroupBox("Prediction Results")
+        results_group = QGroupBox()
         results_layout = QVBoxLayout()
         
         self.results_table = QTableWidget()
@@ -945,12 +925,12 @@ class ModelEvaluationPanel(QWidget):
         # Action buttons
         actions_layout = QHBoxLayout()
         
-        self.save_button = QPushButton("💾 Save Labeled Data")
+        self.save_button = QPushButton("💾 Save")
         self.save_button.clicked.connect(self.save_labeled_data)
         self.save_button.setEnabled(False)
         actions_layout.addWidget(self.save_button)
         
-        self.visualize_button = QPushButton("📊 Visualize Results")
+        self.visualize_button = QPushButton("📊 View")
         self.visualize_button.clicked.connect(self.visualize_results)
         self.visualize_button.setEnabled(False)
         actions_layout.addWidget(self.visualize_button)
@@ -969,7 +949,6 @@ class ModelEvaluationPanel(QWidget):
         layout.addWidget(predict_group)
         layout.addWidget(self.progress_bar)
         layout.addWidget(results_group)
-        layout.addWidget(QLabel("Status Log:"))
         layout.addWidget(self.status_text)
         layout.addStretch()
         
@@ -985,7 +964,7 @@ class ModelEvaluationPanel(QWidget):
         if file_path:
             self.model_path = file_path
             model_name = Path(file_path).name
-            self.model_label.setText(f"Selected: {model_name}")
+            self.model_label.setText(model_name)
             self.status_text.append(f"\n✓ Model selected: {file_path}")
             self.data_button.setEnabled(True)
     
@@ -999,7 +978,7 @@ class ModelEvaluationPanel(QWidget):
         if file_path:
             self.input_data_path = file_path
             data_name = Path(file_path).name
-            self.data_label.setText(f"Selected: {data_name}")
+            self.data_label.setText(data_name)
             self.status_text.append(f"✓ Data file selected: {file_path}")
             
             # Load and display basic info
@@ -1165,22 +1144,22 @@ class HighVolumeTrainingPanel(QWidget):
         layout = QVBoxLayout()
         
         # Step 1: Dataset Generation
-        data_gen_group = QGroupBox("Step 1: Generate High-Volume Dataset")
+        data_gen_group = QGroupBox("1. Data")
         data_gen_layout = QFormLayout()
         
         self.n_tracks_spin = QSpinBox()
         self.n_tracks_spin.setRange(10, 500)
         self.n_tracks_spin.setValue(200)
         self.n_tracks_spin.setToolTip("Number of trajectory tracks to generate")
-        data_gen_layout.addRow("Number of Tracks:", self.n_tracks_spin)
+        data_gen_layout.addRow("Tracks:", self.n_tracks_spin)
         
         self.duration_spin = QDoubleSpinBox()
         self.duration_spin.setRange(1.0, 30.0)
         self.duration_spin.setValue(10.0)
         self.duration_spin.setToolTip("Duration of each track in minutes")
-        data_gen_layout.addRow("Duration (min):", self.duration_spin)
+        data_gen_layout.addRow("Min:", self.duration_spin)
         
-        self.generate_button = QPushButton("Generate Dataset")
+        self.generate_button = QPushButton("Generate")
         self.generate_button.clicked.connect(self.generate_dataset)
         self.generate_button.setObjectName("primaryButton")
         data_gen_layout.addWidget(self.generate_button)
@@ -1188,14 +1167,14 @@ class HighVolumeTrainingPanel(QWidget):
         data_gen_group.setLayout(data_gen_layout)
         
         # Step 2: Auto-Labeling
-        labeling_group = QGroupBox("Step 2: Apply Auto-Labeling")
+        labeling_group = QGroupBox("2. Label")
         labeling_layout = QVBoxLayout()
         
-        self.use_existing_data = QPushButton("Or Select Existing CSV File")
+        self.use_existing_data = QPushButton("📄 Existing")
         self.use_existing_data.clicked.connect(self.select_existing_data)
         labeling_layout.addWidget(self.use_existing_data)
         
-        self.label_button = QPushButton("Apply Auto-Labeling")
+        self.label_button = QPushButton("Label")
         self.label_button.clicked.connect(self.apply_labeling)
         self.label_button.setEnabled(False)
         labeling_layout.addWidget(self.label_button)
@@ -1203,29 +1182,29 @@ class HighVolumeTrainingPanel(QWidget):
         labeling_group.setLayout(labeling_layout)
         
         # Step 3: Model Training
-        training_group = QGroupBox("Step 3: Train Models")
+        training_group = QGroupBox("3. Train")
         training_layout = QVBoxLayout()
         
         # Model selection checkboxes
         models_layout = QHBoxLayout()
-        self.train_random_forest_check = QPushButton("🌲 Random Forest")
+        self.train_random_forest_check = QPushButton("🌲 RF")
         self.train_random_forest_check.setCheckable(True)
         self.train_random_forest_check.setChecked(True)
         models_layout.addWidget(self.train_random_forest_check)
         
-        self.train_gradient_boosting_check = QPushButton("🚀 Gradient Boosting")
+        self.train_gradient_boosting_check = QPushButton("🚀 GB")
         self.train_gradient_boosting_check.setCheckable(True)
         self.train_gradient_boosting_check.setChecked(True)
         models_layout.addWidget(self.train_gradient_boosting_check)
         
-        self.train_neural_network_check = QPushButton("🧠 Neural Network")
+        self.train_neural_network_check = QPushButton("🧠 NN")
         self.train_neural_network_check.setCheckable(True)
         self.train_neural_network_check.setChecked(True)
         models_layout.addWidget(self.train_neural_network_check)
         
         training_layout.addLayout(models_layout)
         
-        self.train_all_button = QPushButton("Train Selected Models")
+        self.train_all_button = QPushButton("Train")
         self.train_all_button.clicked.connect(self.train_models)
         self.train_all_button.setEnabled(False)
         self.train_all_button.setObjectName("primaryButton")
@@ -1238,7 +1217,7 @@ class HighVolumeTrainingPanel(QWidget):
         self.progress_bar.setVisible(False)
         
         # Results display
-        results_group = QGroupBox("Results Summary")
+        results_group = QGroupBox()
         results_layout = QVBoxLayout()
         
         self.results_table = QTableWidget()
@@ -1252,12 +1231,12 @@ class HighVolumeTrainingPanel(QWidget):
         # Action buttons
         actions_layout = QHBoxLayout()
         
-        self.generate_report_button = QPushButton("📄 Generate Report")
+        self.generate_report_button = QPushButton("📄 Report")
         self.generate_report_button.clicked.connect(self.generate_report)
         self.generate_report_button.setEnabled(False)
         actions_layout.addWidget(self.generate_report_button)
         
-        self.export_results_button = QPushButton("💾 Export Results")
+        self.export_results_button = QPushButton("💾 Export")
         self.export_results_button.clicked.connect(self.export_results)
         self.export_results_button.setEnabled(False)
         actions_layout.addWidget(self.export_results_button)
@@ -1276,7 +1255,6 @@ class HighVolumeTrainingPanel(QWidget):
         layout.addWidget(training_group)
         layout.addWidget(self.progress_bar)
         layout.addWidget(results_group)
-        layout.addWidget(QLabel("Status Log:"))
         layout.addWidget(self.status_text)
         
         self.setLayout(layout)
@@ -1611,14 +1589,13 @@ class VisualizationPanel(QWidget):
         controls_layout = QHBoxLayout()
         
         # Load data button
-        load_button = QPushButton("Load Data")
+        load_button = QPushButton("📁 Load")
         load_button.clicked.connect(self.load_data)
         load_button.setObjectName("primaryButton")
         controls_layout.addWidget(load_button)
         
         if HAS_PYQTGRAPH:
             # Coordinate mode selector
-            controls_layout.addWidget(QLabel("Display:"))
             self.coord_combo = QComboBox()
             self.coord_combo.addItems(['Radar View (Circular)', 'Cartesian (X, Y)', 'Polar (Range, Azimuth)'])
             self.coord_combo.setCurrentIndex(0)  # Set Radar View as default
@@ -1626,24 +1603,19 @@ class VisualizationPanel(QWidget):
             controls_layout.addWidget(self.coord_combo)
             
             # Color by selector
-            controls_layout.addWidget(QLabel("Color:"))
             self.color_combo = QComboBox()
             self.color_combo.addItems(['Track ID', 'Annotation', 'Track Segments (Colored by Annotation)'])
             self.color_combo.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.color_combo)
             
             # Track ID filter
-            controls_layout.addWidget(QLabel("Track:"))
             self.track_filter = QComboBox()
             self.track_filter.addItem("All Tracks")
             self.track_filter.currentTextChanged.connect(self.update_visualization)
             controls_layout.addWidget(self.track_filter)
             
-            # Add separator
-            controls_layout.addWidget(QLabel(" | "))
-            
             # Show time series toggle
-            self.show_timeseries_checkbox = QPushButton("Time Series")
+            self.show_timeseries_checkbox = QPushButton("📈")
             self.show_timeseries_checkbox.setCheckable(True)
             self.show_timeseries_checkbox.setChecked(False)
             self.show_timeseries_checkbox.clicked.connect(self.toggle_timeseries)
@@ -1679,8 +1651,6 @@ class VisualizationPanel(QWidget):
             interactive_layout.addWidget(btn_reset)
             
             # History controls - Icon only
-            interactive_layout.addWidget(QLabel(" | "))
-            
             self.btn_undo = QPushButton("⬅")
             self.btn_undo.setToolTip("Undo")
             self.btn_undo.setMaximumWidth(40)
@@ -1696,8 +1666,6 @@ class VisualizationPanel(QWidget):
             interactive_layout.addWidget(self.btn_redo)
             
             # Magnifier controls - Icon only
-            interactive_layout.addWidget(QLabel(" | "))
-            
             self.magnifier_toggle = QPushButton("🔍")
             self.magnifier_toggle.setToolTip("Enable/Disable Magnifier")
             self.magnifier_toggle.setMaximumWidth(40)
@@ -1707,7 +1675,6 @@ class VisualizationPanel(QWidget):
             interactive_layout.addWidget(self.magnifier_toggle)
             
             # Export controls - Icon only
-            interactive_layout.addWidget(QLabel(" | "))
             
             btn_export_ppi = QPushButton("💾")
             btn_export_ppi.setToolTip("Save PPI Plot")
@@ -1757,9 +1724,9 @@ class VisualizationPanel(QWidget):
             self.ts_container.setVisible(is_visible)
             # Update button text
             if is_visible:
-                self.show_timeseries_checkbox.setText("Hide Time Series Charts")
+                self.show_timeseries_checkbox.setText("📈✓")
             else:
-                self.show_timeseries_checkbox.setText("Show Time Series Charts")
+                self.show_timeseries_checkbox.setText("📈")
     
     def update_visualization(self):
         """Update visualization based on current settings"""
@@ -1898,7 +1865,7 @@ class MainWindow(QMainWindow):
     
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Radar Data Annotation Application")
+        self.setWindowTitle("Radar")
         self.setGeometry(100, 100, 1280, 720)
         
         # Initialize config
@@ -1923,18 +1890,18 @@ class MainWindow(QMainWindow):
         # Left panel: Engine selector
         self.engine_list = QListWidget()
         self.engine_list.addItems([
-            "📊 Data Extraction",
-            "🏷️ AutoLabeling",
-            "🤖 AI Tagging",
-            "🔮 Model Evaluation",
-            "🚀 High Volume Training",
+            "📊 Extract",
+            "🏷️ Label",
+            "🤖 AI",
+            "🔮 Eval",
+            "🚀 Train",
             "📈 Report",
-            "🔬 Simulation",
-            "📉 Visualization",
-            "⚙️ Settings"
+            "🔬 Sim",
+            "📉 Viz",
+            "⚙️"
         ])
-        self.engine_list.setMinimumWidth(170)
-        self.engine_list.setMaximumWidth(200)
+        self.engine_list.setMinimumWidth(80)
+        self.engine_list.setMaximumWidth(100)
         self.engine_list.setSpacing(2)
         self.engine_list.currentRowChanged.connect(self.change_panel)
         
