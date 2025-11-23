@@ -26,13 +26,14 @@ void printUsage(const char* progName) {
     std::cout << "  --help              Show this help message\n\n";
     std::cout << "Examples:\n";
     std::cout << "  # Neural network model\n";
-    std::cout << "  " << progName << " --model lstm.tflite --metadata metadata.json --model-type nn\n\n";
+    std::cout << "  " << progName << " --model nn_model.tflite --metadata metadata.json --model-type nn\n\n";
     std::cout << "  # With evaluation\n";
-    std::cout << "  " << progName << " --model lstm.tflite --metadata metadata.json \\\n";
+    std::cout << "  " << progName << " --model nn_model.tflite --metadata metadata.json \\\n";
     std::cout << "                   --test-data data.csv --load-gt\n\n";
-    std::cout << "  # Benchmark mode\n";
-    std::cout << "  " << progName << " --model lstm.tflite --metadata metadata.json \\\n";
-    std::cout << "                   --test-data test.bin --test-binary --benchmark\n";
+    std::cout << "  # XGBoost model\n";
+    std::cout << "  " << progName << " --model xgb_model.json --metadata metadata.json --model-type xgboost\n\n";
+    std::cout << "  # Random Forest model\n";
+    std::cout << "  " << progName << " --model rf_model.pkl --metadata metadata.json --model-type rf\n";
 }
 
 void runEvaluation(RadarTaggerMultiOutput& tagger,

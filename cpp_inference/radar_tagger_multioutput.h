@@ -111,7 +111,7 @@ struct MultiOutputResult {
  * @brief Model type enumeration
  */
 enum class ModelType {
-    NEURAL_NETWORK,  // LSTM, Transformer (TFLite)
+    NEURAL_NETWORK,  // Multi-output NN (TFLite)
     XGBOOST,         // XGBoost (requires separate handling)
     RANDOM_FOREST    // Random Forest (requires separate handling)
 };
@@ -254,7 +254,7 @@ private:
     int numTags_;
     int sequenceLength_;
     int numFeatures_;
-    bool isSequenceModel_;  // True for LSTM/Transformer, False for XGBoost/RF
+    bool isSequenceModel_;  // True for sequence-based NN, False for XGBoost/RF
     
     // Performance tracking
     MultiOutputMetrics metrics_;
