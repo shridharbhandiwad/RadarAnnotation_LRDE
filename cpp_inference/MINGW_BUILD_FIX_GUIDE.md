@@ -76,17 +76,31 @@ build_with_fixes.bat clean
 
 ### Method 3: Manual CMake Flags (Partial Fix)
 
-The CMakeLists.txt includes these fixes for cpuinfo:
+⚠️ **CRITICAL WARNING: The CMAKE_C_FLAGS approach below is BROKEN on Windows!**
+
+**DO NOT USE the following in your CMakeLists.txt:**
 
 ```cmake
 if(MINGW OR WIN32)
     # Add min/max macros for cpuinfo compatibility
-    add_compile_definitions(NOMINMAX)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dmax(a,b)=((a)>(b)?(a):(b)) -Dmin(a,b)=((a)<(b)?(a):(b))")
+    add_compile_definitions(NOMINMAX)  # ✅ This is OK
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dmax(a,b)=((a)>(b)?(a):(b)) -Dmin(a,b)=((a)<(b)?(a):(b))")  # ❌ BROKEN ON WINDOWS!
 endif()
 ```
 
-However, gemmlowp still needs manual patching after configuration.
+**Why it fails:**
+- The `>` and `<` characters are interpreted as shell redirection operators on Windows
+- This causes: "The filename, directory name, or volume label syntax is incorrect"
+- The C compiler test in CMake will fail immediately
+
+**Correct approach:**
+- ✅ Keep `add_compile_definitions(NOMINMAX)` - this works fine
+- ✅ Use the Python script (`fix_build_dependencies.py`) to patch cpuinfo source files directly
+- ✅ The current CMakeLists.txt is already correct - don't add the CMAKE_C_FLAGS line!
+
+**See `COMPILER_TEST_FAILURE_DIAGNOSIS.md` and `FIX_INSTRUCTIONS.md` for details.**
+
+However, gemmlowp still needs manual patching after configuration (handled by the Python script).
 
 ## Build Process
 
