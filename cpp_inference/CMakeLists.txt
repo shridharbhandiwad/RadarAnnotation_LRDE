@@ -39,7 +39,24 @@ else()
     set(TFLITE_ENABLE_XNNPACK OFF CACHE BOOL "" FORCE)
     set(TFLITE_ENABLE_RUY ON CACHE BOOL "" FORCE)
     
+    # Fix for MinGW build issues with gemmlowp and abseil
+    if(MINGW OR WIN32)
+        # Use larger object files for MinGW
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wa,-mbig-obj")
+        # Disable building tests and examples
+        set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
+        # Use single-threaded builds for problematic targets
+        set(CMAKE_BUILD_PARALLEL_LEVEL 1)
+        # Disable problematic SIMD optimizations
+        set(GEMMLOWP_ENABLE_NEON OFF CACHE BOOL "" FORCE)
+    endif()
+    
     FetchContent_MakeAvailable(tensorflow)
+    
+    # Post-fetch fix: Disable eight_bit_int_gemm executable for MinGW
+    if((MINGW OR WIN32) AND TARGET eight_bit_int_gemm)
+        set_target_properties(eight_bit_int_gemm PROPERTIES EXCLUDE_FROM_ALL TRUE)
+    endif()
     
     set(TensorFlowLite_INCLUDE_DIRS 
         ${tensorflow_SOURCE_DIR}

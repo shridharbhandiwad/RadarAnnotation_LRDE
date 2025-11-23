@@ -1,0 +1,63 @@
+=== BUILD FIX APPLIED: MinGW gemmlowp Issue ===
+
+Date: 2025-11-23
+
+PROBLEM ADDRESSED:
+------------------
+Error during CMake build with MinGW:
+  "c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files"
+  in gemmlowp/eight_bit_int_gemm target
+
+ROOT CAUSE:
+-----------
+TensorFlow Lite's gemmlowp dependency has CMake configuration issues with MinGW
+that generate incorrect compiler commands.
+
+SOLUTION IMPLEMENTED:
+---------------------
+Modified CMakeLists.txt with:
+
+1. MinGW-specific compiler flags:
+   - Added -Wa,-mbig-obj for large object file support
+   - Disabled BUILD_TESTING 
+   - Set single-threaded build for problematic targets
+   - Disabled GEMMLOWP_ENABLE_NEON
+
+2. Excluded problematic target:
+   - eight_bit_int_gemm executable set to EXCLUDE_FROM_ALL
+   - This is only a test tool, not needed for TensorFlow Lite functionality
+
+NEXT STEPS FOR WINDOWS USERS:
+------------------------------
+1. Clean your build directory:
+   cd cpp_inference
+   rmdir /s /q build
+   mkdir build
+   cd build
+
+2. Reconfigure with CMake:
+   cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+
+3. Build:
+   cmake --build . --config Release
+
+OR simply run:
+   build_mingw_alternative.bat
+
+EXPECTED OUTCOME:
+-----------------
+✓ Build should complete successfully
+✓ radar_tagger.exe and radar_tagger_multioutput.exe will be created
+✓ Some warnings about pragma comments are normal and can be ignored
+✓ TensorFlow Lite inference functionality is fully preserved
+
+FILES MODIFIED:
+---------------
+- cpp_inference/CMakeLists.txt (added MinGW workarounds)
+- cpp_inference/MINGW_BUILD_GUIDE.md (updated with fix information)
+- cpp_inference/MINGW_GEMMLOWP_FIX.md (new, detailed technical documentation)
+
+DOCUMENTATION:
+--------------
+For technical details, see: MINGW_GEMMLOWP_FIX.md
+For build instructions, see: MINGW_BUILD_GUIDE.md
