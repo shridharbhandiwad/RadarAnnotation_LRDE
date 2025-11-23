@@ -179,26 +179,40 @@ python3 export_models_to_onnx.py \
 pip install scikit-learn skl2onnx onnx
 ```
 
-#### Exporting Neural Network Models (Alternative to TFLite)
+#### Exporting Neural Network Models
 
-You can also export Keras models to ONNX format:
+You can export Keras models to ONNX or TFLite format:
 
+**Option 1: TFLite (Recommended for best performance)**
 ```bash
-# Export Keras model to ONNX (alternative to TFLite)
+# Export multi-output neural network to TFLite
+python3 convert_model_to_tflite.py \
+    --model-path output/nn_multioutput.h5 \
+    --output-dir cpp_models/nn \
+    --metadata-path output/nn_metadata.json
+```
+
+**Option 2: ONNX (For cross-platform compatibility)**
+```bash
+# Export Keras model to ONNX
 python3 export_models_to_onnx.py \
     --model-type neural_network \
-    --model-path output/test_lstm/lstm_model.h5 \
+    --model-path output/nn_multioutput.h5 \
     --output-path cpp_models/nn_model.onnx \
-    --metadata-path output/test_lstm/lstm_model_metadata.pkl \
+    --metadata-path output/nn_metadata.json \
     --output-metadata cpp_models/nn_metadata.json
 ```
 
 **Requirements:**
 ```bash
+# For TFLite
+pip install tensorflow
+
+# For ONNX
 pip install tensorflow tf2onnx onnx
 ```
 
-**Note:** For Neural Networks, TFLite is recommended over ONNX for better performance. Use ONNX only if you need cross-platform compatibility.
+**Note:** For multi-output Neural Networks, use simple feed-forward architectures for best C++ deployment performance. TFLite is recommended over ONNX for better inference speed.
 
 ### Model Structure Requirements
 
@@ -247,7 +261,10 @@ model.fit(X_train, y_train_multioutput, epochs=50)
 model.save('nn_model.h5')
 ```
 
-**Note:** LSTM and Transformer architectures are not recommended for C++ deployment due to complexity and performance considerations. Use simpler feed-forward multi-output neural networks for better real-time performance.
+**Note:** For best real-time performance in C++ deployment, use:
+- **Random Forest or XGBoost**: Best for tabular data, fast inference
+- **Feed-forward Neural Networks**: Good balance of accuracy and speed
+- Avoid complex architectures (LSTM, Transformer) as they add deployment complexity
 
 ## Performance
 
