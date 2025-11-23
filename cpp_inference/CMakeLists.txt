@@ -34,9 +34,6 @@ else()
     
     # Fix for MinGW build issues with gemmlowp and abseil
     if(MINGW OR WIN32)
-        # Use larger object files for MinGW
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wa,-mbig-obj")
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wa,-mbig-obj")
         # Disable building tests and examples
         set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
         # Use single-threaded builds for problematic targets
@@ -63,6 +60,84 @@ else()
     if(NOT tensorflow_POPULATED)
         message(STATUS "Populating TensorFlow Lite source...")
         FetchContent_Populate(tensorflow)
+        
+        # Patch TensorFlow Lite CMakeLists.txt for MinGW/Windows
+        if(MINGW OR WIN32)
+            set(TFLITE_CMAKE "${tensorflow_SOURCE_DIR}/tensorflow/lite/CMakeLists.txt")
+            if(EXISTS "${TFLITE_CMAKE}")
+                file(READ "${TFLITE_CMAKE}" TFLITE_CONTENT)
+                
+                # Check if already patched
+                string(FIND "${TFLITE_CONTENT}" "PATCHED_FOR_MINGW_MAX_MIN" ALREADY_PATCHED)
+                
+                if(ALREADY_PATCHED EQUAL -1)
+                    message(STATUS "Patching TensorFlow Lite CMakeLists.txt for MinGW compatibility...")
+                    
+                    # Remove problematic max/min macro definitions that contain > and < characters
+                    # These cause issues on Windows due to shell redirection operators
+                    # Match various forms: with quotes, without quotes, in set(), etc.
+                    
+                    # Remove from CMAKE_C_FLAGS and CMAKE_CXX_FLAGS
+                    string(REGEX REPLACE 
+                        "set\\(CMAKE_C_FLAGS[^)]*-Dmax\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_C_FLAGS"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "set\\(CMAKE_C_FLAGS[^)]*-Dmin\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_C_FLAGS"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "set\\(CMAKE_CXX_FLAGS[^)]*-Dmax\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_CXX_FLAGS"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "set\\(CMAKE_CXX_FLAGS[^)]*-Dmin\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_CXX_FLAGS"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove from add_compile_definitions
+                    string(REGEX REPLACE 
+                        "add_compile_definitions\\([^)]*max\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic max macro"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "add_compile_definitions\\([^)]*min\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic min macro"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove from target_compile_definitions
+                    string(REGEX REPLACE 
+                        "target_compile_definitions\\([^)]*max\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic max macro"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "target_compile_definitions\\([^)]*min\\(a,b\\)=[^)]*\\)"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic min macro"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove standalone -D definitions
+                    string(REGEX REPLACE 
+                        "-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)"
+                        ""
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    string(REGEX REPLACE 
+                        "-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)"
+                        ""
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
+                    message(STATUS "  -> Successfully patched TensorFlow Lite CMakeLists.txt")
+                else()
+                    message(STATUS "TensorFlow Lite CMakeLists.txt already patched, skipping...")
+                endif()
+            endif()
+        endif()
         
         # Now add TensorFlow Lite to the build
         add_subdirectory(${tensorflow_SOURCE_DIR}/tensorflow/lite ${tensorflow_BINARY_DIR})
@@ -264,6 +339,12 @@ if(MSVC)
 else()
     target_compile_options(radar_tagger PRIVATE -Wall -Wextra -Wpedantic)
     target_compile_options(radar_tagger_multioutput PRIVATE -Wall -Wextra -Wpedantic)
+    
+    # Add big-obj flag for MinGW
+    if(MINGW OR WIN32)
+        target_compile_options(radar_tagger PRIVATE -Wa,-mbig-obj)
+        target_compile_options(radar_tagger_multioutput PRIVATE -Wa,-mbig-obj)
+    endif()
 endif()
 
 # Install targets
