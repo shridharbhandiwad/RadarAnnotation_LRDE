@@ -1,5 +1,9 @@
 # Building with MinGW on Windows
 
+## ⚠️ Important Note
+This project includes fixes for known MinGW build issues with TensorFlow Lite's gemmlowp dependency. 
+See `MINGW_GEMMLOWP_FIX.md` for technical details.
+
 ## Quick Start
 
 If you have MinGW installed and in your PATH, simply run:
@@ -60,6 +64,19 @@ cmake -G "MinGW Makefiles" ^
     -DCMAKE_CXX_COMPILER=g++ ^
     ..
 ```
+
+### Issue 4: gemmlowp build error (FIXED)
+
+**Error Message:**
+```
+c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
+mingw32-make[2]: *** [.../gemmlowp-build/...] Error 1
+```
+
+**Status:** ✅ This issue has been fixed in the CMakeLists.txt
+
+The project now includes automatic workarounds for this MinGW-specific issue. No action needed.
+See `MINGW_GEMMLOWP_FIX.md` for technical details.
 
 ## Manual Build Steps
 
