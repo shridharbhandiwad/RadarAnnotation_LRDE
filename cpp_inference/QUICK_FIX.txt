@@ -1,0 +1,75 @@
+================================================================================
+QUICK FIX FOR MINGW BUILD ERRORS
+================================================================================
+
+TWO ERRORS DETECTED:
+1. gemmlowp: "cannot specify '-o' with '-c', '-S' or '-E' with multiple files"
+2. cpuinfo: "implicit declaration of function 'max'"
+
+================================================================================
+QUICK FIX (Run these commands):
+================================================================================
+
+# In the cpp_inference directory:
+
+# Step 1: Configure (if not done already)
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+cd ..
+
+# Step 2: Apply fixes
+python fix_build_dependencies.py
+
+# Step 3: Build
+cd build
+mingw32-make -j4
+
+================================================================================
+OR USE THE ALL-IN-ONE SCRIPT:
+================================================================================
+
+build_with_fixes.bat
+
+# For clean build:
+build_with_fixes.bat clean
+
+================================================================================
+WHAT GETS FIXED:
+================================================================================
+
+1. gemmlowp CMakeLists.txt
+   - Disables eight_bit_int_gemm target (not needed for inference)
+   - Location: build/_deps/gemmlowp-src/CMakeLists.txt
+
+2. cpuinfo source file
+   - Adds missing max() and min() macros
+   - Location: build/_deps/cpuinfo-src/src/x86/windows/init.c
+
+3. CMakeLists.txt compiler flags (already in place)
+   - Adds -Dmax(...) and -Dmin(...) as backup
+   - Uses NOMINMAX to prevent conflicts
+
+================================================================================
+IF ERRORS PERSIST:
+================================================================================
+
+1. Wait for TensorFlow Lite download to complete
+2. Run: python fix_build_dependencies.py (again)
+3. Try: cd build && mingw32-make -j4
+
+If still failing, try clean build:
+   rmdir /s /q build
+   build_with_fixes.bat
+
+================================================================================
+VERIFY PATCHES APPLIED:
+================================================================================
+
+# Check gemmlowp:
+findstr "DISABLED_FOR_MINGW" build\_deps\gemmlowp-src\CMakeLists.txt
+
+# Check cpuinfo:
+findstr "PATCHED_FOR_MINGW" build\_deps\cpuinfo-src\src\x86\windows\init.c
+
+================================================================================

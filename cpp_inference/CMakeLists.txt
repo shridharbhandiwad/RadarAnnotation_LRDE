@@ -36,6 +36,7 @@ else()
     if(MINGW OR WIN32)
         # Use larger object files for MinGW
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wa,-mbig-obj")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wa,-mbig-obj")
         # Disable building tests and examples
         set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
         # Use single-threaded builds for problematic targets
@@ -43,7 +44,11 @@ else()
         # Disable problematic SIMD optimizations
         set(GEMMLOWP_ENABLE_NEON OFF CACHE BOOL "" FORCE)
         
-        message(STATUS "MinGW/Windows detected - gemmlowp patch will be applied")
+        # Add min/max macros for cpuinfo compatibility
+        add_compile_definitions(NOMINMAX)
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dmax(a,b)=((a)>(b)?(a):(b)) -Dmin(a,b)=((a)<(b)?(a):(b))")
+        
+        message(STATUS "MinGW/Windows detected - gemmlowp and cpuinfo patches will be applied")
     endif()
     
     FetchContent_Declare(
@@ -60,53 +65,83 @@ else()
         message(STATUS "Populating TensorFlow Lite source...")
         FetchContent_Populate(tensorflow)
         
-        # Apply gemmlowp patch BEFORE configuring TensorFlow Lite
-        # This ensures eight_bit_int_gemm target is never created
-        set(GEMMLOWP_DIR "${CMAKE_BINARY_DIR}/gemmlowp")
-        if(EXISTS "${GEMMLOWP_DIR}/CMakeLists.txt")
-            file(READ "${GEMMLOWP_DIR}/CMakeLists.txt" GEMMLOWP_CONTENT)
-            
-            # Check if already patched
-            string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
-            
-            if(ALREADY_PATCHED EQUAL -1)
-                message(STATUS "Patching gemmlowp CMakeLists.txt to disable eight_bit_int_gemm...")
-                
-                # Comment out add_library for eight_bit_int_gemm
-                string(REGEX REPLACE 
-                    "add_library\\(eight_bit_int_gemm"
-                    "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
-                    GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                
-                # Comment out add_executable for eight_bit_int_gemm    
-                string(REGEX REPLACE 
-                    "add_executable\\(eight_bit_int_gemm"
-                    "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
-                    GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                    
-                # Comment out any target_link_libraries for eight_bit_int_gemm
-                string(REGEX REPLACE 
-                    "target_link_libraries\\(eight_bit_int_gemm"
-                    "# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm"
-                    GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                
-                # Comment out any set_target_properties for eight_bit_int_gemm
-                string(REGEX REPLACE 
-                    "set_target_properties\\(eight_bit_int_gemm"
-                    "# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm"
-                    GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                
-                file(WRITE "${GEMMLOWP_DIR}/CMakeLists.txt" "${GEMMLOWP_CONTENT}")
-                message(STATUS "  -> Successfully patched gemmlowp CMakeLists.txt")
-            else()
-                message(STATUS "gemmlowp CMakeLists.txt already patched, skipping...")
-            endif()
-        else()
-            message(STATUS "gemmlowp not yet downloaded, will be patched during build if needed")
-        endif()
-        
         # Now add TensorFlow Lite to the build
         add_subdirectory(${tensorflow_SOURCE_DIR}/tensorflow/lite ${tensorflow_BINARY_DIR})
+        
+        # Apply gemmlowp patch AFTER TensorFlow Lite subdirectory is added
+        # This allows us to patch the downloaded gemmlowp before it's built
+        if(MINGW OR WIN32)
+            set(GEMMLOWP_DIR "${CMAKE_BINARY_DIR}/_deps/gemmlowp-src")
+            if(EXISTS "${GEMMLOWP_DIR}/CMakeLists.txt")
+                file(READ "${GEMMLOWP_DIR}/CMakeLists.txt" GEMMLOWP_CONTENT)
+                
+                # Check if already patched
+                string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
+                
+                if(ALREADY_PATCHED EQUAL -1)
+                    message(STATUS "Patching gemmlowp CMakeLists.txt to disable eight_bit_int_gemm...")
+                    
+                    # Comment out add_library for eight_bit_int_gemm
+                    string(REGEX REPLACE 
+                        "add_library\\(eight_bit_int_gemm"
+                        "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
+                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                    
+                    # Comment out add_executable for eight_bit_int_gemm    
+                    string(REGEX REPLACE 
+                        "add_executable\\(eight_bit_int_gemm"
+                        "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
+                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        
+                    # Comment out any target_link_libraries for eight_bit_int_gemm
+                    string(REGEX REPLACE 
+                        "target_link_libraries\\(eight_bit_int_gemm"
+                        "# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm"
+                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                    
+                    # Comment out any set_target_properties for eight_bit_int_gemm
+                    string(REGEX REPLACE 
+                        "set_target_properties\\(eight_bit_int_gemm"
+                        "# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm"
+                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                    
+                    file(WRITE "${GEMMLOWP_DIR}/CMakeLists.txt" "${GEMMLOWP_CONTENT}")
+                    message(STATUS "  -> Successfully patched gemmlowp CMakeLists.txt")
+                else()
+                    message(STATUS "gemmlowp CMakeLists.txt already patched, skipping...")
+                endif()
+            else()
+                message(STATUS "gemmlowp not found at ${GEMMLOWP_DIR}, checking alternate locations...")
+                # Try alternate location
+                set(GEMMLOWP_DIR "${CMAKE_BINARY_DIR}/gemmlowp")
+                if(EXISTS "${GEMMLOWP_DIR}/CMakeLists.txt")
+                    message(STATUS "Found gemmlowp at ${GEMMLOWP_DIR}, applying patch...")
+                    file(READ "${GEMMLOWP_DIR}/CMakeLists.txt" GEMMLOWP_CONTENT)
+                    
+                    string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
+                    if(ALREADY_PATCHED EQUAL -1)
+                        string(REGEX REPLACE 
+                            "add_library\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        string(REGEX REPLACE 
+                            "add_executable\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        string(REGEX REPLACE 
+                            "target_link_libraries\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        string(REGEX REPLACE 
+                            "set_target_properties\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        file(WRITE "${GEMMLOWP_DIR}/CMakeLists.txt" "${GEMMLOWP_CONTENT}")
+                        message(STATUS "  -> Successfully patched gemmlowp CMakeLists.txt at alternate location")
+                    endif()
+                endif()
+            endif()
+        endif()
     endif()
     
     # Post-configuration fix for MinGW: Exclude eight_bit_int_gemm from the build
