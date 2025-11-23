@@ -1893,6 +1893,426 @@ class VisualizationPanel(QWidget):
                 QMessageBox.critical(self, "Error", f"Failed to load data: {str(e)}")
 
 
+class CppDeploymentPanel(QWidget):
+    """Panel for C++ Model Deployment with Conversion and Evaluation"""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.model_path = None
+        self.tflite_path = None
+        self.cpp_executable = None
+        self.setup_ui()
+    
+    def setup_ui(self):
+        layout = QVBoxLayout()
+        
+        # Title
+        title = QLabel("⚙️ C++ Model Deployment & Evaluation")
+        title_font = QFont()
+        title_font.setPointSize(14)
+        title_font.setBold(True)
+        title.setFont(title_font)
+        layout.addWidget(title)
+        
+        # Step 1: Model Conversion
+        conversion_group = QGroupBox("Step 1: Convert Model to TensorFlow Lite")
+        conversion_layout = QVBoxLayout()
+        
+        # Model selection
+        model_select_layout = QHBoxLayout()
+        self.model_label = QLabel("No model selected")
+        self.model_button = QPushButton("📁 Select Keras Model (.h5)")
+        self.model_button.clicked.connect(self.select_model)
+        self.model_button.setObjectName("primaryButton")
+        model_select_layout.addWidget(self.model_label)
+        model_select_layout.addWidget(self.model_button)
+        conversion_layout.addLayout(model_select_layout)
+        
+        # Model type selection
+        type_layout = QHBoxLayout()
+        type_layout.addWidget(QLabel("Model Type:"))
+        self.model_type_combo = QComboBox()
+        self.model_type_combo.addItems(['LSTM', 'Transformer'])
+        type_layout.addWidget(self.model_type_combo)
+        type_layout.addStretch()
+        conversion_layout.addLayout(type_layout)
+        
+        # Convert button
+        self.convert_button = QPushButton("🔄 Convert to TFLite")
+        self.convert_button.clicked.connect(self.convert_model)
+        self.convert_button.setEnabled(False)
+        self.convert_button.setObjectName("primaryButton")
+        conversion_layout.addWidget(self.convert_button)
+        
+        conversion_group.setLayout(conversion_layout)
+        
+        # Step 2: Build C++ Application
+        build_group = QGroupBox("Step 2: Build C++ Inference Application")
+        build_layout = QVBoxLayout()
+        
+        build_info = QLabel("Build the C++ inference application with TensorFlow Lite support.")
+        build_info.setWordWrap(True)
+        build_layout.addWidget(build_info)
+        
+        # Build button
+        self.build_button = QPushButton("🔨 Build C++ Application")
+        self.build_button.clicked.connect(self.build_cpp_app)
+        self.build_button.setEnabled(False)
+        self.build_button.setObjectName("primaryButton")
+        build_layout.addWidget(self.build_button)
+        
+        build_group.setLayout(build_layout)
+        
+        # Step 3: Evaluate Model
+        eval_group = QGroupBox("Step 3: Evaluate Model with C++")
+        eval_layout = QVBoxLayout()
+        
+        # Test data selection
+        data_select_layout = QHBoxLayout()
+        self.data_label = QLabel("Using built-in test data")
+        self.data_button = QPushButton("📄 Select Test Data (Optional)")
+        self.data_button.clicked.connect(self.select_test_data)
+        data_select_layout.addWidget(self.data_label)
+        data_select_layout.addWidget(self.data_button)
+        eval_layout.addLayout(data_select_layout)
+        
+        # Evaluation options
+        options_layout = QHBoxLayout()
+        self.benchmark_checkbox = QPushButton("🚀 Benchmark Mode")
+        self.benchmark_checkbox.setCheckable(True)
+        self.benchmark_checkbox.setChecked(False)
+        options_layout.addWidget(self.benchmark_checkbox)
+        
+        options_layout.addWidget(QLabel("Threads:"))
+        self.threads_spin = QSpinBox()
+        self.threads_spin.setRange(1, 16)
+        self.threads_spin.setValue(4)
+        options_layout.addWidget(self.threads_spin)
+        options_layout.addStretch()
+        eval_layout.addLayout(options_layout)
+        
+        # Evaluate button
+        self.evaluate_button = QPushButton("🎯 Run C++ Evaluation")
+        self.evaluate_button.clicked.connect(self.run_evaluation)
+        self.evaluate_button.setEnabled(False)
+        self.evaluate_button.setObjectName("primaryButton")
+        eval_layout.addWidget(self.evaluate_button)
+        
+        eval_group.setLayout(eval_layout)
+        
+        # Progress bar
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setVisible(False)
+        
+        # Results/Status display
+        results_group = QGroupBox("Output & Results")
+        results_layout = QVBoxLayout()
+        
+        self.status_text = QTextEdit()
+        self.status_text.setReadOnly(True)
+        self.status_text.setMinimumHeight(200)
+        results_layout.addWidget(self.status_text)
+        
+        results_group.setLayout(results_layout)
+        
+        # Add all components to main layout
+        layout.addWidget(conversion_group)
+        layout.addWidget(build_group)
+        layout.addWidget(eval_group)
+        layout.addWidget(self.progress_bar)
+        layout.addWidget(results_group)
+        layout.addStretch()
+        
+        self.setLayout(layout)
+    
+    def select_model(self):
+        """Select Keras model file"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Select Keras Model", "output/", "Keras Model Files (*.h5)"
+        )
+        
+        if file_path:
+            self.model_path = file_path
+            self.model_label.setText(f"Selected: {Path(file_path).name}")
+            self.convert_button.setEnabled(True)
+            self.status_text.append(f"✓ Selected model: {file_path}")
+    
+    def select_test_data(self):
+        """Select test data file"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Select Test Data", "data/", "CSV Files (*.csv);;Binary Files (*.bin)"
+        )
+        
+        if file_path:
+            self.test_data_path = file_path
+            self.data_label.setText(f"Selected: {Path(file_path).name}")
+            self.status_text.append(f"✓ Selected test data: {file_path}")
+    
+    def convert_model(self):
+        """Convert Keras model to TensorFlow Lite"""
+        if not self.model_path:
+            self.status_text.append("✗ Error: No model selected")
+            return
+        
+        self.status_text.append("\n=== Converting Model to TensorFlow Lite ===")
+        self.progress_bar.setVisible(True)
+        self.progress_bar.setRange(0, 0)  # Indeterminate
+        self.convert_button.setEnabled(False)
+        
+        # Run conversion in worker thread
+        def conversion_task():
+            try:
+                import subprocess
+                import sys
+                
+                # Determine model type
+                model_type = self.model_type_combo.currentText().lower()
+                
+                # Run conversion script
+                cmd = [
+                    sys.executable,
+                    "convert_model_to_tflite.py",
+                    "--model-type", model_type,
+                    "--output-dir", "cpp_models"
+                ]
+                
+                result = subprocess.run(
+                    cmd,
+                    capture_output=True,
+                    text=True,
+                    cwd=os.getcwd()
+                )
+                
+                return {
+                    'returncode': result.returncode,
+                    'stdout': result.stdout,
+                    'stderr': result.stderr,
+                    'model_type': model_type
+                }
+            except Exception as e:
+                return {'error': str(e)}
+        
+        worker = WorkerThread(conversion_task)
+        worker.finished.connect(self.on_conversion_complete)
+        worker.error.connect(self.on_conversion_error)
+        worker.start()
+    
+    def on_conversion_complete(self, result):
+        """Handle conversion completion"""
+        self.progress_bar.setVisible(False)
+        self.convert_button.setEnabled(True)
+        
+        if 'error' in result:
+            self.status_text.append(f"✗ Conversion failed: {result['error']}")
+            return
+        
+        if result['returncode'] == 0:
+            model_type = result['model_type']
+            tflite_path = f"cpp_models/{model_type}/{model_type}_model.tflite"
+            self.tflite_path = tflite_path
+            
+            self.status_text.append("✓ Conversion successful!")
+            self.status_text.append(f"  TFLite model: {tflite_path}")
+            self.status_text.append(f"  Metadata: cpp_models/{model_type}/model_metadata.json")
+            self.status_text.append(f"  Test data: cpp_models/{model_type}/test_data.bin")
+            
+            if result['stdout']:
+                self.status_text.append("\n--- Conversion Output ---")
+                self.status_text.append(result['stdout'])
+            
+            # Enable build button
+            self.build_button.setEnabled(True)
+        else:
+            self.status_text.append(f"✗ Conversion failed with code {result['returncode']}")
+            if result['stderr']:
+                self.status_text.append("\n--- Error Output ---")
+                self.status_text.append(result['stderr'])
+    
+    def on_conversion_error(self, error_msg):
+        """Handle conversion error"""
+        self.progress_bar.setVisible(False)
+        self.convert_button.setEnabled(True)
+        self.status_text.append(f"✗ Error during conversion: {error_msg}")
+    
+    def build_cpp_app(self):
+        """Build C++ inference application"""
+        self.status_text.append("\n=== Building C++ Application ===")
+        self.progress_bar.setVisible(True)
+        self.progress_bar.setRange(0, 0)
+        self.build_button.setEnabled(False)
+        
+        def build_task():
+            try:
+                import subprocess
+                import platform
+                
+                # Check if build directory exists
+                build_dir = Path("cpp_inference/build")
+                if not build_dir.exists():
+                    build_dir.mkdir(parents=True)
+                
+                # Configure with CMake
+                self.status_text.append("Configuring with CMake...")
+                config_result = subprocess.run(
+                    ["cmake", ".."],
+                    capture_output=True,
+                    text=True,
+                    cwd=str(build_dir)
+                )
+                
+                if config_result.returncode != 0:
+                    return {
+                        'success': False,
+                        'stage': 'configure',
+                        'output': config_result.stderr
+                    }
+                
+                # Build
+                self.status_text.append("Building application...")
+                build_result = subprocess.run(
+                    ["cmake", "--build", ".", "--config", "Release"],
+                    capture_output=True,
+                    text=True,
+                    cwd=str(build_dir)
+                )
+                
+                if build_result.returncode != 0:
+                    return {
+                        'success': False,
+                        'stage': 'build',
+                        'output': build_result.stderr
+                    }
+                
+                # Determine executable name
+                if platform.system() == "Windows":
+                    exe_name = "radar_tagger.exe"
+                    exe_path = build_dir / "Release" / exe_name
+                else:
+                    exe_name = "radar_tagger"
+                    exe_path = build_dir / exe_name
+                
+                return {
+                    'success': True,
+                    'exe_path': str(exe_path),
+                    'configure_output': config_result.stdout,
+                    'build_output': build_result.stdout
+                }
+                
+            except Exception as e:
+                return {'success': False, 'error': str(e)}
+        
+        worker = WorkerThread(build_task)
+        worker.finished.connect(self.on_build_complete)
+        worker.error.connect(self.on_build_error)
+        worker.start()
+    
+    def on_build_complete(self, result):
+        """Handle build completion"""
+        self.progress_bar.setVisible(False)
+        self.build_button.setEnabled(True)
+        
+        if result.get('success'):
+            self.cpp_executable = result['exe_path']
+            self.status_text.append("✓ Build successful!")
+            self.status_text.append(f"  Executable: {self.cpp_executable}")
+            
+            # Enable evaluate button
+            self.evaluate_button.setEnabled(True)
+        else:
+            self.status_text.append(f"✗ Build failed at {result.get('stage', 'unknown')} stage")
+            if 'output' in result:
+                self.status_text.append("\n--- Error Output ---")
+                self.status_text.append(result['output'])
+            if 'error' in result:
+                self.status_text.append(f"Error: {result['error']}")
+    
+    def on_build_error(self, error_msg):
+        """Handle build error"""
+        self.progress_bar.setVisible(False)
+        self.build_button.setEnabled(True)
+        self.status_text.append(f"✗ Build error: {error_msg}")
+    
+    def run_evaluation(self):
+        """Run C++ model evaluation"""
+        if not self.cpp_executable or not self.tflite_path:
+            self.status_text.append("✗ Error: Build C++ application and convert model first")
+            return
+        
+        self.status_text.append("\n=== Running C++ Evaluation ===")
+        self.progress_bar.setVisible(True)
+        self.progress_bar.setRange(0, 0)
+        self.evaluate_button.setEnabled(False)
+        
+        def eval_task():
+            try:
+                import subprocess
+                
+                # Get model type from tflite path
+                model_type = Path(self.tflite_path).parent.name
+                
+                # Prepare command
+                cmd = [
+                    self.cpp_executable,
+                    "--model", self.tflite_path,
+                    "--metadata", f"cpp_models/{model_type}/model_metadata.json",
+                    "--test-data", f"cpp_models/{model_type}/test_data.bin",
+                    "--test-binary",
+                    "--threads", str(self.threads_spin.value())
+                ]
+                
+                if self.benchmark_checkbox.isChecked():
+                    cmd.append("--benchmark")
+                
+                # Run evaluation
+                result = subprocess.run(
+                    cmd,
+                    capture_output=True,
+                    text=True,
+                    timeout=60
+                )
+                
+                return {
+                    'returncode': result.returncode,
+                    'stdout': result.stdout,
+                    'stderr': result.stderr
+                }
+                
+            except subprocess.TimeoutExpired:
+                return {'error': 'Evaluation timed out (60s limit)'}
+            except Exception as e:
+                return {'error': str(e)}
+        
+        worker = WorkerThread(eval_task)
+        worker.finished.connect(self.on_evaluation_complete)
+        worker.error.connect(self.on_evaluation_error)
+        worker.start()
+    
+    def on_evaluation_complete(self, result):
+        """Handle evaluation completion"""
+        self.progress_bar.setVisible(False)
+        self.evaluate_button.setEnabled(True)
+        
+        if 'error' in result:
+            self.status_text.append(f"✗ Evaluation failed: {result['error']}")
+            return
+        
+        if result['returncode'] == 0:
+            self.status_text.append("✓ Evaluation completed successfully!")
+            self.status_text.append("\n--- Results ---")
+            self.status_text.append(result['stdout'])
+        else:
+            self.status_text.append(f"✗ Evaluation failed with code {result['returncode']}")
+            if result['stderr']:
+                self.status_text.append("\n--- Error Output ---")
+                self.status_text.append(result['stderr'])
+    
+    def on_evaluation_error(self, error_msg):
+        """Handle evaluation error"""
+        self.progress_bar.setVisible(False)
+        self.evaluate_button.setEnabled(True)
+        self.status_text.append(f"✗ Evaluation error: {error_msg}")
+
+
 class MainWindow(QMainWindow):
     """Main application window"""
     
@@ -1928,10 +2348,11 @@ class MainWindow(QMainWindow):
             "🤖 AI Tagging",
             "🔮 Model Evaluation",
             "🚀 High Volume Training",
+            "⚙️ C++ Deployment",
             "📈 Report",
             "🔬 Simulation",
             "📉 Visualization",
-            "⚙️ Settings"
+            "🛠️ Settings"
         ])
         self.engine_list.setMinimumWidth(170)
         self.engine_list.setMaximumWidth(200)
@@ -1953,6 +2374,7 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(AITaggingPanel())
         self.stack.addWidget(ModelEvaluationPanel())
         self.stack.addWidget(HighVolumeTrainingPanel())
+        self.stack.addWidget(CppDeploymentPanel())
         self.stack.addWidget(ReportPanel())
         self.stack.addWidget(SimulationPanel())
         self.stack.addWidget(VisualizationPanel())
