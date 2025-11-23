@@ -20,6 +20,15 @@ namespace tflite {
     class InterpreterBuilder;
 }
 
+// Forward declarations for ONNX Runtime
+namespace Ort {
+    struct Env;
+    struct Session;
+    struct SessionOptions;
+    struct MemoryInfo;
+    template<typename T> struct Value;
+}
+
 /**
  * @brief Multi-output tags for radar trajectory classification
  */
@@ -111,7 +120,7 @@ struct MultiOutputResult {
  * @brief Model type enumeration
  */
 enum class ModelType {
-    NEURAL_NETWORK,  // LSTM, Transformer (TFLite)
+    NEURAL_NETWORK,  // Multi-output NN (TFLite)
     XGBOOST,         // XGBoost (requires separate handling)
     RANDOM_FOREST    // Random Forest (requires separate handling)
 };
@@ -246,6 +255,15 @@ private:
     std::unique_ptr<tflite::FlatBufferModel> model_;
     std::unique_ptr<tflite::Interpreter> interpreter_;
     
+    // ONNX Runtime components (for XGBoost and Random Forest)
+    std::unique_ptr<Ort::Env> onnxEnv_;
+    std::unique_ptr<Ort::Session> onnxSession_;
+    std::unique_ptr<Ort::SessionOptions> onnxSessionOptions_;
+    std::vector<std::string> onnxInputNames_;
+    std::vector<std::string> onnxOutputNames_;
+    std::vector<std::vector<int64_t>> onnxInputShapes_;
+    std::vector<std::vector<int64_t>> onnxOutputShapes_;
+    
     // Model metadata
     std::vector<std::string> tagNames_;
     std::vector<float> scalerMean_;
@@ -254,7 +272,7 @@ private:
     int numTags_;
     int sequenceLength_;
     int numFeatures_;
-    bool isSequenceModel_;  // True for LSTM/Transformer, False for XGBoost/RF
+    bool isSequenceModel_;  // True for sequence-based NN, False for XGBoost/RF
     
     // Performance tracking
     MultiOutputMetrics metrics_;
@@ -265,10 +283,15 @@ private:
     std::vector<float> normalizeInput(const std::vector<float>& input);
     void updateMetrics(double inferenceTime, const MultiOutputResult& result);
     
+    // Model-specific initialization
+    bool initializeNeuralNetwork();
+    bool initializeONNXModel();
+    
     // Model-specific prediction methods
     MultiOutputResult predictNeuralNetwork(const RadarSequence& sequence);
     MultiOutputResult predictXGBoost(const RadarSequence& sequence);
     MultiOutputResult predictRandomForest(const RadarSequence& sequence);
+    MultiOutputResult predictONNX(const RadarSequence& sequence);
     
     // Parse output tensors into tags
     MultiOutputTags parseOutputTags(const std::vector<float>& outputs);

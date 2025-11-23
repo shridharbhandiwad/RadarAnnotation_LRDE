@@ -1,6 +1,6 @@
 # Radar Trajectory Real-Time Tagger - C++ Application
 
-This C++ application provides real-time radar trajectory classification using TensorFlow Lite models converted from Keras.
+This C++ application provides real-time radar trajectory classification with multi-output support for Neural Networks (TFLite), XGBoost, and Random Forest models.
 
 ## Features
 
@@ -51,45 +51,62 @@ cmake --build . --parallel 4
 ### Basic Usage
 
 ```bash
-# Run with model and metadata
-./radar_tagger --model ../cpp_models/lstm/lstm_model.tflite \
-               --metadata ../cpp_models/lstm/model_metadata.json
+# Neural Network multi-output model
+./radar_tagger_multioutput --model <path_to_nn_model.tflite> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type nn
+
+# XGBoost model (requires additional implementation)
+./radar_tagger_multioutput --model <path_to_xgb_model.json> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type xgboost
+
+# Random Forest model (requires additional implementation)
+./radar_tagger_multioutput --model <path_to_rf_model.pkl> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type rf
 ```
 
 ### With Test Data
 
 ```bash
-# Using CSV file
-./radar_tagger --model ../cpp_models/lstm/lstm_model.tflite \
-               --metadata ../cpp_models/lstm/model_metadata.json \
-               --test-data ../data/high_volume_simulation_labeled.csv
+# Using CSV file with ground truth
+./radar_tagger_multioutput --model <path_to_model> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type nn \
+                           --test-data ../data/high_volume_simulation_labeled.csv \
+                           --load-gt
 
 # Using binary file
-./radar_tagger --model ../cpp_models/lstm/lstm_model.tflite \
-               --metadata ../cpp_models/lstm/model_metadata.json \
-               --test-data ../cpp_models/lstm/test_data.bin \
-               --test-binary \
-               --samples 10 \
-               --seq-length 20 \
-               --features 18
+./radar_tagger_multioutput --model <path_to_model> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type nn \
+                           --test-data test_data.bin \
+                           --test-binary \
+                           --samples 10 \
+                           --seq-length 20 \
+                           --features 18
 ```
 
 ### Benchmark Mode
 
 ```bash
-./radar_tagger --model ../cpp_models/lstm/lstm_model.tflite \
-               --metadata ../cpp_models/lstm/model_metadata.json \
-               --test-data ../cpp_models/lstm/test_data.bin \
-               --test-binary \
-               --benchmark
+./radar_tagger_multioutput --model <path_to_model> \
+                           --metadata <path_to_metadata.json> \
+                           --model-type nn \
+                           --test-data test_data.bin \
+                           --test-binary \
+                           --benchmark
 ```
 
 ### Command Line Options
 
-- `--model PATH`: Path to TFLite model file (required)
+- `--model PATH`: Path to model file (.tflite for NN, .json/.pkl for XGBoost/RF) (required)
 - `--metadata PATH`: Path to model metadata JSON (required)
+- `--model-type TYPE`: Model type: nn, xgboost, or rf (default: nn)
 - `--test-data PATH`: Path to test data file (CSV or binary)
 - `--test-binary`: Indicate that test data is in binary format
+- `--load-gt`: Load ground truth labels from CSV for evaluation
 - `--samples N`: Number of samples in binary file (default: 10)
 - `--seq-length N`: Sequence length for binary data (default: 20)
 - `--features N`: Number of features per time step (default: 18)
@@ -97,20 +114,140 @@ cmake --build . --parallel 4
 - `--benchmark`: Run in benchmark mode
 - `--help`: Show help message
 
-## Model Conversion
+## Model Requirements
 
-Before using the C++ application, you need to convert your Keras models to TensorFlow Lite format:
+### Supported Models
+
+All models must predict 11 binary outputs corresponding to:
+- **Direction**: incoming, outgoing
+- **Vertical motion**: fixed_range_ascending, fixed_range_descending, level_flight
+- **Path shape**: linear, curved
+- **Maneuver intensity**: light_maneuver, high_maneuver
+- **Speed**: low_speed, high_speed
+
+1. **Neural Network Multi-Output Models (TFLite)**
+   - ✅ **Fully Implemented**
+   - Format: `.tflite` (TensorFlow Lite)
+   - Converted from Keras/TensorFlow models
+   - Best for: Real-time inference with low latency
+
+2. **XGBoost Models (ONNX)**
+   - ✅ **Fully Implemented**
+   - Format: `.onnx` (ONNX Runtime)
+   - Converted from trained XGBoost models
+   - Best for: High accuracy with tabular data
+
+3. **Random Forest Models (ONNX)**
+   - ✅ **Fully Implemented**
+   - Format: `.onnx` (ONNX Runtime)
+   - Converted from scikit-learn Random Forest models
+   - Best for: Robust predictions with feature importance
+
+### Model Export Instructions
+
+#### Exporting XGBoost Models
 
 ```bash
-cd /workspace
-python3 convert_model_to_tflite.py --model-type lstm --output-dir cpp_models
+# Export trained XGBoost model to ONNX
+python3 export_models_to_onnx.py \
+    --model-type xgboost \
+    --model-path output/xgboost_multioutput.pkl \
+    --output-path cpp_models/xgboost_model.onnx \
+    --metadata-path output/xgboost_metadata.json \
+    --output-metadata cpp_models/xgboost_metadata.json
 ```
 
-This will create:
-- `cpp_models/lstm/lstm_model.tflite` - The TFLite model
-- `cpp_models/lstm/model_metadata.json` - Model metadata (classes, normalization parameters, etc.)
-- `cpp_models/lstm/test_data.bin` - Sample test data
-- `cpp_models/lstm/test_data.csv` - Sample test data in CSV format
+**Requirements:**
+```bash
+pip install xgboost skl2onnx onnx onnxmltools
+```
+
+#### Exporting Random Forest Models
+
+```bash
+# Export trained Random Forest model to ONNX
+python3 export_models_to_onnx.py \
+    --model-type random_forest \
+    --model-path output/random_forest_multioutput.pkl \
+    --output-path cpp_models/rf_model.onnx \
+    --metadata-path output/rf_metadata.json \
+    --output-metadata cpp_models/rf_metadata.json
+```
+
+**Requirements:**
+```bash
+pip install scikit-learn skl2onnx onnx
+```
+
+#### Exporting Neural Network Models (Alternative to TFLite)
+
+You can also export Keras models to ONNX format:
+
+```bash
+# Export Keras model to ONNX (alternative to TFLite)
+python3 export_models_to_onnx.py \
+    --model-type neural_network \
+    --model-path output/test_lstm/lstm_model.h5 \
+    --output-path cpp_models/nn_model.onnx \
+    --metadata-path output/test_lstm/lstm_model_metadata.pkl \
+    --output-metadata cpp_models/nn_metadata.json
+```
+
+**Requirements:**
+```bash
+pip install tensorflow tf2onnx onnx
+```
+
+**Note:** For Neural Networks, TFLite is recommended over ONNX for better performance. Use ONNX only if you need cross-platform compatibility.
+
+### Model Structure Requirements
+
+#### For XGBoost and Random Forest (Multi-Output)
+
+Your Python training code should create models that output 11 binary predictions:
+
+```python
+# Example: Training multi-output XGBoost
+import xgboost as xgb
+from sklearn.multioutput import MultiOutputClassifier
+
+# Create multi-output wrapper
+base_model = xgb.XGBClassifier(n_estimators=100, max_depth=6)
+model = MultiOutputClassifier(base_model)
+
+# Train on multi-output labels (shape: [n_samples, 11])
+model.fit(X_train, y_train_multioutput)
+
+# Save model
+import pickle
+with open('xgboost_multioutput.pkl', 'wb') as f:
+    pickle.dump(model, f)
+```
+
+#### For Neural Networks
+
+```python
+# Example: Keras multi-output model
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation='relu', input_shape=(18,)),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(11, activation='sigmoid')  # 11 binary outputs
+])
+
+model.compile(
+    optimizer='adam',
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
+
+model.fit(X_train, y_train_multioutput, epochs=50)
+model.save('nn_model.h5')
+```
+
+**Note:** LSTM and Transformer architectures are not recommended for C++ deployment due to complexity and performance considerations. Use simpler feed-forward multi-output neural networks for better real-time performance.
 
 ## Performance
 
@@ -135,14 +272,15 @@ Throughput: 408.16 inferences/sec
 
 ## Integration into Your Application
 
-### Basic Integration
+### Basic Multi-Output Integration
 
 ```cpp
-#include "radar_tagger.h"
+#include "radar_tagger_multioutput.h"
 
 int main() {
     // Create tagger
-    RadarTagger tagger("model.tflite", "metadata.json", 4);
+    RadarTaggerMultiOutput tagger("model.tflite", "metadata.json", 
+                                   ModelType::NEURAL_NETWORK, 4);
     
     // Initialize
     if (!tagger.initialize()) {
@@ -157,8 +295,16 @@ int main() {
     auto result = tagger.predict(sequence);
     
     if (result.success) {
-        std::cout << "Predicted class: " << result.className << "\n";
-        std::cout << "Confidence: " << result.classProbabilities[result.predictedClass] << "\n";
+        std::cout << "Predicted tags: " << result.aggregatedLabel << "\n";
+        
+        // Access individual tags
+        if (result.tags.incoming) {
+            std::cout << "Direction: incoming\n";
+        }
+        if (result.tags.level_flight) {
+            std::cout << "Altitude: level flight\n";
+        }
+        // ... check other tags ...
     }
     
     return 0;
@@ -178,8 +324,18 @@ while (radarSystem.hasData()) {
     if (currentSequence.points.size() >= 20) {
         auto result = tagger.predict(currentSequence);
         
-        // Process result
-        processClassification(result);
+        if (result.success) {
+            // Process multi-output tags
+            std::cout << "Track " << currentSequence.trackId 
+                      << ": " << result.aggregatedLabel << "\n";
+            
+            // Access individual tag confidences
+            for (const auto& [tag, confidence] : result.tags.confidences) {
+                if (confidence > 0.5f) {
+                    std::cout << "  " << tag << ": " << confidence << "\n";
+                }
+            }
+        }
         
         // Prepare for next sequence
         currentSequence.points.clear();

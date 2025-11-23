@@ -58,8 +58,9 @@ if [ -f "radar_tagger" ] || [ -f "Release/radar_tagger.exe" ]; then
     echo ""
     echo "To run the application:"
     echo "  cd build"
-    echo "  ./radar_tagger --model ../cpp_models/lstm/lstm_model.tflite \\"
-    echo "                 --metadata ../cpp_models/lstm/model_metadata.json"
+    echo "  ./radar_tagger_multioutput --model <path_to_model> \\"
+    echo "                             --metadata <path_to_metadata.json> \\"
+    echo "                             --model-type <nn|xgboost|rf>"
     echo ""
 else
     echo -e "${RED}✗ Build failed${NC}"

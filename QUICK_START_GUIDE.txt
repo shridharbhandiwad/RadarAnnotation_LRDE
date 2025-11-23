@@ -1,0 +1,227 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║         XGBOOST & RANDOM FOREST C++ INFERENCE - QUICK START             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+This guide gets you started in 5 minutes!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: INSTALL PYTHON DEPENDENCIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For XGBoost:
+  $ pip install xgboost skl2onnx onnx onnxmltools
+
+For Random Forest:
+  $ pip install scikit-learn skl2onnx onnx
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: TRAIN YOUR MODEL (Python)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+XGBoost Example:
+  from sklearn.multioutput import MultiOutputClassifier
+  import xgboost as xgb
+  import pickle
+  
+  model = MultiOutputClassifier(xgb.XGBClassifier(n_estimators=100))
+  model.fit(X_train, y_train)  # y_train shape: [n_samples, 11]
+  
+  with open('xgb_model.pkl', 'wb') as f:
+      pickle.dump(model, f)
+
+Random Forest Example:
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.multioutput import MultiOutputClassifier
+  import pickle
+  
+  model = MultiOutputClassifier(RandomForestClassifier(n_estimators=100))
+  model.fit(X_train, y_train)
+  
+  with open('rf_model.pkl', 'wb') as f:
+      pickle.dump(model, f)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: EXPORT TO ONNX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+XGBoost:
+  $ python3 export_models_to_onnx.py \
+      --model-type xgboost \
+      --model-path xgb_model.pkl \
+      --output-path xgb_model.onnx
+
+Random Forest:
+  $ python3 export_models_to_onnx.py \
+      --model-type random_forest \
+      --model-path rf_model.pkl \
+      --output-path rf_model.onnx
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: BUILD C++ APPLICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  $ cd cpp_inference
+  $ mkdir build && cd build
+  $ cmake .. -DCMAKE_BUILD_TYPE=Release
+  $ cmake --build . --parallel 4
+
+Expected output:
+  ✓ Downloading ONNX Runtime...
+  ✓ Building radar_tagger_multioutput...
+  ✓ Build successful!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: RUN INFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+XGBoost Demo (synthetic data):
+  $ ./radar_tagger_multioutput \
+      --model ../../xgb_model.onnx \
+      --metadata ../../metadata.json \
+      --model-type xgboost
+
+Random Forest Demo:
+  $ ./radar_tagger_multioutput \
+      --model ../../rf_model.onnx \
+      --metadata ../../metadata.json \
+      --model-type rf
+
+With Real Data:
+  $ ./radar_tagger_multioutput \
+      --model ../../xgb_model.onnx \
+      --metadata ../../metadata.json \
+      --model-type xgboost \
+      --test-data ../../data/test.csv \
+      --load-gt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXPECTED OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+==============================================
+  Multi-Output Radar Trajectory Tagger
+  Supports XGBoost, Random Forest, Neural Networks
+==============================================
+
+Initializing Multi-Output Radar Tagger...
+Model path: xgb_model.onnx
+Metadata path: metadata.json
+Model type: XGBoost (ONNX)
+Loading ONNX model from: xgb_model.onnx
+ONNX model loaded successfully
+  Input nodes: 1
+    float_input shape: [1, 18]
+  Output nodes: 1
+    output shape: [1, 11]
+
+=== Running Demo with Synthetic Data ===
+Running inference on synthetic data...
+Expected tags: outgoing, level_flight, linear, light_maneuver, low_speed
+
+=== Prediction Result ===
+Aggregated Label: outgoing,level_flight,linear,light_maneuver,low_speed
+Inference Time: 2.134 ms
+
+Tags: outgoing,level_flight,linear,light_maneuver,low_speed
+Confidences:
+  outgoing: 0.987
+  level_flight: 0.923
+  linear: 0.956
+  light_maneuver: 0.891
+  low_speed: 0.934
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMMAND-LINE OPTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Required:
+  --model PATH              Path to ONNX model (.onnx)
+  --metadata PATH           Path to metadata JSON
+  --model-type TYPE         xgboost, rf, or nn
+
+Optional:
+  --test-data PATH          CSV or binary test data
+  --test-binary             Data is in binary format
+  --load-gt                 Load ground truth from CSV
+  --threads N               Number of threads (default: 4)
+  --benchmark               Run benchmark mode
+  --samples N               Binary file samples (default: 10)
+  --seq-length N            Sequence length (default: 20)
+  --features N              Number of features (default: 18)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMMON ISSUES & SOLUTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Issue: "Failed to load ONNX model"
+  → Check file path is correct
+  → Verify .onnx file exists
+  → Re-export from Python
+
+Issue: "Input size mismatch"
+  → Ensure model expects 18 features
+  → Check metadata feature_columns
+  → Verify normalization parameters
+
+Issue: "Unexpected number of output tensors"
+  → Model must output 11 predictions
+  → Check multi-output wrapper in Python
+  → Re-train with MultiOutputClassifier
+
+Issue: Build fails with "ONNX Runtime not found"
+  → Check internet connection (auto-download)
+  → Or install manually:
+    Ubuntu: sudo apt-get install libonnxruntime-dev
+  → Use: cmake .. -DUSE_SYSTEM_ONNXRUNTIME=ON
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PERFORMANCE TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Faster Training:
+  - Reduce n_estimators (50-100 is usually enough)
+  - Reduce max_depth (4-6 for XGBoost, 8-10 for RF)
+  
+Faster Inference:
+  - Use --threads 8 for multi-core systems
+  - Build with Release mode (not Debug)
+  - Use smaller models (fewer trees)
+  
+Model Size:
+  - XGBoost: Typically 1-10 MB
+  - Random Forest: Typically 5-50 MB
+  - Reduce n_estimators to shrink size
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MODEL COMPARISON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Model Type      Speed      Accuracy   Size      Best For
+─────────────────────────────────────────────────────────────────────────
+Neural Network  ★★★★★      ★★★★☆      ★★★★★     Real-time systems
+XGBoost         ★★★★☆      ★★★★★      ★★★★☆     High accuracy
+Random Forest   ★★★☆☆      ★★★★☆      ★★★☆☆     Interpretability
+
+★★★★★ = Excellent, ★★★★☆ = Very Good, ★★★☆☆ = Good
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MORE INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Detailed Guides:
+  - cpp_inference/README.md              Main documentation
+  - cpp_inference/ONNX_EXPORT_GUIDE.md   Export guide
+  - XGBOOST_RF_IMPLEMENTATION_SUMMARY.md Implementation details
+  - CHANGES_MADE.md                      Complete changelog
+
+Help:
+  $ python3 export_models_to_onnx.py --help
+  $ ./radar_tagger_multioutput --help
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Ready to go! Start with Step 1 above.
+
+Questions? Check ONNX_EXPORT_GUIDE.md or IMPLEMENTATION_VERIFICATION.txt
+
+═══════════════════════════════════════════════════════════════════════════
