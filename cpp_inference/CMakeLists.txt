@@ -74,61 +74,92 @@ else()
                     message(STATUS "Patching TensorFlow Lite CMakeLists.txt for MinGW compatibility...")
                     
                     # Remove problematic max/min macro definitions that contain > and < characters
-                    # These cause issues on Windows due to shell redirection operators
-                    # Match various forms: with quotes, without quotes, in set(), etc.
+                    # These cause issues on Windows due to shell redirection operators in cmd.exe
+                    # The flags must be removed BEFORE the project() command to prevent C compiler test failures
                     
-                    # Remove from CMAKE_C_FLAGS and CMAKE_CXX_FLAGS
+                    # Strategy: Remove any line containing these macros entirely
+                    # This is more aggressive but necessary for Windows MinGW builds
+                    
+                    # Remove entire lines containing max macro definitions
                     string(REGEX REPLACE 
-                        "set\\(CMAKE_C_FLAGS[^)]*-Dmax\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_C_FLAGS"
+                        "[^\n]*-Dmax\\(a,b\\)=[^\n]*\n"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Line removed (contained problematic max macro)\n"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove entire lines containing min macro definitions  
+                    string(REGEX REPLACE 
+                        "[^\n]*-Dmin\\(a,b\\)=[^\n]*\n"
+                        "# PATCHED_FOR_MINGW_MAX_MIN: Line removed (contained problematic min macro)\n"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Also handle multi-line set() commands - remove max macro from CMAKE_C_FLAGS
+                    string(REGEX REPLACE 
+                        "(set\\(CMAKE_C_FLAGS[^)]*)-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove min macro from CMAKE_C_FLAGS
+                    string(REGEX REPLACE 
+                        "(set\\(CMAKE_C_FLAGS[^)]*)-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove max macro from CMAKE_CXX_FLAGS
+                    string(REGEX REPLACE 
+                        "(set\\(CMAKE_CXX_FLAGS[^)]*)-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Remove min macro from CMAKE_CXX_FLAGS
+                    string(REGEX REPLACE 
+                        "(set\\(CMAKE_CXX_FLAGS[^)]*)-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Handle string(APPEND CMAKE_C_FLAGS ...) variants
+                    string(REGEX REPLACE 
+                        "(string\\([Aa][Pp][Pp][Ee][Nn][Dd][^)]*CMAKE_C_FLAGS[^)]*)-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
                     string(REGEX REPLACE 
-                        "set\\(CMAKE_C_FLAGS[^)]*-Dmin\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_C_FLAGS"
+                        "(string\\([Aa][Pp][Pp][Ee][Nn][Dd][^)]*CMAKE_C_FLAGS[^)]*)-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
+                        TFLITE_CONTENT "${TFLITE_CONTENT}")
+                    
+                    # Handle string(APPEND CMAKE_CXX_FLAGS ...) variants
+                    string(REGEX REPLACE 
+                        "(string\\([Aa][Pp][Pp][Ee][Nn][Dd][^)]*CMAKE_CXX_FLAGS[^)]*)-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
                     string(REGEX REPLACE 
-                        "set\\(CMAKE_CXX_FLAGS[^)]*-Dmax\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_CXX_FLAGS"
+                        "(string\\([Aa][Pp][Pp][Ee][Nn][Dd][^)]*CMAKE_CXX_FLAGS[^)]*)-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)([^)]*\\))"
+                        "\\1\\2 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
+                    # Remove from add_compile_definitions() - max
                     string(REGEX REPLACE 
-                        "set\\(CMAKE_CXX_FLAGS[^)]*-Dmin\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed from CMAKE_CXX_FLAGS"
+                        "(add_compile_definitions\\([^)]*)(max\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\))([^)]*\\))"
+                        "\\1\\3 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
-                    # Remove from add_compile_definitions
+                    # Remove from add_compile_definitions() - min
                     string(REGEX REPLACE 
-                        "add_compile_definitions\\([^)]*max\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic max macro"
+                        "(add_compile_definitions\\([^)]*)(min\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\))([^)]*\\))"
+                        "\\1\\3 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
+                    # Remove from target_compile_definitions() - max
                     string(REGEX REPLACE 
-                        "add_compile_definitions\\([^)]*min\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic min macro"
+                        "(target_compile_definitions\\([^)]*)(max\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\))([^)]*\\))"
+                        "\\1\\3 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
-                    # Remove from target_compile_definitions
+                    # Remove from target_compile_definitions() - min  
                     string(REGEX REPLACE 
-                        "target_compile_definitions\\([^)]*max\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic max macro"
-                        TFLITE_CONTENT "${TFLITE_CONTENT}")
-                    
-                    string(REGEX REPLACE 
-                        "target_compile_definitions\\([^)]*min\\(a,b\\)=[^)]*\\)"
-                        "# PATCHED_FOR_MINGW_MAX_MIN: Removed problematic min macro"
-                        TFLITE_CONTENT "${TFLITE_CONTENT}")
-                    
-                    # Remove standalone -D definitions
-                    string(REGEX REPLACE 
-                        "-Dmax\\(a,b\\)=\\(\\(a\\)>\\(b\\)\\?\\(a\\):\\(b\\)\\)"
-                        ""
-                        TFLITE_CONTENT "${TFLITE_CONTENT}")
-                    
-                    string(REGEX REPLACE 
-                        "-Dmin\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\)"
-                        ""
+                        "(target_compile_definitions\\([^)]*)(min\\(a,b\\)=\\(\\(a\\)<\\(b\\)\\?\\(a\\):\\(b\\)\\))([^)]*\\))"
+                        "\\1\\3 # PATCHED_FOR_MINGW_MAX_MIN"
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
                     file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")

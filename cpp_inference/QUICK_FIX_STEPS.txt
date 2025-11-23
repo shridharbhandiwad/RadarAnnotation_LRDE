@@ -1,0 +1,100 @@
+================================================================================
+QUICK FIX - CMake C Compiler Test Failure (Windows MinGW)
+================================================================================
+
+ERROR YOU'RE SEEING:
+  "The filename, directory name, or volume label syntax is incorrect"
+  CMake cannot compile a simple test program
+
+ROOT CAUSE:
+  Flags with < and > characters are being interpreted as shell redirection
+  operators by Windows cmd.exe
+
+================================================================================
+SOLUTION - FOLLOW THESE STEPS EXACTLY:
+================================================================================
+
+1. PULL THE LATEST CODE
+   ----------------------
+   git pull origin main
+   
+   (or manually update cpp_inference/CMakeLists.txt)
+
+2. COMPLETELY DELETE BUILD DIRECTORY
+   ----------------------------------
+   cd cpp_inference
+   rmdir /s /q build
+   mkdir build
+
+   ⚠️ CRITICAL: You MUST delete build/ to clear cached configuration!
+
+3. CONFIGURE CMAKE
+   ----------------
+   cd build
+   cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+   
+   Wait for TensorFlow download (first time: ~10 minutes)
+   
+   You should see:
+   ✅ "Patching TensorFlow Lite CMakeLists.txt for MinGW compatibility..."
+   ✅ "Successfully patched TensorFlow Lite CMakeLists.txt"
+   ✅ "Check for working C compiler: ... - works"
+
+4. BUILD
+   ------
+   cmake --build . --config Release
+   
+   OR
+   
+   mingw32-make -j4
+
+================================================================================
+VERIFICATION
+================================================================================
+
+If successful, you'll see:
+  ✅ C compiler test PASSES (step 3)
+  ✅ radar_tagger.exe created (step 4)
+  ✅ radar_tagger_multioutput.exe created (step 4)
+
+If still failing, see FIX_CMAKE_COMPILER_TEST_FAILURE.md for troubleshooting.
+
+================================================================================
+WHAT WAS FIXED?
+================================================================================
+
+Updated CMakeLists.txt (2025-11-23) with comprehensive patching that removes
+ALL instances of problematic -Dmax(a,b)=... and -Dmin(a,b)=... flags from
+TensorFlow Lite's build configuration.
+
+The patching now handles:
+  ✓ set(CMAKE_C_FLAGS ...) 
+  ✓ set(CMAKE_CXX_FLAGS ...)
+  ✓ string(APPEND CMAKE_*_FLAGS ...)
+  ✓ add_compile_definitions(...)
+  ✓ target_compile_definitions(...)
+  ✓ Any line containing these macros
+
+================================================================================
+STILL NOT WORKING?
+================================================================================
+
+1. Verify CMakeLists.txt is updated:
+   findstr "Remove entire lines containing max macro" ..\CMakeLists.txt
+   
+   Should return a match.
+
+2. Make sure build/ was deleted:
+   dir build\_deps\tensorflow-src
+   
+   Should NOT exist before step 3.
+
+3. Check for environment variable pollution:
+   echo %CMAKE_C_FLAGS%
+   
+   Should be empty.
+
+4. Read detailed troubleshooting:
+   FIX_CMAKE_COMPILER_TEST_FAILURE.md
+
+================================================================================
