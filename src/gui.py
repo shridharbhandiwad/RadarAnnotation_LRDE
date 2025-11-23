@@ -2077,6 +2077,10 @@ class CppDeploymentPanel(QWidget):
                     "--output-dir", "cpp_models"
                 ]
                 
+                # Add model path for XGBoost models
+                if model_type == "xgboost":
+                    cmd.extend(["--model-path", self.model_path])
+                
                 result = subprocess.run(
                     cmd,
                     capture_output=True,
@@ -2109,13 +2113,26 @@ class CppDeploymentPanel(QWidget):
         
         if result['returncode'] == 0:
             model_type = result['model_type']
-            tflite_path = f"cpp_models/{model_type}/{model_type}_model.tflite"
-            self.tflite_path = tflite_path
             
             self.status_text.append("✓ Conversion successful!")
-            self.status_text.append(f"  TFLite model: {tflite_path}")
-            self.status_text.append(f"  Metadata: cpp_models/{model_type}/model_metadata.json")
-            self.status_text.append(f"  Test data: cpp_models/{model_type}/test_data.bin")
+            
+            # Handle different output formats based on model type
+            if model_type == "xgboost":
+                # XGBoost models are converted to ONNX format
+                output_dir = "cpp_models"
+                self.tflite_path = output_dir  # Store base directory for XGBoost
+                self.status_text.append(f"  ONNX models saved to: {output_dir}")
+                self.status_text.append(f"  Metadata: {output_dir}/model_metadata.json")
+                self.status_text.append("")
+                self.status_text.append("  Note: XGBoost models are exported as ONNX files.")
+                self.status_text.append("  Use ONNX Runtime C++ API for inference.")
+            else:
+                # Keras models (LSTM/Transformer) are converted to TFLite
+                tflite_path = f"cpp_models/{model_type}/{model_type}_model.tflite"
+                self.tflite_path = tflite_path
+                self.status_text.append(f"  TFLite model: {tflite_path}")
+                self.status_text.append(f"  Metadata: cpp_models/{model_type}/model_metadata.json")
+                self.status_text.append(f"  Test data: cpp_models/{model_type}/test_data.bin")
             
             if result['stdout']:
                 self.status_text.append("\n--- Conversion Output ---")
