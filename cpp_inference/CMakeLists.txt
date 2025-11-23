@@ -49,6 +49,9 @@ else()
 endif()
 
 # JSON library (header-only)
+# Set policy to allow older CMake minimum version in nlohmann/json
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
 FetchContent_Declare(
     json
     URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz
