@@ -594,14 +594,15 @@ class AITaggingPanel(QWidget):
             model_display_name = 'XGBoost'
             output_dir = 'output/models/xgboost_multi_output'
         elif model_name == 'neural_network':
-            model = ai_engine.TransformerMultiOutputModel(params={
-                'd_model': 128,
-                'num_heads': 8,
-                'num_layers': 4,
-                'epochs': 50
+            model = ai_engine.NeuralNetworkMultiOutputModel(params={
+                'hidden_units': [128, 64, 32],
+                'dropout': 0.3,
+                'epochs': 50,
+                'batch_size': 32,
+                'sequence_length': 20
             })
-            model_display_name = 'Transformer'
-            output_dir = 'output/models/transformer_multi_output'
+            model_display_name = 'Neural Network'
+            output_dir = 'output/models/neural_network_multi_output'
         else:
             raise ValueError(f"Unsupported model type for multi-output: {model_name}")
         
@@ -1932,7 +1933,7 @@ class CppDeploymentPanel(QWidget):
         type_layout = QHBoxLayout()
         type_layout.addWidget(QLabel("Model Type:"))
         self.model_type_combo = QComboBox()
-        self.model_type_combo.addItems(['LSTM', 'Transformer'])
+        self.model_type_combo.addItems(['Random Forest', 'XGBoost', 'Neural Network'])
         type_layout.addWidget(self.model_type_combo)
         type_layout.addStretch()
         conversion_layout.addLayout(type_layout)
