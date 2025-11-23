@@ -1,0 +1,12 @@
+{
+  "n_samples": 10,
+  "sequence_length": 20,
+  "n_features": 18,
+  "dtype": "float32",
+  "shape": [
+    10,
+    20,
+    18
+  ],
+  "total_elements": 3600
+}
