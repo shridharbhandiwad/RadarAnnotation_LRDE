@@ -1,3 +1,0 @@
-/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/pthreadpool.dir
-/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/edit_cache.dir
-/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/rebuild_cache.dir

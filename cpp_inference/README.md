@@ -18,8 +18,19 @@ This C++ application provides real-time radar trajectory classification with mul
 
 ## Building
 
+### Windows MinGW Users - Important Note ⚠️
+
+If you're building on Windows with MinGW and encounter the `eight_bit_int_gemm` compilation error, use the automated fix script:
+
+```batch
+fix_and_build_windows.bat clean
+```
+
+See [EIGHT_BIT_INT_GEMM_FIX.md](EIGHT_BIT_INT_GEMM_FIX.md) for details.
+
 ### Quick Build
 
+**Linux/macOS:**
 ```bash
 # Create build directory
 mkdir build && cd build
@@ -30,7 +41,21 @@ cmake ..
 # Build
 cmake --build . --config Release
 
-# The executable will be in build/radar_tagger (Linux/Mac) or build/Release/radar_tagger.exe (Windows)
+# The executable will be in build/radar_tagger
+```
+
+**Windows (MinGW):**
+```batch
+# Use the automated build script (recommended)
+fix_and_build_windows.bat
+
+# Or manual build:
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+cmake --build . --config Release
+
+# The executable will be in build\radar_tagger.exe
 ```
 
 ### Build Options

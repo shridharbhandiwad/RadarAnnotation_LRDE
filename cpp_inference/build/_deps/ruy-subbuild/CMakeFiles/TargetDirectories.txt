@@ -1,3 +1,0 @@
-/workspace/cpp_inference/build/_deps/ruy-subbuild/CMakeFiles/ruy-populate.dir
-/workspace/cpp_inference/build/_deps/ruy-subbuild/CMakeFiles/edit_cache.dir
-/workspace/cpp_inference/build/_deps/ruy-subbuild/CMakeFiles/rebuild_cache.dir

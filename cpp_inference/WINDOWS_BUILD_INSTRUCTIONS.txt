@@ -1,0 +1,226 @@
+================================================================================
+  WINDOWS MINGW BUILD INSTRUCTIONS - Radar Tagger C++
+================================================================================
+
+QUICK START
+-----------
+1. Open Command Prompt or PowerShell
+2. Navigate to cpp_inference directory:
+   cd cpp_inference
+
+3. Run the automated build script:
+   fix_and_build_windows.bat clean
+
+4. Wait for build to complete
+5. Executables will be in: cpp_inference\build\
+
+That's it!
+
+================================================================================
+
+PREREQUISITES
+-------------
+✓ MinGW-w64 (with g++ and mingw32-make)
+  Download: https://sourceforge.net/projects/mingw-w64/
+  
+✓ CMake 3.16 or newer
+  Download: https://cmake.org/download/
+  
+✓ Git (for downloading dependencies)
+  Download: https://git-scm.com/download/win
+
+Verify installation:
+  > g++ --version
+  > cmake --version
+  > git --version
+
+================================================================================
+
+COMMON ISSUES & SOLUTIONS
+--------------------------
+
+Issue: "eight_bit_int_gemm compilation error"
+Error: c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
+
+Solution: This is automatically fixed by fix_and_build_windows.bat
+If you see this error, run: fix_and_build_windows.bat clean
+
+---
+
+Issue: "mingw32-make not found"
+Solution: 
+  1. Install MinGW-w64
+  2. Add to PATH: C:\mingw-w64\bin (or your installation path)
+  3. Restart Command Prompt
+
+---
+
+Issue: "cmake not found"
+Solution:
+  1. Install CMake from cmake.org
+  2. During installation, select "Add CMake to system PATH"
+  3. Restart Command Prompt
+
+---
+
+Issue: Build fails with "missing dependencies"
+Solution:
+  1. Ensure you have internet connection (needed to download TensorFlow Lite)
+  2. Clean and rebuild: fix_and_build_windows.bat clean
+  3. Check firewall settings (allow cmake and git)
+
+---
+
+Issue: "TensorFlow Lite download fails"
+Solution:
+  1. Check internet connection
+  2. Try using a VPN if GitHub is blocked
+  3. Alternatively, manually download TensorFlow Lite
+
+================================================================================
+
+MANUAL BUILD (if automated script doesn't work)
+------------------------------------------------
+
+Step 1: Clean build directory
+  > cd cpp_inference
+  > rmdir /s /q build
+  > mkdir build
+  > cd build
+
+Step 2: Configure CMake
+  > cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+
+Step 3: Wait for dependencies to download
+  (This may take 5-10 minutes on first build)
+
+Step 4: Check if gemmlowp needs patching
+  > dir gemmlowp\CMakeLists.txt
+  
+  If file exists, apply patch using PowerShell:
+  > powershell -Command "$c = Get-Content 'gemmlowp\CMakeLists.txt' -Raw; $c = $c -replace 'add_library\(eight_bit_int_gemm', '# DISABLED: add_library(eight_bit_int_gemm'; $c = $c -replace 'add_executable\(eight_bit_int_gemm', '# DISABLED: add_executable(eight_bit_int_gemm'; Set-Content 'gemmlowp\CMakeLists.txt' $c"
+
+Step 5: Reconfigure after patch
+  > cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+
+Step 6: Build
+  > cmake --build . --config Release
+
+Step 7: Verify executables
+  > dir *.exe
+  
+  Should see:
+    - radar_tagger.exe
+    - radar_tagger_multioutput.exe
+
+================================================================================
+
+WHAT'S INCLUDED IN THE FIX
+---------------------------
+
+The fix addresses a known compatibility issue between Google's gemmlowp library
+and MinGW on Windows.
+
+Modified files:
+  ✓ CMakeLists.txt - Enhanced with automatic patching
+  ✓ fix_and_build_windows.bat - Automated build script
+  ✓ EIGHT_BIT_INT_GEMM_FIX.md - Detailed documentation
+
+What the fix does:
+  1. Downloads TensorFlow Lite and its dependencies
+  2. Detects gemmlowp library
+  3. Patches gemmlowp/CMakeLists.txt to disable eight_bit_int_gemm target
+  4. Continues build without the problematic target
+
+Impact on functionality:
+  ✓ NONE - eight_bit_int_gemm is only a test tool
+  ✓ All TensorFlow Lite inference works normally
+  ✓ No performance impact
+  ✓ All features available
+
+================================================================================
+
+BUILD OPTIONS
+-------------
+
+Clean build (recommended if previous build failed):
+  > fix_and_build_windows.bat clean
+
+Normal build:
+  > fix_and_build_windows.bat
+
+With verbose output (for debugging):
+  > cd build
+  > cmake --build . --config Release -- VERBOSE=1
+
+Parallel build (faster):
+  > cd build
+  > cmake --build . --config Release -- -j4
+
+================================================================================
+
+RUNNING THE APPLICATION
+-----------------------
+
+After successful build:
+
+  > cd cpp_inference\build
+  > .\radar_tagger.exe
+  
+  or
+  
+  > .\radar_tagger_multioutput.exe
+
+For usage instructions, see README.md
+
+================================================================================
+
+GETTING HELP
+------------
+
+If you encounter issues:
+
+1. Read EIGHT_BIT_INT_GEMM_FIX.md for detailed troubleshooting
+2. Check that all prerequisites are installed
+3. Try clean build: fix_and_build_windows.bat clean
+4. Enable verbose output to see exact error
+5. Open an issue with complete error log
+
+Documentation files:
+  - README.md - General usage and features
+  - EIGHT_BIT_INT_GEMM_FIX.md - Detailed fix documentation
+  - WINDOWS_BUILD_INSTRUCTIONS.txt - This file
+
+================================================================================
+
+BUILD TIME ESTIMATES
+--------------------
+
+First build:
+  - Download dependencies: 5-10 minutes (depends on internet speed)
+  - Compile TensorFlow Lite: 15-30 minutes
+  - Compile project: 2-5 minutes
+  Total: ~20-45 minutes
+
+Subsequent builds:
+  - Clean rebuild: ~5-10 minutes
+  - Incremental build: ~1-3 minutes
+
+================================================================================
+
+SYSTEM REQUIREMENTS
+-------------------
+
+Minimum:
+  - Windows 7 or later (64-bit)
+  - 4 GB RAM
+  - 5 GB free disk space
+  - Dual-core processor
+
+Recommended:
+  - Windows 10/11 (64-bit)
+  - 8 GB RAM or more
+  - 10 GB free disk space
+  - Quad-core processor or better
+
+================================================================================
