@@ -2093,10 +2093,10 @@ class CppDeploymentPanel(QWidget):
             except Exception as e:
                 return {'error': str(e)}
         
-        worker = WorkerThread(conversion_task)
-        worker.finished.connect(self.on_conversion_complete)
-        worker.error.connect(self.on_conversion_error)
-        worker.start()
+        self.worker = WorkerThread(conversion_task)
+        self.worker.finished.connect(self.on_conversion_complete)
+        self.worker.error.connect(self.on_conversion_error)
+        self.worker.start()
     
     def on_conversion_complete(self, result):
         """Handle conversion completion"""
@@ -2202,10 +2202,10 @@ class CppDeploymentPanel(QWidget):
             except Exception as e:
                 return {'success': False, 'error': str(e)}
         
-        worker = WorkerThread(build_task)
-        worker.finished.connect(self.on_build_complete)
-        worker.error.connect(self.on_build_error)
-        worker.start()
+        self.worker = WorkerThread(build_task)
+        self.worker.finished.connect(self.on_build_complete)
+        self.worker.error.connect(self.on_build_error)
+        self.worker.start()
     
     def on_build_complete(self, result):
         """Handle build completion"""
@@ -2283,10 +2283,10 @@ class CppDeploymentPanel(QWidget):
             except Exception as e:
                 return {'error': str(e)}
         
-        worker = WorkerThread(eval_task)
-        worker.finished.connect(self.on_evaluation_complete)
-        worker.error.connect(self.on_evaluation_error)
-        worker.start()
+        self.worker = WorkerThread(eval_task)
+        self.worker.finished.connect(self.on_evaluation_complete)
+        self.worker.error.connect(self.on_evaluation_error)
+        self.worker.start()
     
     def on_evaluation_complete(self, result):
         """Handle evaluation completion"""
