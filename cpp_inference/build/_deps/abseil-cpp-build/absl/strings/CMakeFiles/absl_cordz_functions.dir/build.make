@@ -73,15 +73,15 @@ _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal
 _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o: abseil-cpp/absl/strings/internal/cordz_functions.cc
 _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o: _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o -MF CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o.d -o CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o -MF CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o.d -o CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc
 
 _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.i"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc > CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.i
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc > CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.i
 
 _deps/abseil-cpp-build/absl/strings/CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.s"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc -o CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.s
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/strings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/strings/internal/cordz_functions.cc -o CMakeFiles/absl_cordz_functions.dir/internal/cordz_functions.cc.s
 
 # Object files for target absl_cordz_functions
 absl_cordz_functions_OBJECTS = \

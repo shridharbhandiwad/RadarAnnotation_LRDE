@@ -73,15 +73,15 @@ _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o: _
 _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o: ruy/ruy/blocking_counter.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o -MF CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o.d -o CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o -c /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o -MF CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o.d -o CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o -c /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc > CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc > CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc -o CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/blocking_counter.cc -o CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.s
 
 # Object files for target ruy_blocking_counter
 ruy_blocking_counter_OBJECTS = \

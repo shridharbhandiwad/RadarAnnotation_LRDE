@@ -73,15 +73,15 @@ _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_ma
 _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o: ruy/ruy/prepare_packed_matrices.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o -MF CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o.d -o CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o -c /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o -MF CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o.d -o CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.o -c /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc > CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc > CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc -o CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/prepare_packed_matrices.cc -o CMakeFiles/ruy_prepare_packed_matrices.dir/prepare_packed_matrices.cc.s
 
 # Object files for target ruy_prepare_packed_matrices
 ruy_prepare_packed_matrices_OBJECTS = \

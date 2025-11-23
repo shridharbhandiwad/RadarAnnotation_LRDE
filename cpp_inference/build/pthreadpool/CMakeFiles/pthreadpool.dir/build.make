@@ -73,57 +73,57 @@ pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o: pthreadpool/CMakeFi
 pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o: pthreadpool-source/src/portable-api.c
 pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o -MF CMakeFiles/pthreadpool.dir/src/portable-api.c.o.d -o CMakeFiles/pthreadpool.dir/src/portable-api.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.o -MF CMakeFiles/pthreadpool.dir/src/portable-api.c.o.d -o CMakeFiles/pthreadpool.dir/src/portable-api.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pthreadpool.dir/src/portable-api.c.i"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c > CMakeFiles/pthreadpool.dir/src/portable-api.c.i
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c > CMakeFiles/pthreadpool.dir/src/portable-api.c.i
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/portable-api.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pthreadpool.dir/src/portable-api.c.s"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c -o CMakeFiles/pthreadpool.dir/src/portable-api.c.s
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/portable-api.c -o CMakeFiles/pthreadpool.dir/src/portable-api.c.s
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/flags.make
 pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o: pthreadpool-source/src/memory.c
 pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o -MF CMakeFiles/pthreadpool.dir/src/memory.c.o.d -o CMakeFiles/pthreadpool.dir/src/memory.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/memory.c
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.o -MF CMakeFiles/pthreadpool.dir/src/memory.c.o.d -o CMakeFiles/pthreadpool.dir/src/memory.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/memory.c
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pthreadpool.dir/src/memory.c.i"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/memory.c > CMakeFiles/pthreadpool.dir/src/memory.c.i
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/memory.c > CMakeFiles/pthreadpool.dir/src/memory.c.i
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/memory.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pthreadpool.dir/src/memory.c.s"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/memory.c -o CMakeFiles/pthreadpool.dir/src/memory.c.s
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/memory.c -o CMakeFiles/pthreadpool.dir/src/memory.c.s
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/flags.make
 pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o: pthreadpool-source/src/pthreads.c
 pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o -MF CMakeFiles/pthreadpool.dir/src/pthreads.c.o.d -o CMakeFiles/pthreadpool.dir/src/pthreads.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.o -MF CMakeFiles/pthreadpool.dir/src/pthreads.c.o.d -o CMakeFiles/pthreadpool.dir/src/pthreads.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pthreadpool.dir/src/pthreads.c.i"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c > CMakeFiles/pthreadpool.dir/src/pthreads.c.i
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c > CMakeFiles/pthreadpool.dir/src/pthreads.c.i
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/pthreads.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pthreadpool.dir/src/pthreads.c.s"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c -o CMakeFiles/pthreadpool.dir/src/pthreads.c.s
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/pthreads.c -o CMakeFiles/pthreadpool.dir/src/pthreads.c.s
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/flags.make
 pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o: pthreadpool-source/src/fastpath.c
 pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o: pthreadpool/CMakeFiles/pthreadpool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o -MF CMakeFiles/pthreadpool.dir/src/fastpath.c.o.d -o CMakeFiles/pthreadpool.dir/src/fastpath.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.o -MF CMakeFiles/pthreadpool.dir/src/fastpath.c.o.d -o CMakeFiles/pthreadpool.dir/src/fastpath.c.o -c /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pthreadpool.dir/src/fastpath.c.i"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c > CMakeFiles/pthreadpool.dir/src/fastpath.c.i
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c > CMakeFiles/pthreadpool.dir/src/fastpath.c.i
 
 pthreadpool/CMakeFiles/pthreadpool.dir/src/fastpath.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pthreadpool.dir/src/fastpath.c.s"
-	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c -o CMakeFiles/pthreadpool.dir/src/fastpath.c.s
+	cd /workspace/cpp_inference/build/pthreadpool && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/pthreadpool-source/src/fastpath.c -o CMakeFiles/pthreadpool.dir/src/fastpath.c.s
 
 # Object files for target pthreadpool
 pthreadpool_OBJECTS = \
