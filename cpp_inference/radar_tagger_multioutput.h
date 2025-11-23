@@ -13,20 +13,19 @@
 #include <map>
 #include <set>
 
-// Forward declarations for TensorFlow Lite
-namespace tflite {
-    class FlatBufferModel;
-    class Interpreter;
-    class InterpreterBuilder;
-}
+// TensorFlow Lite headers - need full definitions for member variables
+#include "tensorflow/lite/model.h"
+#include "tensorflow/lite/interpreter.h"
+#include "tensorflow/lite/kernels/register.h"
 
-// Forward declarations for ONNX Runtime
+// Forward declarations for ONNX Runtime (avoid template forward declarations)
 namespace Ort {
     struct Env;
     struct Session;
     struct SessionOptions;
     struct MemoryInfo;
-    template<typename T> struct Value;
+    // Note: Value is a template and cannot be forward-declared properly
+    // Will use std::unique_ptr to avoid needing complete type in header
 }
 
 /**

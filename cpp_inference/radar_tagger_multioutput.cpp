@@ -4,14 +4,8 @@
  */
 
 #include "radar_tagger_multioutput.h"
-#include "tensorflow/lite/interpreter.h"
-#include "tensorflow/lite/kernels/register.h"
-#include "tensorflow/lite/model.h"
-#include "tensorflow/lite/optional_debug_tools.h"
 
-// ONNX Runtime
-#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
-
+// Standard library includes first
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -22,8 +16,17 @@
 #include <iomanip>
 
 // JSON parsing
-#include "json.hpp"
+#include <nlohmann/json.hpp>
 using json = nlohmann::json;
+
+// TensorFlow Lite
+#include "tensorflow/lite/interpreter.h"
+#include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/model.h"
+#include "tensorflow/lite/optional_debug_tools.h"
+
+// ONNX Runtime (last to avoid macro pollution)
+#include <onnxruntime_cxx_api.h>
 
 // Tag names in order
 static const std::vector<std::string> TAG_NAMES = {
