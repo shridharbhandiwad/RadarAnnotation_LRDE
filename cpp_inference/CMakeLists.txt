@@ -179,33 +179,33 @@ else()
                     # The injection will patch gemmlowp CMakeLists.txt before add_subdirectory processes it
                     set(GEMMLOWP_PATCH_CODE "\n# PATCHED_FOR_MINGW_GEMMLOWP: Disable eight_bit_int_gemm for MinGW\nif(MINGW OR WIN32)\n  FetchContent_GetProperties(gemmlowp)\n  if(gemmlowp_POPULATED)\n    set(GEMMLOWP_CMAKE \"\${gemmlowp_SOURCE_DIR}/CMakeLists.txt\")\n    if(EXISTS \"\${GEMMLOWP_CMAKE}\")\n      file(READ \"\${GEMMLOWP_CMAKE}\" GEMMLOWP_CONTENT)\n      string(FIND \"\${GEMMLOWP_CONTENT}\" \"DISABLED_FOR_MINGW\" GEMMLOWP_ALREADY_PATCHED)\n      if(GEMMLOWP_ALREADY_PATCHED EQUAL -1)\n        message(STATUS \"Patching gemmlowp to disable eight_bit_int_gemm...\")\n        string(REGEX REPLACE \"add_library\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"add_executable\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"target_link_libraries\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"set_target_properties\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        file(WRITE \"\${GEMMLOWP_CMAKE}\" \"\${GEMMLOWP_CONTENT}\")\n        message(STATUS \"  -> gemmlowp patched successfully\")\n      endif()\n    endif()\n  endif()\nendif()\n")
                     
-                    # Insert the patch code after FetchContent_MakeAvailable(gemmlowp) or FetchContent_Populate(gemmlowp)
-                    # Try to find FetchContent_MakeAvailable first
-                    string(FIND "${TFLITE_CONTENT}" "FetchContent_MakeAvailable(gemmlowp)" FETCHCONTENT_POS)
-                    if(NOT FETCHCONTENT_POS EQUAL -1)
-                        # Find the end of the line
-                        string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_POS REVERSE ${FETCHCONTENT_POS})
-                        math(EXPR INSERT_POS "${FETCHCONTENT_POS} + 34")  # Length of "FetchContent_MakeAvailable(gemmlowp)"
-                        # Find next newline after FetchContent_MakeAvailable
-                        string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_AFTER ${INSERT_POS})
+                    # Find a safe injection point - after "find_package(gemmlowp REQUIRED)" 
+                    # This is outside any macro definitions and after gemmlowp is discovered
+                    string(FIND "${TFLITE_CONTENT}" "find_package(gemmlowp REQUIRED)" FINDPKG_POS)
+                    if(NOT FINDPKG_POS EQUAL -1)
+                        # Find the end of this line
+                        string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_AFTER ${FINDPKG_POS})
                         if(NOT NEWLINE_AFTER EQUAL -1)
                             math(EXPR INSERT_POS "${NEWLINE_AFTER} + 1")
                             string(SUBSTRING "${TFLITE_CONTENT}" 0 ${INSERT_POS} BEFORE_PART)
                             string(SUBSTRING "${TFLITE_CONTENT}" ${INSERT_POS} -1 AFTER_PART)
                             set(TFLITE_CONTENT "${BEFORE_PART}${GEMMLOWP_PATCH_CODE}${AFTER_PART}")
                             file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
-                            message(STATUS "  -> Successfully injected gemmlowp patching code")
+                            message(STATUS "  -> Successfully injected gemmlowp patching code after find_package(gemmlowp)")
                         endif()
                     else()
-                        # Try to find populate_tflite_source_vars (which is called after dependencies are fetched)
-                        string(FIND "${TFLITE_CONTENT}" "populate_tflite_source_vars" POPULATE_POS)
-                        if(NOT POPULATE_POS EQUAL -1)
-                            # Insert before populate_tflite_source_vars
-                            string(SUBSTRING "${TFLITE_CONTENT}" 0 ${POPULATE_POS} BEFORE_PART)
-                            string(SUBSTRING "${TFLITE_CONTENT}" ${POPULATE_POS} -1 AFTER_PART)
-                            set(TFLITE_CONTENT "${BEFORE_PART}${GEMMLOWP_PATCH_CODE}\n${AFTER_PART}")
-                            file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
-                            message(STATUS "  -> Successfully injected gemmlowp patching code")
+                        # Fallback: try to find "# Find TensorFlow Lite dependencies." and inject after it
+                        string(FIND "${TFLITE_CONTENT}" "# Find TensorFlow Lite dependencies." DEPS_COMMENT_POS)
+                        if(NOT DEPS_COMMENT_POS EQUAL -1)
+                            string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_AFTER ${DEPS_COMMENT_POS})
+                            if(NOT NEWLINE_AFTER EQUAL -1)
+                                math(EXPR INSERT_POS "${NEWLINE_AFTER} + 1")
+                                string(SUBSTRING "${TFLITE_CONTENT}" 0 ${INSERT_POS} BEFORE_PART)
+                                string(SUBSTRING "${TFLITE_CONTENT}" ${INSERT_POS} -1 AFTER_PART)
+                                set(TFLITE_CONTENT "${BEFORE_PART}${GEMMLOWP_PATCH_CODE}${AFTER_PART}")
+                                file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
+                                message(STATUS "  -> Successfully injected gemmlowp patching code after dependencies comment")
+                            endif()
                         else()
                             message(WARNING "Could not find suitable injection point for gemmlowp patch in TensorFlow Lite CMakeLists.txt")
                         endif()
