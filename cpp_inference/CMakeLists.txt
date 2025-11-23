@@ -55,16 +55,31 @@ set(HEADERS
     radar_tagger.h
 )
 
-# Create executable
-add_executable(radar_tagger ${SOURCES} ${HEADERS})
+set(SOURCES_MULTIOUTPUT
+    radar_tagger_multioutput.cpp
+    main_multioutput.cpp
+)
 
-# Include directories
+set(HEADERS_MULTIOUTPUT
+    radar_tagger_multioutput.h
+)
+
+# Create executables
+add_executable(radar_tagger ${SOURCES} ${HEADERS})
+add_executable(radar_tagger_multioutput ${SOURCES_MULTIOUTPUT} ${HEADERS_MULTIOUTPUT})
+
+# Include directories for both executables
 target_include_directories(radar_tagger PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${TensorFlowLite_INCLUDE_DIRS}
 )
 
-# Link libraries
+target_include_directories(radar_tagger_multioutput PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${TensorFlowLite_INCLUDE_DIRS}
+)
+
+# Link libraries for both executables
 target_link_libraries(radar_tagger PRIVATE
     ${TensorFlowLite_LIBRARIES}
     nlohmann_json::nlohmann_json
@@ -72,16 +87,25 @@ target_link_libraries(radar_tagger PRIVATE
     ${CMAKE_DL_LIBS}
 )
 
-# Compiler options
+target_link_libraries(radar_tagger_multioutput PRIVATE
+    ${TensorFlowLite_LIBRARIES}
+    nlohmann_json::nlohmann_json
+    Threads::Threads
+    ${CMAKE_DL_LIBS}
+)
+
+# Compiler options for both executables
 if(MSVC)
     target_compile_options(radar_tagger PRIVATE /W4)
+    target_compile_options(radar_tagger_multioutput PRIVATE /W4)
 else()
     target_compile_options(radar_tagger PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(radar_tagger_multioutput PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
 # Install targets
-install(TARGETS radar_tagger DESTINATION bin)
-install(FILES ${HEADERS} DESTINATION include/radar_tagger)
+install(TARGETS radar_tagger radar_tagger_multioutput DESTINATION bin)
+install(FILES ${HEADERS} ${HEADERS_MULTIOUTPUT} DESTINATION include/radar_tagger)
 
 # Print configuration
 message(STATUS "")
