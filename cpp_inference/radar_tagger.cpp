@@ -4,11 +4,8 @@
  */
 
 #include "radar_tagger.h"
-#include "tensorflow/lite/interpreter.h"
-#include "tensorflow/lite/kernels/register.h"
-#include "tensorflow/lite/model.h"
-#include "tensorflow/lite/optional_debug_tools.h"
 
+// Standard library includes first
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -18,9 +15,15 @@
 #include <cmath>
 #include <iomanip>
 
-// JSON parsing (simple implementation)
-#include "json.hpp"
+// JSON parsing
+#include <nlohmann/json.hpp>
 using json = nlohmann::json;
+
+// TensorFlow Lite (include after STL)
+#include "tensorflow/lite/interpreter.h"
+#include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/model.h"
+#include "tensorflow/lite/optional_debug_tools.h"
 
 // Convert RadarDataPoint to feature vector
 std::vector<float> RadarDataPoint::toFeatureVector() const {

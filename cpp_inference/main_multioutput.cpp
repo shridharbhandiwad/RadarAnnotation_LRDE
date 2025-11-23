@@ -6,6 +6,9 @@
 #include "radar_tagger_multioutput.h"
 #include <iostream>
 #include <iomanip>
+#include <chrono>
+#include <algorithm>
+#include <numeric>
 
 void printUsage(const char* progName) {
     std::cout << "Usage: " << progName << " [options]\n\n";

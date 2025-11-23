@@ -8,6 +8,8 @@
 #include <iomanip>
 #include <chrono>
 #include <fstream>
+#include <algorithm>
+#include <numeric>
 
 void printUsage(const char* progName) {
     std::cout << "Usage: " << progName << " [options]\n\n";

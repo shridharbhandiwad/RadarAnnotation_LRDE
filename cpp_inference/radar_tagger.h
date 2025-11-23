@@ -11,12 +11,10 @@
 #include <memory>
 #include <map>
 
-// Forward declarations for TensorFlow Lite
-namespace tflite {
-    class FlatBufferModel;
-    class Interpreter;
-    class InterpreterBuilder;
-}
+// TensorFlow Lite headers - need full definitions for member variables
+#include "tensorflow/lite/model.h"
+#include "tensorflow/lite/interpreter.h"
+#include "tensorflow/lite/kernels/register.h"
 
 /**
  * @brief Radar data point structure
