@@ -1922,7 +1922,7 @@ class CppDeploymentPanel(QWidget):
         # Model selection
         model_select_layout = QHBoxLayout()
         self.model_label = QLabel("No model selected")
-        self.model_button = QPushButton("📁 Select Keras Model (.h5)")
+        self.model_button = QPushButton("📁 Select Model (.pkl/.h5)")
         self.model_button.clicked.connect(self.select_model)
         self.model_button.setObjectName("primaryButton")
         model_select_layout.addWidget(self.model_label)
@@ -2027,9 +2027,9 @@ class CppDeploymentPanel(QWidget):
         self.setLayout(layout)
     
     def select_model(self):
-        """Select Keras model file"""
+        """Select model file (.pkl for RF/XGBoost, .h5 for Neural Network)"""
         file_path, _ = QFileDialog.getOpenFileName(
-            self, "Select Keras Model", "output/", "Keras Model Files (*.h5)"
+            self, "Select Trained Model", "output/", "Model Files (*.pkl *.h5);;All Files (*)"
         )
         
         if file_path:
