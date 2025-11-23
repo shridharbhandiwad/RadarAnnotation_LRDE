@@ -2163,16 +2163,39 @@ class CppDeploymentPanel(QWidget):
             try:
                 import subprocess
                 import platform
+                import shutil
                 
-                # Check if build directory exists
+                # Clean and recreate build directory
                 build_dir = Path("cpp_inference/build")
-                if not build_dir.exists():
-                    build_dir.mkdir(parents=True)
+                if build_dir.exists():
+                    self.status_text.append("Cleaning old build directory...")
+                    shutil.rmtree(build_dir)
+                build_dir.mkdir(parents=True)
+                
+                # Prepare CMake command with proper configuration
+                cmake_cmd = ["cmake", ".."]
+                
+                # Add platform-specific configurations
+                if platform.system() == "Windows":
+                    # Windows: use Visual Studio or MinGW
+                    cmake_cmd.extend(["-G", "MinGW Makefiles"])
+                else:
+                    # Linux/Mac: use Unix Makefiles and specify compiler
+                    cmake_cmd.extend([
+                        "-G", "Unix Makefiles",
+                        "-DCMAKE_BUILD_TYPE=Release"
+                    ])
+                    
+                    # Try to find g++ compiler
+                    if shutil.which("g++"):
+                        cmake_cmd.append("-DCMAKE_CXX_COMPILER=g++")
+                    elif shutil.which("clang++"):
+                        cmake_cmd.append("-DCMAKE_CXX_COMPILER=clang++")
                 
                 # Configure with CMake
-                self.status_text.append("Configuring with CMake...")
+                self.status_text.append(f"Configuring with CMake: {' '.join(cmake_cmd)}")
                 config_result = subprocess.run(
-                    ["cmake", ".."],
+                    cmake_cmd,
                     capture_output=True,
                     text=True,
                     cwd=str(build_dir)
@@ -2187,8 +2210,16 @@ class CppDeploymentPanel(QWidget):
                 
                 # Build
                 self.status_text.append("Building application...")
+                build_cmd = ["cmake", "--build", ".", "--config", "Release"]
+                
+                # Add parallel build flag on Linux/Mac
+                if platform.system() != "Windows":
+                    import os
+                    ncpu = os.cpu_count() or 4
+                    build_cmd.extend(["--parallel", str(ncpu)])
+                
                 build_result = subprocess.run(
-                    ["cmake", "--build", ".", "--config", "Release"],
+                    build_cmd,
                     capture_output=True,
                     text=True,
                     cwd=str(build_dir)
