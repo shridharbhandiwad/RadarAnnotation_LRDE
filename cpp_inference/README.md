@@ -118,27 +118,134 @@ cmake --build . --parallel 4
 
 ### Supported Models
 
+All models must predict 11 binary outputs corresponding to:
+- **Direction**: incoming, outgoing
+- **Vertical motion**: fixed_range_ascending, fixed_range_descending, level_flight
+- **Path shape**: linear, curved
+- **Maneuver intensity**: light_maneuver, high_maneuver
+- **Speed**: low_speed, high_speed
+
 1. **Neural Network Multi-Output Models (TFLite)**
+   - ✅ **Fully Implemented**
+   - Format: `.tflite` (TensorFlow Lite)
    - Converted from Keras/TensorFlow models
-   - Must output 11 binary predictions (one for each tag)
-   - Requires TFLite conversion
+   - Best for: Real-time inference with low latency
 
-2. **XGBoost Models** (Currently stub - requires XGBoost C++ library)
-   - Export as .json format
-   - Multi-output support required
+2. **XGBoost Models (ONNX)**
+   - ✅ **Fully Implemented**
+   - Format: `.onnx` (ONNX Runtime)
+   - Converted from trained XGBoost models
+   - Best for: High accuracy with tabular data
 
-3. **Random Forest Models** (Currently stub - requires implementation)
-   - Export as .pkl or custom format
-   - Multi-output support required
+3. **Random Forest Models (ONNX)**
+   - ✅ **Fully Implemented**
+   - Format: `.onnx` (ONNX Runtime)
+   - Converted from scikit-learn Random Forest models
+   - Best for: Robust predictions with feature importance
 
-### Model Conversion for Neural Networks
+### Model Export Instructions
 
-Convert your trained Keras models to TensorFlow Lite format. The model must be trained for multi-output classification with 11 binary outputs corresponding to the following tags:
-- Direction: incoming, outgoing
-- Vertical motion: fixed_range_ascending, fixed_range_descending, level_flight
-- Path shape: linear, curved
-- Maneuver intensity: light_maneuver, high_maneuver
-- Speed: low_speed, high_speed
+#### Exporting XGBoost Models
+
+```bash
+# Export trained XGBoost model to ONNX
+python3 export_models_to_onnx.py \
+    --model-type xgboost \
+    --model-path output/xgboost_multioutput.pkl \
+    --output-path cpp_models/xgboost_model.onnx \
+    --metadata-path output/xgboost_metadata.json \
+    --output-metadata cpp_models/xgboost_metadata.json
+```
+
+**Requirements:**
+```bash
+pip install xgboost skl2onnx onnx onnxmltools
+```
+
+#### Exporting Random Forest Models
+
+```bash
+# Export trained Random Forest model to ONNX
+python3 export_models_to_onnx.py \
+    --model-type random_forest \
+    --model-path output/random_forest_multioutput.pkl \
+    --output-path cpp_models/rf_model.onnx \
+    --metadata-path output/rf_metadata.json \
+    --output-metadata cpp_models/rf_metadata.json
+```
+
+**Requirements:**
+```bash
+pip install scikit-learn skl2onnx onnx
+```
+
+#### Exporting Neural Network Models (Alternative to TFLite)
+
+You can also export Keras models to ONNX format:
+
+```bash
+# Export Keras model to ONNX (alternative to TFLite)
+python3 export_models_to_onnx.py \
+    --model-type neural_network \
+    --model-path output/test_lstm/lstm_model.h5 \
+    --output-path cpp_models/nn_model.onnx \
+    --metadata-path output/test_lstm/lstm_model_metadata.pkl \
+    --output-metadata cpp_models/nn_metadata.json
+```
+
+**Requirements:**
+```bash
+pip install tensorflow tf2onnx onnx
+```
+
+**Note:** For Neural Networks, TFLite is recommended over ONNX for better performance. Use ONNX only if you need cross-platform compatibility.
+
+### Model Structure Requirements
+
+#### For XGBoost and Random Forest (Multi-Output)
+
+Your Python training code should create models that output 11 binary predictions:
+
+```python
+# Example: Training multi-output XGBoost
+import xgboost as xgb
+from sklearn.multioutput import MultiOutputClassifier
+
+# Create multi-output wrapper
+base_model = xgb.XGBClassifier(n_estimators=100, max_depth=6)
+model = MultiOutputClassifier(base_model)
+
+# Train on multi-output labels (shape: [n_samples, 11])
+model.fit(X_train, y_train_multioutput)
+
+# Save model
+import pickle
+with open('xgboost_multioutput.pkl', 'wb') as f:
+    pickle.dump(model, f)
+```
+
+#### For Neural Networks
+
+```python
+# Example: Keras multi-output model
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation='relu', input_shape=(18,)),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(11, activation='sigmoid')  # 11 binary outputs
+])
+
+model.compile(
+    optimizer='adam',
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
+
+model.fit(X_train, y_train_multioutput, epochs=50)
+model.save('nn_model.h5')
+```
 
 **Note:** LSTM and Transformer architectures are not recommended for C++ deployment due to complexity and performance considerations. Use simpler feed-forward multi-output neural networks for better real-time performance.
 

@@ -9,6 +9,9 @@
 #include "tensorflow/lite/model.h"
 #include "tensorflow/lite/optional_debug_tools.h"
 
+// ONNX Runtime
+#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
+
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -216,10 +219,10 @@ bool RadarTaggerMultiOutput::initialize() {
             std::cout << "Neural Network (TFLite)\n";
             break;
         case ModelType::XGBOOST:
-            std::cout << "XGBoost\n";
+            std::cout << "XGBoost (ONNX)\n";
             break;
         case ModelType::RANDOM_FOREST:
-            std::cout << "Random Forest\n";
+            std::cout << "Random Forest (ONNX)\n";
             break;
     }
     
@@ -231,42 +234,111 @@ bool RadarTaggerMultiOutput::initialize() {
     
     // Initialize model based on type
     if (modelType_ == ModelType::NEURAL_NETWORK) {
-        // Load TFLite model
-        model_ = tflite::FlatBufferModel::BuildFromFile(modelPath_.c_str());
-        if (!model_) {
-            std::cerr << "Failed to load TFLite model from: " << modelPath_ << "\n";
-            return false;
-        }
-        std::cout << "TFLite model loaded successfully\n";
-        
-        // Build interpreter
-        tflite::ops::builtin::BuiltinOpResolver resolver;
-        tflite::InterpreterBuilder builder(*model_, resolver);
-        builder(&interpreter_);
-        
-        if (!interpreter_) {
-            std::cerr << "Failed to create interpreter\n";
-            return false;
-        }
-        
-        interpreter_->SetNumThreads(numThreads_);
-        
-        if (interpreter_->AllocateTensors() != kTfLiteOk) {
-            std::cerr << "Failed to allocate tensors\n";
-            return false;
-        }
-        
-        std::cout << "TFLite interpreter initialized\n";
+        return initializeNeuralNetwork();
     } else {
-        // For XGBoost/Random Forest, we would load the model here
-        // This requires a C++ XGBoost library or custom implementation
-        std::cout << "Note: XGBoost/RandomForest support requires additional libraries\n";
-        std::cout << "Consider exporting to ONNX or TFLite for full C++ support\n";
-        return false;  // Not fully implemented yet
+        return initializeONNXModel();
+    }
+}
+
+bool RadarTaggerMultiOutput::initializeNeuralNetwork() {
+    // Load TFLite model
+    model_ = tflite::FlatBufferModel::BuildFromFile(modelPath_.c_str());
+    if (!model_) {
+        std::cerr << "Failed to load TFLite model from: " << modelPath_ << "\n";
+        return false;
+    }
+    std::cout << "TFLite model loaded successfully\n";
+    
+    // Build interpreter
+    tflite::ops::builtin::BuiltinOpResolver resolver;
+    tflite::InterpreterBuilder builder(*model_, resolver);
+    builder(&interpreter_);
+    
+    if (!interpreter_) {
+        std::cerr << "Failed to create interpreter\n";
+        return false;
     }
     
+    interpreter_->SetNumThreads(numThreads_);
+    
+    if (interpreter_->AllocateTensors() != kTfLiteOk) {
+        std::cerr << "Failed to allocate tensors\n";
+        return false;
+    }
+    
+    std::cout << "TFLite interpreter initialized\n";
     printModelInfo();
     return true;
+}
+
+bool RadarTaggerMultiOutput::initializeONNXModel() {
+    try {
+        // Initialize ONNX Runtime environment
+        onnxEnv_ = std::make_unique<Ort::Env>(ORT_LOGGING_LEVEL_WARNING, "RadarTagger");
+        
+        // Create session options
+        onnxSessionOptions_ = std::make_unique<Ort::SessionOptions>();
+        onnxSessionOptions_->SetIntraOpNumThreads(numThreads_);
+        onnxSessionOptions_->SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_EXTENDED);
+        
+        // Load model
+        std::cout << "Loading ONNX model from: " << modelPath_ << "\n";
+        onnxSession_ = std::make_unique<Ort::Session>(*onnxEnv_, modelPath_.c_str(), *onnxSessionOptions_);
+        
+        // Get input/output information
+        Ort::AllocatorWithDefaultOptions allocator;
+        
+        // Get input names and shapes
+        size_t numInputs = onnxSession_->GetInputCount();
+        for (size_t i = 0; i < numInputs; i++) {
+            auto inputName = onnxSession_->GetInputNameAllocated(i, allocator);
+            onnxInputNames_.push_back(inputName.get());
+            
+            auto typeInfo = onnxSession_->GetInputTypeInfo(i);
+            auto tensorInfo = typeInfo.GetTensorTypeAndShapeInfo();
+            auto shape = tensorInfo.GetShape();
+            onnxInputShapes_.push_back(std::vector<int64_t>(shape.begin(), shape.end()));
+        }
+        
+        // Get output names and shapes
+        size_t numOutputs = onnxSession_->GetOutputCount();
+        for (size_t i = 0; i < numOutputs; i++) {
+            auto outputName = onnxSession_->GetOutputNameAllocated(i, allocator);
+            onnxOutputNames_.push_back(outputName.get());
+            
+            auto typeInfo = onnxSession_->GetOutputTypeInfo(i);
+            auto tensorInfo = typeInfo.GetTensorTypeAndShapeInfo();
+            auto shape = tensorInfo.GetShape();
+            onnxOutputShapes_.push_back(std::vector<int64_t>(shape.begin(), shape.end()));
+        }
+        
+        std::cout << "ONNX model loaded successfully\n";
+        std::cout << "  Input nodes: " << numInputs << "\n";
+        for (size_t i = 0; i < numInputs; i++) {
+            std::cout << "    " << onnxInputNames_[i] << " shape: [";
+            for (size_t j = 0; j < onnxInputShapes_[i].size(); j++) {
+                std::cout << onnxInputShapes_[i][j];
+                if (j < onnxInputShapes_[i].size() - 1) std::cout << ", ";
+            }
+            std::cout << "]\n";
+        }
+        std::cout << "  Output nodes: " << numOutputs << "\n";
+        for (size_t i = 0; i < numOutputs; i++) {
+            std::cout << "    " << onnxOutputNames_[i] << " shape: [";
+            for (size_t j = 0; j < onnxOutputShapes_[i].size(); j++) {
+                std::cout << onnxOutputShapes_[i][j];
+                if (j < onnxOutputShapes_[i].size() - 1) std::cout << ", ";
+            }
+            std::cout << "]\n";
+        }
+        
+        printModelInfo();
+        return true;
+        
+    } catch (const Ort::Exception& e) {
+        std::cerr << "ONNX Runtime error: " << e.what() << "\n";
+        return false;
+    }
 }
 
 bool RadarTaggerMultiOutput::loadMetadata() {
@@ -445,17 +517,112 @@ MultiOutputResult RadarTaggerMultiOutput::predictNeuralNetwork(const RadarSequen
 }
 
 MultiOutputResult RadarTaggerMultiOutput::predictXGBoost(const RadarSequence& sequence) {
-    MultiOutputResult result;
-    result.success = false;
-    result.errorMessage = "XGBoost prediction not implemented (requires XGBoost C++ library)";
-    return result;
+    return predictONNX(sequence);
 }
 
 MultiOutputResult RadarTaggerMultiOutput::predictRandomForest(const RadarSequence& sequence) {
+    return predictONNX(sequence);
+}
+
+MultiOutputResult RadarTaggerMultiOutput::predictONNX(const RadarSequence& sequence) {
     MultiOutputResult result;
     result.success = false;
-    result.errorMessage = "Random Forest prediction not implemented (requires RF C++ library)";
-    return result;
+    
+    auto startTime = std::chrono::high_resolution_clock::now();
+    
+    try {
+        // Prepare input: for non-sequence models, use aggregated features
+        auto inputFeatures = sequence.computeAggregatedFeatures();
+        auto normalizedInput = normalizeInput(inputFeatures);
+        
+        // Create input tensor
+        Ort::MemoryInfo memoryInfo = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);
+        
+        // Prepare input shape (batch_size=1, num_features)
+        std::vector<int64_t> inputShape = {1, static_cast<int64_t>(normalizedInput.size())};
+        
+        // Create input tensor
+        std::vector<Ort::Value> inputTensors;
+        inputTensors.push_back(Ort::Value::CreateTensor<float>(
+            memoryInfo,
+            normalizedInput.data(),
+            normalizedInput.size(),
+            inputShape.data(),
+            inputShape.size()
+        ));
+        
+        // Prepare input/output names for ONNX Runtime
+        std::vector<const char*> inputNames;
+        for (const auto& name : onnxInputNames_) {
+            inputNames.push_back(name.c_str());
+        }
+        
+        std::vector<const char*> outputNames;
+        for (const auto& name : onnxOutputNames_) {
+            outputNames.push_back(name.c_str());
+        }
+        
+        // Run inference
+        auto outputTensors = onnxSession_->Run(
+            Ort::RunOptions{nullptr},
+            inputNames.data(),
+            inputTensors.data(),
+            inputTensors.size(),
+            outputNames.data(),
+            outputNames.size()
+        );
+        
+        // Process outputs
+        // For multi-output models, ONNX typically returns multiple outputs or a single tensor with all predictions
+        std::vector<float> outputs;
+        
+        if (outputTensors.size() == 1) {
+            // Single output tensor containing all 11 predictions
+            float* outputData = outputTensors[0].GetTensorMutableData<float>();
+            auto outputShape = outputTensors[0].GetTensorTypeAndShapeInfo().GetShape();
+            
+            size_t outputSize = 1;
+            for (auto dim : outputShape) {
+                outputSize *= dim;
+            }
+            
+            outputs.assign(outputData, outputData + outputSize);
+        } else if (outputTensors.size() == 11) {
+            // Multiple output tensors (one per tag)
+            for (size_t i = 0; i < outputTensors.size(); i++) {
+                float* outputData = outputTensors[i].GetTensorMutableData<float>();
+                outputs.push_back(outputData[0]);
+            }
+        } else {
+            result.errorMessage = "Unexpected number of output tensors: " + std::to_string(outputTensors.size());
+            return result;
+        }
+        
+        // Ensure we have exactly 11 outputs
+        if (outputs.size() < 11) {
+            result.errorMessage = "Insufficient outputs: expected 11, got " + std::to_string(outputs.size());
+            return result;
+        }
+        
+        // Parse tags
+        result.tags = parseOutputTags(outputs);
+        result.aggregatedLabel = result.tags.toAggregatedLabel();
+        
+        auto endTime = std::chrono::high_resolution_clock::now();
+        result.inferenceTimeMs = std::chrono::duration<double, std::milli>(endTime - startTime).count();
+        
+        updateMetrics(result.inferenceTimeMs, result);
+        
+        result.success = true;
+        return result;
+        
+    } catch (const Ort::Exception& e) {
+        result.errorMessage = std::string("ONNX Runtime error: ") + e.what();
+        return result;
+    } catch (const std::exception& e) {
+        result.errorMessage = std::string("Error: ") + e.what();
+        return result;
+    }
 }
 
 std::vector<MultiOutputResult> RadarTaggerMultiOutput::predictBatch(

@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Options
 option(USE_SYSTEM_TFLITE "Use system-installed TensorFlow Lite" OFF)
+option(USE_SYSTEM_ONNXRUNTIME "Use system-installed ONNX Runtime" OFF)
 
 # Find dependencies
 find_package(Threads REQUIRED)
@@ -45,6 +46,40 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(json)
 
+# ONNX Runtime (for XGBoost and Random Forest)
+if(USE_SYSTEM_ONNXRUNTIME)
+    find_package(onnxruntime REQUIRED)
+else()
+    # Download pre-built ONNX Runtime
+    message(STATUS "Downloading ONNX Runtime...")
+    
+    if(WIN32)
+        set(ONNXRUNTIME_URL "https://github.com/microsoft/onnxruntime/releases/download/v1.16.3/onnxruntime-win-x64-1.16.3.zip")
+        set(ONNXRUNTIME_HASH "")
+    elseif(APPLE)
+        set(ONNXRUNTIME_URL "https://github.com/microsoft/onnxruntime/releases/download/v1.16.3/onnxruntime-osx-arm64-1.16.3.tgz")
+        set(ONNXRUNTIME_HASH "")
+    else()
+        set(ONNXRUNTIME_URL "https://github.com/microsoft/onnxruntime/releases/download/v1.16.3/onnxruntime-linux-x64-1.16.3.tgz")
+        set(ONNXRUNTIME_HASH "")
+    endif()
+    
+    FetchContent_Declare(
+        onnxruntime
+        URL ${ONNXRUNTIME_URL}
+    )
+    FetchContent_MakeAvailable(onnxruntime)
+    
+    set(ONNXRUNTIME_INCLUDE_DIRS ${onnxruntime_SOURCE_DIR}/include)
+    set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/libonnxruntime.so)
+    
+    if(WIN32)
+        set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/onnxruntime.dll)
+    elseif(APPLE)
+        set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/libonnxruntime.dylib)
+    endif()
+endif()
+
 # Source files
 set(SOURCES
     radar_tagger.cpp
@@ -77,6 +112,7 @@ target_include_directories(radar_tagger PRIVATE
 target_include_directories(radar_tagger_multioutput PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${TensorFlowLite_INCLUDE_DIRS}
+    ${ONNXRUNTIME_INCLUDE_DIRS}
 )
 
 # Link libraries for both executables
@@ -89,6 +125,7 @@ target_link_libraries(radar_tagger PRIVATE
 
 target_link_libraries(radar_tagger_multioutput PRIVATE
     ${TensorFlowLite_LIBRARIES}
+    ${ONNXRUNTIME_LIBRARIES}
     nlohmann_json::nlohmann_json
     Threads::Threads
     ${CMAKE_DL_LIBS}
@@ -114,4 +151,5 @@ message(STATUS "  Version: ${PROJECT_VERSION}")
 message(STATUS "  C++ Standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "  Build Type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "  TensorFlow Lite: ${TensorFlowLite_LIBRARIES}")
+message(STATUS "  ONNX Runtime: ${ONNXRUNTIME_LIBRARIES}")
 message(STATUS "")
