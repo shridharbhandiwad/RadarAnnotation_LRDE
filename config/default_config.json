@@ -84,12 +84,9 @@
       "objective": "multi:softmax",
       "random_state": 42
     },
-    "transformer": {
-      "d_model": 64,
-      "num_heads": 4,
-      "ff_dim": 128,
-      "num_layers": 2,
-      "dropout": 0.1,
+    "neural_network": {
+      "hidden_units": [128, 64, 32],
+      "dropout": 0.3,
       "epochs": 50,
       "batch_size": 32,
       "sequence_length": 20

@@ -1,6 +1,6 @@
 """Train Multi-Output Models for Auto-Tagging
 
-This script trains XGBoost, Random Forest, and Transformer models in multi-output mode
+This script trains XGBoost, Random Forest, and Neural Network models in multi-output mode
 for auto-tagging and auto-annotation based on the data format:
 - Columns A-K: Input features (radar measurements)
 - Columns L-AF: Output tags (to be predicted)

@@ -1026,537 +1026,25 @@ class RandomForestMultiOutputModel:
         logger.info(f"Loaded Random Forest Multi-Output model from {path}")
 
 
-class TransformerBlock(keras.layers.Layer):
-    """Transformer block with multi-head attention"""
+class NeuralNetworkMultiOutputModel:
+    """Neural Network Multi-Output Model for tag prediction
     
-    def __init__(self, d_model: int, num_heads: int, ff_dim: int, dropout: float = 0.1):
-        """Initialize Transformer block
-        
-        Args:
-            d_model: Dimension of the model
-            num_heads: Number of attention heads
-            ff_dim: Dimension of feed-forward network
-            dropout: Dropout rate
-        """
-        super(TransformerBlock, self).__init__()
-        self.d_model = d_model
-        self.num_heads = num_heads
-        self.ff_dim = ff_dim
-        self.dropout_rate = dropout
-        
-    def build(self, input_shape):
-        """Build the layer"""
-        self.att = layers.MultiHeadAttention(
-            num_heads=self.num_heads, 
-            key_dim=self.d_model // self.num_heads
-        )
-        self.ffn = keras.Sequential([
-            layers.Dense(self.ff_dim, activation='relu'),
-            layers.Dense(self.d_model)
-        ])
-        self.layernorm1 = layers.LayerNormalization(epsilon=1e-6)
-        self.layernorm2 = layers.LayerNormalization(epsilon=1e-6)
-        self.dropout1 = layers.Dropout(self.dropout_rate)
-        self.dropout2 = layers.Dropout(self.dropout_rate)
-        super(TransformerBlock, self).build(input_shape)
-        
-    def call(self, inputs, training=False):
-        """Forward pass"""
-        attn_output = self.att(inputs, inputs)
-        attn_output = self.dropout1(attn_output, training=training)
-        out1 = self.layernorm1(inputs + attn_output)
-        
-        ffn_output = self.ffn(out1)
-        ffn_output = self.dropout2(ffn_output, training=training)
-        out2 = self.layernorm2(out1 + ffn_output)
-        
-        return out2
-    
-    def get_config(self):
-        """Get layer configuration"""
-        config = super(TransformerBlock, self).get_config()
-        config.update({
-            'd_model': self.d_model,
-            'num_heads': self.num_heads,
-            'ff_dim': self.ff_dim,
-            'dropout_rate': self.dropout_rate
-        })
-        return config
-
-
-class TransformerModel:
-    """Transformer-based Multi-output Model for trajectory classification
-    
-    This model uses self-attention mechanisms to capture temporal dependencies
-    in trajectory sequences and can predict multiple output labels simultaneously
-    (e.g., direction, altitude pattern, maneuver type, speed class).
-    """
-    
-    def __init__(self, params: Dict[str, Any] = None):
-        """Initialize Transformer model
-        
-        Args:
-            params: Model parameters
-        """
-        if not HAS_TENSORFLOW:
-            raise RuntimeError("TensorFlow is required for Transformer model")
-        
-        config = get_config()
-        default_params = config.get('ml_params.transformer', {})
-        self.params = {**default_params, **(params or {})}
-        self.model = None
-        self.sequence_generator = SequenceDataGenerator(self.params['sequence_length'])
-        self.history = None
-        self.multi_output = False
-        self.output_names = []
-        
-    def build_model(self, input_shape: Tuple[int, int], n_classes: int, 
-                    multi_output: bool = False, output_dims: Dict[str, int] = None) -> None:
-        """Build Transformer model architecture
-        
-        Args:
-            input_shape: (sequence_length, n_features)
-            n_classes: Number of output classes (for single output)
-            multi_output: Whether to use multi-output architecture
-            output_dims: Dictionary of output names to number of classes (for multi-output)
-        """
-        self.multi_output = multi_output
-        
-        # Input layer
-        inputs = keras.Input(shape=input_shape)
-        
-        # Linear projection to d_model dimensions
-        x = layers.Dense(self.params['d_model'])(inputs)
-        
-        # Add positional encoding
-        seq_len = input_shape[0]
-        positions = tf.range(start=0, limit=seq_len, delta=1)
-        position_embedding = layers.Embedding(
-            input_dim=seq_len, 
-            output_dim=self.params['d_model']
-        )(positions)
-        x = x + position_embedding
-        
-        # Stack Transformer blocks
-        for _ in range(self.params['num_layers']):
-            x = TransformerBlock(
-                d_model=self.params['d_model'],
-                num_heads=self.params['num_heads'],
-                ff_dim=self.params['ff_dim'],
-                dropout=self.params['dropout']
-            )(x)
-        
-        # Global average pooling
-        x = layers.GlobalAveragePooling1D()(x)
-        x = layers.Dropout(self.params['dropout'])(x)
-        x = layers.Dense(self.params['d_model'], activation='relu')(x)
-        x = layers.Dropout(self.params['dropout'])(x)
-        
-        # Output layer(s)
-        if multi_output and output_dims:
-            # Multi-output architecture
-            outputs = {}
-            for output_name, n_out in output_dims.items():
-                if n_out == 2:
-                    # Binary output
-                    outputs[output_name] = layers.Dense(1, activation='sigmoid', name=output_name)(x)
-                else:
-                    # Multi-class output
-                    outputs[output_name] = layers.Dense(n_out, activation='softmax', name=output_name)(x)
-            self.output_names = list(output_dims.keys())
-            
-            self.model = keras.Model(inputs=inputs, outputs=outputs)
-            
-            # Compile with multiple losses
-            losses = {}
-            metrics_dict = {}
-            for output_name, n_out in output_dims.items():
-                if n_out == 2:
-                    losses[output_name] = 'binary_crossentropy'
-                    metrics_dict[output_name] = ['accuracy']
-                else:
-                    losses[output_name] = 'sparse_categorical_crossentropy'
-                    metrics_dict[output_name] = ['accuracy']
-            
-            self.model.compile(
-                optimizer='adam',
-                loss=losses,
-                metrics=metrics_dict
-            )
-        else:
-            # Single output architecture
-            outputs = layers.Dense(n_classes, activation='softmax')(x)
-            self.model = keras.Model(inputs=inputs, outputs=outputs)
-            
-            self.model.compile(
-                optimizer='adam',
-                loss='sparse_categorical_crossentropy',
-                metrics=['accuracy']
-            )
-        
-        logger.info(f"Built Transformer model with input shape {input_shape}, "
-                   f"multi_output={multi_output}")
-    
-    def prepare_multi_output_labels(self, label_strings: np.ndarray) -> Dict[str, np.ndarray]:
-        """Prepare multi-output labels from composite annotation strings
-        
-        Args:
-            label_strings: Array of annotation strings (e.g., from sequences)
-            
-        Returns:
-            Dictionary of label arrays for each output
-        """
-        # Define output categories
-        direction_map = {'incoming': 0, 'outgoing': 1}
-        altitude_map = {'ascending': 0, 'descending': 1, 'level': 2}
-        path_map = {'linear': 0, 'curved': 1}
-        maneuver_map = {'light_maneuver': 0, 'high_maneuver': 1}
-        speed_map = {'low_speed': 0, 'high_speed': 1}
-        
-        n_samples = len(label_strings)
-        labels = {
-            'direction': np.zeros(n_samples, dtype=np.float32),
-            'altitude': np.zeros(n_samples, dtype=np.int32),
-            'path': np.zeros(n_samples, dtype=np.float32),
-            'maneuver': np.zeros(n_samples, dtype=np.float32),
-            'speed': np.zeros(n_samples, dtype=np.float32)
-        }
-        
-        for idx, annotation in enumerate(label_strings):
-            tags = str(annotation).split(',')
-            tags = [tag.strip() for tag in tags]  # Strip whitespace
-            
-            # Direction
-            if 'incoming' in tags:
-                labels['direction'][idx] = 0
-            elif 'outgoing' in tags:
-                labels['direction'][idx] = 1
-            
-            # Altitude
-            if 'ascending' in tags or 'fixed_range_ascending' in tags:
-                labels['altitude'][idx] = 0
-            elif 'descending' in tags or 'fixed_range_descending' in tags:
-                labels['altitude'][idx] = 1
-            elif 'level' in tags or 'level_flight' in tags:
-                labels['altitude'][idx] = 2
-            
-            # Path
-            if 'linear' in tags:
-                labels['path'][idx] = 0
-            elif 'curved' in tags:
-                labels['path'][idx] = 1
-            
-            # Maneuver
-            if 'light_maneuver' in tags:
-                labels['maneuver'][idx] = 0
-            elif 'high_maneuver' in tags:
-                labels['maneuver'][idx] = 1
-            
-            # Speed
-            if 'low_speed' in tags:
-                labels['speed'][idx] = 0
-            elif 'high_speed' in tags:
-                labels['speed'][idx] = 1
-        
-        return labels
-    
-    def train(self, df_train: pd.DataFrame, df_val: pd.DataFrame = None,
-             use_multi_output: bool = False) -> Dict[str, Any]:
-        """Train Transformer model
-        
-        Args:
-            df_train: Training DataFrame
-            df_val: Validation DataFrame (optional)
-            use_multi_output: Whether to use multi-output architecture
-            
-        Returns:
-            Training metrics
-        """
-        import time
-        start_time = time.time()
-        
-        # Prepare enhanced feature columns for transformer
-        feature_cols = [
-            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
-            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
-            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
-        ]
-        feature_cols = [col for col in feature_cols if col in df_train.columns]
-        
-        if len(feature_cols) == 0:
-            raise ValueError("No valid feature columns found in the training data")
-        
-        logger.info(f"Using {len(feature_cols)} features for transformer model: {feature_cols}")
-        
-        # Check if data has composite labels
-        if use_multi_output or self._has_composite_labels(df_train):
-            use_multi_output = True
-            logger.info("Using multi-output architecture for composite labels")
-        
-        if use_multi_output:
-            # Generate sequences with label strings (not encoded)
-            X_train, y_train_strings, _ = self.sequence_generator.prepare_sequences(
-                df_train, feature_cols, return_label_strings=True
-            )
-            X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
-            
-            # Prepare multi-output labels from the sequence label strings
-            y_train_multi = self.prepare_multi_output_labels(y_train_strings)
-            
-            # Build multi-output model
-            output_dims = {
-                'direction': 2,
-                'altitude': 3,
-                'path': 2,
-                'maneuver': 2,
-                'speed': 2
-            }
-            self.build_model((X_train.shape[1], X_train.shape[2]), 0, 
-                           multi_output=True, output_dims=output_dims)
-            
-            # Prepare validation data
-            validation_data = None
-            if df_val is not None:
-                X_val, y_val_strings, _ = self.sequence_generator.prepare_sequences(
-                    df_val, feature_cols, return_label_strings=True
-                )
-                X_val = self.sequence_generator.normalize_sequences(X_val, fit=False)
-                y_val_multi = self.prepare_multi_output_labels(y_val_strings)
-                validation_data = (X_val, y_val_multi)
-            
-            # Train
-            self.history = self.model.fit(
-                X_train, y_train_multi,
-                epochs=self.params['epochs'],
-                batch_size=self.params['batch_size'],
-                validation_data=validation_data,
-                verbose=0
-            )
-        else:
-            # Single output training - use encoded labels
-            X_train, y_train, _ = self.sequence_generator.prepare_sequences(
-                df_train, feature_cols, return_label_strings=False
-            )
-            X_train = self.sequence_generator.normalize_sequences(X_train, fit=True)
-            
-            n_classes = len(self.sequence_generator.label_encoder.classes_)
-            self.build_model((X_train.shape[1], X_train.shape[2]), n_classes)
-            
-            # Prepare validation data
-            validation_data = None
-            if df_val is not None:
-                X_val, y_val, _ = self.sequence_generator.prepare_sequences(
-                    df_val, feature_cols, return_label_strings=False
-                )
-                X_val = self.sequence_generator.normalize_sequences(X_val, fit=False)
-                validation_data = (X_val, y_val)
-            
-            # Train
-            self.history = self.model.fit(
-                X_train, y_train,
-                epochs=self.params['epochs'],
-                batch_size=self.params['batch_size'],
-                validation_data=validation_data,
-                verbose=0
-            )
-        
-        training_time = time.time() - start_time
-        
-        # Collect metrics
-        metrics = {
-            'training_time': training_time,
-            'multi_output': use_multi_output,
-            'history': {}
-        }
-        
-        if use_multi_output:
-            # Multi-output metrics
-            for output_name in self.output_names:
-                acc_key = f'{output_name}_accuracy'
-                loss_key = f'{output_name}_loss'
-                if acc_key in self.history.history:
-                    metrics['history'][acc_key] = [float(x) for x in self.history.history[acc_key]]
-                    metrics['history'][loss_key] = [float(x) for x in self.history.history[loss_key]]
-                    metrics[f'train_{output_name}_accuracy'] = float(self.history.history[acc_key][-1])
-            
-            if validation_data:
-                for output_name in self.output_names:
-                    val_acc_key = f'val_{output_name}_accuracy'
-                    val_loss_key = f'val_{output_name}_loss'
-                    if val_acc_key in self.history.history:
-                        metrics['history'][val_acc_key] = [float(x) for x in self.history.history[val_acc_key]]
-                        metrics['history'][val_loss_key] = [float(x) for x in self.history.history[val_loss_key]]
-                        metrics[f'val_{output_name}_accuracy'] = float(self.history.history[val_acc_key][-1])
-        else:
-            # Single output metrics
-            metrics['train_accuracy'] = float(self.history.history['accuracy'][-1])
-            metrics['n_classes'] = len(self.sequence_generator.label_encoder.classes_)
-            metrics['classes'] = list(self.sequence_generator.label_encoder.classes_)
-            metrics['history']['accuracy'] = [float(x) for x in self.history.history['accuracy']]
-            metrics['history']['loss'] = [float(x) for x in self.history.history['loss']]
-            
-            if validation_data:
-                metrics['val_accuracy'] = float(self.history.history['val_accuracy'][-1])
-                metrics['history']['val_accuracy'] = [float(x) for x in self.history.history['val_accuracy']]
-                metrics['history']['val_loss'] = [float(x) for x in self.history.history['val_loss']]
-        
-        logger.info(f"Transformer training completed in {training_time:.2f}s")
-        
-        return metrics
-    
-    def _has_composite_labels(self, df: pd.DataFrame) -> bool:
-        """Check if DataFrame has composite labels"""
-        if 'Annotation' not in df.columns:
-            return False
-        sample_label = str(df['Annotation'].iloc[0])
-        return ',' in sample_label
-    
-    def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
-        """Evaluate Transformer model with enhanced features
-        
-        Args:
-            df_test: Test DataFrame
-            
-        Returns:
-            Evaluation metrics
-        """
-        feature_cols = [
-            'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az',
-            'speed', 'speed_2d', 'heading', 'range', 'range_rate', 
-            'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change'
-        ]
-        feature_cols = [col for col in feature_cols if col in df_test.columns]
-        
-        if self.multi_output:
-            # Multi-output evaluation - get label strings for sequences
-            X_test, y_test_strings, _ = self.sequence_generator.prepare_sequences(
-                df_test, feature_cols, return_label_strings=True
-            )
-            X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
-            
-            # Prepare multi-output labels from sequence label strings
-            y_test_multi = self.prepare_multi_output_labels(y_test_strings)
-            
-            # Predictions
-            y_pred_multi = self.model.predict(X_test, verbose=0)
-            
-            metrics = {'multi_output': True, 'outputs': {}}
-            
-            for output_name in self.output_names:
-                y_true = y_test_multi[output_name]
-                y_pred = y_pred_multi[output_name]
-                
-                if y_pred.shape[-1] == 1:
-                    # Binary classification
-                    y_pred_class = (y_pred > 0.5).astype(int).flatten()
-                    accuracy = accuracy_score(y_true, y_pred_class)
-                    f1 = f1_score(y_true, y_pred_class, average='binary', zero_division=0)
-                else:
-                    # Multi-class classification
-                    y_pred_class = np.argmax(y_pred, axis=1)
-                    accuracy = accuracy_score(y_true, y_pred_class)
-                    f1 = f1_score(y_true, y_pred_class, average='weighted', zero_division=0)
-                
-                metrics['outputs'][output_name] = {
-                    'accuracy': float(accuracy),
-                    'f1_score': float(f1)
-                }
-            
-            # Overall accuracy (average across outputs)
-            overall_acc = np.mean([m['accuracy'] for m in metrics['outputs'].values()])
-            metrics['accuracy'] = float(overall_acc)
-            metrics['f1_score'] = float(np.mean([m['f1_score'] for m in metrics['outputs'].values()]))
-            
-        else:
-            # Single output evaluation - use encoded labels
-            X_test, y_test, _ = self.sequence_generator.prepare_sequences(
-                df_test, feature_cols, return_label_strings=False
-            )
-            X_test = self.sequence_generator.normalize_sequences(X_test, fit=False)
-            
-            y_pred_proba = self.model.predict(X_test, verbose=0)
-            y_pred = np.argmax(y_pred_proba, axis=1)
-            
-            accuracy = accuracy_score(y_test, y_pred)
-            f1 = f1_score(y_test, y_pred, average='weighted', zero_division=0)
-            
-            cm = confusion_matrix(y_test, y_pred)
-            
-            classes = self.sequence_generator.label_encoder.classes_
-            # Get labels present in y_test and y_pred
-            labels_present = np.unique(np.concatenate([y_test, y_pred]))
-            target_names = [classes[i] for i in labels_present if i < len(classes)]
-            
-            report = classification_report(y_test, y_pred,
-                                          labels=labels_present,
-                                          target_names=target_names if len(target_names) == len(labels_present) else None,
-                                          output_dict=True, zero_division=0)
-            
-            metrics = {
-                'accuracy': float(accuracy),
-                'f1_score': float(f1),
-                'confusion_matrix': cm.tolist(),
-                'classification_report': report,
-                'classes': list(classes),
-                'multi_output': False
-            }
-        
-        logger.info(f"Transformer evaluation - Accuracy: {metrics['accuracy']:.4f}, "
-                   f"F1: {metrics['f1_score']:.4f}")
-        
-        return metrics
-    
-    def save(self, path: str) -> None:
-        """Save model to disk"""
-        ensure_dir(Path(path).parent)
-        self.model.save(path)
-        
-        # Save additional data
-        metadata_path = Path(path).parent / f"{Path(path).stem}_metadata.pkl"
-        joblib.dump({
-            'sequence_generator': self.sequence_generator,
-            'params': self.params,
-            'multi_output': self.multi_output,
-            'output_names': self.output_names
-        }, metadata_path)
-        
-        logger.info(f"Saved Transformer model to {path}")
-    
-    def load(self, path: str) -> None:
-        """Load model from disk"""
-        # Register custom layer
-        custom_objects = {'TransformerBlock': TransformerBlock}
-        self.model = keras.models.load_model(path, custom_objects=custom_objects)
-        
-        metadata_path = Path(path).parent / f"{Path(path).stem}_metadata.pkl"
-        data = joblib.load(metadata_path)
-        self.sequence_generator = data['sequence_generator']
-        self.params = data['params']
-        self.multi_output = data.get('multi_output', False)
-        self.output_names = data.get('output_names', [])
-        
-        logger.info(f"Loaded Transformer model from {path}")
-
-
-class TransformerMultiOutputModel:
-    """Transformer Multi-Output Model for tag prediction
-    
-    Uses a single transformer architecture with multiple output heads,
+    Uses a simple feedforward neural network architecture with multiple output heads,
     one for each output tag column. Suitable for the data format where
     columns A-K are inputs and columns L-AF are output tags.
     """
     
     def __init__(self, params: Dict[str, Any] = None):
-        """Initialize Transformer Multi-Output model
+        """Initialize Neural Network Multi-Output model
         
         Args:
             params: Model parameters
         """
         if not HAS_TENSORFLOW:
-            raise RuntimeError("TensorFlow is required for Transformer model")
+            raise RuntimeError("TensorFlow is required for Neural Network model")
         
         config = get_config()
-        default_params = config.get('ml_params.transformer', {})
+        default_params = config.get('ml_params.neural_network', {})
         self.params = {**default_params, **(params or {})}
         self.model = None
         self.adapter = MultiOutputDataAdapter()
@@ -1565,7 +1053,7 @@ class TransformerMultiOutputModel:
         
     def train(self, df_train: pd.DataFrame, df_val: pd.DataFrame = None,
              input_cols: List[str] = None, output_cols: List[str] = None) -> Dict[str, Any]:
-        """Train Transformer model for multi-output prediction
+        """Train Neural Network model for multi-output prediction
         
         Args:
             df_train: Training DataFrame
@@ -1662,13 +1150,13 @@ class TransformerMultiOutputModel:
             overall_val_acc = np.mean([m['val_accuracy'] for m in metrics['per_tag_metrics'].values() if 'val_accuracy' in m])
             metrics['val_accuracy'] = overall_val_acc
         
-        logger.info(f"Transformer Multi-Output training completed in {training_time:.2f}s")
+        logger.info(f"Neural Network Multi-Output training completed in {training_time:.2f}s")
         logger.info(f"Overall train accuracy: {overall_train_acc:.4f}")
         
         return metrics
     
     def _build_model(self, input_shape: Tuple[int, int]) -> None:
-        """Build Transformer model architecture with multiple output heads
+        """Build Neural Network model architecture with multiple output heads
         
         Args:
             input_shape: (sequence_length, n_features)
@@ -1676,32 +1164,16 @@ class TransformerMultiOutputModel:
         # Input layer
         inputs = keras.Input(shape=input_shape)
         
-        # Linear projection to d_model dimensions
-        x = layers.Dense(self.params['d_model'])(inputs)
+        # Flatten the sequence for feedforward processing
+        x = layers.Flatten()(inputs)
         
-        # Add positional encoding
-        seq_len = input_shape[0]
-        positions = tf.range(start=0, limit=seq_len, delta=1)
-        position_embedding = layers.Embedding(
-            input_dim=seq_len,
-            output_dim=self.params['d_model']
-        )(positions)
-        x = x + position_embedding
+        # Hidden layers with default parameters
+        hidden_units = self.params.get('hidden_units', [128, 64, 32])
+        dropout = self.params.get('dropout', 0.3)
         
-        # Stack Transformer blocks
-        for _ in range(self.params['num_layers']):
-            x = TransformerBlock(
-                d_model=self.params['d_model'],
-                num_heads=self.params['num_heads'],
-                ff_dim=self.params['ff_dim'],
-                dropout=self.params['dropout']
-            )(x)
-        
-        # Global average pooling
-        x = layers.GlobalAveragePooling1D()(x)
-        x = layers.Dropout(self.params['dropout'])(x)
-        x = layers.Dense(self.params['d_model'], activation='relu')(x)
-        x = layers.Dropout(self.params['dropout'])(x)
+        for units in hidden_units:
+            x = layers.Dense(units, activation='relu')(x)
+            x = layers.Dropout(dropout)(x)
         
         # Create output head for each tag (all binary classification)
         outputs = {}
@@ -1720,7 +1192,7 @@ class TransformerMultiOutputModel:
             metrics=metrics_dict
         )
         
-        logger.info(f"Built Transformer Multi-Output model with {len(self.output_tag_names)} output heads")
+        logger.info(f"Built Neural Network Multi-Output model with {len(self.output_tag_names)} output heads")
     
     def evaluate(self, df_test: pd.DataFrame) -> Dict[str, Any]:
         """Evaluate model on test data
@@ -1773,7 +1245,7 @@ class TransformerMultiOutputModel:
             'tag_names': self.output_tag_names
         }
         
-        logger.info(f"Transformer Multi-Output evaluation - Accuracy: {overall_acc:.4f}, F1: {overall_f1:.4f}")
+        logger.info(f"Neural Network Multi-Output evaluation - Accuracy: {overall_acc:.4f}, F1: {overall_f1:.4f}")
         
         return metrics
     
@@ -1828,13 +1300,11 @@ class TransformerMultiOutputModel:
             'params': self.params
         }, metadata_path)
         
-        logger.info(f"Saved Transformer Multi-Output model to {path}")
+        logger.info(f"Saved Neural Network Multi-Output model to {path}")
     
     def load(self, path: str) -> None:
         """Load model from disk"""
-        # Register custom layer
-        custom_objects = {'TransformerBlock': TransformerBlock}
-        self.model = keras.models.load_model(path, custom_objects=custom_objects)
+        self.model = keras.models.load_model(path)
         
         metadata_path = Path(path).parent / f"{Path(path).stem}_metadata.pkl"
         data = joblib.load(metadata_path)
@@ -1843,7 +1313,7 @@ class TransformerMultiOutputModel:
         self.output_tag_names = data['output_tag_names']
         self.params = data['params']
         
-        logger.info(f"Loaded Transformer Multi-Output model from {path}")
+        logger.info(f"Loaded Neural Network Multi-Output model from {path}")
 
 
 def load_trained_model(model_path: str) -> Tuple[Any, str]:
@@ -1874,8 +1344,8 @@ def load_trained_model(model_path: str) -> Tuple[Any, str]:
         if not HAS_TENSORFLOW:
             raise RuntimeError("TensorFlow is required to load neural network models")
         
-        # Use TransformerModel for all neural network models
-        model = TransformerModel()
+        # Use NeuralNetworkMultiOutputModel for all neural network models
+        model = NeuralNetworkMultiOutputModel()
         model.load(str(model_path))
         return model, 'neural_network'
     
@@ -1904,8 +1374,8 @@ def load_trained_model(model_path: str) -> Tuple[Any, str]:
         # Look for .h5 file in the same directory
         h5_files = list(model_path.parent.glob('*.h5'))
         if h5_files:
-            # Use the first .h5 file found (TransformerModel handles all neural network types)
-            model = TransformerModel()
+            # Use the first .h5 file found (NeuralNetworkMultiOutputModel handles all neural network types)
+            model = NeuralNetworkMultiOutputModel()
             model.load(str(h5_files[0]))
             return model, 'neural_network'
         else:
@@ -2390,7 +1860,7 @@ def _train_model_impl(model_name: str, data_path: str, output_dir: str,
     Supported Models:
         - random_forest: Random Forest classifier for tabular features
         - gradient_boosting: XGBoost gradient boosting for tabular features
-        - neural_network: Transformer with multi-head attention and multi-output support
+        - neural_network: Not supported in single-output mode, use train_multi_output_models() instead
     """
     
     # Validate input file exists
@@ -2544,37 +2014,13 @@ def _train_model_impl(model_name: str, data_path: str, output_dir: str,
         model_path = Path(output_dir) / 'gradient_boosting_model.pkl'
         model.save(str(model_path))
         
-    elif model_name == 'neural_network' or model_name == 'transformer':
-        if not HAS_TENSORFLOW:
-            raise RuntimeError("TensorFlow is required for Transformer model")
-        
-        model = TransformerModel(params)
-        
-        # Check if we should use multi-output mode
-        use_multi_output = False
-        if 'Annotation' in df_train_sub.columns:
-            sample_label = str(df_train_sub['Annotation'].iloc[0])
-            use_multi_output = ',' in sample_label
-        
-        train_metrics = model.train(df_train_sub, df_val, use_multi_output=use_multi_output)
-        
-        # Evaluate on test set if available
-        if df_test is not None and len(df_test) > 0:
-            test_metrics = model.evaluate(df_test)
-        else:
-            logger.warning("No test data available. Using training set for evaluation (not recommended).")
-            test_metrics = {
-                'accuracy': train_metrics.get('train_accuracy', 0.0),
-                'f1_score': 0.0,
-                'confusion_matrix': [],
-                'classification_report': {},
-                'classes': train_metrics.get('classes', []),
-                'multi_output': train_metrics.get('multi_output', False),
-                'note': 'Evaluated on training set due to insufficient data for test split'
-            }
-        
-        model_path = Path(output_dir) / 'neural_network_model.h5'
-        model.save(str(model_path))
+    elif model_name == 'neural_network':
+        # Neural network models are only available in multi-output mode
+        # Use train_multi_output_models() function instead
+        raise ValueError(
+            "Neural network models are only supported in multi-output mode. "
+            "Please use the train_multi_output_models() function or the multi-output training interface in the GUI."
+        )
         
     else:
         raise ValueError(f"Unsupported model: {model_name}")
@@ -2734,46 +2180,43 @@ def train_multi_output_models(data_path: str = "data/high_volume_simulation_labe
         metrics['random_forest'] = None
     
     # ========================================================================
-    # 3. Train Transformer Multi-Output Model
+    # 3. Train Neural Network Multi-Output Model
     # ========================================================================
     logger.info("=" * 80)
-    logger.info("3/3: TRAINING TRANSFORMER MULTI-OUTPUT MODEL")
+    logger.info("3/3: TRAINING NEURAL NETWORK MULTI-OUTPUT MODEL")
     logger.info("=" * 80)
     try:
-        model_transformer = TransformerMultiOutputModel(params={
-            'd_model': 64,
-            'num_heads': 4,
-            'ff_dim': 128,
-            'num_layers': 2,
-            'dropout': 0.2,
+        model_nn = NeuralNetworkMultiOutputModel(params={
+            'hidden_units': [128, 64, 32],
+            'dropout': 0.3,
             'epochs': 50,
             'batch_size': 32,
             'sequence_length': 20
         })
         
-        train_metrics_transformer = model_transformer.train(df_train, df_val)
-        test_metrics_transformer = model_transformer.evaluate(df_test)
+        train_metrics_nn = model_nn.train(df_train, df_val)
+        test_metrics_nn = model_nn.evaluate(df_test)
         
         # Save model
-        model_path_transformer = Path(output_dir) / 'transformer_multi_output' / 'model.h5'
-        model_transformer.save(str(model_path_transformer))
+        model_path_nn = Path(output_dir) / 'neural_network_multi_output' / 'model.h5'
+        model_nn.save(str(model_path_nn))
         
-        models['transformer'] = model_transformer
-        metrics['transformer'] = {
-            'train': train_metrics_transformer,
-            'test': test_metrics_transformer
+        models['neural_network'] = model_nn
+        metrics['neural_network'] = {
+            'train': train_metrics_nn,
+            'test': test_metrics_nn
         }
         
-        logger.info("✓ Transformer Multi-Output training completed")
-        logger.info(f"  Overall Test Accuracy: {test_metrics_transformer['accuracy']:.4f}")
-        logger.info(f"  Overall Test F1: {test_metrics_transformer['f1_score']:.4f}")
+        logger.info("✓ Neural Network Multi-Output training completed")
+        logger.info(f"  Overall Test Accuracy: {test_metrics_nn['accuracy']:.4f}")
+        logger.info(f"  Overall Test F1: {test_metrics_nn['f1_score']:.4f}")
         logger.info("")
         
     except Exception as e:
-        logger.error(f"✗ Transformer training failed: {e}")
+        logger.error(f"✗ Neural Network training failed: {e}")
         import traceback
         traceback.print_exc()
-        metrics['transformer'] = None
+        metrics['neural_network'] = None
     
     # ========================================================================
     # SUMMARY
