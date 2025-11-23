@@ -51,11 +51,31 @@ else()
         set(GEMMLOWP_ENABLE_NEON OFF CACHE BOOL "" FORCE)
     endif()
     
-    FetchContent_MakeAvailable(tensorflow)
-    
-    # Post-fetch fix: Disable eight_bit_int_gemm executable for MinGW
-    if((MINGW OR WIN32) AND TARGET eight_bit_int_gemm)
-        set_target_properties(eight_bit_int_gemm PROPERTIES EXCLUDE_FROM_ALL TRUE)
+    # Download TensorFlow without configuring it yet
+    FetchContent_GetProperties(tensorflow)
+    if(NOT tensorflow_POPULATED)
+        message(STATUS "Downloading TensorFlow Lite (this may take a while)...")
+        FetchContent_Populate(tensorflow)
+        
+        # Patch gemmlowp CMakeLists.txt for MinGW compatibility
+        if(MINGW OR WIN32)
+            message(STATUS "Applying MinGW compatibility patches...")
+            set(GEMMLOWP_CMAKE "${tensorflow_SOURCE_DIR}/tensorflow/lite/tools/cmake/modules/gemmlowp.cmake")
+            
+            if(EXISTS "${GEMMLOWP_CMAKE}")
+                file(READ "${GEMMLOWP_CMAKE}" GEMMLOWP_CONTENT)
+                # Comment out the eight_bit_int_gemm target
+                string(REPLACE 
+                    "add_executable(eight_bit_int_gemm" 
+                    "# DISABLED FOR MINGW: add_executable(eight_bit_int_gemm"
+                    GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                file(WRITE "${GEMMLOWP_CMAKE}" "${GEMMLOWP_CONTENT}")
+                message(STATUS "Patched gemmlowp.cmake to disable eight_bit_int_gemm")
+            endif()
+        endif()
+        
+        # Now configure TensorFlow Lite
+        add_subdirectory(${tensorflow_SOURCE_DIR}/tensorflow/lite ${tensorflow_BINARY_DIR})
     endif()
     
     set(TensorFlowLite_INCLUDE_DIRS 
