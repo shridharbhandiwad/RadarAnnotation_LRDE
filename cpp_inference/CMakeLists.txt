@@ -46,7 +46,6 @@ else()
         
         # Add min/max macros for cpuinfo compatibility
         add_compile_definitions(NOMINMAX)
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dmax(a,b)=((a)>(b)?(a):(b)) -Dmin(a,b)=((a)<(b)?(a):(b))")
         
         message(STATUS "MinGW/Windows detected - gemmlowp and cpuinfo patches will be applied")
     endif()
