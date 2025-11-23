@@ -1,0 +1,94 @@
+================================================================================
+  QUICK BUILD INSTRUCTIONS FOR WINDOWS (MinGW)
+================================================================================
+
+The eight_bit_int_gemm error has been fixed with multiple fallback solutions.
+
+--------------------------------------------------------------------------------
+RECOMMENDED METHOD: Use the new build script
+--------------------------------------------------------------------------------
+
+1. Open Command Prompt or PowerShell
+2. Navigate to the cpp_inference directory:
+   cd /d "D:\Zoppler Projects\RadarAnnotation_LRDE\cpp_inference"
+
+3. Run the new build script:
+   build_mingw_fixed.bat
+
+That's it! The script will:
+  ✓ Clean the build directory
+  ✓ Configure CMake
+  ✓ Automatically patch gemmlowp if needed
+  ✓ Build the executables
+
+--------------------------------------------------------------------------------
+ALTERNATIVE METHOD: If the script fails
+--------------------------------------------------------------------------------
+
+If build_mingw_fixed.bat doesn't work, try the manual approach:
+
+1. Clean build:
+   rmdir /s /q build
+   mkdir build
+   cd build
+
+2. Configure (first time - will download dependencies):
+   cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+
+3. Check if gemmlowp was downloaded:
+   dir gemmlowp\CMakeLists.txt
+
+4. If gemmlowp exists, patch it:
+   - Open: build\gemmlowp\CMakeLists.txt
+   - Find lines containing "eight_bit_int_gemm"
+   - Comment them out with # at the start of the line
+   - Save and close
+
+5. Reconfigure:
+   cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+
+6. Build:
+   cmake --build . --config Release
+
+--------------------------------------------------------------------------------
+WHAT'S NEW?
+--------------------------------------------------------------------------------
+
+✓ Updated CMakeLists.txt automatically excludes the problematic target
+✓ New build_mingw_fixed.bat script with automatic patching
+✓ Comprehensive documentation in WINDOWS_MINGW_BUILD_FIX.md
+✓ Multiple fallback solutions if one method fails
+
+--------------------------------------------------------------------------------
+VERIFICATION
+--------------------------------------------------------------------------------
+
+After a successful build, you should have:
+  ✓ radar_tagger.exe
+  ✓ radar_tagger_multioutput.exe
+
+Both in the build directory or a subdirectory.
+
+--------------------------------------------------------------------------------
+WARNINGS YOU CAN IGNORE
+--------------------------------------------------------------------------------
+
+These warnings are normal and safe to ignore:
+  • pragma comment warnings
+  • pragma warning warnings  
+  • HAS_STRPTIME undefined warnings
+  • cast between incompatible function types warnings
+  • format string warnings
+
+--------------------------------------------------------------------------------
+NEED MORE HELP?
+--------------------------------------------------------------------------------
+
+See detailed documentation:
+  • WINDOWS_MINGW_BUILD_FIX.md - Complete troubleshooting guide
+  • MINGW_BUILD_GUIDE.md - General MinGW build information
+  • MINGW_GEMMLOWP_FIX.md - Technical details about the fix
+
+--------------------------------------------------------------------------------
+LAST UPDATED: 2025-11-23
+================================================================================

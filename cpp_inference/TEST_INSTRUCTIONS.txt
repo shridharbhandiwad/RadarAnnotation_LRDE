@@ -1,0 +1,130 @@
+================================================================================
+  TEST INSTRUCTIONS - Please test the build and report results
+================================================================================
+
+The gemmlowp eight_bit_int_gemm issue has been fixed with multiple solutions.
+Please test the build and let us know if it works!
+
+--------------------------------------------------------------------------------
+TEST PROCEDURE
+--------------------------------------------------------------------------------
+
+1. Open Command Prompt or PowerShell as Administrator (recommended)
+
+2. Navigate to your project directory:
+   cd /d "D:\Zoppler Projects\RadarAnnotation_LRDE\cpp_inference"
+
+3. Run the new build script:
+   build_mingw_fixed.bat
+
+4. Observe the output and check for:
+   ✓ "Successfully patched gemmlowp" message (if gemmlowp was found)
+   ✓ "Build completed successfully!" message at the end
+   ✓ radar_tagger.exe and radar_tagger_multioutput.exe files created
+
+5. If the build fails:
+   a. Note the error message
+   b. Check if it's still the eight_bit_int_gemm error
+   c. Try the manual method described in QUICK_BUILD_INSTRUCTIONS.txt
+
+--------------------------------------------------------------------------------
+WHAT TO REPORT
+--------------------------------------------------------------------------------
+
+Please provide:
+
+✓ SUCCESS: If the build works
+  - "Build succeeded with build_mingw_fixed.bat"
+  - Confirm both .exe files are created
+  - Note any warnings (warnings are usually OK)
+
+✗ FAILURE: If the build still fails
+  - Copy the complete error output
+  - Specify which method you tried
+  - Check if gemmlowp directory exists in build/
+
+--------------------------------------------------------------------------------
+ALTERNATIVE TESTS
+--------------------------------------------------------------------------------
+
+If build_mingw_fixed.bat doesn't work, please try:
+
+Test A: Manual patching
+  1. Follow steps in QUICK_BUILD_INSTRUCTIONS.txt
+  2. Report if manual patching works
+
+Test B: Without patching (CMakeLists.txt fix only)
+  1. Use the original build_mingw.bat
+  2. See if the automatic exclusion works
+
+--------------------------------------------------------------------------------
+EXPECTED OUTCOMES
+--------------------------------------------------------------------------------
+
+Best case:
+  ✓ build_mingw_fixed.bat completes successfully
+  ✓ Both executables are created
+  ✓ Only warnings about pragmas (safe to ignore)
+
+Acceptable:
+  ✓ Manual patching method works
+  ✓ Both executables are created
+  ✓ Build time may be longer
+
+Needs more work:
+  ✗ Same eight_bit_int_gemm error persists
+  → Please share the complete error log
+
+--------------------------------------------------------------------------------
+VERIFICATION COMMANDS
+--------------------------------------------------------------------------------
+
+After build, verify executables exist:
+  dir build\*.exe
+  dir build\Release\*.exe
+  dir build\Debug\*.exe
+
+Check executable sizes (should be several MB):
+  dir build\radar_tagger*.exe /s
+
+Test if executables run:
+  build\radar_tagger.exe --help
+  build\radar_tagger_multioutput.exe --help
+
+--------------------------------------------------------------------------------
+DEBUGGING COMMANDS (if build fails)
+--------------------------------------------------------------------------------
+
+Check MinGW installation:
+  where gcc
+  where g++
+  where mingw32-make
+  gcc --version
+
+Check CMake:
+  cmake --version
+  
+Check if gemmlowp was downloaded:
+  dir build\gemmlowp\CMakeLists.txt
+
+Check if eight_bit_int_gemm target exists:
+  findstr /s "eight_bit_int_gemm" build\*.cmake
+
+--------------------------------------------------------------------------------
+FILES TO CHECK
+--------------------------------------------------------------------------------
+
+After build (success or failure), these files contain useful info:
+
+build/CMakeCache.txt
+  → CMake configuration cache
+
+build/_deps/gemmlowp-build/CMakeFiles/
+  → gemmlowp target files (check if eight_bit_int_gemm exists)
+
+build/gemmlowp/CMakeLists.txt
+  → Check if patching was applied (look for DISABLED_FOR_MINGW comments)
+
+--------------------------------------------------------------------------------
+Thank you for testing! Your feedback helps improve the build system.
+================================================================================

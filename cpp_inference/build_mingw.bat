@@ -1,7 +1,15 @@
 @echo off
 REM Build script for RadarTagger C++ with MinGW
+REM
+REM IMPORTANT: If you encounter eight_bit_int_gemm errors,
+REM            please use build_mingw_fixed.bat instead!
+REM
 
 echo === Building C++ Application with MinGW ===
+echo.
+echo NOTE: If this fails with eight_bit_int_gemm errors,
+echo       use build_mingw_fixed.bat for automatic patching.
+echo.
 
 REM Clean previous build
 if exist build (
