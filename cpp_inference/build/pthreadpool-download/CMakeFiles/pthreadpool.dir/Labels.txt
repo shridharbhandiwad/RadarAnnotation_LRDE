@@ -1,0 +1,14 @@
+# Target labels
+ pthreadpool
+# Source files and their labels
+/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/pthreadpool
+/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/pthreadpool.rule
+/workspace/cpp_inference/build/pthreadpool-download/CMakeFiles/pthreadpool-complete.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-build.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-configure.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-download.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-install.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-mkdir.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-patch.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-test.rule
+/workspace/cpp_inference/build/pthreadpool-download/pthreadpool-prefix/src/pthreadpool-stamp/pthreadpool-update.rule
