@@ -37,7 +37,7 @@ cd "$BUILD_DIR"
 # Configure
 echo ""
 echo "Configuring project..."
-cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_BUILD_TYPE=Release
 
 # Build
 echo ""

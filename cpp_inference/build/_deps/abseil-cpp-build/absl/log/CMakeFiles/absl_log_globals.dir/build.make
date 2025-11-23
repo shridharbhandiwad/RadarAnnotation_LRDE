@@ -73,15 +73,15 @@ _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o: _d
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o: abseil-cpp/absl/log/globals.cc
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o: _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o -MF CMakeFiles/absl_log_globals.dir/globals.cc.o.d -o CMakeFiles/absl_log_globals.dir/globals.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.o -MF CMakeFiles/absl_log_globals.dir/globals.cc.o.d -o CMakeFiles/absl_log_globals.dir/globals.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/absl_log_globals.dir/globals.cc.i"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc > CMakeFiles/absl_log_globals.dir/globals.cc.i
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc > CMakeFiles/absl_log_globals.dir/globals.cc.i
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_globals.dir/globals.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/absl_log_globals.dir/globals.cc.s"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc -o CMakeFiles/absl_log_globals.dir/globals.cc.s
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/globals.cc -o CMakeFiles/absl_log_globals.dir/globals.cc.s
 
 # Object files for target absl_log_globals
 absl_log_globals_OBJECTS = \
