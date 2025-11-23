@@ -68,10 +68,11 @@ else()
                 file(READ "${TFLITE_CMAKE}" TFLITE_CONTENT)
                 
                 # Check if already patched
-                string(FIND "${TFLITE_CONTENT}" "PATCHED_FOR_MINGW_MAX_MIN" ALREADY_PATCHED)
+                string(FIND "${TFLITE_CONTENT}" "PATCHED_FOR_MINGW_MAX_MIN" ALREADY_PATCHED_MAX_MIN)
+                string(FIND "${TFLITE_CONTENT}" "PATCHED_FOR_MINGW_GEMMLOWP" ALREADY_PATCHED_GEMMLOWP)
                 
-                if(ALREADY_PATCHED EQUAL -1)
-                    message(STATUS "Patching TensorFlow Lite CMakeLists.txt for MinGW compatibility...")
+                if(ALREADY_PATCHED_MAX_MIN EQUAL -1)
+                    message(STATUS "Patching TensorFlow Lite CMakeLists.txt for MinGW compatibility (max/min macros)...")
                     
                     # Remove problematic max/min macro definitions that contain > and < characters
                     # These cause issues on Windows due to shell redirection operators in cmd.exe
@@ -163,96 +164,66 @@ else()
                         TFLITE_CONTENT "${TFLITE_CONTENT}")
                     
                     file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
-                    message(STATUS "  -> Successfully patched TensorFlow Lite CMakeLists.txt")
+                    message(STATUS "  -> Successfully patched TensorFlow Lite CMakeLists.txt (max/min macros)")
                 else()
-                    message(STATUS "TensorFlow Lite CMakeLists.txt already patched, skipping...")
+                    message(STATUS "TensorFlow Lite CMakeLists.txt already patched (max/min), skipping...")
+                endif()
+                
+                # Now inject gemmlowp patching code into TensorFlow Lite CMakeLists.txt
+                if(ALREADY_PATCHED_GEMMLOWP EQUAL -1)
+                    file(READ "${TFLITE_CMAKE}" TFLITE_CONTENT)
+                    
+                    message(STATUS "Injecting gemmlowp patching code into TensorFlow Lite CMakeLists.txt...")
+                    
+                    # Find where gemmlowp is populated and inject patching code right after FetchContent_Populate
+                    # The injection will patch gemmlowp CMakeLists.txt before add_subdirectory processes it
+                    set(GEMMLOWP_PATCH_CODE "\n# PATCHED_FOR_MINGW_GEMMLOWP: Disable eight_bit_int_gemm for MinGW\nif(MINGW OR WIN32)\n  FetchContent_GetProperties(gemmlowp)\n  if(gemmlowp_POPULATED)\n    set(GEMMLOWP_CMAKE \"\${gemmlowp_SOURCE_DIR}/CMakeLists.txt\")\n    if(EXISTS \"\${GEMMLOWP_CMAKE}\")\n      file(READ \"\${GEMMLOWP_CMAKE}\" GEMMLOWP_CONTENT)\n      string(FIND \"\${GEMMLOWP_CONTENT}\" \"DISABLED_FOR_MINGW\" GEMMLOWP_ALREADY_PATCHED)\n      if(GEMMLOWP_ALREADY_PATCHED EQUAL -1)\n        message(STATUS \"Patching gemmlowp to disable eight_bit_int_gemm...\")\n        string(REGEX REPLACE \"add_library\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"add_executable\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"target_link_libraries\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        string(REGEX REPLACE \"set_target_properties\\\\(eight_bit_int_gemm\" \"# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm\" GEMMLOWP_CONTENT \"\${GEMMLOWP_CONTENT}\")\n        file(WRITE \"\${GEMMLOWP_CMAKE}\" \"\${GEMMLOWP_CONTENT}\")\n        message(STATUS \"  -> gemmlowp patched successfully\")\n      endif()\n    endif()\n  endif()\nendif()\n")
+                    
+                    # Insert the patch code after FetchContent_MakeAvailable(gemmlowp) or FetchContent_Populate(gemmlowp)
+                    # Try to find FetchContent_MakeAvailable first
+                    string(FIND "${TFLITE_CONTENT}" "FetchContent_MakeAvailable(gemmlowp)" FETCHCONTENT_POS)
+                    if(NOT FETCHCONTENT_POS EQUAL -1)
+                        # Find the end of the line
+                        string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_POS REVERSE ${FETCHCONTENT_POS})
+                        math(EXPR INSERT_POS "${FETCHCONTENT_POS} + 34")  # Length of "FetchContent_MakeAvailable(gemmlowp)"
+                        # Find next newline after FetchContent_MakeAvailable
+                        string(FIND "${TFLITE_CONTENT}" "\n" NEWLINE_AFTER ${INSERT_POS})
+                        if(NOT NEWLINE_AFTER EQUAL -1)
+                            math(EXPR INSERT_POS "${NEWLINE_AFTER} + 1")
+                            string(SUBSTRING "${TFLITE_CONTENT}" 0 ${INSERT_POS} BEFORE_PART)
+                            string(SUBSTRING "${TFLITE_CONTENT}" ${INSERT_POS} -1 AFTER_PART)
+                            set(TFLITE_CONTENT "${BEFORE_PART}${GEMMLOWP_PATCH_CODE}${AFTER_PART}")
+                            file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
+                            message(STATUS "  -> Successfully injected gemmlowp patching code")
+                        endif()
+                    else()
+                        # Try to find populate_tflite_source_vars (which is called after dependencies are fetched)
+                        string(FIND "${TFLITE_CONTENT}" "populate_tflite_source_vars" POPULATE_POS)
+                        if(NOT POPULATE_POS EQUAL -1)
+                            # Insert before populate_tflite_source_vars
+                            string(SUBSTRING "${TFLITE_CONTENT}" 0 ${POPULATE_POS} BEFORE_PART)
+                            string(SUBSTRING "${TFLITE_CONTENT}" ${POPULATE_POS} -1 AFTER_PART)
+                            set(TFLITE_CONTENT "${BEFORE_PART}${GEMMLOWP_PATCH_CODE}\n${AFTER_PART}")
+                            file(WRITE "${TFLITE_CMAKE}" "${TFLITE_CONTENT}")
+                            message(STATUS "  -> Successfully injected gemmlowp patching code")
+                        else()
+                            message(WARNING "Could not find suitable injection point for gemmlowp patch in TensorFlow Lite CMakeLists.txt")
+                        endif()
+                    endif()
+                else()
+                    message(STATUS "TensorFlow Lite CMakeLists.txt already has gemmlowp patch, skipping...")
                 endif()
             endif()
         endif()
         
         # Now add TensorFlow Lite to the build
         add_subdirectory(${tensorflow_SOURCE_DIR}/tensorflow/lite ${tensorflow_BINARY_DIR})
-        
-        # Apply gemmlowp patch AFTER TensorFlow Lite subdirectory is added
-        # This allows us to patch the downloaded gemmlowp before it's built
-        if(MINGW OR WIN32)
-            set(GEMMLOWP_DIR "${CMAKE_BINARY_DIR}/_deps/gemmlowp-src")
-            if(EXISTS "${GEMMLOWP_DIR}/CMakeLists.txt")
-                file(READ "${GEMMLOWP_DIR}/CMakeLists.txt" GEMMLOWP_CONTENT)
-                
-                # Check if already patched
-                string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
-                
-                if(ALREADY_PATCHED EQUAL -1)
-                    message(STATUS "Patching gemmlowp CMakeLists.txt to disable eight_bit_int_gemm...")
-                    
-                    # Comment out add_library for eight_bit_int_gemm
-                    string(REGEX REPLACE 
-                        "add_library\\(eight_bit_int_gemm"
-                        "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
-                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                    
-                    # Comment out add_executable for eight_bit_int_gemm    
-                    string(REGEX REPLACE 
-                        "add_executable\\(eight_bit_int_gemm"
-                        "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
-                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                        
-                    # Comment out any target_link_libraries for eight_bit_int_gemm
-                    string(REGEX REPLACE 
-                        "target_link_libraries\\(eight_bit_int_gemm"
-                        "# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm"
-                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                    
-                    # Comment out any set_target_properties for eight_bit_int_gemm
-                    string(REGEX REPLACE 
-                        "set_target_properties\\(eight_bit_int_gemm"
-                        "# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm"
-                        GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                    
-                    file(WRITE "${GEMMLOWP_DIR}/CMakeLists.txt" "${GEMMLOWP_CONTENT}")
-                    message(STATUS "  -> Successfully patched gemmlowp CMakeLists.txt")
-                else()
-                    message(STATUS "gemmlowp CMakeLists.txt already patched, skipping...")
-                endif()
-            else()
-                message(STATUS "gemmlowp not found at ${GEMMLOWP_DIR}, checking alternate locations...")
-                # Try alternate location
-                set(GEMMLOWP_DIR "${CMAKE_BINARY_DIR}/gemmlowp")
-                if(EXISTS "${GEMMLOWP_DIR}/CMakeLists.txt")
-                    message(STATUS "Found gemmlowp at ${GEMMLOWP_DIR}, applying patch...")
-                    file(READ "${GEMMLOWP_DIR}/CMakeLists.txt" GEMMLOWP_CONTENT)
-                    
-                    string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
-                    if(ALREADY_PATCHED EQUAL -1)
-                        string(REGEX REPLACE 
-                            "add_library\\(eight_bit_int_gemm"
-                            "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
-                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                        string(REGEX REPLACE 
-                            "add_executable\\(eight_bit_int_gemm"
-                            "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
-                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                        string(REGEX REPLACE 
-                            "target_link_libraries\\(eight_bit_int_gemm"
-                            "# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm"
-                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                        string(REGEX REPLACE 
-                            "set_target_properties\\(eight_bit_int_gemm"
-                            "# DISABLED_FOR_MINGW: set_target_properties(eight_bit_int_gemm"
-                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
-                        file(WRITE "${GEMMLOWP_DIR}/CMakeLists.txt" "${GEMMLOWP_CONTENT}")
-                        message(STATUS "  -> Successfully patched gemmlowp CMakeLists.txt at alternate location")
-                    endif()
-                endif()
-            endif()
-        endif()
     endif()
     
-    # Post-configuration fix for MinGW: Exclude eight_bit_int_gemm from the build
-    # This is a backup in case the target still exists
+    # Post-configuration backup: Exclude eight_bit_int_gemm from the build if it still exists
+    # This is a backup in case the injected patch didn't work
     if((MINGW OR WIN32) AND TARGET eight_bit_int_gemm)
-        message(STATUS "Excluding eight_bit_int_gemm target from MinGW build")
+        message(STATUS "Excluding eight_bit_int_gemm target from MinGW build (backup method)")
         set_target_properties(eight_bit_int_gemm PROPERTIES 
             EXCLUDE_FROM_ALL TRUE
             EXCLUDE_FROM_DEFAULT_BUILD TRUE
