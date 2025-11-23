@@ -1,7 +1,8 @@
-"""Convert Keras Models to TensorFlow Lite Format for C++ Deployment
+"""Convert Models to Deployment Formats for C++
 
-TensorFlow Lite provides excellent C++ support and is optimized for deployment.
-This script converts trained Keras models to TFLite format.
+This script converts trained models to formats suitable for C++ deployment:
+- Keras models (LSTM/Transformer) -> TensorFlow Lite
+- XGBoost models -> ONNX format (recommended for tree-based models)
 """
 
 import os
@@ -20,9 +21,14 @@ try:
     HAS_TF = True
 except ImportError:
     HAS_TF = False
-    print("ERROR: TensorFlow is required for model conversion")
-    print("Install with: pip install tensorflow")
-    sys.exit(1)
+
+try:
+    import onnx
+    import onnxmltools
+    from onnxmltools.convert.common.data_types import FloatTensorType
+    HAS_ONNX = True
+except ImportError:
+    HAS_ONNX = False
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -243,18 +249,229 @@ def create_test_data(output_dir: str, n_samples: int = 10, sequence_length: int 
     return test_data
 
 
+def convert_xgboost_to_onnx(model_path: str, output_dir: str, model_name: str = "xgboost"):
+    """Convert XGBoost model to ONNX format
+    
+    Args:
+        model_path: Path to .pkl file containing XGBoost model
+        output_dir: Output directory for ONNX files
+        model_name: Base name for output files
+    
+    Returns:
+        List of paths to converted ONNX files
+    """
+    if not HAS_ONNX:
+        logger.error("ONNX tools not installed. Install with:")
+        logger.error("  pip install onnx onnxmltools skl2onnx")
+        return []
+    
+    logger.info(f"Loading XGBoost model from: {model_path}")
+    
+    try:
+        import xgboost as xgb
+    except ImportError:
+        logger.error("XGBoost not installed. Install with: pip install xgboost")
+        return []
+    
+    # Load model
+    try:
+        with open(model_path, 'rb') as f:
+            data = pickle.load(f)
+        
+        # Extract models (multi-output: one model per tag)
+        if isinstance(data, dict) and 'models' in data:
+            models = data['models']
+            scaler = data.get('scaler')
+            tag_names = list(models.keys())
+            
+            logger.info(f"Found multi-output XGBoost with {len(models)} models")
+            logger.info(f"Tags: {tag_names}")
+            
+            onnx_files = []
+            json_files = []
+            
+            # Convert each model
+            for tag_name, model in models.items():
+                tag_output_dir = os.path.join(output_dir, tag_name)
+                os.makedirs(tag_output_dir, exist_ok=True)
+                
+                onnx_path = os.path.join(tag_output_dir, f'{model_name}_{tag_name}.onnx')
+                json_path = os.path.join(tag_output_dir, f'{model_name}_{tag_name}.json')
+                
+                # Try ONNX conversion first
+                onnx_success = False
+                try:
+                    # Determine input shape
+                    n_features = model.n_features_in_ if hasattr(model, 'n_features_in_') else 18
+                    initial_type = [('input', FloatTensorType([None, n_features]))]
+                    
+                    # Get the booster from the XGBoost model
+                    # This is more reliable for ONNX conversion
+                    booster = model.get_booster()
+                    
+                    # Convert to ONNX
+                    onnx_model = onnxmltools.convert_xgboost(booster, initial_types=initial_type)
+                    
+                    # Save ONNX model
+                    onnx.save_model(onnx_model, onnx_path)
+                    logger.info(f"✓ Converted {tag_name} to ONNX: {onnx_path}")
+                    
+                    # Get file size
+                    file_size = os.path.getsize(onnx_path) / 1024
+                    logger.info(f"  Model size: {file_size:.2f} KB")
+                    
+                    onnx_files.append(onnx_path)
+                    onnx_success = True
+                    
+                except Exception as e:
+                    logger.warning(f"ONNX conversion failed for {tag_name}: {e}")
+                    logger.info(f"  Falling back to JSON format...")
+                
+                # Fall back to JSON export if ONNX fails
+                if not onnx_success:
+                    try:
+                        model.save_model(json_path)
+                        logger.info(f"✓ Exported {tag_name} to JSON: {json_path}")
+                        
+                        # Get file size
+                        file_size = os.path.getsize(json_path) / 1024
+                        logger.info(f"  Model size: {file_size:.2f} KB")
+                        
+                        json_files.append(json_path)
+                        
+                    except Exception as e:
+                        logger.error(f"Failed to export {tag_name} to JSON: {e}")
+                        continue
+            
+            # Export scaler parameters
+            if scaler is not None:
+                scaler_data = {
+                    'mean': scaler.mean_.tolist(),
+                    'scale': scaler.scale_.tolist(),
+                    'n_features': len(scaler.mean_)
+                }
+                scaler_path = os.path.join(output_dir, 'scaler_params.json')
+                with open(scaler_path, 'w') as f:
+                    json.dump(scaler_data, f, indent=2)
+                logger.info(f"Exported scaler parameters: {scaler_path}")
+            
+            # Export model metadata
+            model_files = {}
+            export_format = 'mixed' if (onnx_files and json_files) else ('onnx' if onnx_files else 'json')
+            
+            for tag in tag_names:
+                if any(tag in path for path in onnx_files):
+                    model_files[tag] = f'{tag}/{model_name}_{tag}.onnx'
+                else:
+                    model_files[tag] = f'{tag}/{model_name}_{tag}.json'
+            
+            metadata = {
+                'model_type': 'xgboost_multioutput',
+                'format': export_format,
+                'num_models': len(models),
+                'tag_names': tag_names,
+                'has_scaler': scaler is not None,
+                'model_files': model_files,
+                'onnx_models': len(onnx_files),
+                'json_models': len(json_files)
+            }
+            metadata_path = os.path.join(output_dir, 'model_metadata.json')
+            with open(metadata_path, 'w') as f:
+                json.dump(metadata, f, indent=2)
+            logger.info(f"Exported metadata: {metadata_path}")
+            
+            return onnx_files + json_files
+            
+        else:
+            logger.error("Unknown model format. Expected dict with 'models' key.")
+            return []
+            
+    except Exception as e:
+        logger.error(f"Failed to convert XGBoost model: {e}")
+        import traceback
+        traceback.print_exc()
+        return []
+
+
 def main():
-    parser = argparse.ArgumentParser(description='Convert Keras models to TensorFlow Lite for C++ deployment')
-    parser.add_argument('--model-type', type=str, choices=['lstm', 'transformer', 'both'],
+    parser = argparse.ArgumentParser(description='Convert models to formats suitable for C++ deployment')
+    parser.add_argument('--model-type', type=str, choices=['lstm', 'transformer', 'both', 'xgboost'],
                        default='lstm', help='Which model to convert')
+    parser.add_argument('--model-path', type=str,
+                       help='Path to model file (required for xgboost)')
     parser.add_argument('--output-dir', type=str, default='cpp_models',
-                       help='Output directory for TFLite models')
+                       help='Output directory for converted models')
     
     args = parser.parse_args()
+    
+    # Check TensorFlow requirement for neural network models
+    if args.model_type in ['lstm', 'transformer', 'both'] and not HAS_TF:
+        logger.error("ERROR: TensorFlow is required for LSTM/Transformer model conversion")
+        logger.error("Install with: pip install tensorflow")
+        return 1
+    
+    # Check ONNX requirement for XGBoost models
+    if args.model_type == 'xgboost' and not HAS_ONNX:
+        logger.error("ERROR: ONNX tools are required for XGBoost model conversion")
+        logger.error("Install with: pip install onnx onnxmltools skl2onnx")
+        return 1
     
     # Create output directory
     os.makedirs(args.output_dir, exist_ok=True)
     
+    # Handle XGBoost conversion
+    if args.model_type == 'xgboost':
+        if not args.model_path:
+            logger.error("ERROR: --model-path is required for xgboost model type")
+            return 1
+        
+        if not os.path.exists(args.model_path):
+            logger.error(f"ERROR: Model file not found: {args.model_path}")
+            return 1
+        
+        logger.info(f"\n{'='*60}")
+        logger.info("Converting XGBoost Model to ONNX Format")
+        logger.info(f"{'='*60}")
+        logger.info("")
+        logger.info("Note: XGBoost models are tree-based and cannot be converted to TensorFlow Lite.")
+        logger.info("ONNX format is the recommended deployment format for XGBoost in C++.")
+        logger.info("")
+        
+        model_files = convert_xgboost_to_onnx(args.model_path, args.output_dir)
+        
+        if model_files:
+            logger.info(f"\n{'='*60}")
+            logger.info("Conversion Complete!")
+            logger.info(f"{'='*60}")
+            logger.info(f"Models saved to: {args.output_dir}")
+            logger.info(f"Number of models converted: {len(model_files)}")
+            
+            # Count ONNX vs JSON files
+            onnx_count = sum(1 for f in model_files if f.endswith('.onnx'))
+            json_count = sum(1 for f in model_files if f.endswith('.json'))
+            
+            if onnx_count > 0:
+                logger.info(f"  - ONNX models: {onnx_count}")
+            if json_count > 0:
+                logger.info(f"  - JSON models: {json_count}")
+            
+            logger.info("")
+            logger.info("Next Steps:")
+            if onnx_count > 0:
+                logger.info("For ONNX models:")
+                logger.info("  1. Use ONNX Runtime C++ API for inference")
+                logger.info("  2. See: https://onnxruntime.ai/docs/get-started/with-cpp.html")
+            if json_count > 0:
+                logger.info("For JSON models:")
+                logger.info("  1. Use XGBoost C++ API to load and run inference")
+                logger.info("  2. Link with libxgboost")
+                logger.info("  3. See: https://xgboost.readthedocs.io/en/latest/")
+            return 0
+        else:
+            logger.error("Conversion failed")
+            return 1
+    
+    # Handle Keras model conversion (LSTM/Transformer)
     models_to_convert = []
     
     if args.model_type in ['transformer', 'both']:
