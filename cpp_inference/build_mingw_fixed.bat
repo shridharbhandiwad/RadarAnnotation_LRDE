@@ -59,31 +59,31 @@ if exist "gemmlowp\CMakeLists.txt" (
     echo cmake_file = "gemmlowp/CMakeLists.txt" >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
     echo try: >> patch_gemmlowp.py
-    echo     with open(cmake_file, 'r') as f: >> patch_gemmlowp.py
-    echo         content = f.read() >> patch_gemmlowp.py
+    echo     with open^(cmake_file, 'r'^) as f: >> patch_gemmlowp.py
+    echo         content = f.read^(^) >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
     echo     # Comment out add_library for eight_bit_int_gemm >> patch_gemmlowp.py
-    echo     content = re.sub(r'add_library\(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      '# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      content) >> patch_gemmlowp.py
+    echo     content = re.sub^(r'add_library\^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      '# DISABLED_FOR_MINGW: add_library^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      content^) >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
     echo     # Comment out add_executable for eight_bit_int_gemm >> patch_gemmlowp.py
-    echo     content = re.sub(r'add_executable\(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      '# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      content) >> patch_gemmlowp.py
+    echo     content = re.sub^(r'add_executable\^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      '# DISABLED_FOR_MINGW: add_executable^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      content^) >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
     echo     # Comment out target_link_libraries for eight_bit_int_gemm >> patch_gemmlowp.py
-    echo     content = re.sub(r'target_link_libraries\(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      '# DISABLED_FOR_MINGW: target_link_libraries(eight_bit_int_gemm', >> patch_gemmlowp.py
-    echo                      content) >> patch_gemmlowp.py
+    echo     content = re.sub^(r'target_link_libraries\^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      '# DISABLED_FOR_MINGW: target_link_libraries^(eight_bit_int_gemm', >> patch_gemmlowp.py
+    echo                      content^) >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
-    echo     with open(cmake_file, 'w') as f: >> patch_gemmlowp.py
-    echo         f.write(content) >> patch_gemmlowp.py
+    echo     with open^(cmake_file, 'w'^) as f: >> patch_gemmlowp.py
+    echo         f.write^(content^) >> patch_gemmlowp.py
     echo. >> patch_gemmlowp.py
-    echo     print("Successfully patched gemmlowp CMakeLists.txt") >> patch_gemmlowp.py
+    echo     print^("Successfully patched gemmlowp CMakeLists.txt"^) >> patch_gemmlowp.py
     echo except Exception as e: >> patch_gemmlowp.py
-    echo     print(f"Error patching: {e}") >> patch_gemmlowp.py
-    echo     sys.exit(1) >> patch_gemmlowp.py
+    echo     print^(f"Error patching: ^{e^}"^) >> patch_gemmlowp.py
+    echo     sys.exit^(1^) >> patch_gemmlowp.py
     
     REM Run the patch script
     python patch_gemmlowp.py
