@@ -1,0 +1,114 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         QUICK FIX: eight_bit_int_gemm Compilation Error (MinGW)           ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+ERROR YOU'RE SEEING:
+────────────────────
+c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with 
+multiple files
+
+FIX (3 seconds):
+────────────────
+cd cpp_inference
+fix_and_build_windows.bat clean
+
+THAT'S IT! ✓
+
+═══════════════════════════════════════════════════════════════════════════════
+
+WHAT IT DOES:
+─────────────
+✓ Cleans build directory
+✓ Configures CMake
+✓ Applies patch to disable problematic target
+✓ Builds the project
+✓ Verifies executables
+
+TIME REQUIRED:
+──────────────
+First build: ~20-45 minutes (downloading dependencies)
+Subsequent:  ~5-10 minutes
+
+OUTPUT LOCATION:
+────────────────
+cpp_inference\build\radar_tagger.exe
+cpp_inference\build\radar_tagger_multioutput.exe
+
+═══════════════════════════════════════════════════════════════════════════════
+
+IF IT STILL FAILS:
+──────────────────
+
+1. Check prerequisites:
+   > g++ --version       (Should show MinGW-w64)
+   > cmake --version     (Should be 3.16 or newer)
+   > git --version
+
+2. Read detailed docs:
+   > See: cpp_inference\EIGHT_BIT_INT_GEMM_FIX.md
+
+3. Try manual fix:
+   > See: cpp_inference\WINDOWS_BUILD_INSTRUCTIONS.txt
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FAQ:
+────
+
+Q: Will this affect functionality?
+A: NO. The disabled target is only a test tool, not needed for inference.
+
+Q: Will this work on Linux/macOS?
+A: Linux/macOS don't have this issue. Build normally.
+
+Q: Is this safe?
+A: YES. Only disables an unused test target. All TensorFlow Lite features work.
+
+Q: Do I need to rerun this after updates?
+A: Only if you clean the build directory or update TensorFlow Lite.
+
+Q: Can I undo this?
+A: YES. Just delete the build directory and rebuild.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+────────────────
+
+Problem: "mingw32-make not found"
+Fix: Install MinGW-w64 and add to PATH
+
+Problem: "cmake not found"
+Fix: Install CMake 3.16+ and add to PATH
+
+Problem: Download fails
+Fix: Check internet connection, firewall settings
+
+Problem: Still getting errors
+Fix: Run with verbose output:
+     cd cpp_inference\build
+     cmake --build . --config Release -- VERBOSE=1
+
+═══════════════════════════════════════════════════════════════════════════════
+
+NEED MORE HELP?
+───────────────
+
+Documentation files (in cpp_inference/):
+  • EIGHT_BIT_INT_GEMM_FIX.md ............ Detailed technical docs
+  • WINDOWS_BUILD_INSTRUCTIONS.txt ....... Step-by-step guide
+  • README.md ............................ General usage
+  
+Summary (in workspace root):
+  • EIGHT_BIT_INT_GEMM_SOLUTION_SUMMARY.md
+  • FIX_SUMMARY_EIGHT_BIT_INT_GEMM.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Remember: fix_and_build_windows.bat clean
+
+That's the magic command! ✨
+
+═══════════════════════════════════════════════════════════════════════════════
