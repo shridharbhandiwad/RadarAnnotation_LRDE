@@ -73,15 +73,15 @@ _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrum
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o: ruy/ruy/profiler/instrumentation.cc
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o: _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o -MF CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o.d -o CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o -MF CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o.d -o CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc > CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc > CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.i
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc -o CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.cc -o CMakeFiles/ruy_profiler_instrumentation.dir/instrumentation.cc.s
 
 # Object files for target ruy_profiler_instrumentation
 ruy_profiler_instrumentation_OBJECTS = \
