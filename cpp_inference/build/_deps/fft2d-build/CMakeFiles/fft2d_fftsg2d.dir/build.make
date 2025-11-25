@@ -73,15 +73,15 @@ _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o: _deps/ff
 _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o: fft2d/fftsg2d.c
 _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o: _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o"
-	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o -MF CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o.d -o CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o -c /workspace/cpp_inference/build/fft2d/fftsg2d.c
+	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o -MF CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o.d -o CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.o -c /workspace/cpp_inference/build/fft2d/fftsg2d.c
 
 _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.i"
-	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/fft2d/fftsg2d.c > CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.i
+	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/cpp_inference/build/fft2d/fftsg2d.c > CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.i
 
 _deps/fft2d-build/CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.s"
-	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/fft2d/fftsg2d.c -o CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.s
+	cd /workspace/cpp_inference/build/_deps/fft2d-build && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/cpp_inference/build/fft2d/fftsg2d.c -o CMakeFiles/fft2d_fftsg2d.dir/__/__/fft2d/fftsg2d.c.s
 
 # Object files for target fft2d_fftsg2d
 fft2d_fftsg2d_OBJECTS = \

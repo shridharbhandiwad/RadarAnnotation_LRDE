@@ -73,29 +73,29 @@ _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o: _deps/ruy-b
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o: ruy/ruy/kernel_arm32.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o -MF CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o.d -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o -c /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o -MF CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o.d -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.o -c /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc > CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc > CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/kernel_arm32.cc -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm32.cc.s
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/flags.make
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o: ruy/ruy/kernel_arm64.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o -MF CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o.d -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o -c /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o -MF CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o.d -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.o -c /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc > CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc > CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/kernel_arm64.cc -o CMakeFiles/ruy_kernel_arm.dir/kernel_arm64.cc.s
 
 # Object files for target ruy_kernel_arm
 ruy_kernel_arm_OBJECTS = \
