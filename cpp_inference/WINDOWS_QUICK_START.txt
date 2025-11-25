@@ -1,0 +1,186 @@
+================================================================================
+  WINDOWS BUILD - QUICK START
+================================================================================
+
+ERROR YOU'RE SEEING:
+  -- Configuring incomplete, errors occurred!
+  -- Disabled eight_bit_int_gemm target (method 2)
+  ERROR: CMake configuration failed!
+
+SOLUTION: Choose ONE method below
+
+================================================================================
+  METHOD 1: ONNX-ONLY BUILD (Recommended - Fastest & Most Reliable)
+================================================================================
+
+  cd cpp_inference
+  build_onnx_only.bat clean
+
+  ✅ Takes 5-10 minutes
+  ✅ Very reliable
+  ✅ Avoids TensorFlow Lite issues
+  ⚠️  No TensorFlow Lite model support
+
+================================================================================
+  METHOD 2: ROBUST BUILD (Full Features)
+================================================================================
+
+  cd cpp_inference
+  build_windows_robust.bat clean
+
+  ✅ Automatic diagnostics
+  ✅ Supports all features
+  ✅ Clear error messages
+  ⚠️  Takes 20-30 minutes
+
+================================================================================
+  METHOD 3: MSVC BUILD (Visual Studio)
+================================================================================
+
+  Open "x64 Native Tools Command Prompt for VS"
+  cd cpp_inference
+  build_msvc.bat clean
+
+  ✅ Best Windows compatibility
+  ✅ Good for debugging
+  ⚠️  Requires Visual Studio
+  ⚠️  Takes 20-30 minutes
+
+================================================================================
+  METHOD 4: WSL2 (Most Reliable)
+================================================================================
+
+  # First time setup:
+  wsl --install
+  # Restart computer
+
+  # Then:
+  wsl
+  cd /mnt/c/path/to/cpp_inference
+  ./build.sh
+
+  ✅ Most reliable
+  ✅ No Windows issues
+  ✅ Faster builds
+  ⚠️  Requires WSL2 setup
+
+================================================================================
+  METHOD 5: PRE-BUILT BINARIES (No Build Needed)
+================================================================================
+
+  1. Go to GitHub repository
+  2. Click "Actions" tab
+  3. Download latest artifact
+  4. Extract and use
+
+  ✅ No compilation needed
+  ✅ Instant
+  ⚠️  Requires GitHub access
+
+================================================================================
+  RECOMMENDATIONS
+================================================================================
+
+  First time?        → Try METHOD 1 (ONNX-only)
+  Need all features? → Try METHOD 2 (Robust build)
+  Have Visual Studio?→ Try METHOD 3 (MSVC)
+  Keep failing?      → Use METHOD 4 (WSL2)
+  End user?          → Use METHOD 5 (Pre-built)
+
+================================================================================
+  VERIFICATION
+================================================================================
+
+  After successful build:
+
+  cd cpp_inference\build
+
+  # For MSVC builds:
+  cd Release
+
+  # Test:
+  radar_tagger.exe --help
+
+  You should see usage information (not "command not found")
+
+================================================================================
+  IF IT STILL FAILS
+================================================================================
+
+  1. Run diagnostics:
+     build_windows_robust.bat
+
+  2. Read detailed guide:
+     WINDOWS_BUILD_COMPLETE_GUIDE.md
+
+  3. Check error log:
+     build\cmake_config_output.txt
+
+  4. Try alternative:
+     See WINDOWS_BUILD_ALTERNATIVES.md
+
+  5. Open GitHub issue with:
+     - Windows version
+     - CMake version (cmake --version)
+     - Compiler version (g++ --version OR cl)
+     - Full error log
+
+================================================================================
+  DOCUMENTATION
+================================================================================
+
+  Quick overview:      WINDOWS_FIX_README.md
+  Complete guide:      WINDOWS_BUILD_COMPLETE_GUIDE.md
+  Alternatives:        WINDOWS_BUILD_ALTERNATIVES.md
+  Summary:             /WINDOWS_BUILD_FIX_SUMMARY.md (in root)
+
+================================================================================
+  TROUBLESHOOTING QUICK REFERENCE
+================================================================================
+
+  "cmake not found"
+    → Install CMake from https://cmake.org/download/
+
+  "compiler not found"
+    → Install MinGW from https://winlibs.com/
+    → OR install Visual Studio
+
+  "FetchContent failed"
+    → Check internet connection
+    → Try VPN if GitHub blocked
+
+  "eight_bit_int_gemm error"
+    → Use build_onnx_only.bat instead
+
+  "out of memory"
+    → Close other applications
+    → Use cmake --build . -- -j1
+
+================================================================================
+  WHAT YOU'LL GET
+================================================================================
+
+  After successful build:
+
+  ✅ radar_tagger.exe              (single-output inference)
+  ✅ radar_tagger_multioutput.exe  (multi-output inference)
+  ✅ onnxruntime.dll               (runtime dependency)
+
+  Location: cpp_inference\build\
+       (or: cpp_inference\build\Release\ for MSVC)
+
+================================================================================
+  SUPPORT
+================================================================================
+
+  Documentation: See files listed above
+  GitHub Issues: Open an issue with error details
+  Maintainer:    Contact project maintainer
+
+================================================================================
+
+Last Updated: November 25, 2025
+Version: 1.0
+Status: Complete and tested
+
+================================================================================

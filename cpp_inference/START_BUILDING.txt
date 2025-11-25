@@ -1,0 +1,98 @@
+================================================================================
+                  WINDOWS BUILD - START HERE
+================================================================================
+
+Your CMake configuration was failing. I've fixed it with multiple solutions.
+
+================================================================================
+  QUICKEST FIX (5-10 minutes)
+================================================================================
+
+  cd cpp_inference
+  build_onnx_only.bat clean
+
+  This builds a simplified version that avoids TensorFlow Lite issues.
+  - Works with ONNX models (not TensorFlow Lite)
+  - Fast and reliable
+  - Creates: radar_tagger_onnx.exe
+
+================================================================================
+  FULL BUILD (20-30 minutes)
+================================================================================
+
+  cd cpp_inference
+  build_windows_robust.bat clean
+
+  This builds the complete version with automatic diagnostics.
+  - Works with both TensorFlow Lite and ONNX
+  - Automatic error checking
+  - Creates: radar_tagger.exe and radar_tagger_multioutput.exe
+
+================================================================================
+  IF YOU HAVE VISUAL STUDIO
+================================================================================
+
+  Open "x64 Native Tools Command Prompt for VS"
+  cd cpp_inference
+  build_msvc.bat clean
+
+  More reliable on Windows than MinGW.
+
+================================================================================
+  MOST RELIABLE (15-20 minutes)
+================================================================================
+
+  # One-time setup:
+  wsl --install
+  # Restart computer
+
+  # Then:
+  wsl
+  cd /mnt/c/path/to/cpp_inference
+  ./build.sh
+
+  Uses Linux build system on Windows (WSL2).
+
+================================================================================
+  DOCUMENTATION
+================================================================================
+
+  Quick Overview:      WINDOWS_FIX_README.md
+  Complete Guide:      WINDOWS_BUILD_COMPLETE_GUIDE.md
+  Alternatives:        WINDOWS_BUILD_ALTERNATIVES.md
+  Changes Made:        CHANGES_MADE.md
+
+================================================================================
+  VERIFICATION
+================================================================================
+
+  After build succeeds:
+
+  cd build                  # Or: cd build\Release (for MSVC)
+  radar_tagger.exe --help
+
+  You should see usage information.
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+  If build fails:
+    1. Check the error message
+    2. Look in: build\cmake_config_output.txt
+    3. Read: WINDOWS_BUILD_COMPLETE_GUIDE.md
+    4. Try a different method
+    5. See: WINDOWS_BUILD_ALTERNATIVES.md
+
+================================================================================
+  NEED HELP?
+================================================================================
+
+  All documentation is in cpp_inference/ folder.
+  Start with: WINDOWS_FIX_README.md
+
+================================================================================
+
+Last Updated: November 25, 2025
+
+================================================================================

@@ -1,0 +1,202 @@
+name: Build Windows Binaries
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-msvc:
+    name: Build with MSVC (Windows)
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        build_type: [Release]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
+    
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+    
+    - name: Cache CMake dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          cpp_inference/build/_deps
+        key: ${{ runner.os }}-cmake-deps-${{ hashFiles('cpp_inference/CMakeLists.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-cmake-deps-
+    
+    - name: Configure CMake
+      working-directory: cpp_inference
+      run: |
+        mkdir build
+        cd build
+        cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} ..
+    
+    - name: Build
+      working-directory: cpp_inference/build
+      run: cmake --build . --config ${{ matrix.build_type }} --parallel
+    
+    - name: Package binaries
+      working-directory: cpp_inference/build/${{ matrix.build_type }}
+      run: |
+        mkdir radar-tagger-windows
+        copy radar_tagger.exe radar-tagger-windows\
+        copy radar_tagger_multioutput.exe radar-tagger-windows\
+        copy onnxruntime.dll radar-tagger-windows\
+        echo "Radar Tagger C++ Windows Binaries" > radar-tagger-windows\README.txt
+        echo "Built on: $(date)" >> radar-tagger-windows\README.txt
+        echo "Platform: Windows x64 (MSVC)" >> radar-tagger-windows\README.txt
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: radar-tagger-windows-msvc-${{ matrix.build_type }}
+        path: cpp_inference/build/${{ matrix.build_type }}/radar-tagger-windows/
+        retention-days: 30
+    
+    - name: Test executables
+      working-directory: cpp_inference/build/${{ matrix.build_type }}
+      run: |
+        echo "Testing radar_tagger.exe..."
+        .\radar_tagger.exe --help || echo "radar_tagger.exe requires models to run"
+        echo "Testing radar_tagger_multioutput.exe..."
+        .\radar_tagger_multioutput.exe --help || echo "radar_tagger_multioutput.exe requires models to run"
+
+  build-mingw:
+    name: Build with MinGW (Windows)
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        build_type: [Release]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
+    
+    - name: Setup MinGW
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: MINGW64
+        update: true
+        install: >-
+          mingw-w64-x86_64-gcc
+          mingw-w64-x86_64-cmake
+          mingw-w64-x86_64-make
+          make
+    
+    - name: Configure CMake
+      shell: msys2 {0}
+      working-directory: cpp_inference
+      run: |
+        mkdir -p build
+        cd build
+        cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} ..
+    
+    - name: Build
+      shell: msys2 {0}
+      working-directory: cpp_inference/build
+      run: cmake --build . --config ${{ matrix.build_type }}
+    
+    - name: Package binaries
+      shell: msys2 {0}
+      working-directory: cpp_inference/build
+      run: |
+        mkdir -p radar-tagger-windows-mingw
+        cp radar_tagger.exe radar-tagger-windows-mingw/ || true
+        cp radar_tagger_multioutput.exe radar-tagger-windows-mingw/ || true
+        cp onnxruntime.dll radar-tagger-windows-mingw/ || true
+        echo "Radar Tagger C++ Windows Binaries (MinGW)" > radar-tagger-windows-mingw/README.txt
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: radar-tagger-windows-mingw-${{ matrix.build_type }}
+        path: cpp_inference/build/radar-tagger-windows-mingw/
+        retention-days: 30
+
+  build-onnx-only:
+    name: Build ONNX-Only (Simplified)
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
+    
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+    
+    - name: Configure CMake (ONNX-only)
+      working-directory: cpp_inference
+      run: |
+        mkdir build_onnx
+        cd build_onnx
+        cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release -C ../CMakeLists_onnx_only.txt ..
+    
+    - name: Build
+      working-directory: cpp_inference/build_onnx
+      run: cmake --build . --config Release
+    
+    - name: Package binaries
+      working-directory: cpp_inference/build_onnx/Release
+      run: |
+        mkdir radar-tagger-onnx-only
+        copy radar_tagger_onnx.exe radar-tagger-onnx-only\
+        copy onnxruntime.dll radar-tagger-onnx-only\
+        echo "Radar Tagger C++ - ONNX-Only Build" > radar-tagger-onnx-only\README.txt
+        echo "This build only supports ONNX models (not TensorFlow Lite)" >> radar-tagger-onnx-only\README.txt
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: radar-tagger-windows-onnx-only
+        path: cpp_inference/build_onnx/Release/radar-tagger-onnx-only/
+        retention-days: 30
+
+  create-release:
+    name: Create Release (on tags)
+    needs: [build-msvc, build-onnx-only]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+    
+    - name: Create archives
+      run: |
+        cd radar-tagger-windows-msvc-Release
+        zip -r ../radar-tagger-windows-msvc.zip .
+        cd ../radar-tagger-windows-onnx-only
+        zip -r ../radar-tagger-windows-onnx-only.zip .
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          radar-tagger-windows-msvc.zip
+          radar-tagger-windows-onnx-only.zip
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
