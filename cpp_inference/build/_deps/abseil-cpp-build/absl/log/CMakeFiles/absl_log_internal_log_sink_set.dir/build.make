@@ -73,15 +73,15 @@ _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/in
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o: abseil-cpp/absl/log/internal/log_sink_set.cc
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o: _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o -MF CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o.d -o CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o -MF CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o.d -o CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.i"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc > CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.i
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc > CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.i
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.s"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc -o CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.s
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_sink_set.cc -o CMakeFiles/absl_log_internal_log_sink_set.dir/internal/log_sink_set.cc.s
 
 # Object files for target absl_log_internal_log_sink_set
 absl_log_internal_log_sink_set_OBJECTS = \

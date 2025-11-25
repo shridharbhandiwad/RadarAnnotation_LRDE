@@ -73,15 +73,15 @@ _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o: abseil-cpp/absl/log/internal/log_format.cc
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o: _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o -MF CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o.d -o CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o -MF CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o.d -o CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.i"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc > CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.i
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc > CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.i
 
 _deps/abseil-cpp-build/absl/log/CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.s"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc -o CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.s
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/log && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/log/internal/log_format.cc -o CMakeFiles/absl_log_internal_format.dir/internal/log_format.cc.s
 
 # Object files for target absl_log_internal_format
 absl_log_internal_format_OBJECTS = \
