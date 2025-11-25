@@ -4,6 +4,9 @@
 
 This project has been configured for **Windows 10/11** with **MinGW-w64**.
 
+### 🔧 Latest Fix (Nov 25, 2025)
+**Fixed:** CMake configuration failure on Windows. The build system now correctly links to `onnxruntime.lib` (import library) instead of `onnxruntime.dll`. See `WINDOWS_CMAKE_FIX.md` for technical details.
+
 ---
 
 ## 🚀 Quick Start (2 minutes)
@@ -86,12 +89,15 @@ set PATH=C:\mingw64\bin;%PATH%
 Download from https://cmake.org/download/  
 Select "Add CMake to system PATH" during install
 
-### Build fails
+### Build fails with "Configuring incomplete, errors occurred!"
+This has been fixed! The issue was incorrect ONNX Runtime linking.
 ```cmd
 cd cpp_inference
 rmdir /s /q build
 rebuild_windows.bat
 ```
+
+If you still have issues, see **WINDOWS_CMAKE_FIX.md** for detailed troubleshooting.
 
 ### Still stuck?
 Read **WINDOWS_BUILD_QUICK_FIX.md** for more solutions
