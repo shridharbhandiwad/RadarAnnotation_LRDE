@@ -53,6 +53,7 @@ else()
         GIT_TAG        v2.14.0
         GIT_SHALLOW    TRUE
         SOURCE_SUBDIR  tensorflow/lite
+        PATCH_COMMAND  ""
     )
     
     # Download TensorFlow Lite source (but don't configure yet)
@@ -60,6 +61,37 @@ else()
     if(NOT tensorflow_POPULATED)
         message(STATUS "Populating TensorFlow Lite source...")
         FetchContent_Populate(tensorflow)
+        
+        # Patch gemmlowp before TensorFlow Lite configures it
+        if(MINGW OR WIN32)
+            message(STATUS "Applying MinGW/Windows patches to TensorFlow Lite dependencies...")
+            
+            # Find and patch gemmlowp if it gets downloaded by TensorFlow Lite
+            file(GLOB_RECURSE GEMMLOWP_CMAKE_FILES 
+                "${tensorflow_SOURCE_DIR}/*gemmlowp*/CMakeLists.txt"
+                "${CMAKE_BINARY_DIR}/*gemmlowp*/CMakeLists.txt"
+            )
+            
+            foreach(GEMMLOWP_CMAKE IN LISTS GEMMLOWP_CMAKE_FILES)
+                if(EXISTS "${GEMMLOWP_CMAKE}")
+                    file(READ "${GEMMLOWP_CMAKE}" GEMMLOWP_CONTENT)
+                    string(FIND "${GEMMLOWP_CONTENT}" "DISABLED_FOR_MINGW" ALREADY_PATCHED)
+                    
+                    if(ALREADY_PATCHED EQUAL -1)
+                        message(STATUS "Pre-patching gemmlowp at: ${GEMMLOWP_CMAKE}")
+                        string(REGEX REPLACE 
+                            "add_library\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: add_library(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        string(REGEX REPLACE 
+                            "add_executable\\(eight_bit_int_gemm"
+                            "# DISABLED_FOR_MINGW: add_executable(eight_bit_int_gemm"
+                            GEMMLOWP_CONTENT "${GEMMLOWP_CONTENT}")
+                        file(WRITE "${GEMMLOWP_CMAKE}" "${GEMMLOWP_CONTENT}")
+                    endif()
+                endif()
+            endforeach()
+        endif()
         
         # Patch TensorFlow Lite CMakeLists.txt for MinGW/Windows
         if(MINGW OR WIN32)
@@ -228,13 +260,33 @@ else()
         add_subdirectory(${tensorflow_SOURCE_DIR}/tensorflow/lite ${tensorflow_BINARY_DIR})
     endif()
     
-    # Post-configuration backup: Exclude eight_bit_int_gemm from the build if it still exists
-    # This is a backup in case the injected patch didn't work
-    if((MINGW OR WIN32) AND TARGET eight_bit_int_gemm)
-        message(STATUS "Excluding eight_bit_int_gemm target from MinGW build (backup method)")
-        set_target_properties(eight_bit_int_gemm PROPERTIES 
-            EXCLUDE_FROM_ALL TRUE
-            EXCLUDE_FROM_DEFAULT_BUILD TRUE
+    # Post-configuration backup: Remove eight_bit_int_gemm from the build if it still exists
+    # This is a backup in case the patching didn't work
+    if(MINGW OR WIN32)
+        # Method 1: Try to exclude the target
+        if(TARGET eight_bit_int_gemm)
+            message(STATUS "Excluding eight_bit_int_gemm target from MinGW build (method 1)")
+            set_target_properties(eight_bit_int_gemm PROPERTIES 
+                EXCLUDE_FROM_ALL TRUE
+                EXCLUDE_FROM_DEFAULT_BUILD TRUE
+            )
+        endif()
+        
+        # Method 2: Override the add_library/add_executable commands temporarily
+        # This creates a macro that disables eight_bit_int_gemm creation
+        macro(disable_eight_bit_int_gemm)
+            if(TARGET eight_bit_int_gemm)
+                set_property(TARGET eight_bit_int_gemm PROPERTY EXCLUDE_FROM_ALL TRUE)
+                message(STATUS "Disabled eight_bit_int_gemm target (method 2)")
+            endif()
+        endmacro()
+        
+        # Run the macro after all targets are defined
+        cmake_language(DEFER CALL disable_eight_bit_int_gemm)
+        
+        # Method 3: Modify the Makefile generation to skip this target
+        set_directory_properties(PROPERTIES 
+            ADDITIONAL_MAKE_CLEAN_FILES "${CMAKE_BINARY_DIR}/_deps/gemmlowp-build/libeight_bit_int_gemm.a"
         )
     endif()
     

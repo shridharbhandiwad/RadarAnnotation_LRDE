@@ -20,43 +20,54 @@ This C++ application provides real-time radar trajectory classification with mul
 
 ### Windows MinGW Users - Important Note ⚠️
 
-If you're building on Windows with MinGW and encounter the `eight_bit_int_gemm` compilation error, use the automated fix script:
+If you're building on Windows with MinGW and encounter the `eight_bit_int_gemm` compilation error:
 
-```batch
-fix_and_build_windows.bat clean
+```
+c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
 ```
 
-See [EIGHT_BIT_INT_GEMM_FIX.md](EIGHT_BIT_INT_GEMM_FIX.md) for details.
+**Use the fixed build script:**
+
+```batch
+build_with_gemmlowp_fix.bat clean
+```
+
+**Or if the error occurs mid-build:**
+
+```batch
+emergency_fix.bat
+```
+
+**Documentation:**
+- 🚀 [QUICK_FIX_GEMMLOWP.md](QUICK_FIX_GEMMLOWP.md) - Quick 3-step fix
+- 📖 [GEMMLOWP_FINAL_FIX.md](GEMMLOWP_FINAL_FIX.md) - Complete technical details
 
 ### Quick Build
 
 **Linux/macOS:**
 ```bash
-# Create build directory
+# Recommended: Use the fixed build script
+./build_with_gemmlowp_fix.sh clean
+
+# Or manual build (may encounter issues with TensorFlow Lite dependencies):
 mkdir build && cd build
-
-# Configure
 cmake ..
-
-# Build
 cmake --build . --config Release
-
-# The executable will be in build/radar_tagger
 ```
 
 **Windows (MinGW):**
 ```batch
-# Use the automated build script (recommended)
-fix_and_build_windows.bat
+# Recommended: Use the fixed build script (handles gemmlowp issues automatically)
+build_with_gemmlowp_fix.bat clean
 
-# Or manual build:
+# Or manual build (NOT recommended, may fail with gemmlowp errors):
 mkdir build
 cd build
 cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release
-
-# The executable will be in build\radar_tagger.exe
 ```
+
+**Build Time:** First build takes 10-20 minutes (downloads and compiles dependencies). Subsequent builds take 1-2 minutes.
 
 ### Build Options
 
