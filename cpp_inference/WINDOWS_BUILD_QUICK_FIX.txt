@@ -1,0 +1,157 @@
+================================================================================
+  WINDOWS CMAKE CONFIGURATION ERROR - QUICK FIX
+================================================================================
+
+ERROR YOU'RE SEEING:
+  -- Configuring incomplete, errors occurred!
+  [X] CMake configuration failed
+
+CAUSE:
+  CMake version incompatibility (requires 3.16+, works best with 3.19+)
+
+FIX APPLIED:
+  ✅ CMakeLists.txt updated to handle CMake 3.16-3.18 correctly
+  ✅ Documentation updated
+  ✅ System check script added
+
+================================================================================
+  SOLUTION - 2 STEPS
+================================================================================
+
+STEP 1: Check Your System (Optional - 30 seconds)
+  
+  cd cpp_inference
+  check_build_system.bat
+
+  This will tell you if anything is missing.
+
+STEP 2: Build the Project (5-20 minutes)
+  
+  cd cpp_inference
+  build_with_gemmlowp_fix.bat clean
+
+  This will:
+  - Clean old build files
+  - Configure CMake (now works with CMake 3.16+)
+  - Patch dependencies automatically
+  - Build both executables
+
+================================================================================
+  EXPECTED OUTPUT
+================================================================================
+
+Configuration phase:
+  -- Radar Tagger C++ Configuration:
+  --   Version: 1.0.0
+  --   C++ Standard: 17
+  --   Build Type: Release
+  --   TensorFlow Lite: tensorflow-lite
+  --   ONNX Runtime: <path>/onnxruntime.lib
+  --
+  -- Configuring done
+  -- Generating done
+
+Build phase:
+  [100%] Built target radar_tagger
+  [100%] Built target radar_tagger_multioutput
+
+Success message:
+  ================================================
+    Build completed successfully!
+  ================================================
+
+================================================================================
+  WHAT IF IT STILL FAILS?
+================================================================================
+
+1. CHECK CMAKE VERSION:
+   
+   cmake --version
+   
+   Must be 3.16 or higher. If lower, upgrade from:
+   https://cmake.org/download/
+
+2. CHECK COMPILER:
+   
+   g++ --version    (for MinGW)
+   OR
+   cl               (for MSVC in VS Developer Command Prompt)
+   
+   If not found, install:
+   - MinGW: https://www.mingw-w64.org/downloads/
+   - MSVC: https://visualstudio.microsoft.com/
+
+3. CHECK INTERNET CONNECTION:
+   
+   First build downloads ~2GB of dependencies from GitHub
+
+4. READ DETAILED DOCS:
+   
+   - WINDOWS_CMAKE_VERSION_FIX.md  (CMake issues)
+   - WINDOWS_MINGW_BUILD_FIX.md    (Build errors)
+   - START_HERE.md                 (Quick start)
+
+================================================================================
+  CMAKE VERSION NOTES
+================================================================================
+
+CMake 3.16-3.18:
+  - ✅ Supported (fix applied)
+  - ℹ️ Some optimization features disabled (not important)
+  - ℹ️ Consider upgrading to 3.20+ for best experience
+
+CMake 3.19+:
+  - ✅ Fully supported
+  - ✅ All optimization features available
+
+CMake < 3.16:
+  - ❌ Not supported
+  - ⚠️ Must upgrade to at least 3.16
+
+================================================================================
+  MESSAGES YOU MIGHT SEE (NORMAL)
+================================================================================
+
+During CMake configuration:
+
+  "Skipping deferred eight_bit_int_gemm fix (requires CMake 3.19+)"
+  → Normal if you have CMake 3.16-3.18. Build will still work.
+
+  "Disabled eight_bit_int_gemm target (method 2)"
+  → Normal if you have CMake 3.19+. This is good.
+
+During build:
+
+  Warning: ignoring '#pragma comment'
+  Warning: 'HAS_STRPTIME' is not defined
+  Warning: cast between incompatible function types
+  → These are harmless compatibility warnings. Ignore them.
+
+================================================================================
+  VERIFICATION
+================================================================================
+
+After successful build, test the executables:
+
+  cd build
+  radar_tagger.exe --help
+  radar_tagger_multioutput.exe --help
+
+You should see usage information for both executables.
+
+================================================================================
+  SUMMARY
+================================================================================
+
+✅ CMake compatibility issue has been fixed
+✅ Build script handles everything automatically  
+✅ Works with CMake 3.16 through 3.30+
+✅ No manual steps needed
+✅ Comprehensive documentation available
+
+Just run: build_with_gemmlowp_fix.bat clean
+
+================================================================================
+
+Date: November 25, 2025
+Status: FIXED

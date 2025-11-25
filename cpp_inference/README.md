@@ -13,14 +13,31 @@ This C++ application provides real-time radar trajectory classification with mul
 ## Requirements
 
 - C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2019+)
-- CMake 3.15 or higher
+- CMake 3.16 or higher (3.20+ recommended for best compatibility)
 - Internet connection (for downloading dependencies during build)
 
 ## Building
 
-### Windows MinGW Users - Important Note ⚠️
+### Windows Users - Important Notes ⚠️
 
-If you're building on Windows with MinGW and encounter the `eight_bit_int_gemm` compilation error:
+#### Issue 1: CMake Configuration Fails
+
+If CMake configuration fails with:
+```
+-- Configuring incomplete, errors occurred!
+```
+
+**Solution:** See [WINDOWS_CMAKE_VERSION_FIX.md](WINDOWS_CMAKE_VERSION_FIX.md) - CMake version compatibility fix
+
+**Quick fix:**
+```batch
+cd cpp_inference
+build_with_gemmlowp_fix.bat clean
+```
+
+#### Issue 2: gemmlowp Compilation Error (MinGW)
+
+If you encounter the `eight_bit_int_gemm` compilation error:
 
 ```
 c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
@@ -39,6 +56,7 @@ emergency_fix.bat
 ```
 
 **Documentation:**
+- 🔧 [WINDOWS_CMAKE_VERSION_FIX.md](WINDOWS_CMAKE_VERSION_FIX.md) - CMake configuration issues
 - 🚀 [QUICK_FIX_GEMMLOWP.md](QUICK_FIX_GEMMLOWP.md) - Quick 3-step fix
 - 📖 [GEMMLOWP_FINAL_FIX.md](GEMMLOWP_FINAL_FIX.md) - Complete technical details
 
