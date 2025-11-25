@@ -1,0 +1,133 @@
+================================================================================
+                    WINDOWS C++ BUILD - QUICK REFERENCE
+================================================================================
+
+ISSUE: CMake configuration fails on Windows with:
+       "-- Configuring incomplete, errors occurred!"
+
+CAUSE: CMake version incompatibility (needed 3.19+, many Windows have 3.16-3.18)
+
+FIX:   ✅ APPLIED - CMakeLists.txt updated with version check
+
+================================================================================
+                         HOW TO BUILD (2 STEPS)
+================================================================================
+
+STEP 1 (Optional): Check your system
+  
+  cd cpp_inference
+  check_build_system.bat
+
+STEP 2: Build the project
+
+  cd cpp_inference
+  build_with_gemmlowp_fix.bat clean
+
+That's it! Build takes 10-20 minutes first time (downloads dependencies).
+
+================================================================================
+                         EXPECTED OUTPUT
+================================================================================
+
+Configuration (with CMake 3.16-3.18):
+  ...
+  -- Skipping deferred eight_bit_int_gemm fix (requires CMake 3.19+)
+  -- Configuring done
+  -- Generating done
+
+Configuration (with CMake 3.19+):
+  ...
+  -- Disabled eight_bit_int_gemm target (method 2)
+  -- Configuring done
+  -- Generating done
+
+Build:
+  [100%] Built target radar_tagger
+  [100%] Built target radar_tagger_multioutput
+
+Success:
+  ================================================
+    Build completed successfully!
+  ================================================
+
+Executables will be in: cpp_inference/build/
+
+================================================================================
+                         SYSTEM REQUIREMENTS
+================================================================================
+
+CMake:    3.16+ (3.20+ recommended)
+Compiler: MinGW GCC 7+ or MSVC 2019+
+Disk:     2 GB free space
+RAM:      4 GB minimum (8 GB recommended)
+Internet: Required for first build
+
+Check versions:
+  cmake --version
+  g++ --version        (for MinGW)
+  cl                   (for MSVC, in VS Developer Command Prompt)
+
+================================================================================
+                         IF BUILD FAILS
+================================================================================
+
+1. Check CMake version (must be 3.16+):
+   cmake --version
+
+2. Check compiler:
+   g++ --version   (MinGW)
+   OR
+   cl              (MSVC)
+
+3. Read documentation:
+   cpp_inference/WINDOWS_CMAKE_VERSION_FIX.md    (CMake issues)
+   cpp_inference/WINDOWS_MINGW_BUILD_FIX.md      (Build errors)
+   cpp_inference/WINDOWS_BUILD_INDEX.md          (All docs)
+
+4. Try emergency fix:
+   cd cpp_inference
+   emergency_fix.bat
+
+5. Clean rebuild:
+   cd cpp_inference
+   build_with_gemmlowp_fix.bat clean
+
+================================================================================
+                         DOCUMENTATION
+================================================================================
+
+Start here:
+  cpp_inference/START_HERE.md
+  cpp_inference/WINDOWS_BUILD_QUICK_FIX.txt
+
+Complete index:
+  cpp_inference/WINDOWS_BUILD_INDEX.md
+
+Detailed guides:
+  cpp_inference/WINDOWS_CMAKE_VERSION_FIX.md
+  cpp_inference/CMAKE_VERSION_FIX_SUMMARY.md
+
+Main workspace summaries:
+  WINDOWS_BUILD_FIX_APPLIED.md
+  WINDOWS_CMAKE_FIX_COMPLETE.md
+
+================================================================================
+                         COMPATIBILITY
+================================================================================
+
+CMake 3.16-3.18:  ✅ Supported (deferred fix skipped, other methods work)
+CMake 3.19+:      ✅ Fully supported (all fix methods available)
+CMake < 3.16:     ❌ Not supported (upgrade required)
+
+MinGW GCC 7+:     ✅ Supported
+MSVC 2019+:       ✅ Supported
+
+Windows 7+:       ✅ Supported
+Windows 10/11:    ✅ Recommended
+
+================================================================================
+
+Status: ✅ FIXED - November 25, 2025
+Build command: cd cpp_inference && build_with_gemmlowp_fix.bat clean
+
+================================================================================

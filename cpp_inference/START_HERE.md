@@ -1,13 +1,34 @@
 # 🎯 START HERE - gemmlowp Build Fix
 
-## The Issue You're Experiencing
+## Common Issues You Might Experience
 
+### Issue 1: CMake Configuration Fails
+```
+-- Configuring incomplete, errors occurred!
+```
+**This has been fixed!** ✅ See section below.
+
+### Issue 2: gemmlowp Compilation Error
 ```
 c++.exe: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
 mingw32-make[2]: *** [.../eight_bit_int_gemm...] Error 1
 ```
+**This has been fixed!** ✅ See section below.
 
-**This has been fixed!** ✅
+---
+
+## 🔍 Check Your System First (Optional)
+
+```batch
+cd cpp_inference
+check_build_system.bat
+```
+
+This will verify:
+- ✅ CMake version (needs 3.16+, recommends 3.20+)
+- ✅ Compiler installation (MinGW or MSVC)
+- ✅ Python availability (for patching)
+- ✅ Provides specific recommendations
 
 ---
 
@@ -15,12 +36,12 @@ mingw32-make[2]: *** [.../eight_bit_int_gemm...] Error 1
 
 ```batch
 cd cpp_inference
-build_mingw_fixed.bat
+build_with_gemmlowp_fix.bat clean
 ```
 
 **That's it!** The script automatically:
 - ✅ Cleans old build files
-- ✅ Configures CMake
+- ✅ Configures CMake (works with CMake 3.16+)
 - ✅ Detects and patches gemmlowp
 - ✅ Builds your executables
 
@@ -33,27 +54,39 @@ We've created several documents to help you:
 | File | When to Read | Time |
 |------|-------------|------|
 | **START_HERE.md** | 👉 **You are here!** | 2 min |
-| `QUICK_BUILD_INSTRUCTIONS.txt` | Need manual steps? | 3 min |
+| `check_build_system.bat` | Check your system setup | 1 min |
+| `WINDOWS_CMAKE_VERSION_FIX.md` | CMake configuration fails? | 5 min |
 | `WINDOWS_MINGW_BUILD_FIX.md` | Build failed? Troubleshooting | 5 min |
+| `QUICK_BUILD_INSTRUCTIONS.txt` | Need manual steps? | 3 min |
 | `README_BUILD_FIX.md` | Want comprehensive overview? | 5 min |
 | `FIX_SUMMARY.md` | Want technical details? | 3 min |
-| `TEST_INSTRUCTIONS.txt` | Want to test systematically? | 5 min |
 
-**Recommendation:** Try `build_mingw_fixed.bat` first. Only read other docs if it fails.
+**Recommendation:** 
+1. Run `check_build_system.bat` to verify your setup (optional)
+2. Run `build_with_gemmlowp_fix.bat clean` to build
+3. Only read other docs if build fails
 
 ---
 
 ## 🔧 What Was Fixed
 
-### Problem
+### Problem 1: CMake Version Compatibility
+- CMakeLists.txt used features requiring CMake 3.19+
+- Many Windows systems have CMake 3.16-3.18
+- Configuration failed on these systems
+
+**Fixed:** Added version checks to gracefully handle older CMake versions
+
+### Problem 2: gemmlowp Compilation Error
 - gemmlowp library (TensorFlow Lite dependency) has a test target called `eight_bit_int_gemm`
 - This target causes MinGW compiler errors
 - Build fails every time
 
-### Solution (3 layers)
-1. **CMakeLists.txt** - Automatically excludes the target
-2. **build_mingw_fixed.bat** - Intelligently patches gemmlowp source
-3. **Manual patching** - Step-by-step guide if automation fails
+**Fixed:** Multiple layers of protection:
+1. **CMakeLists.txt** - Automatically excludes the target (all CMake versions)
+2. **CMakeLists.txt** - Deferred fix (CMake 3.19+ only)
+3. **Build script** - Intelligently patches gemmlowp source
+4. **Manual patching** - Step-by-step guide if automation fails
 
 ---
 

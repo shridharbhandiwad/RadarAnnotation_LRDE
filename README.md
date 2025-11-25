@@ -2,6 +2,8 @@
 
 A comprehensive desktop application for radar data processing, automatic annotation, AI-powered classification, and visualization of airborne target trajectories.
 
+> **📢 Windows C++ Build Note:** If you're building the C++ inference engine on Windows and encounter CMake errors, see [`WINDOWS_BUILD_FIX_APPLIED.md`](WINDOWS_BUILD_FIX_APPLIED.md) for the solution. Quick fix: `cd cpp_inference && build_with_gemmlowp_fix.bat clean`
+
 ## Features
 
 ### 🔧 Core Engines

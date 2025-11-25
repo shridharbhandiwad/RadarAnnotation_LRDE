@@ -274,15 +274,20 @@ else()
         
         # Method 2: Override the add_library/add_executable commands temporarily
         # This creates a macro that disables eight_bit_int_gemm creation
-        macro(disable_eight_bit_int_gemm)
-            if(TARGET eight_bit_int_gemm)
-                set_property(TARGET eight_bit_int_gemm PROPERTY EXCLUDE_FROM_ALL TRUE)
-                message(STATUS "Disabled eight_bit_int_gemm target (method 2)")
-            endif()
-        endmacro()
-        
-        # Run the macro after all targets are defined
-        cmake_language(DEFER CALL disable_eight_bit_int_gemm)
+        # Note: cmake_language(DEFER ...) requires CMake 3.19+
+        if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.19")
+            macro(disable_eight_bit_int_gemm)
+                if(TARGET eight_bit_int_gemm)
+                    set_property(TARGET eight_bit_int_gemm PROPERTY EXCLUDE_FROM_ALL TRUE)
+                    message(STATUS "Disabled eight_bit_int_gemm target (method 2)")
+                endif()
+            endmacro()
+            
+            # Run the macro after all targets are defined
+            cmake_language(DEFER CALL disable_eight_bit_int_gemm)
+        else()
+            message(STATUS "Skipping deferred eight_bit_int_gemm fix (requires CMake 3.19+, you have ${CMAKE_VERSION})")
+        endif()
         
         # Method 3: Modify the Makefile generation to skip this target
         set_directory_properties(PROPERTIES 
