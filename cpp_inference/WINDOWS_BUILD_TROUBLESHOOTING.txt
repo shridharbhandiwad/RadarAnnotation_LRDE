@@ -1,0 +1,375 @@
+================================================================================
+                  WINDOWS/MINGW BUILD TROUBLESHOOTING FLOWCHART
+================================================================================
+
+                              START HERE
+                                  |
+                    [Run: cmake -G "MinGW Makefiles" ..]
+                                  |
+                    +-------------+-------------+
+                    |                           |
+                  SUCCESS                     ERROR
+                    |                           |
+           [Run: mingw32-make]                 |
+                    |                           |
+        +-----------+-----------+               |
+        |                       |               |
+      SUCCESS                 ERROR             |
+        |                       |               |
+    [DONE! ✅]                  |               |
+                                |               |
+                                +-------+-------+
+                                        |
+                        Check error message below
+                                        |
+        +-------------------------------+-------------------------------+
+        |                               |                               |
+   "implicit                      "COMPUTE was                   "cannot find
+    declaration                  not declared"                     the file"
+    of function                       |                               |
+    'max'"                            |                               |
+        |                               |                               |
+        |                               |                               |
+        V                               V                               V
+   cpuinfo ERROR              gemmlowp ERROR               CMAKE CONFIG ERROR
+        |                               |                               |
+        |                               |                               |
+================================================================================
+                                cpuinfo ERROR
+================================================================================
+
+ERROR MESSAGE:
+  cpuinfo/src/x86/windows/init.c:130:46: error: 
+  implicit declaration of function 'max' [-Wimplicit-function-declaration]
+
+DIAGNOSTIC STEPS:
+  1. Check if patch was applied:
+     findstr /s "PATCHED_MAX_MIN_MACROS" build\_deps\cpuinfo-src\CMakeLists.txt
+     
+  2. Check if cpuinfo source exists:
+     dir build\_deps\cpuinfo-src\src\x86\windows\init.c
+
+SOLUTION PATH:
+
+  ┌─────────────────────────────────────┐
+  │ Clean Build (Most Common Solution) │
+  └─────────────────────────────────────┘
+            |
+            V
+     rmdir /s /q build
+     mkdir build
+     cd build
+     cmake -G "MinGW Makefiles" ..
+            |
+            V
+  Did you see "Injecting cpuinfo patching code"?
+            |
+    +-------+-------+
+    |               |
+   YES              NO
+    |               |
+    V               V
+  [Continue     [CMake Not Detecting MinGW]
+   to make]           |
+    |                 V
+    V            Check: gcc --version
+  mingw32-make   Check: cmake --version
+    |            Ensure MinGW is in PATH
+    V                 |
+  SUCCESS?            V
+    |            Retry clean build
+  +---+---+
+  |       |
+ YES     NO
+  |       |
+  V       V
+ DONE   [Try Manual Patch]
+            |
+            V
+  ┌─────────────────────────────┐
+  │ Manual Patch Solution       │
+  └─────────────────────────────┘
+            |
+            V
+  patch_cpuinfo_manual.bat
+            |
+            V
+  cd build
+  mingw32-make
+            |
+            V
+  SUCCESS? --> YES --> DONE
+            |
+           NO
+            |
+            V
+  ┌─────────────────────────────────┐
+  │ Last Resort: Edit Source File  │
+  └─────────────────────────────────┘
+            |
+            V
+  Edit: build\_deps\cpuinfo-src\src\x86\windows\init.c
+  Add at top (before #include):
+    #ifndef max
+    #define max(a,b) (((a) > (b)) ? (a) : (b))
+    #endif
+    #ifndef min
+    #define min(a,b) (((a) < (b)) ? (a) : (b))
+    #endif
+            |
+            V
+  Save and run: mingw32-make
+            |
+            V
+          DONE
+
+DOCUMENTATION: CPUINFO_FIX.md
+
+================================================================================
+                              gemmlowp ERROR
+================================================================================
+
+ERROR MESSAGE:
+  gemmlowp/eight_bit_int_gemm.cc:XX: error: 
+  'COMPUTE' was not declared in this scope
+
+DIAGNOSTIC STEPS:
+  1. Check if patch was applied:
+     findstr /s "DISABLED_FOR_MINGW" build\_deps\gemmlowp-src\CMakeLists.txt
+     
+  2. Check if target still exists:
+     findstr /s "eight_bit_int_gemm" build\_deps\gemmlowp-src\CMakeLists.txt
+
+SOLUTION PATH:
+
+  ┌─────────────────────────────────────┐
+  │ Clean Build (Should Auto-Fix)      │
+  └─────────────────────────────────────┘
+            |
+            V
+     rmdir /s /q build
+     mkdir build
+     cd build
+     cmake -G "MinGW Makefiles" ..
+            |
+            V
+  Did you see "Injecting gemmlowp patching code"?
+            |
+    +-------+-------+
+    |               |
+   YES              NO
+    |               |
+    V               V
+  [Continue     [Check CMakeLists.txt]
+   to make]           |
+    |                 V
+    V            Verify lines 172-223 exist
+  mingw32-make   Re-download project
+    |                 |
+    V                 V
+  SUCCESS         Retry clean build
+    |
+    V
+   DONE
+
+  If still failing:
+            |
+            V
+  ┌─────────────────────────────────────────┐
+  │ Manual Comment Out eight_bit_int_gemm  │
+  └─────────────────────────────────────────┘
+            |
+            V
+  Edit: build\_deps\gemmlowp-src\CMakeLists.txt
+  Find: add_library(eight_bit_int_gemm ...)
+  Change to: # add_library(eight_bit_int_gemm ...)
+  Do the same for:
+    - add_executable(eight_bit_int_gemm ...)
+    - target_link_libraries(eight_bit_int_gemm ...)
+    - set_target_properties(eight_bit_int_gemm ...)
+            |
+            V
+  Save and run: mingw32-make
+            |
+            V
+          DONE
+
+DOCUMENTATION: GEMMLOWP_FIX_APPLIED.md
+
+================================================================================
+                          CMAKE CONFIGURATION ERROR
+================================================================================
+
+ERROR MESSAGES:
+  - "The system cannot find the file specified"
+  - "Check for working C compiler" failed
+  - Errors during compiler test
+
+DIAGNOSTIC STEPS:
+  1. Check CMake version:
+     cmake --version  (need 3.16+)
+     
+  2. Check GCC version:
+     gcc --version  (need 7.0+)
+     
+  3. Check if MinGW in PATH:
+     where gcc
+     where mingw32-make
+
+SOLUTION PATH:
+
+  ┌─────────────────────────────────────┐
+  │ Verify Environment                  │
+  └─────────────────────────────────────┘
+            |
+            V
+  1. Install MinGW-w64 if missing
+  2. Install CMake 3.16+ if old
+  3. Add to PATH:
+     C:\mingw64\bin (or your MinGW path)
+            |
+            V
+  Close and reopen command prompt
+            |
+            V
+  Test:
+    gcc --version
+    mingw32-make --version
+    cmake --version
+            |
+            V
+  All work? --> YES --> Retry build
+            |
+           NO
+            |
+            V
+  Reinstall problematic tool
+            |
+            V
+  Retry build
+
+DOCUMENTATION: FIX_CMAKE_COMPILER_TEST_FAILURE.md
+
+================================================================================
+                        SUCCESSFUL BUILD INDICATORS
+================================================================================
+
+CMAKE PHASE:
+  ✅ "MinGW/Windows detected - gemmlowp and cpuinfo patches will be applied"
+  ✅ "Injecting gemmlowp patching code into TensorFlow Lite CMakeLists.txt..."
+  ✅ "Injecting cpuinfo patching code into TensorFlow Lite CMakeLists.txt..."
+  ✅ "-- Configuring done"
+  ✅ "-- Generating done"
+
+BUILD PHASE:
+  ✅ [  1%] Building CXX object ...
+  ✅ [ 29%] Building C object ...cpuinfo.dir/src/x86/windows/init.c.obj
+  ✅ [ 50%] Linking ...
+  ✅ [100%] Built target radar_tagger
+
+VERIFICATION:
+  ✅ File exists: build\radar_tagger.exe
+  ✅ File size > 1 MB
+  ✅ Can run: .\build\radar_tagger.exe --help
+
+================================================================================
+                              COMMON MISTAKES
+================================================================================
+
+❌ MISTAKE: Not cleaning build directory before retry
+   FIX: Always do: rmdir /s /q build
+
+❌ MISTAKE: Using wrong generator (not "MinGW Makefiles")
+   FIX: cmake -G "MinGW Makefiles" ..
+
+❌ MISTAKE: Using 'make' instead of 'mingw32-make'
+   FIX: Use mingw32-make (or make.exe from MinGW)
+
+❌ MISTAKE: Old CMake version
+   FIX: Upgrade to CMake 3.16 or higher
+
+❌ MISTAKE: Multiple MinGW installations conflicting
+   FIX: Use only one MinGW, ensure correct one is first in PATH
+
+❌ MISTAKE: Running from wrong directory
+   FIX: Should be in cpp_inference/build/
+
+❌ MISTAKE: Missing internet connection
+   FIX: Dependencies download during first cmake run
+
+❌ MISTAKE: Antivirus blocking build
+   FIX: Add exception for build directory
+
+================================================================================
+                          VERBOSE BUILD FOR DEBUG
+================================================================================
+
+If you need more information about what's failing:
+
+  cd cpp_inference
+  rmdir /s /q build
+  mkdir build
+  cd build
+  
+  # Verbose CMake
+  cmake -G "MinGW Makefiles" .. -DCMAKE_VERBOSE_MAKEFILE=ON
+  
+  # Verbose Make
+  mingw32-make VERBOSE=1
+
+This will show:
+  - Exact commands being run
+  - Full compiler command lines
+  - All file paths
+  - Detailed error messages
+
+================================================================================
+                            NUCLEAR OPTION
+================================================================================
+
+If NOTHING works, try this complete reset:
+
+  1. Delete EVERYTHING:
+     cd cpp_inference
+     rmdir /s /q build
+     rmdir /s /q cmake-build-*
+     del /q CMakeCache.txt 2>nul
+     
+  2. Restart computer (clears file locks)
+     
+  3. Fresh build:
+     mkdir build
+     cd build
+     cmake -G "MinGW Makefiles" ..
+     mingw32-make
+     
+  4. If still fails:
+     - Verify MinGW installation
+     - Re-clone the entire project
+     - Check Windows updates
+     - Try different MinGW version
+
+================================================================================
+                              QUICK REFERENCE
+================================================================================
+
+CLEAN BUILD:
+  rmdir /s /q build && mkdir build && cd build && cmake -G "MinGW Makefiles" .. && mingw32-make
+
+CHECK PATCH:
+  findstr /s "PATCHED" build\_deps\*\CMakeLists.txt
+
+MANUAL cpuinfo FIX:
+  patch_cpuinfo_manual.bat
+
+DOCUMENTATION:
+  WINDOWS_BUILD_QUICKSTART.md       - Quick start
+  WINDOWS_BUILD_FIXES_COMPLETE.md   - All fixes
+  CPUINFO_FIX.md                    - cpuinfo details
+  GEMMLOWP_FIX_APPLIED.md          - gemmlowp details
+
+================================================================================
+                                  END
+================================================================================
+
+Still stuck? Read: WINDOWS_BUILD_INDEX.md for complete documentation index

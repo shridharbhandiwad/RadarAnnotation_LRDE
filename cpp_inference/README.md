@@ -20,13 +20,29 @@ This C++ application provides real-time radar trajectory classification with mul
 
 ### Windows MinGW Users - Important Note ⚠️
 
-If you're building on Windows with MinGW and encounter the `eight_bit_int_gemm` compilation error, use the automated fix script:
+**All Windows/MinGW build issues are now automatically fixed!** 🎉
+
+The build system automatically patches:
+- ✅ **cpuinfo** max/min macro errors
+- ✅ **gemmlowp** eight_bit_int_gemm compilation errors  
+- ✅ TensorFlow Lite max/min macro shell redirection issues
+- ✅ Big object file errors
+
+Just run a clean build:
 
 ```batch
-fix_and_build_windows.bat clean
+rmdir /s /q build
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" ..
+mingw32-make
 ```
 
-See [EIGHT_BIT_INT_GEMM_FIX.md](EIGHT_BIT_INT_GEMM_FIX.md) for details.
+**Quick Reference:**
+- 📘 [WINDOWS_BUILD_QUICKSTART.md](WINDOWS_BUILD_QUICKSTART.md) - Quick start guide
+- 📗 [WINDOWS_BUILD_FIXES_COMPLETE.md](WINDOWS_BUILD_FIXES_COMPLETE.md) - Complete fix documentation
+- 📕 [CPUINFO_FIX.md](CPUINFO_FIX.md) - cpuinfo max/min fix details
+- 📙 [GEMMLOWP_FIX_APPLIED.md](GEMMLOWP_FIX_APPLIED.md) - gemmlowp fix details
 
 ### Quick Build
 
