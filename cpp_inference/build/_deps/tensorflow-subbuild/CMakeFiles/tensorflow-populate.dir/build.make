@@ -115,8 +115,8 @@ tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-mkd
 tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-patch: tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-patch-info.txt
 tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-patch: tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-update
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/workspace/cpp_inference/build/_deps/tensorflow-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'tensorflow-populate'"
-	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /workspace/cpp_inference/build/_deps/tensorflow-subbuild/tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-patch
+	cd /workspace/cpp_inference/build/_deps/tensorflow-src && /usr/bin/cmake -E echo_append
+	cd /workspace/cpp_inference/build/_deps/tensorflow-src && /usr/bin/cmake -E touch /workspace/cpp_inference/build/_deps/tensorflow-subbuild/tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-patch
 
 tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-update:
 .PHONY : tensorflow-populate-prefix/src/tensorflow-populate-stamp/tensorflow-populate-update

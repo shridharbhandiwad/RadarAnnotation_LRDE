@@ -27,7 +27,7 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(tensorflow-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/tensorflow/tensorflow.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v2.14.0" "GIT_SHALLOW" "TRUE" "SOURCE_SUBDIR" "tensorflow/lite"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/tensorflow/tensorflow.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v2.14.0" "GIT_SHALLOW" "TRUE" "SOURCE_SUBDIR" "tensorflow/lite" "PATCH_COMMAND" ""
                     SOURCE_DIR          "/workspace/cpp_inference/build/_deps/tensorflow-src"
                     BINARY_DIR          "/workspace/cpp_inference/build/_deps/tensorflow-build"
                     CONFIGURE_COMMAND   ""
