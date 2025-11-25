@@ -334,12 +334,16 @@ else()
     FetchContent_MakeAvailable(onnxruntime)
     
     set(ONNXRUNTIME_INCLUDE_DIRS ${onnxruntime_SOURCE_DIR}/include)
-    set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/libonnxruntime.so)
     
     if(WIN32)
-        set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/onnxruntime.dll)
+        # On Windows, link against the import library (.lib), not the DLL
+        set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/onnxruntime.lib)
+        # Store DLL path for runtime deployment
+        set(ONNXRUNTIME_DLL ${onnxruntime_SOURCE_DIR}/lib/onnxruntime.dll)
     elseif(APPLE)
         set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/libonnxruntime.dylib)
+    else()
+        set(ONNXRUNTIME_LIBRARIES ${onnxruntime_SOURCE_DIR}/lib/libonnxruntime.so)
     endif()
 endif()
 
@@ -413,6 +417,19 @@ endif()
 install(TARGETS radar_tagger radar_tagger_multioutput DESTINATION bin)
 install(FILES ${HEADERS} ${HEADERS_MULTIOUTPUT} DESTINATION include/radar_tagger)
 
+# On Windows, copy ONNX Runtime DLL to build directory for runtime
+if(WIN32 AND DEFINED ONNXRUNTIME_DLL)
+    if(EXISTS ${ONNXRUNTIME_DLL})
+        add_custom_command(TARGET radar_tagger_multioutput POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                ${ONNXRUNTIME_DLL}
+                $<TARGET_FILE_DIR:radar_tagger_multioutput>
+            COMMENT "Copying ONNX Runtime DLL to build directory"
+        )
+        install(FILES ${ONNXRUNTIME_DLL} DESTINATION bin)
+    endif()
+endif()
+
 # Print configuration
 message(STATUS "")
 message(STATUS "Radar Tagger C++ Configuration:")
@@ -421,4 +438,7 @@ message(STATUS "  C++ Standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "  Build Type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "  TensorFlow Lite: ${TensorFlowLite_LIBRARIES}")
 message(STATUS "  ONNX Runtime: ${ONNXRUNTIME_LIBRARIES}")
+if(WIN32 AND DEFINED ONNXRUNTIME_DLL)
+    message(STATUS "  ONNX Runtime DLL: ${ONNXRUNTIME_DLL}")
+endif()
 message(STATUS "")
