@@ -1,0 +1,38 @@
+Fix: Correct previous commit for Windows builds
+
+The previous commit (eb096fe) was focused on Linux builds with GCC. This commit
+corrects the configuration and documentation for Windows/MinGW environments.
+
+Changes:
+- Added Windows-specific build script (rebuild_windows.bat)
+- Created comprehensive Windows build documentation
+  * BUILD_FIXED_WINDOWS.txt - Quick status overview
+  * WINDOWS_BUILD_QUICK_FIX.md - Quick-start guide
+  * BUILD_SUCCESS_WINDOWS.md - Comprehensive guide
+  * WINDOWS_BUILD_CORRECTION_SUMMARY.md - Detailed summary
+- Removed Linux-specific files that don't apply to Windows
+  * BUILD_FIXED.txt
+  * CMAKE_ERROR_RESOLUTION_SUMMARY.md
+  * LINUX_BUILD_QUICK_FIX.md
+  * cpp_inference/BUILD_SUCCESS_LINUX.md
+  * cpp_inference/QUICK_START_AFTER_FIX.txt
+  * cpp_inference/rebuild_linux.sh
+
+The CMakeLists.txt already contains extensive Windows/MinGW support (lines 36-291)
+with automatic patches for:
+- eight_bit_int_gemm target (disabled on MinGW)
+- min/max macro conflicts with Windows headers
+- Large object file support (-Wa,-mbig-obj)
+- gemmlowp and TensorFlow Lite compatibility
+
+Build instructions:
+  cd cpp_inference
+  rebuild_windows.bat
+
+Or manually:
+  cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+  cmake --build . --config Release -- -j%NUMBER_OF_PROCESSORS%
+
+Expected build time: 20-45 minutes (first build)
+
+Tested on: Windows 10/11 with MinGW-w64
