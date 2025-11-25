@@ -16,6 +16,312 @@ events:
       - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/bin/ld: cannot find -lstdc++: No such file or directory
+      c++: error: linker command failed with exit code 1 (use -v to see invocation)
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspace/cpp_inference/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d43de/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d43de.dir/build.make CMakeFiles/cmTC_d43de.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa'
+        Building CXX object CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa -v -fcoverage-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/backward"
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_d43de
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d43de.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d43de 
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d43de /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_d43de.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        /usr/bin/ld: cannot find -lstdc++: No such file or directory
+        c++: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_d43de.dir/build.make:100: cmTC_d43de] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vlOJAa'
+        gmake: *** [Makefile:127: cmTC_d43de/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:49 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working CXX compiler: /usr/bin/c++"
+    directories:
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5fdfb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5fdfb.dir/build.make CMakeFiles/cmTC_5fdfb.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO'
+        Building CXX object CMakeFiles/cmTC_5fdfb.dir/testCXXCompiler.cxx.o
+        /usr/bin/c++    -MD -MT CMakeFiles/cmTC_5fdfb.dir/testCXXCompiler.cxx.o -MF CMakeFiles/cmTC_5fdfb.dir/testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_5fdfb.dir/testCXXCompiler.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO/testCXXCompiler.cxx
+        Linking CXX executable cmTC_5fdfb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fdfb.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_5fdfb.dir/testCXXCompiler.cxx.o -o cmTC_5fdfb 
+        /usr/bin/ld: cannot find -lstdc++: No such file or directory
+        c++: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_5fdfb.dir/build.make:100: cmTC_5fdfb] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xrl7hO'
+        gmake: *** [Makefile:127: cmTC_5fdfb/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/bin/ld: cannot find -lstdc++: No such file or directory
+      c++: error: linker command failed with exit code 1 (use -v to see invocation)
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspace/cpp_inference/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0d753/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0d753.dir/build.make CMakeFiles/cmTC_0d753.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX'
+        Building CXX object CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX -v -fcoverage-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/backward"
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_0d753
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d753.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0d753 
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0d753 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_0d753.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        /usr/bin/ld: cannot find -lstdc++: No such file or directory
+        c++: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_0d753.dir/build.make:100: cmTC_0d753] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7RK5UX'
+        gmake: *** [Makefile:127: cmTC_0d753/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:49 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working CXX compiler: /usr/bin/c++"
+    directories:
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb438/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fb438.dir/build.make CMakeFiles/cmTC_fb438.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY'
+        Building CXX object CMakeFiles/cmTC_fb438.dir/testCXXCompiler.cxx.o
+        /usr/bin/c++    -MD -MT CMakeFiles/cmTC_fb438.dir/testCXXCompiler.cxx.o -MF CMakeFiles/cmTC_fb438.dir/testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_fb438.dir/testCXXCompiler.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY/testCXXCompiler.cxx
+        Linking CXX executable cmTC_fb438
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb438.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_fb438.dir/testCXXCompiler.cxx.o -o cmTC_fb438 
+        /usr/bin/ld: cannot find -lstdc++: No such file or directory
+        c++: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_fb438.dir/build.make:100: cmTC_fb438] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-iJTBDY'
+        gmake: *** [Makefile:127: cmTC_fb438/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /usr/bin/g++ 
       Build flags: 
@@ -39,9 +345,10 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -49,13 +356,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8a390/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8a390.dir/build.make CMakeFiles/cmTC_8a390.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS'
-        Building CXX object CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/g++   -v -o CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_00cb6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_00cb6.dir/build.make CMakeFiles/cmTC_00cb6.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F'
+        Building CXX object CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/g++   -v -o CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/g++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -65,8 +372,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8a390.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc17wQZJ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_00cb6.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccFh4euz.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -87,15 +394,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/'
-         as -v --64 -o CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc17wQZJ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/'
+         as -v --64 -o CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFh4euz.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_8a390
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a390.dir/link.txt --verbose=1
-        /usr/bin/g++  -v CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8a390 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_00cb6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00cb6.dir/link.txt --verbose=1
+        /usr/bin/g++  -v CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_00cb6 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/g++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -108,10 +415,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a390' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a390.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNwTjlH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8a390 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a390' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a390.'
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00cb6' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_00cb6.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccykNaQa.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_00cb6 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00cb6' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_00cb6.'
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F'
         
       exitCode: 0
   -
@@ -151,13 +458,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS']
+        ignore line: [Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8a390/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8a390.dir/build.make CMakeFiles/cmTC_8a390.dir/build]
-        ignore line: [gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P4dURS']
-        ignore line: [Building CXX object CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/g++   -v -o CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_00cb6/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_00cb6.dir/build.make CMakeFiles/cmTC_00cb6.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-1KLO8F']
+        ignore line: [Building CXX object CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/g++   -v -o CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -167,8 +474,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8a390.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc17wQZJ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_00cb6.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccFh4euz.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -189,15 +496,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc17wQZJ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFh4euz.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_8a390]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a390.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/g++  -v CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8a390 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_00cb6]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00cb6.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/g++  -v CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_00cb6 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -210,13 +517,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a390' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8a390.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNwTjlH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8a390 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00cb6' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_00cb6.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccykNaQa.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_00cb6 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccNwTjlH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccykNaQa.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -234,7 +541,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_8a390] ==> ignore
+          arg [cmTC_00cb6] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -246,7 +553,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_8a390.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_00cb6.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -284,9 +591,10 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -294,17 +602,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c69c1/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c69c1.dir/build.make CMakeFiles/cmTC_c69c1.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z'
-        Building CXX object CMakeFiles/cmTC_c69c1.dir/src.cxx.o
-        /usr/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_c69c1.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z/src.cxx
-        Linking CXX executable cmTC_c69c1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c69c1.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_c69c1.dir/src.cxx.o -o cmTC_c69c1 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F70D3Z'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2fa04/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2fa04.dir/build.make CMakeFiles/cmTC_2fa04.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap'
+        Building CXX object CMakeFiles/cmTC_2fa04.dir/src.cxx.o
+        /usr/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_2fa04.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap/src.cxx
+        Linking CXX executable cmTC_2fa04
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fa04.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_2fa04.dir/src.cxx.o -o cmTC_2fa04 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-COgMap'
         
       exitCode: 0
   -
@@ -316,7 +624,7 @@ events:
       - "build/_deps/tensorflow-src/tensorflow/lite/CMakeLists.txt:40 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/gcc 
+      Compiler: /usr/bin/cc 
       Build flags: 
       Id flags:  
       
@@ -326,7 +634,7 @@ events:
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
-      The C compiler identification is GNU, found in:
+      The C compiler identification is Clang, found in:
         /workspace/cpp_inference/build/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
@@ -338,9 +646,10 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -348,65 +657,50 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0679f/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_0679f.dir/build.make CMakeFiles/cmTC_0679f.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5'
-        Building C object CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o
-        /usr/bin/gcc   -v -o CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
-        Using built-in specs.
-        COLLECT_GCC=/usr/bin/gcc
-        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
-        OFFLOAD_TARGET_DEFAULT=1
-        Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05ed3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_05ed3.dir/build.make CMakeFiles/cmTC_05ed3.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7'
+        Building C object CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0679f.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccDOioYn.s
-        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
-        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
-        
-        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7 -v -fcoverage-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7 -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/lib/llvm-18/lib/clang/18/include
          /usr/local/include
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/'
-         as -v --64 -o CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o /tmp/ccDOioYn.s
-        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
-        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_0679f
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0679f.dir/link.txt --verbose=1
-        /usr/bin/gcc  -v CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -o cmTC_0679f 
-        Using built-in specs.
-        COLLECT_GCC=/usr/bin/gcc
-        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
-        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
-        OFFLOAD_TARGET_DEFAULT=1
-        Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Linking C executable cmTC_05ed3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05ed3.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -o cmTC_05ed3 
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0679f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0679f.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9x9A73.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0679f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0679f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0679f.'
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5'
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_05ed3 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-18/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7'
         
       exitCode: 0
   -
@@ -419,16 +713,16 @@ events:
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
           add: [/usr/local/include]
           add: [/usr/include/x86_64-linux-gnu]
           add: [/usr/include]
         end of search list found
-        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
         collapse include dir [/usr/local/include] ==> [/usr/local/include]
         collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
         collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+        implicit include dirs: [/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
       
       
   -
@@ -440,125 +734,103 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5']
+        ignore line: [Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0679f/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_0679f.dir/build.make CMakeFiles/cmTC_0679f.dir/build]
-        ignore line: [gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-Q7rEW5']
-        ignore line: [Building C object CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/gcc   -v -o CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/gcc]
-        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
-        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-        ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05ed3/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_05ed3.dir/build.make CMakeFiles/cmTC_05ed3.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7']
+        ignore line: [Building C object CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0679f.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccDOioYn.s]
-        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
-        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
-        ignore line: []
-        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7 -v -fcoverage-compilation-dir=/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-F9GWL7 -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
         ignore line: [ /usr/local/include]
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o /tmp/ccDOioYn.s]
-        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
-        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_0679f]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0679f.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/gcc  -v CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -o cmTC_0679f ]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/gcc]
-        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
-        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
-        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-        ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Linking C executable cmTC_05ed3]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05ed3.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -o cmTC_05ed3 ]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0679f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0679f.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9x9A73.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0679f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
-          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
-          arg [-plugin] ==> ignore
-          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
-          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc9x9A73.res] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-          arg [-plugin-opt=-pass-through=-lc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_05ed3 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-18/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
           arg [--build-id] ==> ignore
           arg [--eh-frame-hdr] ==> ignore
           arg [-m] ==> ignore
           arg [elf_x86_64] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
-          arg [--as-needed] ==> ignore
+          arg [-pie] ==> ignore
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-          arg [-pie] ==> ignore
-          arg [-znow] ==> ignore
-          arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_0679f] ==> ignore
-          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [cmTC_05ed3] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64]
           arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
-          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
-          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_0679f.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/llvm-18/bin/../lib] ==> dir [/usr/lib/llvm-18/bin/../lib]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [CMakeFiles/cmTC_05ed3.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
-          arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
           arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--pop-state] ==> ignore
+          arg [--no-as-needed] ==> ignore
           arg [-lc] ==> lib [c]
           arg [-lgcc] ==> lib [gcc]
-          arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
           arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--pop-state] ==> ignore
-          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> [/usr/lib64]
         collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
         collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/llvm-18/bin/../lib] ==> [/usr/lib/llvm-18/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
         implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
-        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib/llvm-18/lib;/lib;/usr/lib]
         implicit fwks: []
       
       
@@ -572,9 +844,10 @@ events:
     checks:
       - "Performing Test ABSL_INTERNAL_AT_LEAST_CXX17"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -584,17 +857,17 @@ events:
       variable: "ABSL_INTERNAL_AT_LEAST_CXX17"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cae08/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_cae08.dir/build.make CMakeFiles/cmTC_cae08.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz'
-        Building CXX object CMakeFiles/cmTC_cae08.dir/src.cxx.o
-        /usr/bin/g++ -DABSL_INTERNAL_AT_LEAST_CXX17  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_cae08.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz/src.cxx
-        Linking CXX executable cmTC_cae08
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cae08.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_cae08.dir/src.cxx.o -o cmTC_cae08 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-of7kmz'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42fc3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_42fc3.dir/build.make CMakeFiles/cmTC_42fc3.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S'
+        Building CXX object CMakeFiles/cmTC_42fc3.dir/src.cxx.o
+        /usr/bin/g++ -DABSL_INTERNAL_AT_LEAST_CXX17  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_42fc3.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S/src.cxx
+        Linking CXX executable cmTC_42fc3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42fc3.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_42fc3.dir/src.cxx.o -o cmTC_42fc3 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgHi0S'
         
       exitCode: 0
   -
@@ -607,9 +880,10 @@ events:
     checks:
       - "Performing Test standard_math_library_linked_to_automatically"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -619,17 +893,17 @@ events:
       variable: "standard_math_library_linked_to_automatically"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f3305/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f3305.dir/build.make CMakeFiles/cmTC_f3305.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g'
-        Building CXX object CMakeFiles/cmTC_f3305.dir/src.cxx.o
-        /usr/bin/g++ -Dstandard_math_library_linked_to_automatically  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_f3305.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g/src.cxx
-        Linking CXX executable cmTC_f3305
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3305.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_f3305.dir/src.cxx.o -o cmTC_f3305 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-joca4g'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_559c0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_559c0.dir/build.make CMakeFiles/cmTC_559c0.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs'
+        Building CXX object CMakeFiles/cmTC_559c0.dir/src.cxx.o
+        /usr/bin/g++ -Dstandard_math_library_linked_to_automatically  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_559c0.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs/src.cxx
+        Linking CXX executable cmTC_559c0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_559c0.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_559c0.dir/src.cxx.o -o cmTC_559c0 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MdNrjs'
         
       exitCode: 0
   -
@@ -642,9 +916,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_WERROR"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -654,17 +929,17 @@ events:
       variable: "COMPILER_SUPPORT_WERROR"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_21823/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_21823.dir/build.make CMakeFiles/cmTC_21823.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb'
-        Building CXX object CMakeFiles/cmTC_21823.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_WERROR  -std=gnu++17 -fPIE   -Werror -o CMakeFiles/cmTC_21823.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb/src.cxx
-        Linking CXX executable cmTC_21823
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21823.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_21823.dir/src.cxx.o -o cmTC_21823 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-t4P9Tb'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3a3fa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3a3fa.dir/build.make CMakeFiles/cmTC_3a3fa.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj'
+        Building CXX object CMakeFiles/cmTC_3a3fa.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_WERROR  -std=gnu++17 -fPIE   -Werror -o CMakeFiles/cmTC_3a3fa.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj/src.cxx
+        Linking CXX executable cmTC_3a3fa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a3fa.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_3a3fa.dir/src.cxx.o -o cmTC_3a3fa 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VXQepj'
         
       exitCode: 0
   -
@@ -678,9 +953,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_pedantic"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -690,17 +966,17 @@ events:
       variable: "COMPILER_SUPPORT_pedantic"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ab557/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ab557.dir/build.make CMakeFiles/cmTC_ab557.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z'
-        Building CXX object CMakeFiles/cmTC_ab557.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_pedantic  -Werror -std=gnu++17 -fPIE   -pedantic -o CMakeFiles/cmTC_ab557.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z/src.cxx
-        Linking CXX executable cmTC_ab557
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab557.dir/link.txt --verbose=1
-        /usr/bin/g++  -Werror CMakeFiles/cmTC_ab557.dir/src.cxx.o -o cmTC_ab557 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-CGWe1z'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3e1ff/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3e1ff.dir/build.make CMakeFiles/cmTC_3e1ff.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU'
+        Building CXX object CMakeFiles/cmTC_3e1ff.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_pedantic  -Werror -std=gnu++17 -fPIE   -pedantic -o CMakeFiles/cmTC_3e1ff.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU/src.cxx
+        Linking CXX executable cmTC_3e1ff
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e1ff.dir/link.txt --verbose=1
+        /usr/bin/g++  -Werror CMakeFiles/cmTC_3e1ff.dir/src.cxx.o -o cmTC_3e1ff 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-vRz7bU'
         
       exitCode: 0
   -
@@ -714,9 +990,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wall"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -726,17 +1003,17 @@ events:
       variable: "COMPILER_SUPPORT_Wall"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ddf6/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_6ddf6.dir/build.make CMakeFiles/cmTC_6ddf6.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5'
-        Building CXX object CMakeFiles/cmTC_6ddf6.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wall  -pedantic -Werror -std=gnu++17 -fPIE   -Wall -o CMakeFiles/cmTC_6ddf6.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5/src.cxx
-        Linking CXX executable cmTC_6ddf6
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ddf6.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Werror CMakeFiles/cmTC_6ddf6.dir/src.cxx.o -o cmTC_6ddf6 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wdMMI5'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_774c2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_774c2.dir/build.make CMakeFiles/cmTC_774c2.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv'
+        Building CXX object CMakeFiles/cmTC_774c2.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wall  -pedantic -Werror -std=gnu++17 -fPIE   -Wall -o CMakeFiles/cmTC_774c2.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv/src.cxx
+        Linking CXX executable cmTC_774c2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_774c2.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Werror CMakeFiles/cmTC_774c2.dir/src.cxx.o -o cmTC_774c2 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-HXRZvv'
         
       exitCode: 0
   -
@@ -750,9 +1027,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wextra"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -762,17 +1040,17 @@ events:
       variable: "COMPILER_SUPPORT_Wextra"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_169be/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_169be.dir/build.make CMakeFiles/cmTC_169be.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83'
-        Building CXX object CMakeFiles/cmTC_169be.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wextra  -pedantic -Wall -Werror -std=gnu++17 -fPIE   -Wextra -o CMakeFiles/cmTC_169be.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83/src.cxx
-        Linking CXX executable cmTC_169be
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_169be.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Werror CMakeFiles/cmTC_169be.dir/src.cxx.o -o cmTC_169be 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AAlh83'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_68482/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_68482.dir/build.make CMakeFiles/cmTC_68482.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj'
+        Building CXX object CMakeFiles/cmTC_68482.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wextra  -pedantic -Wall -Werror -std=gnu++17 -fPIE   -Wextra -o CMakeFiles/cmTC_68482.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj/src.cxx
+        Linking CXX executable cmTC_68482
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68482.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Werror CMakeFiles/cmTC_68482.dir/src.cxx.o -o cmTC_68482 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sJHMrj'
         
       exitCode: 0
   -
@@ -786,9 +1064,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wundef"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -798,17 +1077,17 @@ events:
       variable: "COMPILER_SUPPORT_Wundef"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7f835/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_7f835.dir/build.make CMakeFiles/cmTC_7f835.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF'
-        Building CXX object CMakeFiles/cmTC_7f835.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wundef  -pedantic -Wall -Wextra -Werror -std=gnu++17 -fPIE   -Wundef -o CMakeFiles/cmTC_7f835.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF/src.cxx
-        Linking CXX executable cmTC_7f835
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f835.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Werror CMakeFiles/cmTC_7f835.dir/src.cxx.o -o cmTC_7f835 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SuQxMF'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cdc54/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cdc54.dir/build.make CMakeFiles/cmTC_cdc54.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e'
+        Building CXX object CMakeFiles/cmTC_cdc54.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wundef  -pedantic -Wall -Wextra -Werror -std=gnu++17 -fPIE   -Wundef -o CMakeFiles/cmTC_cdc54.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e/src.cxx
+        Linking CXX executable cmTC_cdc54
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cdc54.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Werror CMakeFiles/cmTC_cdc54.dir/src.cxx.o -o cmTC_cdc54 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-NMsR4e'
         
       exitCode: 0
   -
@@ -822,9 +1101,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wcastalign"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -834,17 +1114,17 @@ events:
       variable: "COMPILER_SUPPORT_Wcastalign"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5e903/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_5e903.dir/build.make CMakeFiles/cmTC_5e903.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC'
-        Building CXX object CMakeFiles/cmTC_5e903.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcastalign  -pedantic -Wall -Wextra -Wundef -Werror -std=gnu++17 -fPIE   -Wcast-align -o CMakeFiles/cmTC_5e903.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC/src.cxx
-        Linking CXX executable cmTC_5e903
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e903.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Werror CMakeFiles/cmTC_5e903.dir/src.cxx.o -o cmTC_5e903 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-ER1nkC'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42bfc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_42bfc.dir/build.make CMakeFiles/cmTC_42bfc.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi'
+        Building CXX object CMakeFiles/cmTC_42bfc.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcastalign  -pedantic -Wall -Wextra -Wundef -Werror -std=gnu++17 -fPIE   -Wcast-align -o CMakeFiles/cmTC_42bfc.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi/src.cxx
+        Linking CXX executable cmTC_42bfc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42bfc.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Werror CMakeFiles/cmTC_42bfc.dir/src.cxx.o -o cmTC_42bfc 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r51pSi'
         
       exitCode: 0
   -
@@ -858,9 +1138,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wcharsubscripts"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -870,17 +1151,17 @@ events:
       variable: "COMPILER_SUPPORT_Wcharsubscripts"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_410cf/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_410cf.dir/build.make CMakeFiles/cmTC_410cf.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp'
-        Building CXX object CMakeFiles/cmTC_410cf.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcharsubscripts  -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror -std=gnu++17 -fPIE   -Wchar-subscripts -o CMakeFiles/cmTC_410cf.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp/src.cxx
-        Linking CXX executable cmTC_410cf
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_410cf.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror CMakeFiles/cmTC_410cf.dir/src.cxx.o -o cmTC_410cf 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pspJRp'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a73a8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a73a8.dir/build.make CMakeFiles/cmTC_a73a8.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab'
+        Building CXX object CMakeFiles/cmTC_a73a8.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcharsubscripts  -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror -std=gnu++17 -fPIE   -Wchar-subscripts -o CMakeFiles/cmTC_a73a8.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab/src.cxx
+        Linking CXX executable cmTC_a73a8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a73a8.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror CMakeFiles/cmTC_a73a8.dir/src.cxx.o -o cmTC_a73a8 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-GB0xab'
         
       exitCode: 0
   -
@@ -894,9 +1175,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wnonvirtualdtor"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -906,17 +1188,17 @@ events:
       variable: "COMPILER_SUPPORT_Wnonvirtualdtor"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42904/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_42904.dir/build.make CMakeFiles/cmTC_42904.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq'
-        Building CXX object CMakeFiles/cmTC_42904.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnonvirtualdtor  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror -std=gnu++17 -fPIE   -Wnon-virtual-dtor -o CMakeFiles/cmTC_42904.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq/src.cxx
-        Linking CXX executable cmTC_42904
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42904.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror CMakeFiles/cmTC_42904.dir/src.cxx.o -o cmTC_42904 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-mlTIZq'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7e58a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7e58a.dir/build.make CMakeFiles/cmTC_7e58a.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc'
+        Building CXX object CMakeFiles/cmTC_7e58a.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnonvirtualdtor  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror -std=gnu++17 -fPIE   -Wnon-virtual-dtor -o CMakeFiles/cmTC_7e58a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc/src.cxx
+        Linking CXX executable cmTC_7e58a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7e58a.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror CMakeFiles/cmTC_7e58a.dir/src.cxx.o -o cmTC_7e58a 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-AWObUc'
         
       exitCode: 0
   -
@@ -930,9 +1212,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wunusedlocaltypedefs"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -942,17 +1225,17 @@ events:
       variable: "COMPILER_SUPPORT_Wunusedlocaltypedefs"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1725a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_1725a.dir/build.make CMakeFiles/cmTC_1725a.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ'
-        Building CXX object CMakeFiles/cmTC_1725a.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wunusedlocaltypedefs  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror -std=gnu++17 -fPIE   -Wunused-local-typedefs -o CMakeFiles/cmTC_1725a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ/src.cxx
-        Linking CXX executable cmTC_1725a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1725a.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror CMakeFiles/cmTC_1725a.dir/src.cxx.o -o cmTC_1725a 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-MXNAXQ'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_858a5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_858a5.dir/build.make CMakeFiles/cmTC_858a5.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd'
+        Building CXX object CMakeFiles/cmTC_858a5.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wunusedlocaltypedefs  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror -std=gnu++17 -fPIE   -Wunused-local-typedefs -o CMakeFiles/cmTC_858a5.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd/src.cxx
+        Linking CXX executable cmTC_858a5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_858a5.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror CMakeFiles/cmTC_858a5.dir/src.cxx.o -o cmTC_858a5 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-hXhnPd'
         
       exitCode: 0
   -
@@ -966,9 +1249,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wpointerarith"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -978,17 +1262,17 @@ events:
       variable: "COMPILER_SUPPORT_Wpointerarith"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b80cd/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b80cd.dir/build.make CMakeFiles/cmTC_b80cd.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT'
-        Building CXX object CMakeFiles/cmTC_b80cd.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wpointerarith  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror -std=gnu++17 -fPIE   -Wpointer-arith -o CMakeFiles/cmTC_b80cd.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT/src.cxx
-        Linking CXX executable cmTC_b80cd
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b80cd.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror CMakeFiles/cmTC_b80cd.dir/src.cxx.o -o cmTC_b80cd 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-G1CwDT'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f1b39/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f1b39.dir/build.make CMakeFiles/cmTC_f1b39.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr'
+        Building CXX object CMakeFiles/cmTC_f1b39.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wpointerarith  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror -std=gnu++17 -fPIE   -Wpointer-arith -o CMakeFiles/cmTC_f1b39.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr/src.cxx
+        Linking CXX executable cmTC_f1b39
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1b39.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror CMakeFiles/cmTC_f1b39.dir/src.cxx.o -o cmTC_f1b39 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wSDZIr'
         
       exitCode: 0
   -
@@ -1002,9 +1286,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wwritestrings"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1014,17 +1299,17 @@ events:
       variable: "COMPILER_SUPPORT_Wwritestrings"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_12309/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_12309.dir/build.make CMakeFiles/cmTC_12309.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5'
-        Building CXX object CMakeFiles/cmTC_12309.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wwritestrings  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror -std=gnu++17 -fPIE   -Wwrite-strings -o CMakeFiles/cmTC_12309.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5/src.cxx
-        Linking CXX executable cmTC_12309
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12309.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror CMakeFiles/cmTC_12309.dir/src.cxx.o -o cmTC_12309 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-bFt3d5'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_07f64/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_07f64.dir/build.make CMakeFiles/cmTC_07f64.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN'
+        Building CXX object CMakeFiles/cmTC_07f64.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wwritestrings  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror -std=gnu++17 -fPIE   -Wwrite-strings -o CMakeFiles/cmTC_07f64.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN/src.cxx
+        Linking CXX executable cmTC_07f64
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07f64.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror CMakeFiles/cmTC_07f64.dir/src.cxx.o -o cmTC_07f64 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-FesoEN'
         
       exitCode: 0
   -
@@ -1038,9 +1323,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wformatsecurity"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1050,17 +1336,17 @@ events:
       variable: "COMPILER_SUPPORT_Wformatsecurity"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a012d/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_a012d.dir/build.make CMakeFiles/cmTC_a012d.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on'
-        Building CXX object CMakeFiles/cmTC_a012d.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wformatsecurity  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror -std=gnu++17 -fPIE   -Wformat-security -o CMakeFiles/cmTC_a012d.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on/src.cxx
-        Linking CXX executable cmTC_a012d
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a012d.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror CMakeFiles/cmTC_a012d.dir/src.cxx.o -o cmTC_a012d 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-pWu2on'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d64a9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d64a9.dir/build.make CMakeFiles/cmTC_d64a9.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX'
+        Building CXX object CMakeFiles/cmTC_d64a9.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wformatsecurity  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror -std=gnu++17 -fPIE   -Wformat-security -o CMakeFiles/cmTC_d64a9.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX/src.cxx
+        Linking CXX executable cmTC_d64a9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d64a9.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror CMakeFiles/cmTC_d64a9.dir/src.cxx.o -o cmTC_d64a9 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-PcLLDX'
         
       exitCode: 0
   -
@@ -1074,9 +1360,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wshorten64to32"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1086,17 +1373,17 @@ events:
       variable: "COMPILER_SUPPORT_Wshorten64to32"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0cc19/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_0cc19.dir/build.make CMakeFiles/cmTC_0cc19.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5'
-        Building CXX object CMakeFiles/cmTC_0cc19.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wshorten64to32  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=gnu++17 -fPIE   -Wshorten-64-to-32 -o CMakeFiles/cmTC_0cc19.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_39a04/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_39a04.dir/build.make CMakeFiles/cmTC_39a04.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ'
+        Building CXX object CMakeFiles/cmTC_39a04.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wshorten64to32  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=gnu++17 -fPIE   -Wshorten-64-to-32 -o CMakeFiles/cmTC_39a04.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ/src.cxx
         g++: error: unrecognized command-line option '-Wshorten-64-to-32'
-        gmake[1]: *** [CMakeFiles/cmTC_0cc19.dir/build.make:78: CMakeFiles/cmTC_0cc19.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kY2yE5'
-        gmake: *** [Makefile:127: cmTC_0cc19/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_39a04.dir/build.make:78: CMakeFiles/cmTC_39a04.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5DDwdJ'
+        gmake: *** [Makefile:127: cmTC_39a04/fast] Error 2
         
       exitCode: 2
   -
@@ -1110,9 +1397,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wlogicalop"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1122,17 +1410,17 @@ events:
       variable: "COMPILER_SUPPORT_Wlogicalop"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_340e5/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_340e5.dir/build.make CMakeFiles/cmTC_340e5.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL'
-        Building CXX object CMakeFiles/cmTC_340e5.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wlogicalop  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=gnu++17 -fPIE   -Wlogical-op -o CMakeFiles/cmTC_340e5.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL/src.cxx
-        Linking CXX executable cmTC_340e5
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_340e5.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror CMakeFiles/cmTC_340e5.dir/src.cxx.o -o cmTC_340e5 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-8p2upL'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_302a1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_302a1.dir/build.make CMakeFiles/cmTC_302a1.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj'
+        Building CXX object CMakeFiles/cmTC_302a1.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wlogicalop  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=gnu++17 -fPIE   -Wlogical-op -o CMakeFiles/cmTC_302a1.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj/src.cxx
+        Linking CXX executable cmTC_302a1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_302a1.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror CMakeFiles/cmTC_302a1.dir/src.cxx.o -o cmTC_302a1 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EV2Paj'
         
       exitCode: 0
   -
@@ -1146,9 +1434,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wenumconversion"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1158,17 +1447,17 @@ events:
       variable: "COMPILER_SUPPORT_Wenumconversion"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2a337/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_2a337.dir/build.make CMakeFiles/cmTC_2a337.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB'
-        Building CXX object CMakeFiles/cmTC_2a337.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wenumconversion  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror -std=gnu++17 -fPIE   -Wenum-conversion -o CMakeFiles/cmTC_2a337.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB/src.cxx
-        Linking CXX executable cmTC_2a337
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a337.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror CMakeFiles/cmTC_2a337.dir/src.cxx.o -o cmTC_2a337 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SZq7DB'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2d32e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2d32e.dir/build.make CMakeFiles/cmTC_2d32e.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo'
+        Building CXX object CMakeFiles/cmTC_2d32e.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wenumconversion  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror -std=gnu++17 -fPIE   -Wenum-conversion -o CMakeFiles/cmTC_2d32e.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo/src.cxx
+        Linking CXX executable cmTC_2d32e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d32e.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror CMakeFiles/cmTC_2d32e.dir/src.cxx.o -o cmTC_2d32e 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-QHABOo'
         
       exitCode: 0
   -
@@ -1182,9 +1471,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wcpp11extensions"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1194,17 +1484,17 @@ events:
       variable: "COMPILER_SUPPORT_Wcpp11extensions"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b2da/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_2b2da.dir/build.make CMakeFiles/cmTC_2b2da.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi'
-        Building CXX object CMakeFiles/cmTC_2b2da.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcpp11extensions  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror -std=gnu++17 -fPIE   -Wc++11-extensions -o CMakeFiles/cmTC_2b2da.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi/src.cxx
-        Linking CXX executable cmTC_2b2da
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b2da.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror CMakeFiles/cmTC_2b2da.dir/src.cxx.o -o cmTC_2b2da 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-UNNgJi'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_de311/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_de311.dir/build.make CMakeFiles/cmTC_de311.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y'
+        Building CXX object CMakeFiles/cmTC_de311.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wcpp11extensions  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror -std=gnu++17 -fPIE   -Wc++11-extensions -o CMakeFiles/cmTC_de311.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y/src.cxx
+        Linking CXX executable cmTC_de311
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de311.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror CMakeFiles/cmTC_de311.dir/src.cxx.o -o cmTC_de311 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-P0nq5y'
         
       exitCode: 0
   -
@@ -1218,9 +1508,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wdoublepromotion"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1230,17 +1521,17 @@ events:
       variable: "COMPILER_SUPPORT_Wdoublepromotion"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_43e3a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_43e3a.dir/build.make CMakeFiles/cmTC_43e3a.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh'
-        Building CXX object CMakeFiles/cmTC_43e3a.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wdoublepromotion  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror -std=gnu++17 -fPIE   -Wdouble-promotion -o CMakeFiles/cmTC_43e3a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh/src.cxx
-        Linking CXX executable cmTC_43e3a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43e3a.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror CMakeFiles/cmTC_43e3a.dir/src.cxx.o -o cmTC_43e3a 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-l9sejh'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d1b01/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d1b01.dir/build.make CMakeFiles/cmTC_d1b01.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9'
+        Building CXX object CMakeFiles/cmTC_d1b01.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wdoublepromotion  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror -std=gnu++17 -fPIE   -Wdouble-promotion -o CMakeFiles/cmTC_d1b01.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9/src.cxx
+        Linking CXX executable cmTC_d1b01
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1b01.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror CMakeFiles/cmTC_d1b01.dir/src.cxx.o -o cmTC_d1b01 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-JpAJV9'
         
       exitCode: 0
   -
@@ -1254,9 +1545,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wshadow"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1266,17 +1558,17 @@ events:
       variable: "COMPILER_SUPPORT_Wshadow"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_63944/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_63944.dir/build.make CMakeFiles/cmTC_63944.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ'
-        Building CXX object CMakeFiles/cmTC_63944.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wshadow  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror -std=gnu++17 -fPIE   -Wshadow -o CMakeFiles/cmTC_63944.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ/src.cxx
-        Linking CXX executable cmTC_63944
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63944.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror CMakeFiles/cmTC_63944.dir/src.cxx.o -o cmTC_63944 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-SQaSWZ'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5406b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5406b.dir/build.make CMakeFiles/cmTC_5406b.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT'
+        Building CXX object CMakeFiles/cmTC_5406b.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wshadow  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror -std=gnu++17 -fPIE   -Wshadow -o CMakeFiles/cmTC_5406b.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT/src.cxx
+        Linking CXX executable cmTC_5406b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5406b.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror CMakeFiles/cmTC_5406b.dir/src.cxx.o -o cmTC_5406b 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-M5gLKT'
         
       exitCode: 0
   -
@@ -1290,9 +1582,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wnopsabi"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1302,17 +1595,17 @@ events:
       variable: "COMPILER_SUPPORT_Wnopsabi"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_01fc7/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_01fc7.dir/build.make CMakeFiles/cmTC_01fc7.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w'
-        Building CXX object CMakeFiles/cmTC_01fc7.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnopsabi  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror -std=gnu++17 -fPIE   -Wno-psabi -o CMakeFiles/cmTC_01fc7.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w/src.cxx
-        Linking CXX executable cmTC_01fc7
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01fc7.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror CMakeFiles/cmTC_01fc7.dir/src.cxx.o -o cmTC_01fc7 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-EH3V1w'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fe8bb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fe8bb.dir/build.make CMakeFiles/cmTC_fe8bb.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8'
+        Building CXX object CMakeFiles/cmTC_fe8bb.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnopsabi  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror -std=gnu++17 -fPIE   -Wno-psabi -o CMakeFiles/cmTC_fe8bb.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8/src.cxx
+        Linking CXX executable cmTC_fe8bb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe8bb.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror CMakeFiles/cmTC_fe8bb.dir/src.cxx.o -o cmTC_fe8bb 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YfLDt8'
         
       exitCode: 0
   -
@@ -1326,9 +1619,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wnovariadicmacros"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1338,17 +1632,17 @@ events:
       variable: "COMPILER_SUPPORT_Wnovariadicmacros"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f70ae/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f70ae.dir/build.make CMakeFiles/cmTC_f70ae.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu'
-        Building CXX object CMakeFiles/cmTC_f70ae.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnovariadicmacros  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror -std=gnu++17 -fPIE   -Wno-variadic-macros -o CMakeFiles/cmTC_f70ae.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu/src.cxx
-        Linking CXX executable cmTC_f70ae
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f70ae.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror CMakeFiles/cmTC_f70ae.dir/src.cxx.o -o cmTC_f70ae 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YCxrCu'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e1315/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e1315.dir/build.make CMakeFiles/cmTC_e1315.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh'
+        Building CXX object CMakeFiles/cmTC_e1315.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnovariadicmacros  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror -std=gnu++17 -fPIE   -Wno-variadic-macros -o CMakeFiles/cmTC_e1315.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh/src.cxx
+        Linking CXX executable cmTC_e1315
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1315.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror CMakeFiles/cmTC_e1315.dir/src.cxx.o -o cmTC_e1315 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-y1zgwh'
         
       exitCode: 0
   -
@@ -1362,9 +1656,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_Wnolonglong"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1374,17 +1669,17 @@ events:
       variable: "COMPILER_SUPPORT_Wnolonglong"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9776a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_9776a.dir/build.make CMakeFiles/cmTC_9776a.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe'
-        Building CXX object CMakeFiles/cmTC_9776a.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnolonglong  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror -std=gnu++17 -fPIE   -Wno-long-long -o CMakeFiles/cmTC_9776a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe/src.cxx
-        Linking CXX executable cmTC_9776a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9776a.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror CMakeFiles/cmTC_9776a.dir/src.cxx.o -o cmTC_9776a 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BpnDCe'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a894a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a894a.dir/build.make CMakeFiles/cmTC_a894a.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M'
+        Building CXX object CMakeFiles/cmTC_a894a.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_Wnolonglong  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror -std=gnu++17 -fPIE   -Wno-long-long -o CMakeFiles/cmTC_a894a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M/src.cxx
+        Linking CXX executable cmTC_a894a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a894a.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror CMakeFiles/cmTC_a894a.dir/src.cxx.o -o cmTC_a894a 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-r9Jt7M'
         
       exitCode: 0
   -
@@ -1398,9 +1693,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_fnochecknew"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1410,17 +1706,17 @@ events:
       variable: "COMPILER_SUPPORT_fnochecknew"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_022b6/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_022b6.dir/build.make CMakeFiles/cmTC_022b6.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL'
-        Building CXX object CMakeFiles/cmTC_022b6.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_fnochecknew  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror -std=gnu++17 -fPIE   -fno-check-new -o CMakeFiles/cmTC_022b6.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL/src.cxx
-        Linking CXX executable cmTC_022b6
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_022b6.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror CMakeFiles/cmTC_022b6.dir/src.cxx.o -o cmTC_022b6 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-BLr3QL'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dabfe/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_dabfe.dir/build.make CMakeFiles/cmTC_dabfe.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB'
+        Building CXX object CMakeFiles/cmTC_dabfe.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_fnochecknew  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror -std=gnu++17 -fPIE   -fno-check-new -o CMakeFiles/cmTC_dabfe.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB/src.cxx
+        Linking CXX executable cmTC_dabfe
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dabfe.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror CMakeFiles/cmTC_dabfe.dir/src.cxx.o -o cmTC_dabfe 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kKDULB'
         
       exitCode: 0
   -
@@ -1434,9 +1730,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_fnocommon"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1446,17 +1743,17 @@ events:
       variable: "COMPILER_SUPPORT_fnocommon"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c7132/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c7132.dir/build.make CMakeFiles/cmTC_c7132.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF'
-        Building CXX object CMakeFiles/cmTC_c7132.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_fnocommon  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror -std=gnu++17 -fPIE   -fno-common -o CMakeFiles/cmTC_c7132.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF/src.cxx
-        Linking CXX executable cmTC_c7132
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7132.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror CMakeFiles/cmTC_c7132.dir/src.cxx.o -o cmTC_c7132 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-lBA9LF'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_af875/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_af875.dir/build.make CMakeFiles/cmTC_af875.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w'
+        Building CXX object CMakeFiles/cmTC_af875.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_fnocommon  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror -std=gnu++17 -fPIE   -fno-common -o CMakeFiles/cmTC_af875.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w/src.cxx
+        Linking CXX executable cmTC_af875
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af875.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror CMakeFiles/cmTC_af875.dir/src.cxx.o -o cmTC_af875 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-z2Az6w'
         
       exitCode: 0
   -
@@ -1470,9 +1767,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_fstrictaliasing"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1482,17 +1780,17 @@ events:
       variable: "COMPILER_SUPPORT_fstrictaliasing"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_906b5/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_906b5.dir/build.make CMakeFiles/cmTC_906b5.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk'
-        Building CXX object CMakeFiles/cmTC_906b5.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_fstrictaliasing  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror -std=gnu++17 -fPIE   -fstrict-aliasing -o CMakeFiles/cmTC_906b5.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk/src.cxx
-        Linking CXX executable cmTC_906b5
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_906b5.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror CMakeFiles/cmTC_906b5.dir/src.cxx.o -o cmTC_906b5 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-5dhCuk'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8fa74/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8fa74.dir/build.make CMakeFiles/cmTC_8fa74.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o'
+        Building CXX object CMakeFiles/cmTC_8fa74.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_fstrictaliasing  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror -std=gnu++17 -fPIE   -fstrict-aliasing -o CMakeFiles/cmTC_8fa74.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o/src.cxx
+        Linking CXX executable cmTC_8fa74
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fa74.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror CMakeFiles/cmTC_8fa74.dir/src.cxx.o -o cmTC_8fa74 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-YkiL1o'
         
       exitCode: 0
   -
@@ -1506,9 +1804,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_wd981"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1518,17 +1817,17 @@ events:
       variable: "COMPILER_SUPPORT_wd981"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ea64c/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ea64c.dir/build.make CMakeFiles/cmTC_ea64c.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f'
-        Building CXX object CMakeFiles/cmTC_ea64c.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=gnu++17 -fPIE   -wd981 -o CMakeFiles/cmTC_ea64c.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9a87c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9a87c.dir/build.make CMakeFiles/cmTC_9a87c.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin'
+        Building CXX object CMakeFiles/cmTC_9a87c.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=gnu++17 -fPIE   -wd981 -o CMakeFiles/cmTC_9a87c.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin/src.cxx
         g++: error: unrecognized command-line option '-wd981'
-        gmake[1]: *** [CMakeFiles/cmTC_ea64c.dir/build.make:78: CMakeFiles/cmTC_ea64c.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-xJMI5f'
-        gmake: *** [Makefile:127: cmTC_ea64c/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_9a87c.dir/build.make:78: CMakeFiles/cmTC_9a87c.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sgJJin'
+        gmake: *** [Makefile:127: cmTC_9a87c/fast] Error 2
         
       exitCode: 2
   -
@@ -1542,9 +1841,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_wd2304"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1554,17 +1854,17 @@ events:
       variable: "COMPILER_SUPPORT_wd2304"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_21b05/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_21b05.dir/build.make CMakeFiles/cmTC_21b05.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu'
-        Building CXX object CMakeFiles/cmTC_21b05.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=gnu++17 -fPIE   -wd2304 -o CMakeFiles/cmTC_21b05.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8fcc2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8fcc2.dir/build.make CMakeFiles/cmTC_8fcc2.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5'
+        Building CXX object CMakeFiles/cmTC_8fcc2.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=gnu++17 -fPIE   -wd2304 -o CMakeFiles/cmTC_8fcc2.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5/src.cxx
         g++: error: unrecognized command-line option '-wd2304'
-        gmake[1]: *** [CMakeFiles/cmTC_21b05.dir/build.make:78: CMakeFiles/cmTC_21b05.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-7MUxfu'
-        gmake: *** [Makefile:127: cmTC_21b05/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_8fcc2.dir/build.make:78: CMakeFiles/cmTC_8fcc2.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-myJlt5'
+        gmake: *** [Makefile:127: cmTC_8fcc2/fast] Error 2
         
       exitCode: 2
   -
@@ -1577,9 +1877,10 @@ events:
     checks:
       - "Performing Test COMPILER_SUPPORT_OPENMP"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: " -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1589,17 +1890,17 @@ events:
       variable: "COMPILER_SUPPORT_OPENMP"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_83c23/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_83c23.dir/build.make CMakeFiles/cmTC_83c23.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo'
-        Building CXX object CMakeFiles/cmTC_83c23.dir/src.cxx.o
-        /usr/bin/g++ -DCOMPILER_SUPPORT_OPENMP  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing  -std=gnu++17 -fPIE   -fopenmp -o CMakeFiles/cmTC_83c23.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo/src.cxx
-        Linking CXX executable cmTC_83c23
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83c23.dir/link.txt --verbose=1
-        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing  CMakeFiles/cmTC_83c23.dir/src.cxx.o -o cmTC_83c23 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-sBE8Zo'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2ce48/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2ce48.dir/build.make CMakeFiles/cmTC_2ce48.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6'
+        Building CXX object CMakeFiles/cmTC_2ce48.dir/src.cxx.o
+        /usr/bin/g++ -DCOMPILER_SUPPORT_OPENMP  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing  -std=gnu++17 -fPIE   -fopenmp -o CMakeFiles/cmTC_2ce48.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6/src.cxx
+        Linking CXX executable cmTC_2ce48
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ce48.dir/link.txt --verbose=1
+        /usr/bin/g++  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing  CMakeFiles/cmTC_2ce48.dir/src.cxx.o -o cmTC_2ce48 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-VDKOV6'
         
       exitCode: 0
   -
@@ -1781,9 +2082,10 @@ events:
     checks:
       - "Performing Test FARMHASH_HAS_BUILTIN_EXPECT"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1793,17 +2095,17 @@ events:
       variable: "FARMHASH_HAS_BUILTIN_EXPECT"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4da8c/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_4da8c.dir/build.make CMakeFiles/cmTC_4da8c.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO'
-        Building CXX object CMakeFiles/cmTC_4da8c.dir/src.cxx.o
-        /usr/bin/g++ -DFARMHASH_HAS_BUILTIN_EXPECT  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_4da8c.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO/src.cxx
-        Linking CXX executable cmTC_4da8c
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4da8c.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_4da8c.dir/src.cxx.o -o cmTC_4da8c 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-376VHO'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3f65a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3f65a.dir/build.make CMakeFiles/cmTC_3f65a.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I'
+        Building CXX object CMakeFiles/cmTC_3f65a.dir/src.cxx.o
+        /usr/bin/g++ -DFARMHASH_HAS_BUILTIN_EXPECT  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_3f65a.dir/src.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I/src.cxx
+        Linking CXX executable cmTC_3f65a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f65a.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_3f65a.dir/src.cxx.o -o cmTC_3f65a 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-dZOr1I'
         
       exitCode: 0
   -
@@ -1815,9 +2117,10 @@ events:
     checks:
       - "Looking for strtof_l"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1827,17 +2130,17 @@ events:
       variable: "FLATBUFFERS_HAS_STRTOF_L"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8b510/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8b510.dir/build.make CMakeFiles/cmTC_8b510.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV'
-        Building CXX object CMakeFiles/cmTC_8b510.dir/CheckSymbolExists.cxx.o
-        /usr/bin/g++   -std=gnu++17 -fPIE -o CMakeFiles/cmTC_8b510.dir/CheckSymbolExists.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_8b510
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b510.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_8b510.dir/CheckSymbolExists.cxx.o -o cmTC_8b510 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-u6r5cV'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_222f9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_222f9.dir/build.make CMakeFiles/cmTC_222f9.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi'
+        Building CXX object CMakeFiles/cmTC_222f9.dir/CheckSymbolExists.cxx.o
+        /usr/bin/g++   -std=gnu++17 -fPIE -o CMakeFiles/cmTC_222f9.dir/CheckSymbolExists.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_222f9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_222f9.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_222f9.dir/CheckSymbolExists.cxx.o -o cmTC_222f9 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-o8EyJi'
         
       exitCode: 0
   -
@@ -1849,9 +2152,10 @@ events:
     checks:
       - "Looking for strtoull_l"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1861,17 +2165,17 @@ events:
       variable: "FLATBUFFERS_HAS_STRTOULL_L"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4b194/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_4b194.dir/build.make CMakeFiles/cmTC_4b194.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8'
-        Building CXX object CMakeFiles/cmTC_4b194.dir/CheckSymbolExists.cxx.o
-        /usr/bin/g++   -std=gnu++17 -fPIE -o CMakeFiles/cmTC_4b194.dir/CheckSymbolExists.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_4b194
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b194.dir/link.txt --verbose=1
-        /usr/bin/g++ CMakeFiles/cmTC_4b194.dir/CheckSymbolExists.cxx.o -o cmTC_4b194 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-3zq3T8'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18e7c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_18e7c.dir/build.make CMakeFiles/cmTC_18e7c.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK'
+        Building CXX object CMakeFiles/cmTC_18e7c.dir/CheckSymbolExists.cxx.o
+        /usr/bin/g++   -std=gnu++17 -fPIE -o CMakeFiles/cmTC_18e7c.dir/CheckSymbolExists.cxx.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_18e7c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18e7c.dir/link.txt --verbose=1
+        /usr/bin/g++ CMakeFiles/cmTC_18e7c.dir/CheckSymbolExists.cxx.o -o cmTC_18e7c 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-kBXooK'
         
       exitCode: 0
   -
@@ -1883,9 +2187,10 @@ events:
     checks:
       - "Looking for realpath"
     directories:
-      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht"
-      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht"
+      source: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n"
+      binary: "/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1895,17 +2200,17 @@ events:
       variable: "HAVE_REALPATH"
       cached: true
       stdout: |
-        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht'
+        Change Dir: '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_91a5c/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_91a5c.dir/build.make CMakeFiles/cmTC_91a5c.dir/build
-        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht'
-        Building C object CMakeFiles/cmTC_91a5c.dir/CheckSymbolExists.c.o
-        /usr/bin/gcc   -fPIE -o CMakeFiles/cmTC_91a5c.dir/CheckSymbolExists.c.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht/CheckSymbolExists.c
-        Linking C executable cmTC_91a5c
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91a5c.dir/link.txt --verbose=1
-        /usr/bin/gcc CMakeFiles/cmTC_91a5c.dir/CheckSymbolExists.c.o -o cmTC_91a5c 
-        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-wkW9Ht'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c2c90/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c2c90.dir/build.make CMakeFiles/cmTC_c2c90.dir/build
+        gmake[1]: Entering directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n'
+        Building C object CMakeFiles/cmTC_c2c90.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -fPIE -MD -MT CMakeFiles/cmTC_c2c90.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_c2c90.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_c2c90.dir/CheckSymbolExists.c.o -c /workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n/CheckSymbolExists.c
+        Linking C executable cmTC_c2c90
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2c90.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c2c90.dir/CheckSymbolExists.c.o -o cmTC_c2c90 
+        gmake[1]: Leaving directory '/workspace/cpp_inference/build/CMakeFiles/CMakeScratch/TryCompile-6Fka4n'
         
       exitCode: 0
 ...
