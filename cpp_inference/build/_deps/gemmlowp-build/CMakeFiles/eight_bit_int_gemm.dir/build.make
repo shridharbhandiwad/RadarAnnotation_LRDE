@@ -73,15 +73,15 @@ _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eig
 _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o: gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc
 _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o: _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o -MF CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o.d -o CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o -c /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc
+	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o -MF CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o.d -o CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.o -c /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc
 
 _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc > CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.i
+	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc > CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.i
 
 _deps/gemmlowp-build/CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc -o CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.s
+	cd /workspace/cpp_inference/build/_deps/gemmlowp-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc -o CMakeFiles/eight_bit_int_gemm.dir/__/eight_bit_int_gemm/eight_bit_int_gemm.cc.s
 
 # Object files for target eight_bit_int_gemm
 eight_bit_int_gemm_OBJECTS = \

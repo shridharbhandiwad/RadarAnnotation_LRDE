@@ -1,108 +1,123 @@
 _deps/ruy-build/ruy/CMakeFiles/ruy_block_map.dir/block_map.cc.o: \
- /workspace/cpp_inference/build/ruy/ruy/block_map.cc \
- /usr/include/stdc-predef.h \
- /workspace/cpp_inference/build/ruy/ruy/block_map.h \
- /workspace/cpp_inference/build/ruy/ruy/cpu_cache_params.h \
- /workspace/cpp_inference/build/ruy/ruy/side_pair.h \
- /workspace/cpp_inference/build/ruy/ruy/check_macros.h \
- /usr/include/c++/13/cstdio \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
- /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/x86_64-linux-gnu/bits/wordsize.h \
- /usr/include/x86_64-linux-gnu/bits/timesize.h \
- /usr/include/x86_64-linux-gnu/sys/cdefs.h \
- /usr/include/x86_64-linux-gnu/bits/long-double.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
- /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/13/cstdlib \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
- /usr/include/x86_64-linux-gnu/bits/select-decl.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
- /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h \
- /usr/include/c++/13/bits/std_abs.h /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/stl_function.h /usr/include/c++/13/bits/move.h \
- /usr/include/c++/13/type_traits /usr/include/c++/13/backward/binders.h \
- /usr/include/c++/13/tuple /usr/include/c++/13/bits/stl_pair.h \
- /usr/include/c++/13/bits/utility.h \
- /usr/include/c++/13/bits/uses_allocator.h \
- /usr/include/c++/13/bits/invoke.h \
- /usr/include/c++/13/bits/functional_hash.h \
- /usr/include/c++/13/bits/hash_bytes.h /usr/include/c++/13/bits/refwrap.h \
- /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/new \
- /usr/include/c++/13/bits/exception.h /usr/include/c++/13/typeinfo \
- /usr/include/c++/13/bits/functexcept.h \
- /usr/include/c++/13/bits/exception_defines.h \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algobase.h \
- /usr/include/c++/13/bits/cpp_type_traits.h \
- /usr/include/c++/13/ext/type_traits.h \
- /usr/include/c++/13/ext/numeric_traits.h \
- /usr/include/c++/13/bits/stl_iterator_base_types.h \
- /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/13/bits/concept_check.h \
- /usr/include/c++/13/debug/assertions.h \
- /usr/include/c++/13/bits/stl_iterator.h \
- /usr/include/c++/13/bits/ptr_traits.h /usr/include/c++/13/debug/debug.h \
- /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
- /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/initializer_list /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/stl_tempbuf.h \
- /usr/include/c++/13/bits/stl_construct.h /usr/include/c++/13/cstdint \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/c++/13/limits \
- /workspace/cpp_inference/build/ruy/ruy/opt_set.h \
- /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.h \
- /workspace/cpp_inference/build/ruy/ruy/size_util.h \
- /workspace/cpp_inference/build/ruy/ruy/trace.h
+  /workspace/cpp_inference/build/ruy/ruy/block_map.cc \
+  /workspace/cpp_inference/build/ruy/ruy/block_map.h \
+  /workspace/cpp_inference/build/ruy/ruy/cpu_cache_params.h \
+  /workspace/cpp_inference/build/ruy/ruy/side_pair.h \
+  /workspace/cpp_inference/build/ruy/ruy/check_macros.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/cstdio \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14/bits/c++config.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
+  /usr/include/features.h /usr/include/features-time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/stdc-predef.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14/bits/cpu_defines.h \
+  /usr/include/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/lib/llvm-18/lib/clang/18/include/stddef.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_size_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_null.h \
+  /usr/lib/llvm-18/lib/clang/18/include/stdarg.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stdarg___gnuc_va_list.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_wchar_t.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/std_abs.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/functional \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_function.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/move.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/type_traits \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/version.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward/binders.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/tuple \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_pair.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/utility.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/uses_allocator.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/invoke.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/functional_hash.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/hash_bytes.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/refwrap.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/std_function.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/new \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/exception.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/typeinfo \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/functexcept.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/exception_defines.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/algorithm \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/cpp_type_traits.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/ext/type_traits.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/ext/numeric_traits.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_iterator_base_types.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_iterator_base_funcs.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/concept_check.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/debug/assertions.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_iterator.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/ptr_traits.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/debug/debug.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/predefined_ops.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bit \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/concepts \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algo.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/algorithmfwd.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/initializer_list \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_heap.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/uniform_int_dist.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_tempbuf.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_construct.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/cstdint \
+  /usr/lib/llvm-18/lib/clang/18/include/stdint.h /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/limits \
+  /workspace/cpp_inference/build/ruy/ruy/opt_set.h \
+  /workspace/cpp_inference/build/ruy/ruy/profiler/instrumentation.h \
+  /workspace/cpp_inference/build/ruy/ruy/size_util.h \
+  /workspace/cpp_inference/build/ruy/ruy/trace.h

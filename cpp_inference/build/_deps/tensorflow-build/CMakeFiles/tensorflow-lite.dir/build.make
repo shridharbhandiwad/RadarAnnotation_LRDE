@@ -73,3081 +73,3081 @@ _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configur
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o: _deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/delegate_registry.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/delegate_registry.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o: _deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/nnapi_plugin.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/nnapi_plugin.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o: _deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc > CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/acceleration/configuration/stable_delegate_registry.cc -o CMakeFiles/tensorflow-lite.dir/core/acceleration/configuration/stable_delegate_registry.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o: _deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc > CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc > CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc -o CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/error_reporter.cc -o CMakeFiles/tensorflow-lite.dir/core/api/error_reporter.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o: _deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc > CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc > CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc -o CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/flatbuffer_conversions.cc -o CMakeFiles/tensorflow-lite.dir/core/api/flatbuffer_conversions.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o: _deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc > CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc > CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc -o CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/op_resolver.cc -o CMakeFiles/tensorflow-lite.dir/core/api/op_resolver.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/api/tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/core/api/tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o: _deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o: _deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_experimental.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_experimental.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o: _deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc > CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/c_api_opaque.cc -o CMakeFiles/tensorflow-lite.dir/core/c/c_api_opaque.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o: _deps/tensorflow-src/tensorflow/lite/core/c/common.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/common.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/c/common.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc > CMakeFiles/tensorflow-lite.dir/core/c/common.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc > CMakeFiles/tensorflow-lite.dir/core/c/common.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/common.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/c/common.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc -o CMakeFiles/tensorflow-lite.dir/core/c/common.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/common.cc -o CMakeFiles/tensorflow-lite.dir/core/c/common.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o: _deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc > CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc > CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc -o CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/c/registration_external.cc -o CMakeFiles/tensorflow-lite.dir/core/c/registration_external.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o: _deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc > CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc > CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc -o CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/kernels/register.cc -o CMakeFiles/tensorflow-lite.dir/core/kernels/register.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o: _deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc > CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc > CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc -o CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/create_op_resolver_with_builtin_ops.cc -o CMakeFiles/tensorflow-lite.dir/core/create_op_resolver_with_builtin_ops.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o: _deps/tensorflow-src/tensorflow/lite/core/interpreter.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o: _deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_builder.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter_builder.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o: _deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc > CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/interpreter_experimental.cc -o CMakeFiles/tensorflow-lite.dir/core/interpreter_experimental.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o: _deps/tensorflow-src/tensorflow/lite/core/model_builder.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc > CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc > CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc -o CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/model_builder.cc -o CMakeFiles/tensorflow-lite.dir/core/model_builder.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o: _deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/signature_runner.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o: _deps/tensorflow-src/tensorflow/lite/core/subgraph.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc > CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc > CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc -o CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/subgraph.cc -o CMakeFiles/tensorflow-lite.dir/core/subgraph.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/async/async_signature_runner.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc > CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc > CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc -o CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/async_subgraph.cc -o CMakeFiles/tensorflow-lite.dir/core/async/async_subgraph.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc > CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc > CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc -o CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/task_internal.cc -o CMakeFiles/tensorflow-lite.dir/core/async/task_internal.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_kernel.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_kernel.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/async_signature_runner.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/async_signature_runner.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o: _deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc > CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/async/c/task.cc -o CMakeFiles/tensorflow-lite.dir/core/async/c/task.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o: _deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc > CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc > CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier.cc -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o: _deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc > CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc > CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/core/tools/verifier_internal.cc -o CMakeFiles/tensorflow-lite.dir/core/tools/verifier_internal.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o: _deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc > CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc > CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc -o CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_for_testing.cc -o CMakeFiles/tensorflow-lite.dir/c/c_api_for_testing.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o: _deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc > CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc > CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc -o CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/c_api_opaque_internal.cc -o CMakeFiles/tensorflow-lite.dir/c/c_api_opaque_internal.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o: _deps/tensorflow-src/tensorflow/lite/c/common_internal.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o -MF CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o.d -o CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc > CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc > CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc -o CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/c/common_internal.cc -o CMakeFiles/tensorflow-lite.dir/c/common_internal.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc > CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc > CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc -o CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/nnapi/nnapi_delegate_disabled.cc -o CMakeFiles/tensorflow-lite.dir/delegates/nnapi/nnapi_delegate_disabled.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc > CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc > CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc -o CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/interpreter_utils.cc -o CMakeFiles/tensorflow-lite.dir/delegates/interpreter_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc > CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc > CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc -o CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/serialization.cc -o CMakeFiles/tensorflow-lite.dir/delegates/serialization.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc > CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc > CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc -o CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/telemetry.cc -o CMakeFiles/tensorflow-lite.dir/delegates/telemetry.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc > CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc > CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc -o CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/utils.cc -o CMakeFiles/tensorflow-lite.dir/delegates/utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o: _deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o -MF CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o.d -o CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc > CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc > CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc -o CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/delegates/external/external_delegate.cc -o CMakeFiles/tensorflow-lite.dir/delegates/external/external_delegate.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o: _deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc > CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc > CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc -o CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/remat/metadata_util.cc -o CMakeFiles/tensorflow-lite.dir/experimental/remat/metadata_util.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o: _deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/initialization_status.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/initialization_status.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o: _deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/resource_variable.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/resource_variable.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o: _deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o -MF CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc > CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/experimental/resource/static_hashtable.cc -o CMakeFiles/tensorflow-lite.dir/experimental/resource/static_hashtable.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/cpu_check.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/cpu_check.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/neon_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/neon_tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/sse_tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/optimized/4bit/fully_connected_reference.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/optimized/4bit/fully_connected_reference.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/comparisons.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/comparisons.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/reference/portable_tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/common.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/common.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/kernel_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/kernel_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_dct.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_dct.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/mfcc_mel_filterbank.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/opaque_tensor_ctypes.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/opaque_tensor_ctypes.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/portable_tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/portable_tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/quantization_util.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/quantization_util.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/runtime_shape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/runtime_shape.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/spectrogram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/spectrogram.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_ctypes.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_ctypes.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/tensor_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/tensor_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/transpose_utils.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/transpose_utils.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/activations.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc > CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc > CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc -o CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/activations.cc -o CMakeFiles/tensorflow-lite.dir/kernels/activations.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/add.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/add.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/add.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc > CMakeFiles/tensorflow-lite.dir/kernels/add.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc > CMakeFiles/tensorflow-lite.dir/kernels/add.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/add.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc -o CMakeFiles/tensorflow-lite.dir/kernels/add.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add.cc -o CMakeFiles/tensorflow-lite.dir/kernels/add.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc > CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc > CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc -o CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/add_n.cc -o CMakeFiles/tensorflow-lite.dir/kernels/add_n.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc > CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc > CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc -o CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/arg_min_max.cc -o CMakeFiles/tensorflow-lite.dir/kernels/arg_min_max.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc > CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc > CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/assign_variable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/assign_variable.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc > CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc > CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc -o CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2.cc -o CMakeFiles/tensorflow-lite.dir/kernels/atan2.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/atan2_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/atan2_custom.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc > CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc > CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/audio_spectrogram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/audio_spectrogram.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/basic_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/basic_rnn.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc > CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc > CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc -o CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_matmul.cc -o CMakeFiles/tensorflow-lite.dir/kernels/batch_matmul.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/batch_to_space_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/batch_to_space_nd.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_lstm.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bidirectional_sequence_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bidirectional_sequence_rnn.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc > CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc > CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitcast.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bitcast.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc > CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc > CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bitwise_xor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bitwise_xor.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc > CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc > CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_args.cc -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_args.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc > CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc > CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/broadcast_to.cc -o CMakeFiles/tensorflow-lite.dir/kernels/broadcast_to.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc > CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc > CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/bucketize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/bucketize.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc > CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc > CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc -o CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/call_once.cc -o CMakeFiles/tensorflow-lite.dir/kernels/call_once.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/cast.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc > CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc > CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cast.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cast.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc > CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc > CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc -o CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/ceil.cc -o CMakeFiles/tensorflow-lite.dir/kernels/ceil.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc > CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc > CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc -o CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/comparisons.cc -o CMakeFiles/tensorflow-lite.dir/kernels/comparisons.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc > CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc > CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc -o CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/complex_support.cc -o CMakeFiles/tensorflow-lite.dir/kernels/complex_support.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc > CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc > CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc -o CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/concatenation.cc -o CMakeFiles/tensorflow-lite.dir/kernels/concatenation.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/conv.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc > CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/conv3d_transpose.cc -o CMakeFiles/tensorflow-lite.dir/kernels/conv3d_transpose.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc > CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc > CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_context.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_context.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc > CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc > CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cpu_backend_gemm_eigen.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cpu_backend_gemm_eigen.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc > CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc > CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/cumsum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/cumsum.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/densify.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc > CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc > CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc -o CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/densify.cc -o CMakeFiles/tensorflow-lite.dir/kernels/densify.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc > CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc > CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc -o CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/deprecated_backends.cc -o CMakeFiles/tensorflow-lite.dir/kernels/deprecated_backends.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc > CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc > CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc -o CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depth_to_space.cc -o CMakeFiles/tensorflow-lite.dir/kernels/depth_to_space.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/depthwise_conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/depthwise_conv.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc > CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc > CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dequantize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/dequantize.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc > CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc > CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc -o CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/detection_postprocess.cc -o CMakeFiles/tensorflow-lite.dir/kernels/detection_postprocess.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/div.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/div.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/div.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc > CMakeFiles/tensorflow-lite.dir/kernels/div.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc > CMakeFiles/tensorflow-lite.dir/kernels/div.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/div.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/div.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc -o CMakeFiles/tensorflow-lite.dir/kernels/div.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/div.cc -o CMakeFiles/tensorflow-lite.dir/kernels/div.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/dynamic_update_slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/dynamic_update_slice.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc > CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc > CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc -o CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/eigen_support.cc -o CMakeFiles/tensorflow-lite.dir/kernels/eigen_support.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc > CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc > CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc -o CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/elementwise.cc -o CMakeFiles/tensorflow-lite.dir/kernels/elementwise.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc > CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc > CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup.cc -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc > CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc > CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/embedding_lookup_sparse.cc -o CMakeFiles/tensorflow-lite.dir/kernels/embedding_lookup_sparse.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/exp.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc > CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc > CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc -o CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/exp.cc -o CMakeFiles/tensorflow-lite.dir/kernels/exp.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc > CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc > CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc -o CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/expand_dims.cc -o CMakeFiles/tensorflow-lite.dir/kernels/expand_dims.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc > CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc > CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fake_quant.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fake_quant.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/fill.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc > CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc > CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fill.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fill.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/floor.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_div.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor_div.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc > CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/floor_mod.cc -o CMakeFiles/tensorflow-lite.dir/kernels/floor_mod.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc > CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc > CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/fully_connected.cc -o CMakeFiles/tensorflow-lite.dir/kernels/fully_connected.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/gather.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc > CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc > CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gather.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gather_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gather_nd.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc > CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc > CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/gru_cell.cc -o CMakeFiles/tensorflow-lite.dir/kernels/gru_cell.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_find.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_find.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_import.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_import.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_lookup.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_lookup.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc > CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/hashtable_size.cc -o CMakeFiles/tensorflow-lite.dir/kernels/hashtable_size.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/if.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/if.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/if.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc > CMakeFiles/tensorflow-lite.dir/kernels/if.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc > CMakeFiles/tensorflow-lite.dir/kernels/if.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/if.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/if.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc -o CMakeFiles/tensorflow-lite.dir/kernels/if.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/if.cc -o CMakeFiles/tensorflow-lite.dir/kernels/if.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc > CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc > CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/irfft2d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/irfft2d.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc > CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc > CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc -o CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/kernel_util.cc -o CMakeFiles/tensorflow-lite.dir/kernels/kernel_util.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc > CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc > CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/l2norm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/l2norm.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc > CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc > CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/local_response_norm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/local_response_norm.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/logical.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc > CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc > CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc -o CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/logical.cc -o CMakeFiles/tensorflow-lite.dir/kernels/logical.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc > CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc > CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lsh_projection.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lsh_projection.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lstm.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc > CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc > CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/lstm_eval.cc -o CMakeFiles/tensorflow-lite.dir/kernels/lstm_eval.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc > CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc > CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_diag.cc -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_diag.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc > CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc > CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/matrix_set_diag.cc -o CMakeFiles/tensorflow-lite.dir/kernels/matrix_set_diag.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc > CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc > CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/maximum_minimum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/maximum_minimum.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc > CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc > CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mfcc.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mfcc.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc > CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc > CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mirror_pad.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mirror_pad.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/mul.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc > CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc > CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/mul.cc -o CMakeFiles/tensorflow-lite.dir/kernels/mul.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc > CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc > CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc -o CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/multinomial.cc -o CMakeFiles/tensorflow-lite.dir/kernels/multinomial.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/neg.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc > CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc > CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc -o CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/neg.cc -o CMakeFiles/tensorflow-lite.dir/kernels/neg.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc > CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc > CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc -o CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/non_max_suppression.cc -o CMakeFiles/tensorflow-lite.dir/kernels/non_max_suppression.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc > CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc > CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc -o CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/numeric_verify.cc -o CMakeFiles/tensorflow-lite.dir/kernels/numeric_verify.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc > CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc > CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc -o CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/one_hot.cc -o CMakeFiles/tensorflow-lite.dir/kernels/one_hot.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/pack.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc > CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc > CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pack.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pack.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/pad.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc > CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc > CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pad.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pad.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc > CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc > CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pooling.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc > CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc > CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pooling3d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pooling3d.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/pow.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc > CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc > CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/pow.cc -o CMakeFiles/tensorflow-lite.dir/kernels/pow.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc > CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc > CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/quantize.cc -o CMakeFiles/tensorflow-lite.dir/kernels/quantize.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_ops.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_ops.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_standard_normal_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_standard_normal_custom.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/random_uniform_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/random_uniform_custom.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/range.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/range.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/range.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc > CMakeFiles/tensorflow-lite.dir/kernels/range.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc > CMakeFiles/tensorflow-lite.dir/kernels/range.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/range.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/range.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc -o CMakeFiles/tensorflow-lite.dir/kernels/range.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/range.cc -o CMakeFiles/tensorflow-lite.dir/kernels/range.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/rank.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc > CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc > CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc -o CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rank.cc -o CMakeFiles/tensorflow-lite.dir/kernels/rank.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc > CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc > CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/read_variable.cc -o CMakeFiles/tensorflow-lite.dir/kernels/read_variable.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc > CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc > CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reduce.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reduce.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc > CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc > CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc -o CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/register_ref.cc -o CMakeFiles/tensorflow-lite.dir/kernels/register_ref.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc > CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc > CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reshape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reshape.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc > CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc > CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc -o CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_bilinear.cc -o CMakeFiles/tensorflow-lite.dir/kernels/resize_bilinear.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc > CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc > CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/resize_nearest_neighbor.cc -o CMakeFiles/tensorflow-lite.dir/kernels/resize_nearest_neighbor.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc > CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc > CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reverse.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc > CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc > CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/reverse_sequence.cc -o CMakeFiles/tensorflow-lite.dir/kernels/reverse_sequence.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc > CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc > CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/rfft2d.cc -o CMakeFiles/tensorflow-lite.dir/kernels/rfft2d.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc > CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc > CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc -o CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/right_shift.cc -o CMakeFiles/tensorflow-lite.dir/kernels/right_shift.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/roll.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc > CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc > CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc -o CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/roll.cc -o CMakeFiles/tensorflow-lite.dir/kernels/roll.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/round.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/round.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/round.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc > CMakeFiles/tensorflow-lite.dir/kernels/round.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc > CMakeFiles/tensorflow-lite.dir/kernels/round.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/round.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/round.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc -o CMakeFiles/tensorflow-lite.dir/kernels/round.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/round.cc -o CMakeFiles/tensorflow-lite.dir/kernels/round.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/scatter_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/scatter_nd.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc > CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc > CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/segment_sum.cc -o CMakeFiles/tensorflow-lite.dir/kernels/segment_sum.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/select.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/select.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/select.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc > CMakeFiles/tensorflow-lite.dir/kernels/select.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc > CMakeFiles/tensorflow-lite.dir/kernels/select.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/select.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/select.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc -o CMakeFiles/tensorflow-lite.dir/kernels/select.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/select.cc -o CMakeFiles/tensorflow-lite.dir/kernels/select.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/shape.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc > CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc > CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/shape.cc -o CMakeFiles/tensorflow-lite.dir/kernels/shape.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/sign.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc > CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc > CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sign.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc > CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sign_custom.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sign_custom.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc > CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc > CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/skip_gram.cc -o CMakeFiles/tensorflow-lite.dir/kernels/skip_gram.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/slice.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/slice.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc > CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_batch_nd.cc -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_batch_nd.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc > CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc > CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/space_to_depth.cc -o CMakeFiles/tensorflow-lite.dir/kernels/space_to_depth.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc > CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc > CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sparse_to_dense.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sparse_to_dense.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/split.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/split.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/split.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc > CMakeFiles/tensorflow-lite.dir/kernels/split.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc > CMakeFiles/tensorflow-lite.dir/kernels/split.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/split.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc -o CMakeFiles/tensorflow-lite.dir/kernels/split.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split.cc -o CMakeFiles/tensorflow-lite.dir/kernels/split.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc > CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc > CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc -o CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/split_v.cc -o CMakeFiles/tensorflow-lite.dir/kernels/split_v.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc > CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc > CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc -o CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squared_difference.cc -o CMakeFiles/tensorflow-lite.dir/kernels/squared_difference.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc > CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc > CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc -o CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/squeeze.cc -o CMakeFiles/tensorflow-lite.dir/kernels/squeeze.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc > CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/strided_slice.cc -o CMakeFiles/tensorflow-lite.dir/kernels/strided_slice.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/sub.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc > CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc > CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/sub.cc -o CMakeFiles/tensorflow-lite.dir/kernels/sub.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc > CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc > CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc -o CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/svdf.cc -o CMakeFiles/tensorflow-lite.dir/kernels/svdf.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/table.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/table.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/table.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc > CMakeFiles/tensorflow-lite.dir/kernels/table.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc > CMakeFiles/tensorflow-lite.dir/kernels/table.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/table.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/table.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc -o CMakeFiles/tensorflow-lite.dir/kernels/table.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/table.cc -o CMakeFiles/tensorflow-lite.dir/kernels/table.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/tile.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc > CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc > CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc -o CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/tile.cc -o CMakeFiles/tensorflow-lite.dir/kernels/tile.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_182) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc > CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc > CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc -o CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/topk_v2.cc -o CMakeFiles/tensorflow-lite.dir/kernels/topk_v2.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_183) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc > CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc > CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc -o CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose.cc -o CMakeFiles/tensorflow-lite.dir/kernels/transpose.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_184) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc > CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/transpose_conv.cc -o CMakeFiles/tensorflow-lite.dir/kernels/transpose_conv.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_gru.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_gru.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_186) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_lstm.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_lstm.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_187) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc > CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unidirectional_sequence_rnn.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unidirectional_sequence_rnn.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unique.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc > CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc > CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unique.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unique.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc > CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc > CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unpack.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unpack.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc > CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc > CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/unsorted_segment.cc -o CMakeFiles/tensorflow-lite.dir/kernels/unsorted_segment.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc > CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc > CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc -o CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/var_handle.cc -o CMakeFiles/tensorflow-lite.dir/kernels/var_handle.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/where.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/where.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/where.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc > CMakeFiles/tensorflow-lite.dir/kernels/where.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc > CMakeFiles/tensorflow-lite.dir/kernels/where.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/where.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/where.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc -o CMakeFiles/tensorflow-lite.dir/kernels/where.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/where.cc -o CMakeFiles/tensorflow-lite.dir/kernels/where.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/while.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/while.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/while.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc > CMakeFiles/tensorflow-lite.dir/kernels/while.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc > CMakeFiles/tensorflow-lite.dir/kernels/while.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/while.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/while.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc -o CMakeFiles/tensorflow-lite.dir/kernels/while.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/while.cc -o CMakeFiles/tensorflow-lite.dir/kernels/while.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc > CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc > CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc -o CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/zeros_like.cc -o CMakeFiles/tensorflow-lite.dir/kernels/zeros_like.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o: _deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o -MF CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o.d -o CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o -MF CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o.d -o CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc > CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc > CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc -o CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/nnapi/nnapi_implementation_disabled.cc -o CMakeFiles/tensorflow-lite.dir/nnapi/nnapi_implementation_disabled.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o: _deps/tensorflow-src/tensorflow/lite/allocation.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o -MF CMakeFiles/tensorflow-lite.dir/allocation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/allocation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.o -MF CMakeFiles/tensorflow-lite.dir/allocation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/allocation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/allocation.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc > CMakeFiles/tensorflow-lite.dir/allocation.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc > CMakeFiles/tensorflow-lite.dir/allocation.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/allocation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/allocation.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc -o CMakeFiles/tensorflow-lite.dir/allocation.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/allocation.cc -o CMakeFiles/tensorflow-lite.dir/allocation.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o: _deps/tensorflow-src/tensorflow/lite/arena_planner.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o -MF CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o -MF CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/arena_planner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/arena_planner.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc > CMakeFiles/tensorflow-lite.dir/arena_planner.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc > CMakeFiles/tensorflow-lite.dir/arena_planner.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/arena_planner.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/arena_planner.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc -o CMakeFiles/tensorflow-lite.dir/arena_planner.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/arena_planner.cc -o CMakeFiles/tensorflow-lite.dir/arena_planner.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o: _deps/tensorflow-src/tensorflow/lite/array.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o -MF CMakeFiles/tensorflow-lite.dir/array.cc.o.d -o CMakeFiles/tensorflow-lite.dir/array.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.o -MF CMakeFiles/tensorflow-lite.dir/array.cc.o.d -o CMakeFiles/tensorflow-lite.dir/array.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/array.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc > CMakeFiles/tensorflow-lite.dir/array.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc > CMakeFiles/tensorflow-lite.dir/array.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/array.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/array.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc -o CMakeFiles/tensorflow-lite.dir/array.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/array.cc -o CMakeFiles/tensorflow-lite.dir/array.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o: _deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o -MF CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o.d -o CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o -MF CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o.d -o CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc > CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc > CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc -o CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/external_cpu_backend_context.cc -o CMakeFiles/tensorflow-lite.dir/external_cpu_backend_context.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o: _deps/tensorflow-src/tensorflow/lite/graph_info.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o -MF CMakeFiles/tensorflow-lite.dir/graph_info.cc.o.d -o CMakeFiles/tensorflow-lite.dir/graph_info.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.o -MF CMakeFiles/tensorflow-lite.dir/graph_info.cc.o.d -o CMakeFiles/tensorflow-lite.dir/graph_info.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/graph_info.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc > CMakeFiles/tensorflow-lite.dir/graph_info.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc > CMakeFiles/tensorflow-lite.dir/graph_info.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/graph_info.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/graph_info.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc -o CMakeFiles/tensorflow-lite.dir/graph_info.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/graph_info.cc -o CMakeFiles/tensorflow-lite.dir/graph_info.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o: _deps/tensorflow-src/tensorflow/lite/logger.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o -MF CMakeFiles/tensorflow-lite.dir/logger.cc.o.d -o CMakeFiles/tensorflow-lite.dir/logger.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.o -MF CMakeFiles/tensorflow-lite.dir/logger.cc.o.d -o CMakeFiles/tensorflow-lite.dir/logger.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/logger.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc > CMakeFiles/tensorflow-lite.dir/logger.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc > CMakeFiles/tensorflow-lite.dir/logger.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/logger.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc -o CMakeFiles/tensorflow-lite.dir/logger.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/logger.cc -o CMakeFiles/tensorflow-lite.dir/logger.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o: _deps/tensorflow-src/tensorflow/lite/minimal_logging.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o -MF CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o.d -o CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o -MF CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o.d -o CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc > CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc > CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc -o CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging.cc -o CMakeFiles/tensorflow-lite.dir/minimal_logging.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o: _deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o -MF CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o -MF CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o.d -o CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc > CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc > CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc -o CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mmap_allocation.cc -o CMakeFiles/tensorflow-lite.dir/mmap_allocation.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o: _deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o -MF CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o.d -o CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o -MF CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o.d -o CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc > CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc > CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc -o CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/mutable_op_resolver.cc -o CMakeFiles/tensorflow-lite.dir/mutable_op_resolver.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o: _deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o -MF CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o.d -o CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o -MF CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o.d -o CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc > CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc > CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc -o CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/optional_debug_tools.cc -o CMakeFiles/tensorflow-lite.dir/optional_debug_tools.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o: _deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc > CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc > CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena.cc -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o: _deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc > CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc > CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_memory_arena_debug_dump.cc -o CMakeFiles/tensorflow-lite.dir/simple_memory_arena_debug_dump.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o: _deps/tensorflow-src/tensorflow/lite/simple_planner.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o -MF CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o.d -o CMakeFiles/tensorflow-lite.dir/simple_planner.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/simple_planner.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc > CMakeFiles/tensorflow-lite.dir/simple_planner.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc > CMakeFiles/tensorflow-lite.dir/simple_planner.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/simple_planner.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/simple_planner.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc -o CMakeFiles/tensorflow-lite.dir/simple_planner.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/simple_planner.cc -o CMakeFiles/tensorflow-lite.dir/simple_planner.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o: _deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o -MF CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o -MF CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc > CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc > CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc -o CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/stderr_reporter.cc -o CMakeFiles/tensorflow-lite.dir/stderr_reporter.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o: _deps/tensorflow-src/tensorflow/lite/string_util.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/string_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/string_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.o -MF CMakeFiles/tensorflow-lite.dir/string_util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/string_util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/string_util.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc > CMakeFiles/tensorflow-lite.dir/string_util.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc > CMakeFiles/tensorflow-lite.dir/string_util.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/string_util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/string_util.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc -o CMakeFiles/tensorflow-lite.dir/string_util.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/string_util.cc -o CMakeFiles/tensorflow-lite.dir/string_util.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o: _deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o -MF CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o.d -o CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o -MF CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o.d -o CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc > CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc > CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc -o CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tensorflow_profiler_logger_shim.cc -o CMakeFiles/tensorflow-lite.dir/tensorflow_profiler_logger_shim.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o: _deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o -MF CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o.d -o CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o -MF CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o.d -o CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc > CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc > CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc -o CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/tflite_with_xnnpack_optional.cc -o CMakeFiles/tensorflow-lite.dir/tflite_with_xnnpack_optional.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o: _deps/tensorflow-src/tensorflow/lite/util.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o -MF CMakeFiles/tensorflow-lite.dir/util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.o -MF CMakeFiles/tensorflow-lite.dir/util.cc.o.d -o CMakeFiles/tensorflow-lite.dir/util.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/util.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc > CMakeFiles/tensorflow-lite.dir/util.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc > CMakeFiles/tensorflow-lite.dir/util.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/util.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc -o CMakeFiles/tensorflow-lite.dir/util.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/util.cc -o CMakeFiles/tensorflow-lite.dir/util.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o: _deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o -MF CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o.d -o CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o -MF CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o.d -o CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc > CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc > CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc -o CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/minimal_logging_default.cc -o CMakeFiles/tensorflow-lite.dir/minimal_logging_default.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o: _deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/platform_profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/platform_profiler.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o: _deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/root_profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/root_profiler.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o: _deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc > CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/profiler.cc -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/profiler.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o: _deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o -MF CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o.d -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc > CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc > CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/profiling/telemetry/telemetry.cc -o CMakeFiles/tensorflow-lite.dir/profiling/telemetry/telemetry.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o: _deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o -MF CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o.d -o CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc > CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc -o CMakeFiles/tensorflow-lite.dir/kernels/internal/utils/sparsity_format_converter.cc.s
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/flags.make
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o: _deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o: _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building CXX object _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o -MF CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o.d -o CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.o -c /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.i"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc > CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.i
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc > CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.i
 
 _deps/tensorflow-build/CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.s"
-	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc -o CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.s
+	cd /workspace/cpp_inference/build/_deps/tensorflow-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/_deps/tensorflow-src/tensorflow/lite/schema/schema_utils.cc -o CMakeFiles/tensorflow-lite.dir/schema/schema_utils.cc.s
 
 # Object files for target tensorflow-lite
 tensorflow__lite_OBJECTS = \

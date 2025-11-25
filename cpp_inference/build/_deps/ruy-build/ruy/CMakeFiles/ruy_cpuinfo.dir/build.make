@@ -73,15 +73,15 @@ _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o: _deps/ruy-build/ruy
 _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o: ruy/ruy/cpuinfo.cc
 _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o: _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o -MF CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o.d -o CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o -c /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o -MF CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o.d -o CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.o -c /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc > CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc > CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.i
 
 _deps/ruy-build/ruy/CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc -o CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/cpuinfo.cc -o CMakeFiles/ruy_cpuinfo.dir/cpuinfo.cc.s
 
 # Object files for target ruy_cpuinfo
 ruy_cpuinfo_OBJECTS = \
