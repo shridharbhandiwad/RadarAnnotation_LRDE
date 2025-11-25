@@ -75,16 +75,15 @@ CMAKE_BUILD_TYPE:STRING=
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++
 
-//LLVM archiver
-CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/llvm-ar-18
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-13
 
-//`clang-scan-deps` dependency scanner
-CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH=CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND
-
-//Generate index for LLVM archive
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/llvm-ranlib-18
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-13
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -102,16 +101,15 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
 
-//LLVM archiver
-CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/llvm-ar-18
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-13
 
-//`clang-scan-deps` dependency scanner
-CMAKE_C_COMPILER_CLANG_SCAN_DEPS:FILEPATH=CMAKE_C_COMPILER_CLANG_SCAN_DEPS-NOTFOUND
-
-//Generate index for LLVM archive
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/llvm-ranlib-18
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-13
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -1308,8 +1306,6 @@ CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
 CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
 CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS
-CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
 CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
@@ -1326,8 +1322,6 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_COMPILER_CLANG_SCAN_DEPS
-CMAKE_C_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
 CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
@@ -1490,7 +1484,7 @@ COMPILER_SUPPORT_Wextra:INTERNAL=1
 //Test COMPILER_SUPPORT_Wformatsecurity
 COMPILER_SUPPORT_Wformatsecurity:INTERNAL=1
 //Test COMPILER_SUPPORT_Wlogicalop
-COMPILER_SUPPORT_Wlogicalop:INTERNAL=
+COMPILER_SUPPORT_Wlogicalop:INTERNAL=1
 //Test COMPILER_SUPPORT_Wnolonglong
 COMPILER_SUPPORT_Wnolonglong:INTERNAL=1
 //Test COMPILER_SUPPORT_Wnonvirtualdtor
@@ -1504,7 +1498,7 @@ COMPILER_SUPPORT_Wpointerarith:INTERNAL=1
 //Test COMPILER_SUPPORT_Wshadow
 COMPILER_SUPPORT_Wshadow:INTERNAL=1
 //Test COMPILER_SUPPORT_Wshorten64to32
-COMPILER_SUPPORT_Wshorten64to32:INTERNAL=1
+COMPILER_SUPPORT_Wshorten64to32:INTERNAL=
 //Test COMPILER_SUPPORT_Wundef
 COMPILER_SUPPORT_Wundef:INTERNAL=1
 //Test COMPILER_SUPPORT_Wunusedlocaltypedefs
@@ -1514,9 +1508,9 @@ COMPILER_SUPPORT_Wwritestrings:INTERNAL=1
 //Test COMPILER_SUPPORT_fnochecknew
 COMPILER_SUPPORT_fnochecknew:INTERNAL=1
 //Test COMPILER_SUPPORT_fnocommon
-COMPILER_SUPPORT_fnocommon:INTERNAL=
+COMPILER_SUPPORT_fnocommon:INTERNAL=1
 //Test COMPILER_SUPPORT_fstrictaliasing
-COMPILER_SUPPORT_fstrictaliasing:INTERNAL=
+COMPILER_SUPPORT_fstrictaliasing:INTERNAL=1
 //Test COMPILER_SUPPORT_pedantic
 COMPILER_SUPPORT_pedantic:INTERNAL=1
 //Test COMPILER_SUPPORT_wd2304

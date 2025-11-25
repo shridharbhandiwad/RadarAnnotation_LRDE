@@ -73,29 +73,29 @@ _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o:
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o: ruy/ruy/profiler/profiler.cc
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o: _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o -MF CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o.d -o CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o -MF CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o.d -o CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc > CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc > CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.i
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc -o CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/profiler.cc -o CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.s
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o: _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/flags.make
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o: ruy/ruy/profiler/treeview.cc
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o: _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o -MF CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o.d -o CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o -MF CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o.d -o CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o -c /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.i"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc > CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.i
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc > CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.i
 
 _deps/ruy-build/ruy/profiler/CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.s"
-	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc -o CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.s
+	cd /workspace/cpp_inference/build/_deps/ruy-build/ruy/profiler && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/ruy/ruy/profiler/treeview.cc -o CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.s
 
 # Object files for target ruy_profiler_profiler
 ruy_profiler_profiler_OBJECTS = \

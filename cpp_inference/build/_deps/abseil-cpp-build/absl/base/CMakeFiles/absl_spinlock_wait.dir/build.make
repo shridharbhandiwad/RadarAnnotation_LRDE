@@ -73,15 +73,15 @@ _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spin
 _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o: abseil-cpp/absl/base/internal/spinlock_wait.cc
 _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o: _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o -MF CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o.d -o CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o -MF CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o.d -o CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o -c /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc
 
 _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.i"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc > CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.i
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc > CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.i
 
 _deps/abseil-cpp-build/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.s"
-	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc -o CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.s
+	cd /workspace/cpp_inference/build/_deps/abseil-cpp-build/absl/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/abseil-cpp/absl/base/internal/spinlock_wait.cc -o CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.s
 
 # Object files for target absl_spinlock_wait
 absl_spinlock_wait_OBJECTS = \

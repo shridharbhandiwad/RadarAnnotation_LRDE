@@ -73,15 +73,15 @@ _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o: _
 _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o: farmhash/src/farmhash.cc
 _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o: _deps/farmhash-build/CMakeFiles/farmhash.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/cpp_inference/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o"
-	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o -MF CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o.d -o CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o -c /workspace/cpp_inference/build/farmhash/src/farmhash.cc
+	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o -MF CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o.d -o CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.o -c /workspace/cpp_inference/build/farmhash/src/farmhash.cc
 
 _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.i"
-	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/farmhash/src/farmhash.cc > CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.i
+	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/cpp_inference/build/farmhash/src/farmhash.cc > CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.i
 
 _deps/farmhash-build/CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.s"
-	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/farmhash/src/farmhash.cc -o CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.s
+	cd /workspace/cpp_inference/build/_deps/farmhash-build && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/cpp_inference/build/farmhash/src/farmhash.cc -o CMakeFiles/farmhash.dir/__/__/farmhash/src/farmhash.cc.s
 
 # Object files for target farmhash
 farmhash_OBJECTS = \
