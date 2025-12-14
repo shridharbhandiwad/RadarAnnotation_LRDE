@@ -1,0 +1,196 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                   CHRONOLOGY MARKERS - VISUAL REFERENCE                   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         PPI PLOT (RADAR VIEW)                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+                            NORTH (N)
+                               |
+                               |
+                          30°  |  330°
+                               |
+                        60°    |    300°
+                    ★          |          ▲
+            WEST    •          |          •    EAST
+            (W)     •          +          •    (E)
+                    •          |          •
+                    ▲          |          ★
+                        120°   |    240°
+                               |
+                          150° | 210°
+                               |
+                            SOUTH (S)
+
+    Legend:
+    ★ = Track Start (Green Star)    - Earliest time point
+    • = Track Points               - Intermediate positions
+    ▲ = Track End (Red Triangle)    - Latest time point
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    MULTIPLE TRACKS EXAMPLE                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+                    Track 1: Moving Northeast
+                    Track 2: Moving Southwest
+                    Track 3: Circular Path
+
+
+            N
+            |
+            |     ★════════════════▲  Track 1
+            |                       (Blue dots)
+            |
+    ────────+──────────────────────────── E
+    W       |           ○ Track 3
+            |         ○ ★ ○  (Green dots)
+            |       ○       ○
+            |      ○         ○
+            |       ○       ○
+            |         ○ ▲ ○
+            |
+            |  ▲═══════════★  Track 2
+            |                (Red dots)
+            |
+            S
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     TIME SERIES PLOTS                                   │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    ALTITUDE VS TIME
+    ┌─────────────────────────────────────────────────────────────┐
+    │ 2500m│                                                       │
+    │      │     ★──────────────────────────▲ Track 1             │
+    │ 2000m│    /                             \                   │
+    │      │   /                               \                  │
+    │ 1500m│  /                                 \                 │
+    │      │ ★                                   ▲ Track 2        │
+    │ 1000m│                                                       │
+    │      └────┬────┬────┬────┬────┬────┬────┬────┬────┬───     │
+    │           0s   2s   4s   6s   8s  10s  12s  14s  16s  TIME  │
+    └─────────────────────────────────────────────────────────────┘
+
+
+    SPEED VS TIME
+    ┌─────────────────────────────────────────────────────────────┐
+    │ 200m/s│                                                      │
+    │       │  ★────────────────────────────────▲                 │
+    │ 150m/s│                                                      │
+    │       │     Track 1 (relatively constant speed)             │
+    │ 100m/s│                                                      │
+    │       │    ★─────────────────────▲                          │
+    │  50m/s│       Track 2 (slower)                              │
+    │       └────┬────┬────┬────┬────┬────┬────┬────┬────┬───    │
+    │            0s   2s   4s   6s   8s  10s  12s  14s  16s TIME  │
+    └─────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    COLOR AND SIZE SPECIFICATIONS                        │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    START MARKER (★)
+    ┌──────────────────────────────────────────────┐
+    │ Symbol:  ★ (Star)                            │
+    │ Color:   Bright Green (RGB: 46, 204, 113)    │
+    │ Border:  Dark Green (RGB: 0, 100, 0)         │
+    │ Width:   2 pixels                            │
+    │ Size:    12 pixels                           │
+    │ Z-Index: 100 (on top)                        │
+    └──────────────────────────────────────────────┘
+
+    END MARKER (▲)
+    ┌──────────────────────────────────────────────┐
+    │ Symbol:  ▲ (Triangle Up)                     │
+    │ Color:   Bright Red (RGB: 231, 76, 60)       │
+    │ Border:  Dark Red (RGB: 139, 0, 0)           │
+    │ Width:   2 pixels                            │
+    │ Size:    12 pixels                           │
+    │ Z-Index: 100 (on top)                        │
+    └──────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         HOVER INTERACTION                               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    When you hover over a marker:
+
+    Normal State:         Hover State:
+        ★                    ⭐
+    (green star)         (white border)
+
+        ▲                    🔺
+    (red triangle)       (white border)
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    COORDINATE MODE EXAMPLES                             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    1. RADAR VIEW (CIRCULAR)
+       - Markers appear at cartesian X,Y positions
+       - Circular range rings visible
+       - Azimuth lines radiate from center
+       - Most intuitive for radar data
+
+    2. CARTESIAN (X, Y)
+       - Markers at raw X,Y coordinates
+       - Grid background
+       - Standard graph axes
+       - Good for precise measurements
+
+    3. POLAR (RANGE, AZIMUTH)
+       - X-axis: Azimuth (degrees)
+       - Y-axis: Range (km)
+       - Markers transformed to polar
+       - Useful for range-bearing analysis
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           LEGEND DISPLAY                                │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    The plot legend will show:
+
+    ┌─────────────────────────┐
+    │ ★ Start Points          │
+    │ ▲ End Points            │
+    │ ● Track 1               │
+    │ ● Track 2               │
+    │ ● Track 3               │
+    └─────────────────────────┘
+
+    Click legend items to show/hide elements
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      CHRONOLOGY INTERPRETATION                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    Example Track Patterns:
+
+    ★─────────▲     Linear movement, start to end
+                    
+    ★─────╮          Turning movement
+         │
+         ▲
+    
+    ★───○───○───▲    Multi-point track with clear direction
+    
+         ▲
+    ○   ○  ○  ○      Circular/looping path
+    ○ ★      ○       (start and end nearby)
+      ○    ○
+
+    ★▲              Very short track (start ≈ end)
+    
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  Remember: GREEN STAR (★) = START  |  RED TRIANGLE (▲) = END             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
