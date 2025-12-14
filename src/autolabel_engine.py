@@ -67,7 +67,13 @@ def compute_motion_features(df: pd.DataFrame) -> pd.DataFrame:
         curvature = compute_curvature(track_df)
         
         # Compute acceleration magnitude
-        accel_mag = compute_acceleration_magnitude(track_df['ax'].values, track_df['ay'].values, track_df['az'].values)
+        #
+        # Some datasets (and unit tests) provide only planar acceleration (ax, ay).
+        # Treat missing components as 0 to keep feature computation robust.
+        ax = track_df['ax'].values if 'ax' in track_df.columns else np.zeros(len(track_df))
+        ay = track_df['ay'].values if 'ay' in track_df.columns else np.zeros(len(track_df))
+        az = track_df['az'].values if 'az' in track_df.columns else np.zeros(len(track_df))
+        accel_mag = compute_acceleration_magnitude(ax, ay, az)
         
         # Compute vertical rate
         vertical_rate = track_df['z'].diff() / dt

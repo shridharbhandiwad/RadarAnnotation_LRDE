@@ -236,7 +236,7 @@ class AutoLabelingPanel(QWidget):
         threshold_group.setLayout(threshold_layout)
         
         # Process button
-        self.process_button = QPushButton("Run Auto-Labeling")
+        self.process_button = QPushButton("Run Labelling")
         self.process_button.clicked.connect(self.run_autolabeling)
         self.process_button.setEnabled(False)
         
@@ -279,7 +279,7 @@ class AutoLabelingPanel(QWidget):
     
     def run_autolabeling(self):
         try:
-            self.status_text.append("Running auto-labeling...")
+            self.status_text.append("Running labelling...")
             
             # Load data
             df = pd.read_csv(self.file_path)
@@ -1188,15 +1188,15 @@ class HighVolumeTrainingPanel(QWidget):
         
         data_gen_group.setLayout(data_gen_layout)
         
-        # Step 2: Auto-Labeling
-        labeling_group = QGroupBox("Step 2: Apply Auto-Labeling")
+        # Step 2: Labelling
+        labeling_group = QGroupBox("Step 2: Apply Labelling")
         labeling_layout = QVBoxLayout()
         
         self.use_existing_data = QPushButton("Or Select Existing CSV File")
         self.use_existing_data.clicked.connect(self.select_existing_data)
         labeling_layout.addWidget(self.use_existing_data)
         
-        self.label_button = QPushButton("Apply Auto-Labeling")
+        self.label_button = QPushButton("Apply Labelling")
         self.label_button.clicked.connect(self.apply_labeling)
         self.label_button.setEnabled(False)
         labeling_layout.addWidget(self.label_button)
@@ -1349,14 +1349,14 @@ class HighVolumeTrainingPanel(QWidget):
                 self.label_button.setEnabled(True)
     
     def apply_labeling(self):
-        """Apply auto-labeling to dataset"""
+        """Apply labelling to dataset"""
         if not self.current_data_path:
             QMessageBox.warning(self, "Error", "No dataset available. Generate or select data first.")
             return
         
         try:
             self.status_text.append(f"\n{'='*60}")
-            self.status_text.append("Applying auto-labeling...")
+            self.status_text.append("Applying labelling...")
             self.progress_bar.setVisible(True)
             self.progress_bar.setRange(0, 0)
             self.label_button.setEnabled(False)
@@ -1396,7 +1396,7 @@ class HighVolumeTrainingPanel(QWidget):
         self.label_button.setEnabled(True)
         
         self.labeled_data_path = labeled_path
-        self.status_text.append(f"✓ Auto-labeling completed: {labeled_path}")
+        self.status_text.append(f"✓ Labelling completed: {labeled_path}")
         self.status_text.append(f"  Valid records: {summary['valid_records']:,}/{summary['total_records']:,}")
         self.status_text.append(f"  Unique annotations: {len(summary['annotation_distribution'])}")
         
@@ -2393,10 +2393,9 @@ class MainWindow(QMainWindow):
         self.engine_list = QListWidget()
         self.engine_list.addItems([
             "📊 Data Extraction",
-            "🏷️ AutoLabeling",
-            "🤖 AI Tagging",
+            "🏷️ Labelling",
+            "🤖 AITraining",
             "🔮 Model Evaluation",
-            "🚀 High Volume Training",
             "⚙️ C++ Deployment",
             "📈 Report",
             "🔬 Simulation",
@@ -2422,7 +2421,6 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(AutoLabelingPanel())
         self.stack.addWidget(AITaggingPanel())
         self.stack.addWidget(ModelEvaluationPanel())
-        self.stack.addWidget(HighVolumeTrainingPanel())
         self.stack.addWidget(CppDeploymentPanel())
         self.stack.addWidget(ReportPanel())
         self.stack.addWidget(SimulationPanel())

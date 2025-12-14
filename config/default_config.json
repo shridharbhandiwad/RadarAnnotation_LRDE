@@ -59,7 +59,7 @@
   },
   "autolabel_thresholds": {
     "level_flight_threshold": 5.0,
-    "curvature_threshold": 0.01,
+    "curvature_threshold": 0.0009,
     "low_speed_threshold": 50.0,
     "high_speed_threshold": 200.0,
     "light_maneuver_threshold": 2.0,
