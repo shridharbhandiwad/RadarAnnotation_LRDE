@@ -1,0 +1,122 @@
+═══════════════════════════════════════════════════════════════════
+                VISUALIZATION CHRONOLOGY MARKERS
+                      Quick Reference Guide
+═══════════════════════════════════════════════════════════════════
+
+WHAT'S NEW?
+-----------
+Track start and end points are now marked with distinct symbols to 
+show chronology at a glance!
+
+
+MARKER SYMBOLS
+--------------
+
+  ★  GREEN STAR   = START POINT (earliest time)
+     Color: Bright green (RGB: 46, 204, 113)
+     Border: Dark green
+     Size: 12 pixels
+
+  ▲  RED TRIANGLE = END POINT (latest time)
+     Color: Bright red (RGB: 231, 76, 60)
+     Border: Dark red
+     Size: 12 pixels
+
+
+WHERE YOU'LL SEE THEM
+---------------------
+
+1. PPI PLOT (Plan Position Indicator / Radar View)
+   - Shows track start/end in spatial view
+   - Works in all coordinate modes:
+     • Radar View (Circular)
+     • Cartesian (X, Y)
+     • Polar (Range, Azimuth)
+
+2. TIME SERIES PLOTS
+   - Altitude vs Time
+   - Speed vs Time
+   - Curvature vs Time
+
+
+EXAMPLE VISUALIZATION
+----------------------
+
+PPI Plot:
+                N
+                |
+        ★ •••••|•••••▲    Track 1: Moves North
+                |
+    W ─────────+────────── E
+                |
+            ▲   |            Track 2: Moves South
+            •••••
+            •   |
+            ★   |
+                |
+                S
+
+
+Time Series:
+  Altitude
+    |
+    |     ★─────────────▲
+    |    /               \
+    |   /                 \
+    |  /                   \
+    | ★                     ▲
+    |________________________ Time
+     Start              End
+
+
+BENEFITS
+--------
+
+✓ Instantly see track direction
+✓ Understand temporal sequence in multi-track scenarios
+✓ Identify track entry/exit points
+✓ Correlate spatial and temporal data easily
+✓ Better situational awareness
+
+
+USAGE
+-----
+
+No action required! Markers appear automatically when you:
+1. Load data via "Load Data" button
+2. Select any color mode (Track ID, Annotation, etc.)
+3. Filter tracks (markers adapt to filtered view)
+
+
+LEGEND
+------
+
+Look for these entries in the plot legend:
+- "Start Points" (green stars)
+- "End Points" (red triangles)
+
+You can use the legend to toggle marker visibility if needed.
+
+
+INTERACTIVE FEATURES
+--------------------
+
+• Hoverable: Markers highlight with white border on hover
+• High Priority: Always displayed on top of other elements
+• Theme Compatible: Works with both white and black themes
+• Export Friendly: Markers included in exported images
+
+
+TECHNICAL NOTES
+---------------
+
+• Chronology determined by 'time' column (ascending order)
+• First data point in time = Start marker
+• Last data point in time = End marker
+• Markers automatically adapt to coordinate transformations
+• Z-index: 100 (ensures visibility above all track points)
+
+
+═══════════════════════════════════════════════════════════════════
+For questions or issues, refer to: VISUALIZATION_CHRONOLOGY_MARKERS.md
+═══════════════════════════════════════════════════════════════════

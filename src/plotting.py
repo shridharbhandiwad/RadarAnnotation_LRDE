@@ -649,6 +649,12 @@ class PPIPlotWidget:
             plot_y = y_km
         
         # Store track data for tooltips (store both coordinate systems)
+        # Also collect start and end points for each track
+        start_points_x = []
+        start_points_y = []
+        end_points_x = []
+        end_points_y = []
+        
         for trackid in df['trackid'].unique():
             track_df = df[df['trackid'] == trackid].copy()
             track_df['x_km'] = track_df['x'] / 1000.0
@@ -660,6 +666,26 @@ class PPIPlotWidget:
             track_df['azimuth_deg'] = track_azimuth
             
             self.track_data[trackid] = track_df
+            
+            # Collect start and end points based on time
+            if len(track_df) > 0 and 'time' in track_df.columns:
+                track_df_sorted = track_df.sort_values('time')
+                
+                # Start point (earliest time)
+                if self.coordinate_mode == 'polar':
+                    start_points_x.append(track_df_sorted.iloc[0]['azimuth_deg'])
+                    start_points_y.append(track_df_sorted.iloc[0]['range_km'])
+                else:
+                    start_points_x.append(track_df_sorted.iloc[0]['x_km'])
+                    start_points_y.append(track_df_sorted.iloc[0]['y_km'])
+                
+                # End point (latest time)
+                if self.coordinate_mode == 'polar':
+                    end_points_x.append(track_df_sorted.iloc[-1]['azimuth_deg'])
+                    end_points_y.append(track_df_sorted.iloc[-1]['range_km'])
+                else:
+                    end_points_x.append(track_df_sorted.iloc[-1]['x_km'])
+                    end_points_y.append(track_df_sorted.iloc[-1]['y_km'])
         
         if color_by == 'trackid':
             # Plot by track
@@ -757,6 +783,42 @@ class PPIPlotWidget:
                 
                 self.plot_widget.addItem(scatter)
                 annotation_legend[annotation] = color
+        
+        # Add start point markers (green stars) to show chronology
+        if len(start_points_x) > 0:
+            start_marker_color = (46, 204, 113)  # Green
+            start_markers = pg.ScatterPlotItem(
+                x=start_points_x,
+                y=start_points_y,
+                size=12,
+                symbol='star',
+                pen=pg.mkPen(color=(0, 100, 0), width=2),
+                brush=pg.mkBrush(*start_marker_color),
+                name='Start Points',
+                hoverable=True,
+                hoverPen=pg.mkPen((255, 255, 255), width=3),
+                hoverBrush=pg.mkBrush(*start_marker_color, 200)
+            )
+            start_markers.setZValue(100)  # Display on top
+            self.plot_widget.addItem(start_markers)
+        
+        # Add end point markers (red triangles) to show chronology
+        if len(end_points_x) > 0:
+            end_marker_color = (231, 76, 60)  # Red
+            end_markers = pg.ScatterPlotItem(
+                x=end_points_x,
+                y=end_points_y,
+                size=12,
+                symbol='t',  # Triangle pointing up
+                pen=pg.mkPen(color=(139, 0, 0), width=2),
+                brush=pg.mkBrush(*end_marker_color),
+                name='End Points',
+                hoverable=True,
+                hoverPen=pg.mkPen((255, 255, 255), width=3),
+                hoverBrush=pg.mkBrush(*end_marker_color, 200)
+            )
+            end_markers.setZValue(100)  # Display on top
+            self.plot_widget.addItem(end_markers)
     
     def on_mouse_clicked(self, event):
         """Handle mouse click for magnifier zoom
@@ -1059,6 +1121,31 @@ class TimeSeriesPlotWidget:
                 name=f'Track {int(trackid)}'
             )
             
+            # Add start/end markers to altitude plot
+            start_marker_alt = pg.ScatterPlotItem(
+                x=[track_df['time'].iloc[0]],
+                y=[track_df['z'].iloc[0]],
+                size=12,
+                symbol='star',
+                pen=pg.mkPen(color=(0, 100, 0), width=2),
+                brush=pg.mkBrush(46, 204, 113),  # Green
+                name='Start' if idx == 0 else ''
+            )
+            start_marker_alt.setZValue(100)
+            self.altitude_plot.addItem(start_marker_alt)
+            
+            end_marker_alt = pg.ScatterPlotItem(
+                x=[track_df['time'].iloc[-1]],
+                y=[track_df['z'].iloc[-1]],
+                size=12,
+                symbol='t',
+                pen=pg.mkPen(color=(139, 0, 0), width=2),
+                brush=pg.mkBrush(231, 76, 60),  # Red
+                name='End' if idx == 0 else ''
+            )
+            end_marker_alt.setZValue(100)
+            self.altitude_plot.addItem(end_marker_alt)
+            
             # Speed plot (if available)
             if 'speed' in track_df.columns:
                 speed_curve = self.speed_plot.plot(
@@ -1067,6 +1154,29 @@ class TimeSeriesPlotWidget:
                     pen=pen,
                     name=f'Track {int(trackid)}'
                 )
+                
+                # Add start/end markers to speed plot
+                start_marker_speed = pg.ScatterPlotItem(
+                    x=[track_df['time'].iloc[0]],
+                    y=[track_df['speed'].iloc[0]],
+                    size=12,
+                    symbol='star',
+                    pen=pg.mkPen(color=(0, 100, 0), width=2),
+                    brush=pg.mkBrush(46, 204, 113)
+                )
+                start_marker_speed.setZValue(100)
+                self.speed_plot.addItem(start_marker_speed)
+                
+                end_marker_speed = pg.ScatterPlotItem(
+                    x=[track_df['time'].iloc[-1]],
+                    y=[track_df['speed'].iloc[-1]],
+                    size=12,
+                    symbol='t',
+                    pen=pg.mkPen(color=(139, 0, 0), width=2),
+                    brush=pg.mkBrush(231, 76, 60)
+                )
+                end_marker_speed.setZValue(100)
+                self.speed_plot.addItem(end_marker_speed)
             
             # Curvature plot (if available)
             if 'curvature' in track_df.columns:
@@ -1076,6 +1186,29 @@ class TimeSeriesPlotWidget:
                     pen=pen,
                     name=f'Track {int(trackid)}'
                 )
+                
+                # Add start/end markers to curvature plot
+                start_marker_curv = pg.ScatterPlotItem(
+                    x=[track_df['time'].iloc[0]],
+                    y=[track_df['curvature'].iloc[0]],
+                    size=12,
+                    symbol='star',
+                    pen=pg.mkPen(color=(0, 100, 0), width=2),
+                    brush=pg.mkBrush(46, 204, 113)
+                )
+                start_marker_curv.setZValue(100)
+                self.curvature_plot.addItem(start_marker_curv)
+                
+                end_marker_curv = pg.ScatterPlotItem(
+                    x=[track_df['time'].iloc[-1]],
+                    y=[track_df['curvature'].iloc[-1]],
+                    size=12,
+                    symbol='t',
+                    pen=pg.mkPen(color=(139, 0, 0), width=2),
+                    brush=pg.mkBrush(231, 76, 60)
+                )
+                end_marker_curv.setZValue(100)
+                self.curvature_plot.addItem(end_marker_curv)
             
             self.plot_items[trackid] = {
                 'altitude': alt_curve,
