@@ -139,6 +139,12 @@ def get_config(config_path: str = None) -> Config:
     """Get global configuration instance"""
     global _global_config
     if _global_config is None:
+        # If no explicit path is provided, prefer the repo's default config file
+        # so CLI/modules behave the same as the GUI.
+        if config_path is None:
+            default_path = os.path.join("config", "default_config.json")
+            if os.path.exists(default_path):
+                config_path = default_path
         _global_config = Config(config_path)
     return _global_config
 
