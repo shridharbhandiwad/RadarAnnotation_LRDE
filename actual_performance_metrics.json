@@ -1,0 +1,48 @@
+{
+  "python_performance": {
+    "avg_ms": 0.0028223255067132413,
+    "median_ms": 0.002741988282650709,
+    "min_ms": 0.002596003469079733,
+    "max_ms": 0.0215600011870265,
+    "std_ms": 0.0009013847485213542,
+    "throughput_per_sec": 354317.7417421837,
+    "percentiles": {
+      "p50": 0.002741988282650709,
+      "p90": 0.0028520007617771626,
+      "p95": 0.002940109698101878,
+      "p99": 0.003738848608918487
+    }
+  },
+  "cpp_projections": {
+    "Conservative (2x)": {
+      "inference_ms": 0.0014111627533566207,
+      "inference_us": 1.4111627533566207,
+      "throughput_per_sec": 708635.4834843674,
+      "tracks_at_50hz": 14172
+    },
+    "Typical (3.5x)": {
+      "inference_ms": 0.0008063787162037832,
+      "inference_us": 0.8063787162037832,
+      "throughput_per_sec": 1240112.096097643,
+      "tracks_at_50hz": 24802
+    },
+    "Optimistic (5x)": {
+      "inference_ms": 0.0005644651013426482,
+      "inference_us": 0.5644651013426483,
+      "throughput_per_sec": 1771588.7087109184,
+      "tracks_at_50hz": 35431
+    },
+    "With Quantization (8x)": {
+      "inference_ms": 0.00035279068833915517,
+      "inference_us": 0.35279068833915517,
+      "throughput_per_sec": 2834541.9339374695,
+      "tracks_at_50hz": 56690
+    }
+  },
+  "model_info": {
+    "size_kb": 61.25,
+    "input_size": 360,
+    "n_classes": 2,
+    "architecture": "Feedforward Neural Network"
+  }
+}

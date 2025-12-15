@@ -1,0 +1,12 @@
+{
+  "n_samples": 150,
+  "sequence_length": 20,
+  "n_features": 18,
+  "binary_file": "cpp_models/test_data.bin",
+  "csv_file": "cpp_models/test_data.csv",
+  "shape": [
+    150,
+    20,
+    18
+  ]
+}
