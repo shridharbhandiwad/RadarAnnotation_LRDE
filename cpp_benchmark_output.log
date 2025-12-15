@@ -1,0 +1,273 @@
+2025-12-15 05:05:25.213868: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-12-15 05:05:25.214268: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-15 05:05:25.274028: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-15 05:05:26.217882: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-15 05:05:26.218251: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-12-15 05:05:27.161619: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+
+
+================================================================================
+ COMPREHENSIVE C++ INFERENCE BENCHMARK
+ TensorFlow Lite Model Performance Analysis
+================================================================================
+
+
+================================================================================
+STEP 1: Loading and Preparing Data
+================================================================================
+Loading data from: data/test_simulation_labeled.csv
+Loaded 90000 rows
+Columns: ['time', 'trackid', 'x', 'y', 'z', 'vx', 'vy', 'vz', 'ax', 'ay', 'az', 'speed', 'speed_2d', 'heading', 'range', 'range_rate', 'curvature', 'accel_magnitude', 'vertical_rate', 'altitude_change', 'valid_features', 'incoming', 'outgoing', 'fixed_range_ascending', 'fixed_range_descending', 'level_flight', 'linear', 'curved', 'light_maneuver', 'high_maneuver', 'low_speed', 'high_speed', 'Annotation']
+Data doesn't have required format, creating synthetic data...
+Creating synthetic radar trajectories...
+Created 1000 synthetic sequences
+Train: 700, Val: 150, Test: 150
+
+================================================================================
+STEP 2: Training LSTM Model
+================================================================================
+Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                     │ (None, 20, 64)         │        21,248 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 20, 64)         │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ lstm_1 (LSTM)                   │ (None, 32)             │        12,416 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 32)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense (Dense)                   │ (None, 16)             │           528 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 2)              │            34 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 34,226 (133.70 KB)
+ Trainable params: 34,226 (133.70 KB)
+ Non-trainable params: 0 (0.00 B)
+None
+Epoch 1/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m32s[0m 2s/step - accuracy: 0.4375 - loss: 0.7257[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 7ms/step - accuracy: 0.5705 - loss: 0.6302[1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 0.6927 - loss: 0.5514[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 18ms/step - accuracy: 0.8857 - loss: 0.3633 - val_accuracy: 1.0000 - val_loss: 0.1033
+Epoch 2/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step - accuracy: 1.0000 - loss: 0.1253[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0944 [1m17/22[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0778[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 10ms/step - accuracy: 1.0000 - loss: 0.0422 - val_accuracy: 1.0000 - val_loss: 0.0084
+Epoch 3/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 0.0123[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0096 [1m19/22[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0086[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 0.0063 - val_accuracy: 1.0000 - val_loss: 0.0026
+Epoch 4/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 0.0034[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0037 [1m19/22[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0034[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 0.0028 - val_accuracy: 1.0000 - val_loss: 0.0014
+Epoch 5/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 0.0018[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0019 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0019[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 10ms/step - accuracy: 1.0000 - loss: 0.0017 - val_accuracy: 1.0000 - val_loss: 9.2094e-04
+Epoch 6/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 0.0013[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0014 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 0.0014[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 0.0013 - val_accuracy: 1.0000 - val_loss: 6.5664e-04
+Epoch 7/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 6.5670e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 8.6358e-04 [1m17/22[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 8.7906e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 8.5370e-04 - val_accuracy: 1.0000 - val_loss: 4.9757e-04
+Epoch 8/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 6.7711e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 9.8296e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 9.3131e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 8.4340e-04 - val_accuracy: 1.0000 - val_loss: 3.8670e-04
+Epoch 9/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m2s[0m 123ms/step - accuracy: 1.0000 - loss: 4.8496e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 5.7321e-04  [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 5.9793e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 6.1255e-04 - val_accuracy: 1.0000 - val_loss: 3.0879e-04
+Epoch 10/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 17ms/step - accuracy: 1.0000 - loss: 4.9965e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 4.9549e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 4.8145e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 5.0175e-04 - val_accuracy: 1.0000 - val_loss: 2.5527e-04
+Epoch 11/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 16ms/step - accuracy: 1.0000 - loss: 4.0094e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 4.3057e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 4.2905e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 4.0043e-04 - val_accuracy: 1.0000 - val_loss: 2.1416e-04
+Epoch 12/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 17ms/step - accuracy: 1.0000 - loss: 4.0039e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 3.8173e-04 [1m17/22[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 3.6691e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 3.4023e-04 - val_accuracy: 1.0000 - val_loss: 1.8464e-04
+Epoch 13/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 2.9568e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.7987e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.9178e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 10ms/step - accuracy: 1.0000 - loss: 3.2417e-04 - val_accuracy: 1.0000 - val_loss: 1.6061e-04
+Epoch 14/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 17ms/step - accuracy: 1.0000 - loss: 3.3809e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 3.9084e-04 [1m17/22[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 3.6575e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 10ms/step - accuracy: 1.0000 - loss: 3.0960e-04 - val_accuracy: 1.0000 - val_loss: 1.3867e-04
+Epoch 15/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 4.3511e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 3.2918e-04 [1m16/22[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 2.9820e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 2.5156e-04 - val_accuracy: 1.0000 - val_loss: 1.2219e-04
+Epoch 16/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 3.5115e-04[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.9719e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.6259e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 2.1329e-04 - val_accuracy: 1.0000 - val_loss: 1.0912e-04
+Epoch 17/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 17ms/step - accuracy: 1.0000 - loss: 2.9537e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.4346e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.3987e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 2.2393e-04 - val_accuracy: 1.0000 - val_loss: 9.7470e-05
+Epoch 18/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m2s[0m 126ms/step - accuracy: 1.0000 - loss: 1.3494e-04[1m 8/22[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 1.6634e-04  [1m16/22[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 1.6878e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 1.8051e-04 - val_accuracy: 1.0000 - val_loss: 8.8108e-05
+Epoch 19/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 17ms/step - accuracy: 1.0000 - loss: 2.0697e-04[1m10/22[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 2.0406e-04 [1m18/22[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 6ms/step - accuracy: 1.0000 - loss: 1.9465e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 8ms/step - accuracy: 1.0000 - loss: 1.7955e-04 - val_accuracy: 1.0000 - val_loss: 7.9738e-05
+Epoch 20/20
+[1m 1/22[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 18ms/step - accuracy: 1.0000 - loss: 8.8056e-05[1m 9/22[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 1.3312e-04 [1m17/22[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 7ms/step - accuracy: 1.0000 - loss: 1.3849e-04[1m22/22[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 9ms/step - accuracy: 1.0000 - loss: 1.4969e-04 - val_accuracy: 1.0000 - val_loss: 7.2735e-05
+
+Training completed in 6.04 seconds
+Final training accuracy: 1.0000
+Final validation accuracy: 1.0000
+
+================================================================================
+STEP 3: Converting to TensorFlow Lite
+================================================================================
+Saved artifact at '/tmp/tmpv8ll4m6d'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 20, 18), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 2), dtype=tf.float32, name=None)
+Captures:
+  140128530485072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530486032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530485456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530487568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530488144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530487184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530487760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530487376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530486992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140128530488528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1765775133.651460    2850 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1765775133.651485    2850 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+2025-12-15 05:05:33.651738: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: /tmp/tmpv8ll4m6d
+2025-12-15 05:05:33.652310: I tensorflow/cc/saved_model/reader.cc:52] Reading meta graph with tags { serve }
+2025-12-15 05:05:33.652315: I tensorflow/cc/saved_model/reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpv8ll4m6d
+I0000 00:00:1765775133.657942    2850 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+2025-12-15 05:05:33.658901: I tensorflow/cc/saved_model/loader.cc:236] Restoring SavedModel bundle.
+2025-12-15 05:05:33.692398: I tensorflow/cc/saved_model/loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpv8ll4m6d
+2025-12-15 05:05:33.704702: I tensorflow/cc/saved_model/loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 52957 microseconds.
+2025-12-15 05:05:33.723473: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-12-15 05:05:33.803822: W tensorflow/compiler/mlir/lite/flatbuffer_export.cc:4082] TFLite interpreter needs to link Flex delegate in order to run the model since it contains the following Select TFop(s):
+Flex ops: FlexTensorListReserve, FlexTensorListSetItem, FlexTensorListStack
+Details:
+	tf.TensorListReserve(tensor<2xi32>, tensor<i32>) -> (tensor<!tf_type.variant<tensor<?x32xf32>>>) : {device = ""}
+	tf.TensorListReserve(tensor<2xi32>, tensor<i32>) -> (tensor<!tf_type.variant<tensor<?x64xf32>>>) : {device = ""}
+	tf.TensorListSetItem(tensor<!tf_type.variant<tensor<?x32xf32>>>, tensor<i32>, tensor<?x32xf32>) -> (tensor<!tf_type.variant<tensor<?x32xf32>>>) : {device = "", resize_if_index_out_of_bounds = false}
+	tf.TensorListSetItem(tensor<!tf_type.variant<tensor<?x64xf32>>>, tensor<i32>, tensor<?x64xf32>) -> (tensor<!tf_type.variant<tensor<?x64xf32>>>) : {device = "", resize_if_index_out_of_bounds = false}
+	tf.TensorListStack(tensor<!tf_type.variant<tensor<?x32xf32>>>, tensor<2xi32>) -> (tensor<1x?x32xf32>) : {device = "", num_elements = 1 : i64}
+	tf.TensorListStack(tensor<!tf_type.variant<tensor<?x64xf32>>>, tensor<2xi32>) -> (tensor<20x?x64xf32>) : {device = "", num_elements = 20 : i64}
+See instructions: https://www.tensorflow.org/lite/guide/ops_select
+TFLite model saved: cpp_models/radar_model.tflite
+Model size: 64.48 KB
+
+================================================================================
+STEP 4: Saving Model Metadata
+================================================================================
+Metadata saved: cpp_models/model_metadata.json
+
+================================================================================
+STEP 5: Creating Test Data
+================================================================================
+Binary test data: cpp_models/test_data.bin (210.94 KB)
+CSV test data: cpp_models/test_data.csv
+Test info: cpp_models/test_data_info.json
+Number of test samples: 150
+
+================================================================================
+STEP 6: Running C++ Benchmarks
+================================================================================
+
+--- Test 1: Single Inference (CSV) ---
+==============================================
+  Radar Trajectory Real-Time Tagger
+  Using TensorFlow Lite for C++ Deployment
+==============================================
+
+Initializing Radar Tagger...
+Model path: cpp_models/radar_model.tflite
+Metadata path: cpp_models/model_metadata.json
+Loading metadata from: cpp_models/model_metadata.json
+Loaded 2 class names
+Metadata loaded: 18 features, sequence length 20
+Model loaded successfully
+
+Errors: ERROR: Didn't find op for builtin opcode 'FULLY_CONNECTED' version '12'. An older version of this builtin might be supported. Are you using an old TFLite binary with a newer model?
+
+ERROR: Registration failed.
+
+Failed to create interpreter
+Failed to initialize tagger
+
+
+--- Test 2: Multi-threaded Inference (Binary) ---
+==============================================
+  Radar Trajectory Real-Time Tagger
+  Using TensorFlow Lite for C++ Deployment
+==============================================
+
+Initializing Radar Tagger...
+Model path: cpp_models/radar_model.tflite
+Metadata path: cpp_models/model_metadata.json
+Loading metadata from: cpp_models/model_metadata.json
+Loaded 2 class names
+Metadata loaded: 18 features, sequence length 20
+Model loaded successfully
+
+Errors: ERROR: Didn't find op for builtin opcode 'FULLY_CONNECTED' version '12'. An older version of this builtin might be supported. Are you using an old TFLite binary with a newer model?
+
+ERROR: Registration failed.
+
+Failed to create interpreter
+Failed to initialize tagger
+
+
+--- Test 3: Benchmark Mode (100 iterations) ---
+==============================================
+  Radar Trajectory Real-Time Tagger
+  Using TensorFlow Lite for C++ Deployment
+==============================================
+
+Initializing Radar Tagger...
+Model path: cpp_models/radar_model.tflite
+Metadata path: cpp_models/model_metadata.json
+Loading metadata from: cpp_models/model_metadata.json
+Loaded 2 class names
+Metadata loaded: 18 features, sequence length 20
+Model loaded successfully
+
+Errors: ERROR: Didn't find op for builtin opcode 'FULLY_CONNECTED' version '12'. An older version of this builtin might be supported. Are you using an old TFLite binary with a newer model?
+
+ERROR: Registration failed.
+
+Failed to create interpreter
+Failed to initialize tagger
+
+
+--- Test 4: Thread Scaling Analysis ---
+
+Testing with 1 thread(s)...
+
+Testing with 2 thread(s)...
+
+Testing with 4 thread(s)...
+
+Testing with 8 thread(s)...
+
+================================================================================
+STEP 7: Generating Benchmark Report
+================================================================================
+================================================================================
+C++ INFERENCE BENCHMARK REPORT
+================================================================================
+
+## Performance Summary
+
+
+## Key Metrics
+
+
+## Real-time Performance Analysis
+
+
+## Model Information
+
+- **Model Type**: LSTM Neural Network (TensorFlow Lite)
+- **Sequence Length**: 20 timesteps
+- **Features**: 18
+- **Classes**: 2
+- **Framework**: TensorFlow Lite C++ API
+
+================================================================================
+
+Report saved to: cpp_models/benchmark_report.txt
+JSON metrics saved to: cpp_models/benchmark_metrics.json
+
+
+================================================================================
+ BENCHMARK COMPLETE
+================================================================================
+
+All files saved to: cpp_models
+
+Generated files:
+  - TFLite model: cpp_models/radar_model.tflite
+  - Metadata: cpp_models/model_metadata.json
+  - Test data: cpp_models/test_data.bin
+  - Benchmark report: cpp_models/benchmark_report.txt
+  - JSON metrics: cpp_models/benchmark_metrics.json
