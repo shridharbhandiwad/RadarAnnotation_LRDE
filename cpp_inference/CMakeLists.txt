@@ -447,3 +447,42 @@ if(WIN32 AND DEFINED ONNXRUNTIME_DLL)
     message(STATUS "  ONNX Runtime DLL: ${ONNXRUNTIME_DLL}")
 endif()
 message(STATUS "")
+
+# Final validation for Windows
+if(WIN32)
+    message(STATUS "Windows Build Configuration:")
+    message(STATUS "  Compiler: ${CMAKE_CXX_COMPILER_ID}")
+    message(STATUS "  Generator: ${CMAKE_GENERATOR}")
+    message(STATUS "  CMake Version: ${CMAKE_VERSION}")
+    
+    # Check if required files exist
+    if(NOT EXISTS ${ONNXRUNTIME_LIBRARIES})
+        message(FATAL_ERROR 
+            "ONNX Runtime library not found at: ${ONNXRUNTIME_LIBRARIES}\n"
+            "This usually means the download failed.\n"
+            "Solutions:\n"
+            "  1. Check your internet connection\n"
+            "  2. Delete the build directory and try again\n"
+            "  3. Manually download ONNX Runtime from:\n"
+            "     https://github.com/microsoft/onnxruntime/releases/download/v1.16.3/onnxruntime-win-x64-1.16.3.zip\n"
+            "  4. See WINDOWS_BUILD_ALTERNATIVES.md for alternative approaches"
+        )
+    endif()
+    
+    # Verify TensorFlow Lite
+    if(TARGET tensorflow-lite)
+        message(STATUS "  TensorFlow Lite: Target found successfully")
+    else()
+        message(WARNING 
+            "TensorFlow Lite target not found. This may cause build failures.\n"
+            "If build fails, see WINDOWS_BUILD_ALTERNATIVES.md"
+        )
+    endif()
+    
+    message(STATUS "")
+    message(STATUS "Build scripts available:")
+    message(STATUS "  - build_windows_robust.bat (recommended)")
+    message(STATUS "  - build_with_gemmlowp_fix.bat")
+    message(STATUS "  - See WINDOWS_BUILD_ALTERNATIVES.md for more options")
+    message(STATUS "")
+endif()
